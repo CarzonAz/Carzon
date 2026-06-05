@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CARZON — Gömrük Rüsumu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="calc-page">
+    <div class="calc-header">
+      <a href="index.html" class="back-link">← CARZON</a>
+      <h1>📋 Gömrük Rüsumu Kalkulyatoru</h1>
+      <p>DGK məlumatları əsasında rəsmi hesablama</p>
+    </div>
+
+    <div class="calc gomruk-wrap">
+
+      <!-- Form sahələri: 2 sütun grid -->
+      <div class="form-grid">
+
+        <!-- SOL: 4 sahə -->
+        <div class="form-col">
+          <label class="calc-label">Avtomobil növü</label>
+          <select id="autoType">
+            <option value="0">Minik avtomobili</option>
+            <option value="1">Avtobus</option>
+          </select>
+
+          <label class="calc-label">Mühərrik növü</label>
+          <select id="engineType">
+            <option value="0">Benzin</option>
+            <option value="1">Dizel</option>
+            <option value="2">Qaz</option>
+            <option value="3">Hibrid Benzin</option>
+            <option value="4">Hibrid Dizel</option>
+            <option value="5">Elektrik</option>
+          </select>
+
+          <label class="calc-label">Mühərrik həcmi (sm³)</label>
+          <input type="number" id="engine" placeholder="məs. 1600" min="0" max="999999">
+
+          <label class="calc-label">Ticarət növü</label>
+          <select id="commerceType">
+            <option value="0">Adi (ATS-ə daxil deyil)</option>
+            <option value="1">Azad Ticarət Sazişi (rüsumsuz)</option>
+          </select>
+        </div>
+
+        <!-- SAĞ: 4 sahə -->
+        <div class="form-col">
+          <label class="calc-label">İstehsal tarixi</label>
+          <input type="date" id="issueDate">
+
+          <label class="calc-label">İnvoys dəyəri (USD)</label>
+          <input type="number" id="priceInvoice" placeholder="məs. 5000" min="0" max="999999999">
+
+          <label class="calc-label">Nəqliyyat xərci (USD)</label>
+          <input type="number" id="priceTransport" placeholder="məs. 2000" min="0" max="999999999">
+
+          <label class="calc-label">Digər xərclər (USD)</label>
+          <input type="number" id="priceOther" placeholder="məs. 0" min="0" max="999999999">
+        </div>
+
+      </div>
+
+      <!-- Düymə -->
+      <button onclick="calcDuty()" class="btn-full">Rüsumu Hesabla</button>
+
+      <!-- Loader & xəta -->
+      <div id="loader" class="loader" style="display:none">Hesablanır...</div>
+      <div id="dutyError" class="duty-error" style="display:none"></div>
+
+      <!-- Nəticə -->
+      <div id="dutyResult" class="duty-result" style="display:none">
+        <div class="usd-rate" id="usdRate"></div>
+        <table class="duty-table">
+          <thead>
+            <tr><th>Rüsum</th><th>Məbləğ (AZN)</th></tr>
+          </thead>
+          <tbody id="dutyRows"></tbody>
+          <tfoot><tr id="dutyTotal"></tr></tfoot>
+        </table>
+        <div class="calc-footer-btn">
+          <a href="shipping.html" target="_blank" class="btn btn-outline" style="display:inline-block;text-align:center;margin-top:20px">
+            🚢 Daşınma Xərcini də Hesabla →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
