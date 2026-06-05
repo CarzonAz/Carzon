@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="az">
 <head>
 <meta charset="UTF-8">
@@ -10,24 +11,7 @@
 
 <body>
 
-<header class="navbar">
-
-<div class="container nav-container">
-
-<div class="logo">
-CARZON
-</div>
-
-<nav class="nav-links">
-<a href="#shipping">Daşınma</a>
-<a href="#gomruk">Gömrük</a>
-<a href="#services">Xidmətlər</a>
-<a href="#about">Haqqımızda</a>
-</nav>
-
-</div>
-
-</header>
+<!-- HERO -->
 
 <section class="hero">
 
@@ -37,32 +21,25 @@ CARZON
 </video>
 </div>
 
-<div class="overlay"></div>
+<div class="video-overlay"></div>
 
 <div class="hero-content">
 
-<span class="badge">
-ABŞ Auksion Avtomobilləri
-</span>
-
-<h1>
-ABŞ-dan Avtomobilinizi
-Etibarlı Şəkildə Gətirin
-</h1>
+<h1>CARZON</h1>
 
 <p>
-Copart və IAAI auksionlarından avtomobil seçimi,
-daşınması, gömrük rəsmiləşdirilməsi və təmir xidməti.
+ABŞ auksionlarından avtomobil seçimi,
+daşınması, gömrük dəstəyi və təmir xidməti.
 </p>
 
-<div class="hero-buttons">
+<div class="hero-btns">
 
 <a href="#shipping" class="btn">
-🚢 Daşınma Hesabla
+🚢 Daşınma Xərci Hesabla
 </a>
 
 <a href="#gomruk" class="btn btn-outline">
-📋 Gömrük Hesabla
+📋 Gömrük Rüsumu Hesabla
 </a>
 
 </div>
@@ -71,115 +48,193 @@ daşınması, gömrük rəsmiləşdirilməsi və təmir xidməti.
 
 </section>
 
-<section id="shipping" class="section">
+<!-- SHIPPING -->
 
-<div class="section-title">
-<h2>🚢 Daşınma Kalkulyatoru</h2>
-<p>ABŞ-dan Azərbaycana çatdırılma xərclərini hesablayın</p>
+<section id="shipping" class="calc-section">
+
+<div class="calc-header">
+<h1>🚢 Daşınma Xərci Kalkulyatoru</h1>
+<p>ABŞ-dan Azərbaycana daşınma xərclərini hesablayın</p>
 </div>
 
-<div class="calculator-card">
+<div class="calc">
 
-<label>Auksion</label>
+<label class="calc-label">Auksion növü</label>
 
 <select id="auction" onchange="calcShipping()">
 <option value="copart">Copart</option>
 <option value="iaai">IAAI</option>
 </select>
 
-<label>Ştat</label>
+<label class="calc-label">Ştat</label>
 
 <select id="state" onchange="calcShipping()">
-<option value="">Ştat seçin</option>
+
+<option value="">— Ştat seçin —</option>
+
 </select>
 
-<div id="shippingResult"></div>
+<div id="shippingResult"
+class="shipping-result"
+style="display:none">
+
+<div class="shipping-row">
+<span>Daxili daşınma</span>
+<span id="domestic">—</span>
+</div>
+
+<div class="shipping-row">
+<span>Dəniz yolu</span>
+<span id="ocean">—</span>
+</div>
+
+<div class="shipping-row total-row">
+<span>Cəmi</span>
+<span id="totalShipping">—</span>
+</div>
+
+</div>
 
 </div>
 
 </section>
 
-<section id="gomruk" class="section dark">
+<!-- GOMRUK -->
 
-<div class="section-title">
-<h2>📋 Gömrük Kalkulyatoru</h2>
-<p>Rəsmi DGK məlumatları əsasında hesablama</p>
+<section id="gomruk" class="calc-section">
+
+<div class="calc-header">
+<h1>📋 Gömrük Rüsumu Kalkulyatoru</h1>
+<p>DGK məlumatları əsasında rəsmi hesablama</p>
 </div>
 
-<div class="calculator-card">
+<div class="gomruk-wrap">
 
-<label>Mühərrik növü</label>
+<div class="form-grid">
 
-<select id="engineType">
+<div class="form-col">
+
+<label class="calc-label">Avtomobil növü</label> <select id="autoType">
+
+<option value="0">Minik avtomobili</option>
+<option value="1">Avtobus</option>
+</select>
+
+<label class="calc-label">Mühərrik növü</label> <select id="engineType">
+
 <option value="0">Benzin</option>
 <option value="1">Dizel</option>
+<option value="2">Qaz</option>
+<option value="3">Hibrid Benzin</option>
+<option value="4">Hibrid Dizel</option>
 <option value="5">Elektrik</option>
 </select>
 
-<label>Mühərrik həcmi</label>
-<input type="number" id="engine">
+<label class="calc-label">Mühərrik həcmi (sm³)</label> <input type="number" id="engine">
 
-<label>İstehsal tarixi</label>
-<input type="date" id="issueDate">
+<label class="calc-label">Ticarət növü</label> <select id="commerceType">
 
-<label>İnvoys dəyəri (USD)</label>
-<input type="number" id="priceInvoice">
+<option value="0">Adi</option>
+<option value="1">ATS</option>
+</select>
 
-<button onclick="calcDuty()" class="btn full-btn">
+</div>
+
+<div class="form-col">
+
+<label class="calc-label">İstehsal tarixi</label> <input type="date" id="issueDate">
+
+<label class="calc-label">İnvoys dəyəri (USD)</label> <input type="number" id="priceInvoice">
+
+<label class="calc-label">Nəqliyyat xərci (USD)</label> <input type="number" id="priceTransport">
+
+<label class="calc-label">Digər xərclər (USD)</label> <input type="number" id="priceOther">
+
+</div>
+
+</div>
+
+<button onclick="calcDuty()" class="btn-full">
 Rüsumu Hesabla
 </button>
 
-<div id="dutyResult"></div>
+<div id="loader" class="loader" style="display:none">
+Hesablanır...
+</div>
+
+<div id="dutyError"
+class="duty-error"
+style="display:none">
+</div>
+
+<div id="dutyResult"
+class="duty-result"
+style="display:none">
+
+<div id="usdRate" class="usd-rate"></div>
+
+<table class="duty-table">
+
+<thead>
+<tr>
+<th>Rüsum</th>
+<th>Məbləğ</th>
+</tr>
+</thead>
+
+<tbody id="dutyRows"></tbody>
+
+<tfoot>
+<tr id="dutyTotal"></tr>
+</tfoot>
+
+</table>
+
+</div>
 
 </div>
 
 </section>
 
-<section id="services" class="services">
+<!-- SERVICES -->
 
-<div class="section-title">
+<section class="services-section">
+
 <h2>Xidmətlərimiz</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🚗 Auksion Alışı</h3>
+<p>Copart və IAAI auksionlarından seçim.</p>
 </div>
 
-<div class="services-grid">
-
-<div class="service-card">
-<div class="icon">🚗</div>
-<h3>Auksion Alışı</h3>
-<p>Copart və IAAI auksionlarından avtomobil seçimi.</p>
+<div class="card">
+<h3>🚢 Daşınma</h3>
+<p>ABŞ-dan Azərbaycanadək logistika.</p>
 </div>
 
-<div class="service-card">
-<div class="icon">🚢</div>
-<h3>Daşınma</h3>
-<p>ABŞ-dan Azərbaycana tam logistika xidməti.</p>
+<div class="card">
+<h3>📋 Gömrük</h3>
+<p>Sənədləşmə və müşayiət xidməti.</p>
 </div>
 
-<div class="service-card">
-<div class="icon">📋</div>
-<h3>Gömrük</h3>
-<p>Sənədləşmə və rəsmiləşdirmə xidməti.</p>
-</div>
-
-<div class="service-card">
-<div class="icon">🔧</div>
-<h3>Təmir</h3>
-<p>Təmir və avtomobilin təhvili.</p>
+<div class="card">
+<h3>🔧 Təmir</h3>
+<p>Təmir və müştəriyə təhvil.</p>
 </div>
 
 </div>
 
 </section>
 
-<section id="about" class="about">
+<section class="about">
 
-<div class="section-title">
 <h2>Haqqımızda</h2>
-</div>
 
 <p>
-CARZON olaraq ABŞ auksionlarından avtomobil alışını
-sadə, şəffaf və etibarlı etməyi hədəfləyirik.
+CARZON olaraq ABŞ auksionlarından avtomobil alışını sadə,
+şəffaf və etibarlı etməyi hədəfləyirik.
 Müştərilərimizə alışdan təhvilə qədər tam xidmət təqdim edirik.
 </p>
 
@@ -188,6 +243,8 @@ Müştərilərimizə alışdan təhvilə qədər tam xidmət təqdim edirik.
 <footer>
 © 2026 CARZON. Bütün hüquqlar qorunur.
 </footer>
+
+<script src="shipping.js"></script>
 
 <script src="script.js"></script>
 
