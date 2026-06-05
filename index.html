@@ -1,193 +1,192 @@
 <!DOCTYPE html>
-
 <html lang="az">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CARZON | ABŞ Auksion Avtomobilləri</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CARZON</title>
 
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header class="navbar">
-  <div class="logo">CARZON</div>
 
-  <nav>
-    <a href="#shipping">Daşınma</a>
-    <a href="#gomruk">Gömrük</a>
-    <a href="#services">Xidmətlər</a>
-    <a href="#about">Haqqımızda</a>
-  </nav>
+<div class="container nav-container">
+
+<div class="logo">
+CARZON
+</div>
+
+<nav class="nav-links">
+<a href="#shipping">Daşınma</a>
+<a href="#gomruk">Gömrük</a>
+<a href="#services">Xidmətlər</a>
+<a href="#about">Haqqımızda</a>
+</nav>
+
+</div>
+
 </header>
 
 <section class="hero">
 
-  <div class="video-bg">
-    <video autoplay muted loop playsinline>
-      <source src="bg.mp4" type="video/mp4">
-    </video>
-  </div>
+<div class="video-bg">
+<video autoplay muted loop playsinline>
+<source src="bg.mp4" type="video/mp4">
+</video>
+</div>
 
-  <div class="overlay"></div>
+<div class="overlay"></div>
 
-  <div class="hero-content">
-    <span class="hero-badge">
-      ABŞ Auksion Avtomobilləri
-    </span>
+<div class="hero-content">
 
-```
+<span class="badge">
+ABŞ Auksion Avtomobilləri
+</span>
+
 <h1>
-  Avtomobilinizi ABŞ-dan
-  Təhlükəsiz Gətirin
+ABŞ-dan Avtomobilinizi
+Etibarlı Şəkildə Gətirin
 </h1>
 
 <p>
-  Copart və IAAI auksionlarından avtomobil seçimi,
-  daşınması, gömrük rəsmiləşdirilməsi və təmir xidməti.
+Copart və IAAI auksionlarından avtomobil seçimi,
+daşınması, gömrük rəsmiləşdirilməsi və təmir xidməti.
 </p>
 
 <div class="hero-buttons">
-  <a href="#shipping" class="btn">
-    🚢 Daşınma Hesabla
-  </a>
 
-  <a href="#gomruk" class="btn btn-outline">
-    📋 Gömrük Hesabla
-  </a>
+<a href="#shipping" class="btn">
+🚢 Daşınma Hesabla
+</a>
+
+<a href="#gomruk" class="btn btn-outline">
+📋 Gömrük Hesabla
+</a>
+
 </div>
-```
 
-  </div>
+</div>
 
 </section>
 
 <section id="shipping" class="section">
 
-  <div class="section-title">
-    <h2>🚢 Daşınma Kalkulyatoru</h2>
-    <p>ABŞ-dan Azərbaycana çatdırılma xərcini hesablayın</p>
-  </div>
+<div class="section-title">
+<h2>🚢 Daşınma Kalkulyatoru</h2>
+<p>ABŞ-dan Azərbaycana çatdırılma xərclərini hesablayın</p>
+</div>
 
-  <div class="card-box">
+<div class="calculator-card">
 
-```
 <label>Auksion</label>
 
 <select id="auction" onchange="calcShipping()">
-  <option value="copart">Copart</option>
-  <option value="iaai">IAAI</option>
+<option value="copart">Copart</option>
+<option value="iaai">IAAI</option>
 </select>
 
 <label>Ştat</label>
 
 <select id="state" onchange="calcShipping()">
-  <option value="">Ştat seçin</option>
+<option value="">Ştat seçin</option>
 </select>
 
 <div id="shippingResult"></div>
-```
 
-  </div>
+</div>
 
 </section>
 
 <section id="gomruk" class="section dark">
 
-  <div class="section-title">
-    <h2>📋 Gömrük Kalkulyatoru</h2>
-    <p>Rəsmi DGK məlumatları əsasında hesablanır</p>
-  </div>
+<div class="section-title">
+<h2>📋 Gömrük Kalkulyatoru</h2>
+<p>Rəsmi DGK məlumatları əsasında hesablama</p>
+</div>
 
-  <div class="card-box">
+<div class="calculator-card">
 
-```
-<label>Avtomobil Növü</label>
-<select id="autoType">
-  <option value="0">Minik avtomobili</option>
-</select>
+<label>Mühərrik növü</label>
 
-<label>Mühərrik Növü</label>
 <select id="engineType">
-  <option value="0">Benzin</option>
-  <option value="1">Dizel</option>
-  <option value="5">Elektrik</option>
+<option value="0">Benzin</option>
+<option value="1">Dizel</option>
+<option value="5">Elektrik</option>
 </select>
 
-<label>Mühərrik Həcmi</label>
+<label>Mühərrik həcmi</label>
 <input type="number" id="engine">
 
-<label>İstehsal Tarixi</label>
+<label>İstehsal tarixi</label>
 <input type="date" id="issueDate">
 
-<label>İnvoys Dəyəri (USD)</label>
+<label>İnvoys dəyəri (USD)</label>
 <input type="number" id="priceInvoice">
 
-<button onclick="calcDuty()" class="btn full">
-  Rüsumu Hesabla
+<button onclick="calcDuty()" class="btn full-btn">
+Rüsumu Hesabla
 </button>
 
 <div id="dutyResult"></div>
-```
 
-  </div>
+</div>
 
 </section>
 
 <section id="services" class="services">
 
-  <div class="section-title">
-    <h2>Xidmətlərimiz</h2>
-  </div>
+<div class="section-title">
+<h2>Xidmətlərimiz</h2>
+</div>
 
-  <div class="services-grid">
+<div class="services-grid">
 
-```
 <div class="service-card">
-  <div class="icon">🚗</div>
-  <h3>Auksion Alışı</h3>
-  <p>Copart və IAAI auksionlarından seçim.</p>
+<div class="icon">🚗</div>
+<h3>Auksion Alışı</h3>
+<p>Copart və IAAI auksionlarından avtomobil seçimi.</p>
 </div>
 
 <div class="service-card">
-  <div class="icon">🚢</div>
-  <h3>Daşınma</h3>
-  <p>ABŞ-dan Azərbaycana logistika.</p>
+<div class="icon">🚢</div>
+<h3>Daşınma</h3>
+<p>ABŞ-dan Azərbaycana tam logistika xidməti.</p>
 </div>
 
 <div class="service-card">
-  <div class="icon">📋</div>
-  <h3>Gömrük</h3>
-  <p>Bütün sənədləşmə və müşayiət xidməti.</p>
+<div class="icon">📋</div>
+<h3>Gömrük</h3>
+<p>Sənədləşmə və rəsmiləşdirmə xidməti.</p>
 </div>
 
 <div class="service-card">
-  <div class="icon">🔧</div>
-  <h3>Təmir</h3>
-  <p>Təmir və müştəriyə təhvil.</p>
+<div class="icon">🔧</div>
+<h3>Təmir</h3>
+<p>Təmir və avtomobilin təhvili.</p>
 </div>
-```
 
-  </div>
+</div>
 
 </section>
 
 <section id="about" class="about">
 
-  <div class="section-title">
-    <h2>Haqqımızda</h2>
-  </div>
+<div class="section-title">
+<h2>Haqqımızda</h2>
+</div>
 
-  <p>
-    CARZON olaraq ABŞ auksionlarından avtomobil
-    alışını sadə, şəffaf və etibarlı etməyi hədəfləyirik.
-    Alışdan təhvilə qədər tam xidmət təqdim edirik.
-  </p>
+<p>
+CARZON olaraq ABŞ auksionlarından avtomobil alışını
+sadə, şəffaf və etibarlı etməyi hədəfləyirik.
+Müştərilərimizə alışdan təhvilə qədər tam xidmət təqdim edirik.
+</p>
 
 </section>
 
 <footer>
-  © 2026 CARZON. Bütün hüquqlar qorunur.
+© 2026 CARZON. Bütün hüquqlar qorunur.
 </footer>
 
 <script src="script.js"></script>
