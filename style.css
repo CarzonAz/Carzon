@@ -30,16 +30,16 @@ body {
   pointer-events: none;
 }
 
-.video-bg iframe {
+.video-bg video {
   position: absolute;
   top: 50%;
   left: 50%;
-  /* 16:9 nisbətini qoruyaraq tam ekranı örtür */
   width: 100vw;
-  height: 56.25vw; /* 100 / (16/9) */
+  height: 56.25vw;
   min-height: 100vh;
-  min-width: 177.78vh; /* 100 * (16/9) */
+  min-width: 177.78vh;
   transform: translate(-50%, -50%);
+  object-fit: cover;
 }
 
 /* Qaranlıq overlay */
