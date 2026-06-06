@@ -36,7 +36,6 @@ body {
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   border-bottom: 1px solid rgba(255,255,255,0.06);
-  transition: background 0.3s;
 }
 
 .nav-logo {
@@ -46,6 +45,36 @@ body {
   color: #fff;
   text-decoration: none;
   flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-link {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.72);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.nav-link--active {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
 }
 
 .nav-contacts {
@@ -96,7 +125,7 @@ body {
 }
 
 /* ═══════════════════════════════════════════
-   SUB-BAR  (kontekst bar)
+   SUB-BAR
 ════════════════════════════════════════════ */
 .sub-bar {
   position: fixed;
@@ -112,7 +141,6 @@ body {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255,255,255,0.05);
-  /* hidden by default — JS shows it */
   opacity: 0;
   pointer-events: none;
   transform: translateY(-4px);
@@ -130,10 +158,6 @@ body {
   font-weight: 500;
   color: rgba(255,255,255,0.7);
   letter-spacing: 0.5px;
-}
-
-.sub-bar--gomruk .sub-bar__title {
-  color: rgba(56,189,248,0.9);
 }
 
 /* ═══════════════════════════════════════════
@@ -221,7 +245,6 @@ body {
 ════════════════════════════════════════════ */
 .calc-section {
   padding: 70px 20px;
-  /* top padding accounts for nav + sub-bar space */
   scroll-margin-top: 88px;
 }
 
@@ -413,27 +436,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .card h3 { margin-bottom: 12px; }
 
 /* ═══════════════════════════════════════════
-   ABOUT
-════════════════════════════════════════════ */
-.about {
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.about h2 {
-  font-size: 38px;
-  margin-bottom: 20px;
-}
-
-.about p {
-  max-width: 850px;
-  margin: auto;
-  color: #cbd5e1;
-  line-height: 1.9;
-  font-size: 18px;
-}
-
-/* ═══════════════════════════════════════════
    CONTACT
 ════════════════════════════════════════════ */
 .contact-section {
@@ -549,124 +551,16 @@ footer {
 }
 
 /* ═══════════════════════════════════════════
-   MOBILE
-════════════════════════════════════════════ */
-@media (max-width: 768px) {
-  .hero {
-    height: auto;
-    min-height: 100vh;
-    padding: 80px 20px;
-  }
-
-  .hero h1 {
-    font-size: 52px;
-    letter-spacing: 3px;
-  }
-
-  .hero p { font-size: 16px; }
-
-  .hero-btns { flex-direction: column; }
-
-  .btn { width: 100%; }
-
-  .form-grid { grid-template-columns: 1fr; }
-
-  .calc,
-  .gomruk-wrap { padding: 20px; }
-
-  .calc-header h1 { font-size: 28px; }
-
-  .services-section h2,
-  .about h2,
-  .contact-section h2 { font-size: 30px; }
-
-  .contact-card { min-width: 100%; }
-
-  .nav-contacts { gap: 4px; }
-
-  .nav-icon { width: 32px; height: 32px; }
-  .nav-icon svg { width: 15px; height: 15px; }
-}
-
-@media (max-width: 480px) {
-  .hero h1 { font-size: 40px; }
-  .hero p  { font-size: 15px; }
-}
-
-/* ═══════════════════════════════════════════
-   NAV LOGO IMAGE
-════════════════════════════════════════════ */
-.nav-logo-img {
-  height: 32px;
-  width: auto;
-  display: block;
-  object-fit: contain;
-  /* If logo has white areas that blend into dark nav, keep as-is.
-     If it's fully transparent SVG it will show correctly. */
-}
-
-/* ═══════════════════════════════════════════
-   NAV LINKS (center menu)
-════════════════════════════════════════════ */
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.nav-link {
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.72);
-  text-decoration: none;
-  transition: background 0.2s, color 0.2s;
-  white-space: nowrap;
-}
-
-.nav-link:hover {
-  background: rgba(255,255,255,0.1);
-  color: #fff;
-}
-
-.nav-link--active {
-  background: rgba(255,255,255,0.12);
-  color: #fff;
-}
-
-/* ═══════════════════════════════════════════
-   HERO LOGO (instead of text h1)
-════════════════════════════════════════════ */
-.hero-logo {
-  height: 90px;
-  width: auto;
-  margin-bottom: 20px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  filter: drop-shadow(0 4px 24px rgba(0,0,0,0.5));
-}
-
-/* ═══════════════════════════════════════════
    PAGE CONTENT (gomruk + haqqimizda)
 ════════════════════════════════════════════ */
 .page-content {
-  padding-top: 90px; /* clear fixed nav */
+  padding-top: 90px;
   min-height: 80vh;
   padding-bottom: 60px;
 }
 
 .page-content .calc-header {
   padding: 40px 20px 10px;
-}
-
-.page-content .gomruk-wrap {
-  margin: 0 auto;
-  padding: 30px;
 }
 
 /* ═══════════════════════════════════════════
@@ -679,14 +573,6 @@ footer {
 .about-hero {
   text-align: center;
   padding: 60px 20px 40px;
-}
-
-.about-logo {
-  height: 70px;
-  width: auto;
-  margin: 0 auto 24px;
-  display: block;
-  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.4));
 }
 
 .about-hero h1 {
@@ -733,14 +619,44 @@ footer {
 }
 
 /* ═══════════════════════════════════════════
-   MOBILE — nav links hide on very small screens
+   MOBILE
 ════════════════════════════════════════════ */
-@media (max-width: 540px) {
-  .nav-links {
-    display: none;
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 80px 20px;
   }
 
-  .nav-logo-img {
-    height: 26px;
-  }
+  .hero h1 { font-size: 52px; letter-spacing: 3px; }
+  .hero p  { font-size: 16px; }
+
+  .hero-btns { flex-direction: column; }
+
+  .btn { width: 100%; }
+
+  .form-grid { grid-template-columns: 1fr; }
+
+  .calc,
+  .gomruk-wrap { padding: 20px; }
+
+  .calc-header h1 { font-size: 28px; }
+
+  .services-section h2,
+  .contact-section h2 { font-size: 30px; }
+
+  .contact-card { min-width: 100%; }
+
+  .nav-contacts { gap: 4px; }
+  .nav-icon { width: 32px; height: 32px; }
+  .nav-icon svg { width: 15px; height: 15px; }
+}
+
+@media (max-width: 540px) {
+  .nav-links { display: none; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 40px; }
+  .hero p  { font-size: 15px; }
 }
