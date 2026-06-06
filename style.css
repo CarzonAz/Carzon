@@ -19,31 +19,31 @@ body {
   color: #fff;
   overflow-x: hidden;
   max-width: 100%;
-  padding-top: 76px; /* Navbar dolğun olduğu üçün səhifəni 76px aşağı itələyirik */
+  padding-top: 76px;
 }
 
 /* ═══════════════════════════════════════════
-   2. YENİ DOLĞUN NAVIGASIYA (MAIN NAV)
+   2. NAVIGASIYA BAR (MAIN NAV)
 ════════════════════════════════════════════ */
 .main-nav {
   position: fixed;
-  top: 0;            /* Yuxarıdakı lazımsız boşluğu tam sıfırlayır */
+  top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  height: 76px;      /* Gözünüzə kiçik görünməməsi üçün hündürlüyü artırdıq */
+  height: 76px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px;   /* Kənar boşluqları daha geniş və seliqəli etdik */
-  background: rgba(11, 18, 32, 0.92); /* Fon rəngini bir az daha dolğun etdik */
+  padding: 0 40px;
+  background: rgba(11, 18, 32, 0.85); /* Videonun yuxarısı incə şüşə effekti versin */
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .nav-logo {
-  font-size: 24px;   /* Loqo ölçüsü böyüdü */
+  font-size: 24px;
   font-weight: 800;
   letter-spacing: 4px;
   color: #fff;
@@ -53,14 +53,14 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 36px;         /* Linklərin bir-birinə sıxılmaması üçün məsafə artırıldı */
+  gap: 36px;
   align-items: center;
 }
 
 .nav-link {
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
-  font-size: 16px;   /* Yazılar bir az daha iri və oxunaqlı oldu */
+  font-size: 16px;
   font-weight: 500;
   transition: color 0.2s;
   padding: 8px 0;
@@ -71,42 +71,18 @@ body {
   color: #fff;
 }
 
-/* Digər sosial şəbəkə ikonlarının qabı */
 .nav-contacts {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.nav-icon {
-  color: rgba(255, 255, 255, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  transition: all 0.2s;
-}
-
-.nav-icon:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.nav-icon svg {
-  width: 18px;
-  height: 18px;
-}
-
-/* MODERNE UYĞUNLAŞDIRILMIŞ SƏLİQƏLİ ƏLAQƏ DÜYMƏSİ */
 .nav-contact-btn {
-  background: #1e293b; /* Premium tünd-göy ton */
+  background: #1e293b;
   color: #fff;
   text-decoration: none;
-  padding: 12px 24px;  /* Daha dolğun ölçü */
-  border-radius: 8px;  /* Seliqəli künclər */
+  padding: 12px 24px;
+  border-radius: 8px;
   font-size: 15px;
   font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -114,44 +90,59 @@ body {
 }
 
 .nav-contact-btn:hover {
-  background: #fff;    /* Üzərinə gələndə premium ağ rəng */
-  color: #0b1220;      /* Yazı tündləşir */
+  background: #fff;
+  color: #0b1220;
   border-color: #fff;
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
 }
 
 /* ═══════════════════════════════════════════
-   3. HERO BÖLMƏSİ (GİRİŞ VƏ BAŞLIQLAR)
+   3. HERO BÖLMƏSİ (VİDEO BACKGROUND SİSTEMİ)
 ════════════════════════════════════════════ */
 .hero {
   position: relative;
-  padding: 100px 20px 140px;
+  padding: 80px 20px 120px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: calc(85vh - 76px);
+  min-height: calc(100vh - 76px); /* Ekranı tam tutması üçün vh artırıldı */
   overflow: hidden;
+  background: #0b1220;
 }
 
-/* Arxa fondakı o parıldayan ağ/göy topların mövqeyi (Yazıları boğmaması üçün tənzimləndi) */
-.hero-glow, .customs-glow {
+/* Videonun həm mobil, həm desktopda arxa fona tam oturması */
+.hero-video {
   position: absolute;
-  top: -10%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, 0);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, rgba(11,18,32,0) 70%);
-  pointer-events: none;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover; /* Videonun əyilməsini qarşısını alır */
   z-index: 1;
+  pointer-events: none; /* Videoya kliklənməni ləğv edir */
+}
+
+/* Tündləşdirici lay — videonun işığını azaldır ki, öndəki yazılar oxunsun */
+.hero-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(11, 18, 32, 0.7) 0%, rgba(11, 18, 32, 0.85) 100%);
+  z-index: 2;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2; /* Yazıları işıq effektinin üstünə çıxarır ki, rahat oxunsun */
+  z-index: 3; /* Yazı və kalkulyatoru videonun və overlay-in tam üstünə qaldırır */
   max-width: 800px;
+  width: 100%;
 }
 
 .hero h1 {
@@ -160,27 +151,31 @@ body {
   letter-spacing: -1px;
   line-height: 1.1;
   margin-bottom: 24px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Videonun üzərində yazı daha aydın qabarsın */
 }
 
 .hero p {
   font-size: 20px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.85);
   max-width: 600px;
   margin: 0 auto 40px;
   line-height: 1.5;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* ═══════════════════════════════════════════
-   4. KALKULYATORLAR VƏ FORMLAR (UMUMİ)
+   4. KALKULYATORLAR VƏ FORMLAR
 ════════════════════════════════════════════ */
 .calc-container {
-  max-width: 540px;
+  max-width: 500px;
   margin: 0 auto;
-  background: #111a2e;
-  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(17, 26, 46, 0.85); /* Şüşəvari (Semi-transparent) effekt */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 16px;
   padding: 32px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
 
 .form-group {
@@ -192,7 +187,7 @@ body {
   display: block;
   font-size: 14px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: 8px;
 }
 
@@ -201,7 +196,7 @@ body {
   width: 100%;
   height: 48px;
   background: #18233c;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 8px;
   color: #fff;
   padding: 0 16px;
@@ -215,7 +210,6 @@ body {
   border-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Böyük Hesablama Düymələri */
 .btn-calc {
   width: 100%;
   height: 50px;
@@ -234,7 +228,6 @@ body {
   opacity: 0.9;
 }
 
-/* Nəticə və Yüklənir (Loader) panelləri */
 .loader {
   display: none;
   margin: 20px auto 0;
@@ -278,7 +271,7 @@ body {
 }
 
 /* ═══════════════════════════════════════════
-   5. MOBİL VƏ PLANŞET UYĞUNLUĞU (RESPONSIVE)
+   5. MOBİL VƏ PLANŞET RESPONSIVE AYARLARI
 ════════════════════════════════════════════ */
 .hamburger {
   display: none;
@@ -309,7 +302,7 @@ body {
   
   .nav-links {
     position: fixed;
-    top: 76px; /* Yenilənmiş navbar hündürlüyünə uyğun */
+    top: 76px;
     left: 0;
     right: 0;
     background: rgba(8, 14, 28, 0.98);
