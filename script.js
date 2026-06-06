@@ -1,38 +1,3 @@
-// ======================================================
-// HERO VIDEO — autoplay with fallback play button
-// ======================================================
-document.addEventListener("DOMContentLoaded", function () {
-  const video   = document.getElementById("heroBg");
-  const playBtn = document.getElementById("videoPlayBtn");
-  if (!video || !playBtn) return;
-
-  // Force muted via JS (some browsers ignore HTML attribute)
-  video.muted = true;
-  video.volume = 0;
-
-  const tryPlay = () => {
-    video.play().then(() => {
-      playBtn.classList.add("hidden");
-    }).catch(() => {
-      playBtn.classList.remove("hidden");
-    });
-  };
-
-  // Try immediately, also try once video has loaded metadata
-  tryPlay();
-  video.addEventListener("loadedmetadata", tryPlay, { once: true });
-  video.addEventListener("canplay", tryPlay, { once: true });
-
-  // Manual play on button click
-  playBtn.addEventListener("click", () => {
-    video.muted = true;
-    video.play();
-    playBtn.classList.add("hidden");
-  });
-});
-
-
-
 const STATE_NAMES = {
   AL:"Alabama", AK:"Alaska", AZ:"Arizona", AR:"Arkansas",
   CA:"California", CO:"Colorado", CT:"Connecticut", DE:"Delaware",
