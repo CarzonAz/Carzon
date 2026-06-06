@@ -207,3 +207,32 @@ function showError(msg) {
 }
 function hideError()  { document.getElementById("dutyError").style.display = "none"; }
 function hideResult() { document.getElementById("dutyResult").style.display = "none"; }
+
+// ======================================================
+// CONTEXT-AWARE NAV BAR (sub-bar logic)
+// ======================================================
+(function () {
+  const shippingBar = document.getElementById("shippingBar");
+  const gomrukBar   = document.getElementById("gomrukBar");
+  const shippingSec = document.getElementById("shipping");
+  const gomrukSec   = document.getElementById("gomruk");
+
+  function onScroll() {
+    const scrollY    = window.scrollY;
+    const navH       = 52; // main nav height
+
+    const shipTop    = shippingSec.getBoundingClientRect().top + scrollY - navH;
+    const shipBot    = shipTop + shippingSec.offsetHeight;
+    const gomTop     = gomrukSec.getBoundingClientRect().top  + scrollY - navH;
+    const gomBot     = gomTop  + gomrukSec.offsetHeight;
+
+    const inShipping = scrollY >= shipTop && scrollY < shipBot;
+    const inGomruk   = scrollY >= gomTop  && scrollY < gomBot;
+
+    shippingBar.classList.toggle("visible", inShipping);
+    gomrukBar.classList.toggle("visible",   inGomruk && !inShipping);
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll(); // run once on load
+})();
