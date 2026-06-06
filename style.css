@@ -1,3 +1,6 @@
+/* ═══════════════════════════════════════════
+   1. SIFIRLAMA VƏ ƏSAS AYARLAR (RESET & BODY)
+════════════════════════════════════════════ */
 * {
   margin: 0;
   padding: 0;
@@ -11,129 +14,85 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background: #0b1220;
   color: #fff;
   overflow-x: hidden;
   max-width: 100%;
+  padding-top: 76px; /* Navbar dolğun olduğu üçün səhifəni 76px aşağı itələyirik */
 }
 
 /* ═══════════════════════════════════════════
-   MAIN NAV
+   2. YENİ DOLĞUN NAVIGASIYA (MAIN NAV)
 ════════════════════════════════════════════ */
 .main-nav {
   position: fixed;
-  top: 0;
+  top: 0;            /* Yuxarıdakı lazımsız boşluğu tam sıfırlayır */
   left: 0;
   right: 0;
   z-index: 1000;
-  height: 64px;
+  height: 76px;      /* Gözünüzə kiçik görünməməsi üçün hündürlüyü artırdıq */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 28px;
-  background: rgba(11, 18, 32, 0.85);
+  padding: 0 40px;   /* Kənar boşluqları daha geniş və seliqəli etdik */
+  background: rgba(11, 18, 32, 0.92); /* Fon rəngini bir az daha dolğun etdik */
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .nav-logo {
-  font-size: 20px;
+  font-size: 24px;   /* Loqo ölçüsü böyüdü */
   font-weight: 800;
   letter-spacing: 4px;
   color: #fff;
   text-decoration: none;
-  flex-shrink: 0;
-}
-
-.nav-logo-img {
-  height: 36px;
-  width: auto;
-  display: block;
+  transition: opacity 0.2s;
 }
 
 .nav-links {
   display: flex;
+  gap: 36px;         /* Linklərin bir-birinə sıxılmaması üçün məsafə artırıldı */
   align-items: center;
-  gap: 4px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  /* Mövcud kodlar olduğu kimi qalır */
-  z-index: 999; /* Aktiv olanda digər elementlərin üstünə çıxması üçün */
 }
 
 .nav-link {
-  padding: 8px 16px;
-  border-radius: 22px;
-  font-size: 14px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
-  transition: background 0.2s, color 0.2s;
-  white-space: nowrap;
+  font-size: 16px;   /* Yazılar bir az daha iri və oxunaqlı oldu */
+  font-weight: 500;
+  transition: color 0.2s;
+  padding: 8px 0;
 }
 
-.nav-link:hover {
-  background: rgba(255,255,255,0.12);
-  color: #fff;
-}
-
-
-
+.nav-link:hover,
 .nav-link--active {
-  background: rgba(255,255,255,0.14);
   color: #fff;
 }
 
+/* Digər sosial şəbəkə ikonlarının qabı */
 .nav-contacts {
   display: flex;
   align-items: center;
-  gap: 8px;
-}
-
-/* Contact button in nav */
-.nav-contact-btn {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  padding: 8px 16px;
-  border-radius: 22px;
-  background: #2563eb;
-  color: #fff;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background 0.2s, transform 0.18s, box-shadow 0.18s;
-  box-shadow: 0 2px 12px rgba(37,99,235,0.35);
-}
-
-.nav-contact-btn svg {
-  width: 15px;
-  height: 15px;
-  flex-shrink: 0;
-}
-
-.nav-contact-btn:hover {
-  background: #1d4ed8;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37,99,235,0.5);
+  gap: 16px;
 }
 
 .nav-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.2s;
+}
+
+.nav-icon:hover {
   color: #fff;
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .nav-icon svg {
@@ -141,695 +100,230 @@ body {
   height: 18px;
 }
 
-.nav-icon:hover {
-  transform: translateY(-2px) scale(1.1);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-}
-
-.nav-icon--wp {
-  background: rgba(37,211,102,0.2);
-  color: #25d366;
-  border-color: rgba(37,211,102,0.25);
-}
-.nav-icon--wp:hover {
-  background: #25d366;
+/* MODERNE UYĞUNLAŞDIRILMIŞ SƏLİQƏLİ ƏLAQƏ DÜYMƏSİ */
+.nav-contact-btn {
+  background: #1e293b; /* Premium tünd-göy ton */
   color: #fff;
-  box-shadow: 0 6px 20px rgba(37,211,102,0.5);
+  text-decoration: none;
+  padding: 12px 24px;  /* Daha dolğun ölçü */
+  border-radius: 8px;  /* Seliqəli künclər */
+  font-size: 15px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.25s ease;
 }
 
-.nav-icon--call {
-  background: rgba(37,99,235,0.2);
-  color: #60a5fa;
-  border-color: rgba(37,99,235,0.25);
-}
-.nav-icon--call:hover {
-  background: #2563eb;
-  color: #fff;
-  box-shadow: 0 6px 20px rgba(37,99,235,0.5);
-}
-
-
-/* ═══════════════════════════════════════════
-   SUB-BAR
-════════════════════════════════════════════ */
-.sub-bar {
-  position: fixed;
-  top: 64px;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(7, 12, 24, 0.82);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-4px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.sub-bar.visible {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-.sub-bar__title {
-  font-size: 13px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.7);
-  letter-spacing: 0.5px;
+.nav-contact-btn:hover {
+  background: #fff;    /* Üzərinə gələndə premium ağ rəng */
+  color: #0b1220;      /* Yazı tündləşir */
+  border-color: #fff;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
 }
 
 /* ═══════════════════════════════════════════
-   HERO
+   3. HERO BÖLMƏSİ (GİRİŞ VƏ BAŞLIQLAR)
 ════════════════════════════════════════════ */
 .hero {
   position: relative;
-  height: 100vh;
+  padding: 100px 20px 140px;
+  text-align: center;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  min-height: calc(85vh - 76px);
   overflow: hidden;
 }
 
-.video-bg {
+/* Arxa fondakı o parıldayan ağ/göy topların mövqeyi (Yazıları boğmaması üçün tənzimləndi) */
+.hero-glow, .customs-glow {
   position: absolute;
-  inset: 0;
-}
-
-.video-bg video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.video-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,.58);
+  top: -10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, rgba(11,18,32,0) 70%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
-  max-width: 900px;
-  padding: 20px;
+  z-index: 2; /* Yazıları işıq effektinin üstünə çıxarır ki, rahat oxunsun */
+  max-width: 800px;
 }
 
 .hero h1 {
-  font-size: 80px;
-  letter-spacing: 6px;
-  margin-bottom: 15px;
-  text-shadow: 0 4px 20px rgba(0,0,0,.4);
+  font-size: 56px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: 24px;
 }
 
 .hero p {
-  max-width: 760px;
-  margin: auto;
-  font-size: 22px;
-  line-height: 1.8;
-  color: #e2e8f0;
-}
-
-.hero-btns {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-top: 35px;
-  flex-wrap: wrap;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.5;
 }
 
 /* ═══════════════════════════════════════════
-   BUTTONS
+   4. KALKULYATORLAR VƏ FORMLAR (UMUMİ)
 ════════════════════════════════════════════ */
-.btn {
-  padding: 15px 30px;
-  border-radius: 12px;
-  background: #2563eb;
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  transition: .25s;
+.calc-container {
+  max-width: 540px;
+  margin: 0 auto;
+  background: #111a2e;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
-.btn:hover { transform: translateY(-3px); }
-
-.btn-outline {
-  background: transparent;
-  border: 2px solid rgba(255,255,255,.7);
-}
-
-/* ═══════════════════════════════════════════
-   CALC SECTIONS
-════════════════════════════════════════════ */
-.calc-section {
-  padding: 70px 20px;
-  scroll-margin-top: 88px;
-}
-
-.calc-header {
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-.calc-header h1 {
-  font-size: 36px;
-  margin-bottom: 8px;
-}
-
-.calc-header p { color: #94a3b8; }
-
-.calc,
-.gomruk-wrap {
-  width: 100%;
-  max-width: 900px;
-  margin: auto;
-  background: #172033;
-  border: 1px solid rgba(255,255,255,.06);
-  border-radius: 18px;
-  padding: 30px;
-  box-shadow: 0 15px 40px rgba(0,0,0,.25);
-}
-
-/* ═══════════════════════════════════════════
-   FORM
-════════════════════════════════════════════ */
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-
-.form-col {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-}
-
-.calc-label {
-  margin-top: 15px;
-  margin-bottom: 6px;
-  font-size: 13px;
-  color: #94a3b8;
-  text-transform: uppercase;
-}
-
-select,
-input {
-  width: 100%;
-  min-width: 0;
-  padding: 14px;
-  border-radius: 10px;
-  border: 1px solid #334155;
-  background: #0f172a;
-  color: white;
-  font-size: 15px;
-}
-
-input[type="date"] {
-  appearance: none;
-  -webkit-appearance: none;
-  padding-right: 12px;
-}
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-  filter: invert(1);
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-.btn-full {
-  width: 100%;
-  margin-top: 25px;
-  padding: 15px;
-  border: none;
-  border-radius: 10px;
-  background: #2563eb;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: .2s;
-}
-
-.btn-full:hover { background: #1d4ed8; }
-
-/* ═══════════════════════════════════════════
-   SHIPPING RESULT
-════════════════════════════════════════════ */
-.shipping-result {
-  margin-top: 20px;
-  border: 1px solid #334155;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.shipping-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px;
-  border-bottom: 1px solid #334155;
-}
-
-.shipping-row:last-child { border-bottom: none; }
-
-.total-row {
-  background: #0f172a;
-  color: #38bdf8;
-  font-weight: 700;
-}
-
-/* ═══════════════════════════════════════════
-   DUTY RESULT
-════════════════════════════════════════════ */
-.duty-result { margin-top: 20px; }
-
-.duty-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.duty-table th,
-.duty-table td {
-  padding: 12px;
-  border-bottom: 1px solid #334155;
-}
-
-.duty-table th {
-  color: #94a3b8;
+.form-group {
+  margin-bottom: 20px;
   text-align: left;
 }
 
-.duty-table tfoot td {
-  color: #38bdf8;
-  font-weight: 700;
-  font-size: 18px;
-}
-
-.usd-rate {
-  text-align: right;
-  color: #94a3b8;
-  margin-bottom: 10px;
-}
-
-.loader {
-  text-align: center;
-  margin-top: 15px;
-  color: #94a3b8;
-}
-
-.duty-error {
-  margin-top: 15px;
-  background: #450a0a;
-  color: #fca5a5;
-  padding: 12px;
-  border-radius: 10px;
-}
-
-/* ═══════════════════════════════════════════
-   SERVICES
-════════════════════════════════════════════ */
-.services-section {
-  padding: 80px 8%;
-}
-
-.services-section h2 {
-  text-align: center;
-  font-size: 38px;
-  margin-bottom: 35px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: #172033;
-  border: 1px solid rgba(255,255,255,.05);
-  border-radius: 16px;
-  padding: 25px;
-}
-
-.card h3 { margin-bottom: 12px; }
-
-/* ═══════════════════════════════════════════
-   CONTACT
-════════════════════════════════════════════ */
-.contact-section {
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.contact-section h2 {
-  font-size: 38px;
-  margin-bottom: 40px;
-}
-
-.contact-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
-  max-width: 900px;
-  margin: auto;
-}
-
-.contact-card {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 18px 24px;
-  border-radius: 14px;
-  text-decoration: none;
-  color: #fff;
+.form-group label {
+  display: block;
+  font-size: 14px;
   font-weight: 600;
-  transition: transform .2s, opacity .2s;
-  min-width: 220px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 8px;
 }
 
-.contact-card:hover {
-  transform: translateY(-3px);
-  opacity: .9;
+.form-group select,
+.form-group input {
+  width: 100%;
+  height: 48px;
+  background: #18233c;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  padding: 0 16px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
 }
 
-.contact-card svg {
-  flex-shrink: 0;
+.form-group select:focus,
+.form-group input:focus {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Böyük Hesablama Düymələri */
+.btn-calc {
+  width: 100%;
+  height: 50px;
+  background: #fff;
+  color: #0b1220;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  margin-top: 10px;
+}
+
+.btn-calc:hover {
+  opacity: 0.9;
+}
+
+/* Nəticə və Yüklənir (Loader) panelləri */
+.loader {
+  display: none;
+  margin: 20px auto 0;
+  border: 3px solid rgba(255,255,255,0.1);
+  border-radius: 50%;
+  border-top: 3px solid #fff;
   width: 28px;
   height: 28px;
+  animation: spin 0.8s linear infinite;
 }
 
-.contact-label {
-  display: block;
-  font-size: 11px;
-  text-transform: uppercase;
-  opacity: .75;
-  margin-bottom: 2px;
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-.contact-value {
-  display: block;
+.result-box {
+  display: none;
+  margin-top: 24px;
+  padding: 20px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  border: 1px dashed rgba(255,255,255,0.1);
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
   font-size: 15px;
+  color: rgba(255,255,255,0.7);
 }
 
-.contact-card.whatsapp  {
-  background: linear-gradient(135deg, #00c853, #25d366);
-  box-shadow: 0 4px 20px rgba(37,211,102,0.25);
-}
-.contact-card.whatsapp:hover  { box-shadow: 0 8px 30px rgba(37,211,102,0.45); }
-
-.contact-card.phone {
-  background: linear-gradient(135deg, #1e40af, #3b82f6);
-  box-shadow: 0 4px 20px rgba(59,130,246,0.25);
-}
-.contact-card.phone:hover { box-shadow: 0 8px 30px rgba(59,130,246,0.45); }
-
-.contact-card.email {
-  background: linear-gradient(135deg, #334155, #64748b);
-  box-shadow: 0 4px 20px rgba(100,116,139,0.2);
-}
-.contact-card.email:hover { box-shadow: 0 8px 30px rgba(100,116,139,0.35); }
-
-.contact-card.tiktok {
-  background: linear-gradient(135deg, #010101, #1a1a2e);
-  border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-}
-.contact-card.tiktok:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.5); }
-
-.contact-card.instagram {
-  background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-  box-shadow: 0 4px 20px rgba(220,39,67,0.25);
-}
-.contact-card.instagram:hover { box-shadow: 0 8px 30px rgba(220,39,67,0.45); }
-
-/* ═══════════════════════════════════════════
-   FOOTER
-════════════════════════════════════════════ */
-footer {
-  padding: 30px;
-  text-align: center;
-  background: #050b16;
-  color: #94a3b8;
-}
-
-.footer-social {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 16px;
-}
-
-.footer-social a {
-  color: #94a3b8;
-  transition: color .2s;
-}
-
-.footer-social a:hover { color: #fff; }
-
-/* ═══════════════════════════════════════════
-   FLOATING WHATSAPP
-════════════════════════════════════════════ */
-.whatsapp-float {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 999;
-  background: #25d366;
+.result-row:last-child {
+  margin-bottom: 0;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-weight: 700;
   color: #fff;
-  border-radius: 50%;
-  width: 58px;
-  height: 58px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 20px rgba(37,211,102,.45);
-  transition: transform .2s, box-shadow .2s;
-  text-decoration: none;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 28px rgba(37,211,102,.6);
-}
-
-/* ═══════════════════════════════════════════
-   PAGE CONTENT (gomruk + haqqimizda)
-════════════════════════════════════════════ */
-.page-content {
-  padding-top: 90px;
-  min-height: 80vh;
-  padding-bottom: 60px;
-}
-
-.page-content .calc-header {
-  padding: 40px 20px 10px;
-}
-
-/* ═══════════════════════════════════════════
-   ABOUT PAGE
-════════════════════════════════════════════ */
-.about-page {
-  padding-top: 80px;
-}
-
-.about-logo {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  margin-bottom: 16px;
-}
-
-.about-hero {
-  text-align: center;
-  padding: 60px 20px 40px;
-}
-}
-
-.about-hero h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
-}
-
-.about-sub {
-  color: #94a3b8;
-  font-size: 16px;
-}
-
-.about-blocks {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 20px 60px;
-}
-
-.about-block {
-  background: #172033;
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 18px;
-  padding: 30px 24px;
-  text-align: center;
-}
-
-.about-block__icon {
-  font-size: 36px;
-  margin-bottom: 14px;
-}
-
-.about-block h3 {
   font-size: 18px;
-  margin-bottom: 10px;
 }
 
-.about-block p {
-  color: #94a3b8;
-  font-size: 14px;
-  line-height: 1.7;
-}
-
+/* ═══════════════════════════════════════════
+   5. MOBİL VƏ PLANŞET UYĞUNLUĞU (RESPONSIVE)
+════════════════════════════════════════════ */
 .hamburger {
   display: none;
   flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  width: 40px;
-  height: 40px;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 10px;
+  gap: 6px;
+  background: none;
+  border: none;
   cursor: pointer;
-  padding: 9px;
-  flex-shrink: 0;
-  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
-}
-
-.hamburger:hover {
-  background: rgba(255,255,255,0.22);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
-  transform: scale(1.06);
+  padding: 4px;
+  z-index: 1001;
 }
 
 .hamburger span {
   display: block;
+  width: 24px;
   height: 2px;
   background: #fff;
-  border-radius: 2px;
-  transition: all 0.25s;
+  transition: all 0.3s;
 }
 
-.hamburger.open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-.hamburger.open span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+@media (max-width: 992px) {
+  .main-nav { padding: 0 24px; }
+  .hero h1 { font-size: 42px; }
 }
 
-/* ═══════════════════════════════════════════
-   MOBILE
-════════════════════════════════════════════ */
 @media (max-width: 768px) {
-  .hero {
-    height: auto;
-    min-height: 100vh;
-    padding: 90px 20px;
-  }
-
-  .hero h1 { font-size: 52px; letter-spacing: 3px; }
-  .hero p  { font-size: 16px; }
-
-  .hero-btns { flex-direction: column; }
-
-  .btn { width: 100%; }
-
-  .form-grid { grid-template-columns: 1fr; }
-
-  .calc,
-  .gomruk-wrap { padding: 20px; }
-
-  .calc-header h1 { font-size: 28px; }
-
-  .services-section h2,
-  .contact-section h2 { font-size: 30px; }
-
-  .contact-card { min-width: 100%; }
-
-  /* Hide social icons in nav on tablet, keep WA + call */
-  .nav-icon--insta,
-  .nav-icon--tiktok { display: none; }
-}
-
-@media (max-width: 540px) {
-  /* Hide ALL nav icons except hamburger + contact btn */
-  .nav-icon { display: none; }
-  .nav-contact-btn { display: none; }
-
+  .hamburger { display: flex; }
+  
   .nav-links {
-    display: none;
     position: fixed;
-    top: 64px;
+    top: 76px; /* Yenilənmiş navbar hündürlüyünə uyğun */
     left: 0;
     right: 0;
     background: rgba(8, 14, 28, 0.98);
     backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
     flex-direction: column;
     align-items: stretch;
-    padding: 10px 16px 16px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    z-index: 998;
-    gap: 4px;
-  }
-
-  .nav-links.open {
-    display: flex;
-  }
-
-  .nav-link {
-    padding: 13px 16px;
-    font-size: 15px;
-    border-radius: 10px;
-    text-align: left;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-  }
-
-  .nav-link:last-child {
-    border-bottom: none;
-  }
-
-  /* Show contact btn inside dropdown on mobile */
-  .nav-links .nav-contact-btn-mobile {
-    display: flex;
-    align-items: center;
+    padding: 20px;
     gap: 10px;
-    padding: 13px 16px;
-    margin-top: 8px;
-    border-radius: 10px;
-    background: #2563eb;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 600;
-    text-decoration: none;
-    box-shadow: 0 4px 16px rgba(37,99,235,0.4);
+    display: none;
+    z-index: 999;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
   }
 
-  .hamburger {
-    display: flex;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero h1 { font-size: 40px; }
-  .hero p  { font-size: 15px; }
+  .nav-links.open { display: flex; }
+  .nav-link { padding: 12px; text-align: center; }
+  .nav-contact-btn { text-align: center; margin-top: 10px; }
 }
