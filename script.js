@@ -1,3 +1,37 @@
+// ======================================================
+// HAMBURGER MENU
+// ======================================================
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburger");
+  const navLinks  = document.getElementById("navLinks");
+  if (!hamburger || !navLinks) return;
+
+  hamburger.addEventListener("click", function (e) {
+    e.stopPropagation();
+    hamburger.classList.toggle("open");
+    navLinks.classList.toggle("open");
+  });
+
+  navLinks.querySelectorAll(".nav-link").forEach(link => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("open");
+      navLinks.classList.remove("open");
+    });
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+      hamburger.classList.remove("open");
+      navLinks.classList.remove("open");
+    }
+  });
+});
+
+// ======================================================
+// SHIPPING
+// ======================================================
+
+
 const STATE_NAMES = {
   AL:"Alabama", AK:"Alaska", AZ:"Arizona", AR:"Arkansas",
   CA:"California", CO:"Colorado", CT:"Connecticut", DE:"Delaware",
