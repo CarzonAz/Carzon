@@ -60,6 +60,8 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  /* Mövcud kodlar olduğu kimi qalır */
+  z-index: 999; /* Aktiv olanda digər elementlərin üstünə çıxması üçün */
 }
 
 .nav-link {
@@ -77,6 +79,8 @@ body {
   background: rgba(255,255,255,0.12);
   color: #fff;
 }
+
+
 
 .nav-link--active {
   background: rgba(255,255,255,0.14);
