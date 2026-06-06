@@ -27,28 +27,28 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-  height: 52px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
-  background: rgba(11, 18, 32, 0.72);
+  padding: 0 28px;
+  background: rgba(11, 18, 32, 0.85);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .nav-logo {
-  font-size: 17px;
-  font-weight: 700;
-  letter-spacing: 3px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 4px;
   color: #fff;
   text-decoration: none;
   flex-shrink: 0;
 }
 
 .nav-logo-img {
-  height: 32px;
+  height: 36px;
   width: auto;
   display: block;
 }
@@ -63,79 +63,114 @@ body {
 }
 
 .nav-link {
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 13px;
+  padding: 8px 16px;
+  border-radius: 22px;
+  font-size: 14px;
   font-weight: 500;
-  color: rgba(255,255,255,0.72);
+  color: rgba(255,255,255,0.75);
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
   white-space: nowrap;
 }
 
 .nav-link:hover {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.12);
   color: #fff;
 }
 
 .nav-link--active {
-  background: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.14);
   color: #fff;
 }
 
 .nav-contacts {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+}
+
+/* Contact button in nav */
+.nav-contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border-radius: 22px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.18s, box-shadow 0.18s;
+  box-shadow: 0 2px 12px rgba(37,99,235,0.35);
+}
+
+.nav-contact-btn svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.nav-contact-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37,99,235,0.5);
 }
 
 .nav-icon {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255,255,255,0.75);
+  color: #fff;
   text-decoration: none;
-  transition: background 0.2s, color 0.2s;
-  background: rgba(255,255,255,0.07);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 .nav-icon svg {
-  width: 17px;
-  height: 17px;
+  width: 18px;
+  height: 18px;
 }
 
 .nav-icon:hover {
-  background: rgba(255,255,255,0.16);
-  color: #fff;
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
 }
 
 .nav-icon--wp {
-  background: rgba(37,211,102,0.18);
+  background: rgba(37,211,102,0.2);
   color: #25d366;
+  border-color: rgba(37,211,102,0.25);
 }
 .nav-icon--wp:hover {
   background: #25d366;
   color: #fff;
+  box-shadow: 0 6px 20px rgba(37,211,102,0.5);
 }
 
 .nav-icon--call {
   background: rgba(37,99,235,0.2);
   color: #60a5fa;
+  border-color: rgba(37,99,235,0.25);
 }
 .nav-icon--call:hover {
   background: #2563eb;
   color: #fff;
+  box-shadow: 0 6px 20px rgba(37,99,235,0.5);
 }
+
 
 /* ═══════════════════════════════════════════
    SUB-BAR
 ════════════════════════════════════════════ */
 .sub-bar {
   position: fixed;
-  top: 52px;
+  top: 64px;
   left: 0;
   right: 0;
   z-index: 999;
@@ -500,11 +535,36 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-size: 15px;
 }
 
-.contact-card.whatsapp  { background: #25d366; }
-.contact-card.phone     { background: #2563eb; }
-.contact-card.email     { background: #475569; }
-.contact-card.tiktok    { background: #010101; border: 1px solid #333; }
-.contact-card.instagram { background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+.contact-card.whatsapp  {
+  background: linear-gradient(135deg, #00c853, #25d366);
+  box-shadow: 0 4px 20px rgba(37,211,102,0.25);
+}
+.contact-card.whatsapp:hover  { box-shadow: 0 8px 30px rgba(37,211,102,0.45); }
+
+.contact-card.phone {
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  box-shadow: 0 4px 20px rgba(59,130,246,0.25);
+}
+.contact-card.phone:hover { box-shadow: 0 8px 30px rgba(59,130,246,0.45); }
+
+.contact-card.email {
+  background: linear-gradient(135deg, #334155, #64748b);
+  box-shadow: 0 4px 20px rgba(100,116,139,0.2);
+}
+.contact-card.email:hover { box-shadow: 0 8px 30px rgba(100,116,139,0.35); }
+
+.contact-card.tiktok {
+  background: linear-gradient(135deg, #010101, #1a1a2e);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.contact-card.tiktok:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.5); }
+
+.contact-card.instagram {
+  background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  box-shadow: 0 4px 20px rgba(220,39,67,0.25);
+}
+.contact-card.instagram:hover { box-shadow: 0 8px 30px rgba(220,39,67,0.45); }
 
 /* ═══════════════════════════════════════════
    FOOTER
@@ -637,14 +697,21 @@ footer {
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 36px;
-  height: 36px;
-  background: rgba(255,255,255,0.07);
-  border: none;
-  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
   cursor: pointer;
-  padding: 8px;
+  padding: 9px;
   flex-shrink: 0;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.hamburger:hover {
+  background: rgba(255,255,255,0.22);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  transform: scale(1.06);
 }
 
 .hamburger span {
@@ -672,7 +739,7 @@ footer {
   .hero {
     height: auto;
     min-height: 100vh;
-    padding: 80px 20px;
+    padding: 90px 20px;
   }
 
   .hero h1 { font-size: 52px; letter-spacing: 3px; }
@@ -694,26 +761,31 @@ footer {
 
   .contact-card { min-width: 100%; }
 
-  .nav-contacts { gap: 4px; }
-  .nav-icon { width: 32px; height: 32px; }
-  .nav-icon svg { width: 15px; height: 15px; }
+  /* Hide social icons in nav on tablet, keep WA + call */
+  .nav-icon--insta,
+  .nav-icon--tiktok { display: none; }
 }
 
 @media (max-width: 540px) {
+  /* Hide ALL nav icons except hamburger + contact btn */
+  .nav-icon { display: none; }
+  .nav-contact-btn { display: none; }
+
   .nav-links {
     display: none;
     position: fixed;
-    top: 52px;
+    top: 64px;
     left: 0;
     right: 0;
-    background: rgba(11, 18, 32, 0.97);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(8, 14, 28, 0.98);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     flex-direction: column;
     align-items: stretch;
-    padding: 12px 16px 20px;
+    padding: 10px 16px 16px;
     border-bottom: 1px solid rgba(255,255,255,0.08);
     z-index: 998;
+    gap: 4px;
   }
 
   .nav-links.open {
@@ -721,10 +793,31 @@ footer {
   }
 
   .nav-link {
-    padding: 14px 16px;
+    padding: 13px 16px;
     font-size: 15px;
     border-radius: 10px;
     text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .nav-link:last-child {
+    border-bottom: none;
+  }
+
+  /* Show contact btn inside dropdown on mobile */
+  .nav-links .nav-contact-btn-mobile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 16px;
+    margin-top: 8px;
+    border-radius: 10px;
+    background: #2563eb;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(37,99,235,0.4);
   }
 
   .hamburger {
