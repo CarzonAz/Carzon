@@ -4,8 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CARZON — ABŞ Avtomobil Xidməti</title>
-  <link rel="icon" type="image/svg+xml" href="Logo.svg">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='512' height='512'><rect width='512' height='512' fill='%230b1220'/><path d='M360 150 C310 95, 202 95, 152 150 C100 208, 100 304, 152 362 C202 417, 310 417, 360 362' fill='none' stroke='%23ffffff' stroke-width='54' stroke-linecap='round' stroke-linejoin='round'/></svg>">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Kənardan gələn zaman sürüşməni ləğv edib, rəvan ağarma (opacity) effekti yaradan lüks CSS sinfi */
+    .fade-load .nav-links::before {
+      transition: opacity 0.4s ease-out !important;
+      opacity: 0 !important;
+    }
+    .fade-load-active .nav-links::before {
+      opacity: 1 !important;
+    }
+
+    /* MOBİLDƏ NAV-BARDA HƏR ZAMAN GÖRÜNƏN AĞ QUTU EFFEKTİ */
+    @media (max-width: 768px) {
+      .nav-contacts {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+      }
+
+      .nav-contacts .nav-contact-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #ffffff !important;
+        color: #111a2e !important;
+        padding: 8px 16px !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        border-radius: 10px !important;
+        border: none !important;
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+        transition: all 0.2s ease;
+      }
+
+      .nav-contacts .nav-contact-btn span {
+        display: inline-block !important;
+      }
+    }
+
+    /* KALKULYATOR NƏTİCƏ QUTUSUNUN RƏVAN AÇILMASI ÜÇÜN CSS */
+    .result-box {
+      display: block !important; /* Blok quruluşunu saxlayırıq */
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-out, opacity 0.4s ease-out, padding 0.4s ease-out;
+      margin-top: 0;
+      padding: 0 20px; /* Açılmamışdan qabaq daxili boşluğu sıfırlayırıq */
+    }
+
+    /* Hesablaya basdıqda bu sinif aktivləşəcək və qutu rəvan açılacaq */
+    .result-box.show {
+      max-height: 200px; /* Qutunun daxilindəki kontentə uyğun maksimum hündürlük */
+      opacity: 1;
+      margin-top: 20px;
+      padding: 20px;
+    }
+  </style>
+  <script>
+    if (window.location.hash === "#scrollToCalc") {
+      localStorage.setItem("prevNavIndex", "1");
+      document.documentElement.classList.add("fade-load");
+    }
+  </script>
 </head>
 <body>
 
@@ -13,13 +76,14 @@
     <a href="index.html" class="nav-logo">CARZON</a>
     
     <div class="nav-links" id="navLinks">
-      <a href="index.html#scrollToCalc" class="nav-link nav-link--active">Daşınma</a>
-      <a href="gomruk.html" class="nav-link">Gömrük</a>
-      <a href="haqqimizda.html" class="nav-link">Haqqımızda</a>
+      <a href="#mainNav" class="nav-link nav-link--active" id="navHomeBtn" data-index="0">Ana Səhifə</a>
+      <a href="#scrollToCalc" class="nav-link" id="navShippingBtn" data-index="1">Daşınma</a>
+      <a href="gomruk.html" class="nav-link" data-index="2">Gömrük</a>
+      <a href="haqqimizda.html" class="nav-link" data-index="3">Haqqımızda</a>
     </div>
     
     <div class="nav-contacts">
-      <button class="nav-contact-btn" id="navContactBtn" style="border: none; cursor: pointer;">Əlaqə</button>
+      <button class="nav-contact-btn" id="navContactBtn" style="border: none; cursor: pointer;"><span>Əlaqə</span></button>
       <button class="hamburger" id="hamburger" aria-label="Menü">
         <span></span><span></span><span></span>
       </button>
@@ -37,7 +101,7 @@
       <p class="main-subtitle">Logistika və Gömrük tərəfdaşınız.</p>
       
       <div class="hero-buttons">
-        <button class="btn-main" id="heroScrollBtn">Yol Xərclərini Hesabla</button>
+        <button class="btn-main" id="heroScrollBtn">Daşınma Xərclərini Hesabla</button>
         <a href="gomruk.html" class="btn-secondary">Gömrük Kalkulyatoru</a>
       </div>
     </div>
@@ -45,7 +109,7 @@
 
   <section class="calc-section" id="scrollToCalc">
     <div class="calc-container">
-      <h2 style="text-align: center; margin-bottom: 24px; font-size: 28px;">Yol Hesablama</h2>
+      <h2 style="text-align: center; margin-bottom: 24px; font-size: 28px;">Daşınma Hesablama</h2>
       <form id="shippingForm" onsubmit="return false;">
         
         <div class="form-group">
@@ -54,24 +118,26 @@
             <option value="">-- Hərrac Seçin --</option>
             <option value="copart">Copart</option>
             <option value="iaai">IAAI</option>
+            <option value="manheim">Manheim</option>
+            <option value="canada">Kanada (Canada)</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label for="stateSelect">2. Ştat Seçin</label>
-          <select id="stateSelect">
-            <option value="">-- Ştat Seçin --</option>
+          <label for="locationSelect">2. Meydança (Location) Seçin</label>
+          <select id="locationSelect" disabled>
+            <option value="">Əvvəlcə hərrac seçin...</option>
           </select>
         </div>
 
         <button type="button" class="btn-calc" id="calcShippingBtn">Hesabla</button>
       </form>
 
-      <div class="loader" id="loader"></div>
+      <div class="loader" id="loader" style="display: none;"></div>
 
       <div class="result-box" id="shippingResult">
         <div class="result-row">
-          <span>Bakı portuna qədər daşınma:</span>
+          <span>Poti limanına qədər daşınma:</span>
           <span id="shipCost" style="font-weight: 700; color: #fff;">$0</span>
         </div>
       </div>
@@ -80,53 +146,34 @@
 
   <section class="contact-section" id="contactSection">
     <div class="contact-grid">
-      
       <a href="https://wa.me/994704444408" target="_blank" class="contact-card wa-card">
-        <div class="card-icon">
-          <img src="Logo/whatsapp.png" alt="WhatsApp" width="36" height="36">
-        </div>
-        <h3>WhatsApp</h3>
-        <p>Canlı Dəstək</p>
+        <div class="card-icon"><img src="Logo/whatsapp.png" alt="WhatsApp" width="36" height="36"></div>
+        <h3>WhatsApp</h3><p>Canlı Dəstək</p>
       </a>
-
       <a href="https://www.instagram.com/carzon.az" target="_blank" class="contact-card insta-card">
-        <div class="card-icon">
-          <img src="Logo/instagram.png" alt="Instagram" width="36" height="36">
-        </div>
-        <h3>Instagram</h3>
-        <p>@carzon.az</p>
+        <div class="card-icon"><img src="Logo/instagram.png" alt="Instagram" width="36" height="36"></div>
+        <h3>Instagram</h3><p>@carzon.az</p>
       </a>
-
       <a href="https://www.tiktok.com/@carzon.az" target="_blank" class="contact-card tiktok-card">
-        <div class="card-icon">
-          <img src="Logo/tiktok.png" alt="TikTok" width="34" height="34">
-        </div>
-        <h3>TikTok</h3>
-        <p>Videolarımız</p>
+        <div class="card-icon"><img src="Logo/tiktok.png" alt="TikTok" width="34" height="34"></div>
+        <h3>TikTok</h3><p>Videolarımız</p>
       </a>
-
       <a href="tel:+994704444408" class="contact-card call-card">
-        <div class="card-icon">
-          <img src="Logo/call.png" alt="Zəng" width="36" height="36">
-        </div>
-        <h3>Zəng Et</h3>
-        <p>+994 70 444 44 08</p>
+        <div class="card-icon"><img src="Logo/call.png" alt="Zəng" width="36" height="36"></div>
+        <h3>Zəng Et</h3><p>+994 70 444 44 08</p>
       </a>
-
       <a href="mailto:info@carzon.az" class="contact-card mail-card">
-        <div class="card-icon">
-          <img src="Logo/mail.png" alt="E-poçt" width="36" height="36">
-        </div>
-        <h3>E-Poçt</h3>
-        <p>info@carzon.az</p>
+        <div class="card-icon"><img src="Logo/mail.png" alt="E-poçt" width="36" height="36"></div>
+        <h3>E-Poçt</h3><p>info@carzon.az</p>
       </a>
-
     </div>
   </section>
 
   <footer style="text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.05); font-size: 14px; color: rgba(255,255,255,0.4);">
     <p>© 2026 CARZON. Bütün hüquqlar qorunur.</p>
   </footer>
+
+  <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Yuxarı qayıt">↑</button>
 
   <a href="https://wa.me/994704444408" target="_blank" class="whatsapp-sticky" aria-label="WhatsApp">
     <img src="Logo/whatsapp-sabit.png" alt="WhatsApp" width="34" height="34">
@@ -135,42 +182,355 @@
   <script src="script.js"></script>
   
   <script>
-    function smoothScrollTo(targetId) {
-      const target = document.getElementById(targetId);
-      if (!target) return;
+    document.addEventListener("DOMContentLoaded", function() {
+      // Meydança məlumat bazası
+      const auctionData = {
+        copart: [
+          "NJ - Somerville", "FL - Miami Central", "GA - Savannah", "IN - Indianapolis", "NJ - Glassboro East",
+          "NJ - Trenton", "VA - Richmond East", "FL - Jacksonville North", "PA - Philadelphia", "NC - Gastonia",
+          "SC - North Charleston", "SC - Columbia", "GA - Tifton", "FL - Orlando South", "GA - Fairburn",
+          "GA - Macon", "GA - Augusta", "NJ - Glassboro West", "PA - Philadelphia East", "PA - Philadelphia East-Sublot",
+          "NY - Newburgh", "NC - Mocksville", "SC - Spartanburg", "NC - China Grove", "NC - Concord",
+          "NC - Mebane", "AL - Mobile South", "FL - Tampa South", "NY - Albany", "GA - Atlanta East",
+          "GA - Atlanta North", "GA - Atlanta South", "GA - Atlanta West", "FL - Orlando North", "NC - Lumberton",
+          "NC - Raleigh", "NC - Raleigh North", "ND - Bismarck", "GA - Cartersville", "CT - Hartford",
+          "CT - Hartford Springfield", "NY - Long Island", "TX - Houston", "TX - Houston East", "FL - Punta Gorda South",
+          "PA - Harrisburg", "PA - York Haven", "AL - Dothan", "FL - Tampa North", "DC - Washington DC",
+          "DE - Seaford", "RI - Exeter", "MD - Baltimore", "MD - Baltimore East", "MA - South Boston",
+          "AL - Copart Alabama Ctu", "AL - Birmingham", "AL - Mobile", "AL - Montgomery", "MA - North Boston",
+          "MA - West Warren", "MA - Freetown", "PA - Chambersburg", "FL - Ft. Pierce", "FL - Ocala",
+          "FL - Punta Gorda", "FL - Tallahassee", "FL - West Palm Beach", "WI - Milwaukee North", "IL - Chicago North",
+          "IL - Chicago South", "WI - Appleton", "NH - Candia", "PA - Scranton", "VA - Fredericksburg",
+          "TN - Knoxville", "TN - Memphis", "WI - Madison South", "FL - Miami North", "FL - Miami South",
+          "NY - Syracuse", "OH - Akron", "MN - Minneapolis North", "MN - St. Cloud", "IA - Davenport",
+          "WI - Milwaukee South", "AL - Tanner", "TN - Nashville", "TX - Lufkin", "TX - Waco",
+          "TX - Corpus Christi", "TX - Austin", "TX - Crashedtoys Dallas", "TX - Dallas", "TX - Dallas South",
+          "TX - Ft. Worth", "TX - San Antonio", "TX - Longview", "VA - Danville", "NY - Rochester",
+          "MS - Grenada", "MS - Jackson", "IA - Des Moines", "ME - Lyman", "OH - Dayton",
+          "VA - Hampton", "VA - Richmond", "ME - Windham", "PA - Altoona", "PA - Pittsburgh West",
+          "PA - Pittsburgh North", "PA - Pittsburgh South", "LA - Baton Rouge", "LA - Shreveport", "TX - McAllen",
+          "TX - North Austin", "FL - Clewiston", "IL - Peoria", "IL - Southern Illinois", "IL - Wheeling",
+          "NE - Lincoln", "KY - Earlington", "IN - Cicero", "IN - Dyer", "IN - Fort Wayne",
+          "TX - Abilene", "TX - Amarillo", "MN - Minneapolis", "NY - Buffalo", "OH - Cleveland West",
+          "OH - Columbus", "LA - New Orleans", "OH - Cleveland East", "KY - Lexington East", "KY - Lexington West",
+          "KY - Louisville", "KY - Walton", "MO - Columbia", "OK - Oklahoma City", "OK - Tulsa",
+          "TX - El Paso", "TX - Andrews", "MO - Sikeston", "MO - Springfield", "MO - St. Louis",
+          "VT - Rutland", "AL - Cusseta", "AR - Fayetteville", "AR - Little Rock", "WV - Charleston",
+          "NC - Lagrange", "MI - Detroit", "MI - Kincheloe", "KS - Wichita", "LA - Vinton",
+          "MI - Flint", "MI - Ionia", "MI - Lansing", "MI - Wayland", "NM - Albuquerque",
+          "KS - Kansas City", "CO - Denver", "CO - Denver Central", "CO - Denver South", "IA - Cedar Rapids",
+          "CA - Los Angeles", "CO - Colorado Springs", "SD - Rapid City", "CA - Sun Valley", "CA - Rancho Cucamonga",
+          "CA - Adelanto", "CA - Long Beach", "CA - Mentone", "CA - Van Nuys", "CA - San Bernardino",
+          "CA - Bakersfield", "CA - Hayward", "CA - San Diego", "WY - Casper", "NV - Las Vegas West",
+          "NV - Reno", "NV - 57 Storage", "NV - Las Vegas", "AZ - Phoenix", "CA - Fresno",
+          "CA - So Sacramento", "UT - Ogden", "UT - Salt Lake City", "CA - Martinez", "CA - Antelope",
+          "CA - Sacramento", "CA - Vallejo", "CA - San Jose", "AZ - Tucson", "WA - Graham",
+          "WA - Pasco", "CA - Redding", "OR - Eugene", "OR - Portland North", "WA - Spokane",
+          "ID - Boise", "OR - Portland South", "WA - North Seattle", "AZ - Phoenix North", "WA - Spanaway",
+          "CA - Napa", "MT - Billings", "MT - Helena", "AK - Anchorage", "AK - Anchorage South",
+          "HI - Honolulu"
+        ],
+        iaai: [
+          "GA - Savannah", "NJ - Central New Jersey", "NC - Gastonia", "NY - Albany", "NJ - Englishtown",
+          "SC - Charleston", "FL - Fort Pierce", "AL - Birmingham", "PA - Philadelphia", "SC - Greenville",
+          "KY - Earlington", "RI - Providence", "TX - Houston", "MI - Detroit", "CT - Hartford",
+          "VA - Fredericksburg", "TX - San Antonio-South", "LA - Shreveport", "FL - West Palm Beach", "NJ - Avenel New Jersey",
+          "NJ - Sayreville", "SC - Lexington", "GA - Macon", "GA - Tifton", "NC - Asheville",
+          "TX - Corpus Christi", "NC - Raleigh", "PA - Bridgeport", "NJ - Port Murray", "NJ - Southern New Jersey",
+          "GA - Atlanta", "GA - Atlanta East", "GA - Atlanta North", "GA - Atlanta South", "NC - Greensboro",
+          "NY - Staten Island", "NC - Concord", "NY - Newburgh", "NC - Charlotte", "NC - Wilmington",
+          "NC - High Point", "CT - Hartford-South", "KS - Kansas City", "NY - Long Island", "PA - York Springs",
+          "AL - Dothan", "FL - Fort Myers", "NY - Monticello", "TX - Houston South", "TX - Houston-North",
+          "DE - New Castle", "MD - Dundalk", "MD - Elkton", "MD - Metro DC", "LA - Baton Rouge",
+          "MS - Gulf Coast", "PA - Scranton", "AL - Huntsville", "MS - Jackson", "FL - Jacksonville",
+          "TN - Knoxville", "MA - Taunton", "MA - Templeton", "TN - Chattanooga", "MD - Baltimore",
+          "IL - Lincoln", "MA - Boston - Shirley", "IN - Indianapolis", "NH - Manchester", "CA - North Hollywood",
+          "VA - Northern Virginia", "OK - Oklahoma City", "LA - Lafayette", "FL - Miami-North", "PA - Altoona",
+          "LA - New Orleans", "LA - New Orleans East", "WI - Appleton", "IA - Des Moines", "MN - Minneapolis/St. Paul",
+          "MS - Grenada", "MN - Minneapolis", "VA - Richmond", "IL - Chicago-North", "IL - Chicago-South",
+          "IL - Chicago-West", "IA - Davenport", "VA - Culpeper", "VA - Suffolk", "MI - Grand Rapids",
+          "TX - Austin", "TX - Dallas", "TX - Dallas/Ft Worth", "WI - Milwaukee", "MN - Minneapolis South",
+          "VA - Pulaski", "VA - Roanoke", "NY - Rochester", "NY - Syracuse", "VA - Tidewater",
+          "TX - Fort Worth North", "TX - Longview", "TN - Memphis", "TN - Nashville", "AR - Little Rock",
+          "PA - Pittsburgh", "PA - Pittsburgh-North", "ME - Portland - Gorham", "FL - Tampa", "FL - Tampa North",
+          "ME - Virtual Lane A", "ME - Virtual Lane B", "ME - Virtual Lane C", "IN - Fort Wayne",
+          "CA - Los Angeles South", "NY - Buffalo", "KY - Louisville North", "TX - Abilene", "PA - Erie",
+          "MO - Kansas City East", "TX - McAllen", "St. Cloud", "KY - Bowling Green", "OH - Akron-Canton",
+          "OH - Cincinnati", "OH - Cincinnati-South", "OH - Cleveland", "OH - Columbus", "ME - Online Exclusive",
+          "KY - Paducah", "FL - Pensacola", "KY - Ashland", "TX - Lubbock", "MO - Springfield",
+          "OK - Tulsa", "VT - Burlington", "WV - Buckhannon", "OH - Dayton", "FL - Clearwater",
+          "FL - Orlando", "FL - Orlando-North", "WV - Shady Spring", "AR - Fayetteville", "TX - Permian Basin",
+          "TX - El Paso", "GA - Lake City", "TX - Amarillo", "KS - Wichita", "IL - REC RIDES - Online-Exclusive",
+          "IN - South Bend", "IL - Specialty Division", "IL - St. Louis", "IL - Dream Rides", "MI - Flint",
+          "WI - Portage", "NM - Albuquerque", "CO - Denver East", "CO - Colorado Springs", "Austin North",
+          "NE - Omaha", "CO - Western Colorado", "CA - Los Angeles", "CA - Riverside", "CA - ACE - Carson",
+          "CA - Anaheim", "CA - ACE - Perris", "CA - ACE - Perris 2", "CA - Anaheim Consolidated", "CA - Colton",
+          "CA - Fontana", "CA - High Desert", "CA - Santa Clarita", "CA - San Jose", "CA - San Diego",
+          "SD - Sioux Falls", "NV - Las Vegas", "CA - Fresno", "AZ - Phoenix", "AZ - Tucson",
+          "CA - Fremont", "ND - Fargo", "CA - Sacramento", "CA - East Bay", "UT - Salt Lake City",
+          "NV - Reno", "CA - Stockton", "WY - Casper", "UT - Provo", "WA - Seattle",
+          "OR - Eugene", "Portland", "OR - Portland South", "OR - Portland West", "WA - Spokane",
+          "ID - Boise", "MT - Billings", "MT - Missoula", "AK - Anchorage", "HI - Honolulu"
+        ],
+        manheim: [
+          "NJ - New Jersey", "SC - Lugoff Mobile Auction", "MA - New England", "GA - Georgia", "GA - MyCentralAuction",
+          "NC - North Carolina", "SC - Darlington", "SC - Greer Service Center", "GA - Atlanta", "GA - Rome Auto Auction Powered by Manheim",
+          "GA - Warner Robins", "IL - Chicago", "IL - Sycamore", "IN - Indianapolis", "IN - Louisville",
+          "IA - Iowa", "NC - Statesville", "NC - Wilmington", "FL - St. Pete", "FL - Tampa",
+          "NC - Charlotte", "NC - King Mobile Auction", "FL - Jacksonville", "PA - Philadelphia", "NJ - NY Metro Skyline",
+          "PA - Pennsylvania", "FL - Orlando", "MS - Mississippi", "TN - Nashville", "TX - Houston",
+          "FL - Central Florida", "FL - Daytona Beach", "TX - Texas Hobby", "FL - Lakeland", "FL - Pensacola",
+          "LA - Lafayette", "LA - New Orleans", "PA - Keystone Pennsylvania", "FL - Fort Myers", "MD - Baltimore-Washington",
+          "FL - Fort Lauderdale", "FL - Palm Beach", "NY - Albany", "4 Star Auto Auction", "FL - Hollywood",
+          "TX - Arlington Mobile Auction", "TX - Dallas", "TX - Dallas-Fort Worth", "TX - Hudson Oaks Mobile Auction", "VA - Fredericksburg",
+          "MO - Kansas City", "TX - Park Place Auto Auction", "TX - San Antonio", "VA - Harrisonburg", "VA - Roanoke Mobile Auction",
+          "VA - Virginia Beach", "AR - Little Rock", "TX - Decatur Mobile Auction", "WI - Milwaukee", "MO - St. Louis",
+          "MO - St. Louis Mobile Auction", "MN - Minneapolis", "MN - Northstar Minnesota", "MI - Detroit", "MI - Flint",
+          "OH - Cincinnati", "OH - Cleveland", "OH - Ohio", "PA - Pittsburgh", "PA - Reading Mobile Auction",
+          "NC - Greensboro", "NC - Raleigh", "KS - Olathe Mobile Auction", "TX - El Paso", "GA - Marietta",
+          "NE - Omaha", "PA - Manheim Pennsylvania", "OK - Tulsa", "FL - Melbourne", "NY - Syosset",
+          "VA - Richmond", "KS - Wichita Mobile Auction", "FL - Coral Spring", "WV - Charleston", "CO - Denver",
+          "NM - New Mexico", "CA - Oceanside", "CA - Riverside", "NV - Nevada", "NV - Las Vegas Mobile Auction",
+          "CA - California", "CA - Southern California", "CA - Los Angeles", "UT - Utah", "CA - Fresno",
+          "AZ - Phoenix", "AZ - Tucson", "CA - San Francisco Bay", "WA - Seattle", "WA - Burlington Mobile Auction",
+          "UT - Provo", "OR - Medford Mobile Auction", "OR - Portland", "CA - Tracy"
+        ],
+        canada: [
+          "AB - Calgary", "AB - Edmonton", "NB - Moncton", "NS - Halifax", "ON - Cookstown",
+          "ON - London", "ON - Ottawa", "ON - Toronto", "QC - Montreal"
+        ]
+      };
 
-      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - 80; 
-      const startPosition = window.pageYOffset;
-      const distance = targetPosition - startPosition;
+      const auctionSelect = document.getElementById("auctionSelect");
+      const locationSelect = document.getElementById("locationSelect");
+
+      if (auctionSelect && locationSelect) {
+        auctionSelect.addEventListener("change", function() {
+          const selectedAuction = this.value;
+
+          if (!selectedAuction) {
+            locationSelect.innerHTML = '<option value="">Əvvəlcə hərrac seçin...</option>';
+            locationSelect.disabled = true;
+            return;
+          }
+
+          let optionsHtml = '<option value="">-- Meydança Seçin --</option>';
+          auctionData[selectedAuction].forEach(function(loc) {
+            optionsHtml += `<option value="${loc}">${loc}</option>`;
+          });
+
+          locationSelect.innerHTML = optionsHtml;
+          locationSelect.disabled = false;
+        });
+      }
+
+      // HESABLA FUNKSİYASI (İNDİ "SHOW" KLASSINI ƏLAVƏ EDƏRƏK QUTUNU AÇIR)
+      const calcShippingBtn = document.getElementById("calcShippingBtn");
+      const loader = document.getElementById("loader");
+      const shippingResult = document.getElementById("shippingResult");
+      const shipCostSpan = document.getElementById("shipCost");
+
+      if (calcShippingBtn) {
+        calcShippingBtn.addEventListener("click", function() {
+          if (!auctionSelect.value || !locationSelect.value) {
+            alert("Zəhmət olmasa, əvvəlcə Hərrac və Meydança seçin!");
+            return;
+          }
+
+          // Əvvəlki nəticəni tam bağlayırıq
+          if (shippingResult) shippingResult.classList.remove("show");
+          // Çarxı göstəririk
+          if (loader) loader.style.display = "block";
+
+          setTimeout(function() {
+            if (loader) loader.style.display = "none";
+            
+            // Qiymət yerinə $0 yazırıq
+            if (shipCostSpan) shipCostSpan.innerText = "$0";
+            
+            // CSS `.show` sinfini bura əlavə edərək qutunu görünən edirik
+            if (shippingResult) shippingResult.classList.add("show");
+          }, 800);
+        });
+      }
+
+      // NAV-BAR SLIDE LOGIKASI
+      const navLinksContainer = document.querySelector(".nav-links");
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+      const allLinks = document.querySelectorAll(".nav-link");
+
+      const hasAnchor = window.location.hash === "#scrollToCalc";
       
-      let startTime = null;
-      const duration = 400; // Sizin bəyəndiyiniz tam o ideal sürət!
-
-      function easeOutCubic(t, b, c, d) {
-        t /= d;
-        t--;
-        return c * (t * t * t + 1) + b;
+      if (hasAnchor) {
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('nav-link--active'));
+        const shipBtn = document.getElementById('navShippingBtn');
+        if (shipBtn) shipBtn.classList.add('nav-link--active');
       }
 
-      function animation(currentTime) {
-        if (startTime === null) startTime = currentTime;
-        const timeElapsed = currentTime - startTime;
-        const run = easeOutCubic(timeElapsed, startPosition, distance, duration);
-        window.scrollTo(0, run);
-        if (timeElapsed < duration) requestAnimationFrame(animation);
+      function initSlidePosition() {
+        const activeLink = document.querySelector(".nav-link--active");
+        if (!activeLink || !navLinksContainer) return;
+
+        const containerRect = navLinksContainer.getBoundingClientRect();
+        const activeRect = activeLink.getBoundingClientRect();
+
+        if (window.innerWidth > 768) {
+          navLinksContainer.style.setProperty("--slide-left", `${activeRect.left - containerRect.left}px`);
+          navLinksContainer.style.setProperty("--slide-width", `${activeRect.width}px`);
+        } else {
+          navLinksContainer.style.setProperty("--slide-top", `${activeRect.top - containerRect.top}px`);
+          navLinksContainer.style.setProperty("--slide-height", `${activeRect.height}px`);
+        }
+
+        if (document.documentElement.classList.contains("fade-load")) {
+          setTimeout(() => {
+            document.documentElement.classList.add("fade-load-active");
+            setTimeout(() => {
+              document.documentElement.classList.remove("fade-load", "fade-load-active");
+            }, 400);
+          }, 50);
+        }
       }
 
-      requestAnimationFrame(animation);
-    }
+      function updateSlidePosition() {
+        const activeLink = document.querySelector(".nav-link--active");
+        if (!activeLink || !navLinksContainer) return;
 
-    document.getElementById('heroScrollBtn').addEventListener('click', function() {
-      smoothScrollTo('scrollToCalc');
-    });
+        const containerRect = navLinksContainer.getBoundingClientRect();
+        const activeRect = activeLink.getBoundingClientRect();
 
-    document.getElementById('navContactBtn').addEventListener('click', function() {
-      smoothScrollTo('contactSection');
+        if (window.innerWidth > 768) {
+          const leftPosition = activeRect.left - containerRect.left;
+          navLinksContainer.style.setProperty("--slide-left", `${leftPosition}px`);
+          navLinksContainer.style.setProperty("--slide-width", `${activeRect.width}px`);
+        } else {
+          const topPosition = activeRect.top - containerRect.top;
+          navLinksContainer.style.setProperty("--slide-top", `${topPosition}px`);
+          navLinksContainer.style.setProperty("--slide-height", `${activeRect.height}px`);
+        }
+      }
+
+      allLinks.forEach(link => {
+        link.addEventListener("click", function() {
+          localStorage.setItem("prevNavIndex", this.getAttribute("data-index"));
+        });
+      });
+
+      initSlidePosition();
+      setTimeout(initSlidePosition, 40);
+      window.addEventListener("resize", updateSlidePosition);
+
+      if (hamburger && navLinks) {
+        hamburger.addEventListener("click", function() {
+          hamburger.classList.toggle("open");
+          navLinks.classList.toggle("open");
+          if (navLinks.classList.contains("open")) {
+            setTimeout(updateSlidePosition, 50);
+          }
+        });
+      }
+
+      function smoothScrollTo(targetId, offset = 80) {
+        if (hamburger && navLinks && navLinks.classList.contains("open")) {
+          hamburger.classList.remove("open");
+          navLinks.classList.remove("open");
+        }
+        const target = document.getElementById(targetId);
+        if (!target) return;
+
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        let startTime = null;
+        const duration = 500;
+
+        function easeOutCubic(t, b, c, d) { t /= d; t--; return c * (t * t * t + 1) + b; }
+        function animation(currentTime) {
+          if (startTime === null) startTime = currentTime;
+          const timeElapsed = currentTime - startTime;
+          const run = easeOutCubic(timeElapsed, startPosition, distance, duration);
+          window.scrollTo(0, run);
+          if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+        requestAnimationFrame(animation);
+      }
+
+      if (document.getElementById('navContactBtn')) {
+        document.getElementById('navContactBtn').addEventListener('click', function() {
+          smoothScrollTo('contactSection');
+        });
+      }
+      if (document.getElementById('heroScrollBtn')) {
+        document.getElementById('heroScrollBtn').addEventListener('click', function() {
+          smoothScrollTo('scrollToCalc');
+        });
+      }
+      if (document.getElementById('navShippingBtn')) {
+        document.getElementById('navShippingBtn').addEventListener('click', function(e) {
+          e.preventDefault();
+          smoothScrollTo('scrollToCalc');
+          const shipBtn = document.getElementById('navShippingBtn');
+          document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('nav-link--active'));
+          shipBtn.classList.add('nav-link--active');
+          localStorage.setItem("prevNavIndex", "1");
+          updateSlidePosition();
+        });
+      }
+      if (document.getElementById('navHomeBtn')) {
+        document.getElementById('navHomeBtn').addEventListener('click', function(e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          const hBtn = document.getElementById('navHomeBtn');
+          document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('nav-link--active'));
+          hBtn.classList.add('nav-link--active');
+          localStorage.setItem("prevNavIndex", "0");
+          updateSlidePosition();
+        });
+      }
+
+      let isInitialLoad = true;
+      if (hasAnchor) isInitialLoad = false; 
+
+      const homeBtn = document.getElementById('navHomeBtn');
+      const shippingBtn = document.getElementById('navShippingBtn');
+      const calcSection = document.getElementById('scrollToCalc');
+
+      if (calcSection && homeBtn && shippingBtn) {
+        const observerOptions = { root: null, rootMargin: '-50% 0px -50% 0px', threshold: 0 };
+        const observer = new IntersectionObserver(function(entries) {
+          entries.forEach(entry => {
+            if (isInitialLoad) {
+              setTimeout(() => { isInitialLoad = false; }, 600);
+              return;
+            }
+
+            if (entry.isIntersecting) {
+              homeBtn.classList.remove('nav-link--active');
+              shippingBtn.classList.add('nav-link--active');
+              localStorage.setItem("prevNavIndex", "1");
+            } else if (window.pageYOffset < calcSection.offsetTop - 200) {
+              shippingBtn.classList.remove('nav-link--active');
+              homeBtn.classList.add('nav-link--active');
+              localStorage.setItem("prevNavIndex", "0");
+            }
+            updateSlidePosition();
+          });
+        }, observerOptions);
+        observer.observe(calcSection);
+      }
+
+      const topBtn = document.getElementById("scrollToTopBtn");
+      if (topBtn) {
+        window.addEventListener("scroll", function() {
+          if (window.pageYOffset > 400) topBtn.classList.add("show");
+          else topBtn.classList.remove("show");
+        });
+        topBtn.addEventListener("click", function() {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
     });
   </script>
-
 </body>
 </html>
