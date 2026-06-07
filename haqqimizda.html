@@ -4,10 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Haqqımızda — CARZON</title>
-  <link rel="icon" type="image/svg+xml" href="Logo.svg">
+ <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='512' height='512'><rect width='512' height='512' fill='%230b1220'/><path d='M360 150 C310 95, 202 95, 152 150 C100 208, 100 304, 152 362 C202 417, 310 417, 360 362' fill='none' stroke='%23ffffff' stroke-width='54' stroke-linecap='round' stroke-linejoin='round'/></svg>">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Haqqımızda səhifəsinə özəl əlavə lüks kart dizaynları */
     .about-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -39,15 +38,107 @@
     .full-width-card {
       grid-column: span 2;
     }
+
+    /* Premium Xəritə Konteyneri */
+    .map-wrapper {
+      grid-column: span 2;
+      margin-top: 16px;
+      background: rgba(17, 26, 46, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 16px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 50px rgba(52, 152, 219, 0.05);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .map-wrapper:hover {
+      border-color: rgba(52, 152, 219, 0.3);
+      transform: translateY(-2px);
+    }
+    .map-header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .map-container {
+      position: relative;
+      width: 100%;
+      height: 450px;
+      border-radius: 14px;
+      overflow: hidden;
+      filter: invert(90%) hue-rotate(180deg) grayscale(20%) contrast(95%);
+    }
+    .map-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Lüks Waze Keçid Düyməsi */
+    .waze-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #33ccff;
+      color: #111a2e;
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(51, 204, 255, 0.2);
+    }
+    .waze-link-btn:hover {
+      background: #2cbbe6;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(51, 204, 255, 0.3);
+    }
+
+    /* MOBİL NAV-BAR VƏ RESPONSIVE OPTİMALLAŞDIRILMASI */
     @media (max-width: 768px) {
-      .about-grid {
-        grid-template-columns: 1fr;
+      .about-grid { grid-template-columns: 1fr; }
+      .full-width-card, .map-wrapper { grid-column: span 1; }
+      .map-container { height: 350px; }
+      .map-header-flex { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .waze-link-btn { width: 100%; justify-content: center; box-sizing: border-box; }
+      
+      .nav-contacts {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
       }
-      .full-width-card {
-        grid-column: span 1;
+
+      .nav-contacts .nav-contact-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #ffffff !important;
+        color: #111a2e !important;
+        padding: 8px 16px !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        border-radius: 10px !important;
+        border: none !important;
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+        transition: all 0.2s ease;
+      }
+
+      .nav-contacts .nav-contact-btn span {
+        display: inline-block !important;
       }
     }
   </style>
+  <script>
+    localStorage.setItem("prevNavIndex", "3");
+  </script>
 </head>
 <body>
 
@@ -55,100 +146,81 @@
     <a href="index.html" class="nav-logo">CARZON</a>
     
     <div class="nav-links" id="navLinks">
-      <a href="index.html#scrollToCalc" class="nav-link">Daşınma</a>
-      <a href="gomruk.html" class="nav-link">Gömrük</a>
-      <a href="haqqimizda.html" class="nav-link nav-link--active">Haqqımızda</a>
+      <a href="index.html" class="nav-link" id="navHomeBtn" data-index="0">Ana Səhifə</a>
+      <a href="index.html#scrollToCalc" class="nav-link" data-index="1">Daşınma</a>
+      <a href="gomruk.html" class="nav-link" data-index="2">Gömrük</a>
+      <a href="haqqimizda.html" class="nav-link nav-link--active" id="navAboutBtn" data-index="3">Haqqımızda</a>
     </div>
     
     <div class="nav-contacts">
-      <button class="nav-contact-btn" id="navContactBtn" style="border: none; cursor: pointer;">Əlaqə</button>
+      <button class="nav-contact-btn" id="navContactBtn"><span>Əlaqə</span></button>
       <button class="hamburger" id="hamburger" aria-label="Menü">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <section class="about-section" style="max-width: 1000px; padding-top: 120px;">
-    <h1>Biz Kimik?</h1>
-    <p class="about-p" style="max-width: 700px; margin: 0 auto 40px;">
+  <section class="about-section" style="max-width: 1000px; padding-top: 140px; margin: 0 auto; padding-left: 20px; padding-right: 20px;">
+    <h1 style="text-align: center;">Biz Kimik?</h1>
+    <p class="about-p" style="max-width: 700px; margin: 0 auto 40px; text-align: center;">
       CARZON, Amerika Birləşmiş Ştatlarının (Copart, IAAI) ən böyük avtomobil hərraclarından nəqliyyat vasitələrinin alınması, təhlükəsiz logistikası və Azərbaycana gətirilərək tam gömrüklənməsi sahəsində ixtisaslaşmış professional tərəfdaşınızdır.
     </p>
 
     <div class="about-grid">
-      
       <div class="about-card">
-        <h2>
-          <span style="color: #3498db;">•</span> Təcrübəmiz
-        </h2>
-        <p>
-          İllərdir loqistika və avtomobil sahəsində qazandığımız təcrübə sayəsində ABŞ daxili daşınmalardan tutmuş, okean aşırı konteyner yükləmələrinə qədər hər bir prosesi mükəmməl şəkildə idarə edirik. Okeanın o tayından Bakı portuna qədər olan bütün çətin və bürokratik mərhələləri sizin adınızdan tam şəffaf idarə edə biləcək komandaya sahibik.
-        </p>
+        <h2><span style="color: #3498db;">•</span> Təcrübəmiz</h2>
+        <p>İllərdir logistika və avtomobil sahəsində qazandığımız təcrübə sayəsində ABŞ daxili daşınmalardan tutmuş, okean aşırı konteyner yükləmələrinə qədər hər bir prosesi mükəmməl şəkildə idarə edirik. Okeanın o tayından Bakı portuna qədər olan bütün çətin və bürokratik mərhələləri sizin adınızdan tam şəffaf idarə edə biləcək komandaya sahibik.</p>
       </div>
 
       <div class="about-card">
-        <h2>
-          <span style="color: #25D366;">•</span> Məqsədimiz
-        </h2>
-        <p>
-          Əsas hədəfimiz, ABŞ-dan avtomobil gətirmək istəyən hər bir şəxsə mürəkkəb logistika və gömrük proseslərini unutdurmaqdır. Müştərilərimizə heç bir gizli xərc çıxarmadan, rəsmi API məlumatlarına və real qiymətlərə əsaslanan dürüst, sürətli və tam güvənli bir avto-loqistika xidməti təqdim etmək bizim ən böyük missiyamızdır.
-        </p>
+        <h2><span style="color: #25D366;">•</span> Məqsədimiz</h2>
+        <p>Əsas hədəfimiz, ABŞ-dan avtomobil gətirmək istəyən hər bir şəxsə mürəkkəb logistika və gömrük proseslərini unutdurmaqdır. Müştərilərimizə heç bir gizli xərc çıxarmadan, rəsmi API məlumatlarına və real qiymətlərə əsaslanan dürüst, sürətli və tam güvənli bir avto-logistika xidməti təqdim etmək bizim ən böyük missiyamızdır.</p>
       </div>
 
       <div class="about-card full-width-card" style="background: rgba(255,255,255,0.02); border-color: rgba(255,255,255,0.08);">
-        <h2 style="justify-content: center; font-size: 24px; margin-bottom: 20px;">
-          <span style="color: #e74c3c;">★</span> Niyə Məhz CARZON?
-        </h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 15px;">
-          Biz sadəcə avtomobil daşımırıq; biz ilk saniyədən avtomobili təhvil alacağınız günə qədər tam şəffaflıq zəmanəti veririk. Doğru ştatlardan doğru portlara optimallaşdırılmış logistik xəritəmiz sayəsində həm vaxta, həm də büdcənizə qənaət edirik. Real vaxt rejimli hesablama alətlərimizlə hər bir qəpiyin hara xərcləndiyini dəqiq bilirsiniz.
-        </p>
+        <h2 style="justify-content: center; font-size: 24px; margin-bottom: 20px;"><span style="color: #e74c3c;">★</span> Niyə Məhz CARZON?</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 15px;">Biz sadəcə avtomobil daşımırıq; biz ilk saniyədən avtomobili təhvil alacağınız günə qədər tam şəffaflıq zəmanəti veririk. Doğru ştatlardan doğru portlara optimallaşdırılmış logistik xəritəmiz sayəsində həm vaxta, həm də büdcənizə qənaət edirik. Real vaxt rejimli hesablama alətlərimizlə hər bir qəpiyin hara xərcləndiyini dəqiq bilirsiniz.</p>
       </div>
 
+      <div class="map-wrapper">
+        <div class="map-header-flex">
+          <h2 style="font-size: 20px; color: #fff; margin-bottom: 0; display: flex; align-items: center; gap: 10px;">
+            <span style="color: #3498db;">📍</span> Ofisimizin Ünvanı
+          </h2>
+          <a href="https://ul.waze.com/ul?ll=40.41340619%2C49.86073136&navigate=yes&zoom=17" target="_blank" class="waze-link-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+            Waze ilə Naviqasiya
+          </a>
+        </div>
+        <div class="map-container">
+          <iframe src="https://maps.google.com/maps?q=40.413406,49.860731&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="contact-section" id="contactSection">
     <div class="contact-grid">
-      
       <a href="https://wa.me/994704444408" target="_blank" class="contact-card wa-card">
-        <div class="card-icon">
-          <img src="Logo/whatsapp.png" alt="WhatsApp" width="36" height="36">
-        </div>
-        <h3>WhatsApp</h3>
-        <p>Canlı Dəstək</p>
+        <div class="card-icon"><img src="Logo/whatsapp.png" alt="WhatsApp" width="36" height="36"></div>
+        <h3>WhatsApp</h3><p>Canlı Dəstək</p>
       </a>
-
       <a href="https://www.instagram.com/carzon.az" target="_blank" class="contact-card insta-card">
-        <div class="card-icon">
-          <img src="Logo/instagram.png" alt="Instagram" width="36" height="36">
-        </div>
-        <h3>Instagram</h3>
-        <p>@carzon.az</p>
+        <div class="card-icon"><img src="Logo/instagram.png" alt="Instagram" width="36" height="36"></div>
+        <h3>Instagram</h3><p>@carzon.az</p>
       </a>
-
       <a href="https://www.tiktok.com/@carzon.az" target="_blank" class="contact-card tiktok-card">
-        <div class="card-icon">
-          <img src="Logo/tiktok.png" alt="TikTok" width="34" height="34">
-        </div>
-        <h3>TikTok</h3>
-        <p>Videolarımız</p>
+        <div class="card-icon"><img src="Logo/tiktok.png" alt="TikTok" width="34" height="34"></div>
+        <h3>TikTok</h3><p>Videolarımız</p>
       </a>
-
       <a href="tel:+994704444408" class="contact-card call-card">
-        <div class="card-icon">
-          <img src="Logo/call.png" alt="Zəng" width="36" height="36">
-        </div>
-        <h3>Zəng Et</h3>
-        <p>+994 70 444 44 08</p>
+        <div class="card-icon"><img src="Logo/call.png" alt="Zəng" width="36" height="36"></div>
+        <h3>Zəng Et</h3><p>+994 70 444 44 08</p>
       </a>
-
       <a href="mailto:info@carzon.az" class="contact-card mail-card">
-        <div class="card-icon">
-          <img src="Logo/mail.png" alt="E-poçt" width="36" height="36">
-        </div>
-        <h3>E-Poçt</h3>
-        <p>info@carzon.az</p>
+        <div class="card-icon"><img src="Logo/mail.png" alt="E-poçt" width="36" height="36"></div>
+        <h3>E-Poçt</h3><p>info@carzon.az</p>
       </a>
-
     </div>
   </section>
 
@@ -156,41 +228,27 @@
     <p>© 2026 CARZON. Bütün hüquqlar qorunur.</p>
   </footer>
 
+  <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Yuxarı qayıt">↑</button>
+
   <a href="https://wa.me/994704444408" target="_blank" class="whatsapp-sticky" aria-label="WhatsApp">
     <img src="Logo/whatsapp-sabit.png" alt="WhatsApp" width="34" height="34">
   </a>
 
   <script src="script.js"></script>
-
   <script>
-    document.getElementById('navContactBtn').addEventListener('click', function() {
-      const target = document.getElementById('contactSection');
-      if (!target) return;
-
-      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - 80;
-      const startPosition = window.pageYOffset;
-      const distance = targetPosition - startPosition;
-      
-      let startTime = null;
-      const duration = 400; // İdeal orta sürət
-
-      function easeOutCubic(t, b, c, d) {
-        t /= d;
-        t--;
-        return c * (t * t * t + 1) + b;
-      }
-
-      function animation(currentTime) {
-        if (startTime === null) startTime = currentTime;
-        const timeElapsed = currentTime - startTime;
-        const run = easeOutCubic(timeElapsed, startPosition, distance, duration);
-        window.scrollTo(0, run);
-        if (timeElapsed < duration) requestAnimationFrame(animation);
-      }
-
-      requestAnimationFrame(animation);
-    });
+    // Haqqımızda səhifəsinə özəl Əlaqə düyməsinin smooth scroll funksiyası
+    const localAboutContactBtn = document.getElementById('navContactBtn');
+    if(localAboutContactBtn) {
+      localAboutContactBtn.addEventListener('click', function() {
+        const contactSec = document.getElementById('contactSection');
+        if(contactSec) {
+          window.scrollTo({
+            top: (contactSec.getBoundingClientRect().top + window.pageYOffset - 90),
+            behavior: 'smooth'
+          });
+        }
+      });
+    }
   </script>
-
 </body>
 </html>
