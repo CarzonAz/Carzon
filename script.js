@@ -90,36 +90,7 @@ window.AUCTION_LOCATIONS = {
 };
 
 // Ştatlar və Regionlar üzrə Tarif Matrisi
-const REGION_TARIFFS = {
-  "NJ": { land: 180, ocean: 650, ins: 35 }, "NY": { land: 190, ocean: 650, ins: 35 },
-  "FL": { land: 220, ocean: 750, ins: 40 }, "GA": { land: 240, ocean: 750, ins: 40 },
-  "TX": { land: 280, ocean: 850, ins: 45 }, "CA": { land: 350, ocean: 950, ins: 50 },
-  "IN": { land: 300, ocean: 800, ins: 50 }, "PA": { land: 200, ocean: 680, ins: 35 },
-  "NC": { land: 210, ocean: 700, ins: 40 }, "SC": { land: 220, ocean: 720, ins: 40 },
-  "AL": { land: 250, ocean: 760, ins: 40 }, "VA": { land: 200, ocean: 670, ins: 35 },
-  "CT": { land: 195, ocean: 660, ins: 35 }, "RI": { land: 190, ocean: 650, ins: 35 },
-  "MD": { land: 185, ocean: 660, ins: 35 }, "MA": { land: 195, ocean: 650, ins: 35 },
-  "DC": { land: 190, ocean: 660, ins: 35 }, "DE": { land: 185, ocean: 650, ins: 35 },
-  "WI": { land: 310, ocean: 820, ins: 50 }, "IL": { land: 300, ocean: 800, ins: 50 },
-  "NH": { land: 200, ocean: 670, ins: 35 }, "TN": { land: 260, ocean: 780, ins: 45 },
-  "OH": { land: 280, ocean: 790, ins: 45 }, "MN": { land: 320, ocean: 850, ins: 50 },
-  "IA": { land: 310, ocean: 830, ins: 50 }, "MS": { land: 260, ocean: 790, ins: 45 },
-  "ME": { land: 210, ocean: 680, ins: 35 }, "LA": { land: 270, ocean: 820, ins: 45 },
-  "NE": { land: 330, ocean: 860, ins: 50 }, "KY": { land: 270, ocean: 790, ins: 45 },
-  "MO": { land: 290, ocean: 810, ins: 45 }, "OK": { land: 290, ocean: 840, ins: 45 },
-  "VT": { land: 200, ocean: 670, ins: 35 }, "AR": { land: 280, ocean: 800, ins: 45 },
-  "WV": { land: 240, ocean: 740, ins: 40 }, "MI": { land: 290, ocean: 780, ins: 45 },
-  "KS": { land: 310, ocean: 840, ins: 50 }, "NM": { land: 340, ocean: 920, ins: 50 },
-  "CO": { land: 350, ocean: 940, ins: 50 }, "SD": { land: 340, ocean: 890, ins: 50 },
-  "WY": { land: 360, ocean: 960, ins: 50 }, "NV": { land: 360, ocean: 960, ins: 50 },
-  "AZ": { land: 350, ocean: 950, ins: 50 }, "UT": { land: 360, ocean: 960, ins: 50 },
-  "WA": { land: 380, ocean: 1050, ins: 55 }, "OR": { land: 380, ocean: 1050, ins: 55 },
-  "ID": { land: 370, ocean: 1000, ins: 55 }, "MT": { land: 380, ocean: 1020, ins: 55 },
-  "AK": { land: 500, ocean: 1500, ins: 70 }, "HI": { land: 450, ocean: 1600, ins: 70 },
-  "ON": { land: 450, ocean: 1100, ins: 60 }, "QC": { land: 480, ocean: 1150, ins: 60 },
-  "AB": { land: 550, ocean: 1300, ins: 65 }, "NB": { land: 490, ocean: 1200, ins: 60 },
-  "NS": { land: 490, ocean: 1200, ins: 60 }
-};
+const REGION_TARIFFS = {};
 
 // ==========================================================================
 // 2. DOMContentLoaded - ALQORİTMLƏRİN İŞƏ DÜŞMƏSİ
