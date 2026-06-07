@@ -4,73 +4,94 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gömrük Kalkulyatoru — CARZON</title>
-  <link rel="icon" type="image/svg+xml" href="Logo.svg">
+ <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='512' height='512'><rect width='512' height='512' fill='%230b1220'/><path d='M360 150 C310 95, 202 95, 152 150 C100 208, 100 304, 152 362 C202 417, 310 417, 360 362' fill='none' stroke='%23ffffff' stroke-width='54' stroke-linecap='round' stroke-linejoin='round'/></svg>">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Mobildə nav-barda hər zaman görünən lüks əlaqə düyməsi və responsiv tənzimləmələr */
+    @media (max-width: 768px) {
+      .nav-contacts {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+      }
+      .nav-contacts .nav-contact-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #ffffff !important;
+        color: #111a2e !important;
+        padding: 8px 16px !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        border-radius: 10px !important;
+        border: none !important;
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+        transition: all 0.2s ease;
+      }
+    }
+  </style>
+  <script>
+    localStorage.setItem("prevNavIndex", "2");
+  </script>
 </head>
 <body>
 
   <nav class="main-nav" id="mainNav">
     <a href="index.html" class="nav-logo">CARZON</a>
-    
     <div class="nav-links" id="navLinks">
-      <a href="index.html#scrollToCalc" class="nav-link">Daşınma</a>
-      <a href="gomruk.html" class="nav-link nav-link--active">Gömrük</a>
-      <a href="haqqimizda.html" class="nav-link">Haqqımızda</a>
+      <a href="index.html" class="nav-link" id="navHomeBtn" data-index="0">Ana Səhifə</a>
+      <a href="index.html#scrollToCalc" class="nav-link" data-index="1">Daşınma</a>
+      <a href="gomruk.html" class="nav-link nav-link--active" id="navCustomsBtn" data-index="2">Gömrük</a>
+      <a href="haqqimizda.html" class="nav-link" data-index="3">Haqqımızda</a>
     </div>
-    
     <div class="nav-contacts">
-      <button class="nav-contact-btn" id="navContactBtn" style="border: none; cursor: pointer;">Əlaqə</button>
+      <button class="nav-contact-btn" id="navContactBtn"><span>Əlaqə</span></button>
       <button class="hamburger" id="hamburger" aria-label="Menü">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <section class="calc-section" style="padding-top: 120px;">
-    <div class="calc-container" style="max-width: 550px;">
+  <section class="calc-section" style="padding-top: 140px; padding-bottom: 60px;">
+    <div class="calc-container">
       <div class="calc-title-badge">
         <h2>Gömrük Hesablanması</h2>
-        <p style="font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 4px;">Rəsmi API standartlarına uyğun xanalar</p>
+        <p style="font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 6px;">DGK rəsmi e-gömrük açıq servisləri əsasında</p>
       </div>
+      
       <form id="customsForm" onsubmit="return false;">
-        
-        <div class="form-group">
-          <label for="ownerType">1. İdxalçı statusu</label>
-          <select id="ownerType">
-            <option value="physical">Fiziki şəxs</option>
-            <option value="legal">Hüquqi şəxs (Şirkət)</option>
-          </select>
-        </div>
+        <h3 style="font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600;">1. Nəqliyyat Vasitəsinin Parametrləri</h3>
 
         <div class="form-group">
-          <label for="vehicleType">2. Nəqliyyat vasitəsinin növü</label>
-          <select id="vehicleType">
-            <option value="car">Minik avtomobili</option>
-            <option value="truck">Yük avtomobili (Sadə)</option>
-            <option value="bus">Avtobus / Mikroavtobus</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="engineType">3. Mühərrik tipi</label>
+          <label for="engineType">Mühərrikin növü *</label>
           <select id="engineType">
-            <option value="petrol">Benzin</option>
-            <option value="diesel">Dizel</option>
-            <option value="hybrid">Hibrid (Plug-in daxil olmaqla)</option>
-            <option value="electric">Elektrikli (EV)</option>
+            <option value="0">Benzin</option>
+            <option value="1">Dizel</option>
+            <option value="2">Hibrid (Benzin + Elektrik)</option>
+            <option value="3">Hibrid (Dizel + Elektrik)</option>
+            <option value="4">Elektrik</option>
+            <option value="5">Plug-in Hibrid</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label for="engineCapacity">4. Mühərrik həcmi (sm³ / kub)</label>
-          <input type="number" id="engineCapacity" placeholder="Məsələn: 2000" min="0">
+          <label for="commerceType">Ticarət növü (İdxal məqsədi) *</label>
+          <select id="commerceType">
+            <option value="1">Şəxsi məqsədli (Fiziki şəxs - Şəxsi istifadə üçün)</option>
+            <option value="0">Kommersiya məqsədli (Hüquqi şəxs - Satış üçün)</option>
+          </select>
         </div>
 
-        <div class="form-group" style="display: flex; gap: 12px;">
+        <div class="form-group">
+          <label for="engine">Mühərrikin həcmi (sm³) *</label>
+          <input type="number" id="engine" placeholder="Məsələn: 2000" min="0">
+        </div>
+
+        <div class="form-group" style="display: flex; gap: 16px;">
           <div style="flex: 1;">
-            <label for="manufactureYear">5. İstehsal ili</label>
+            <label for="manufactureYear">İstehsal ili *</label>
             <select id="manufactureYear">
-              <option value="2026">2026 (Yeni)</option>
+              <option value="2026">2026</option>
               <option value="2025">2025</option>
               <option value="2024">2024</option>
               <option value="2023">2023</option>
@@ -82,27 +103,31 @@
             </select>
           </div>
           <div style="flex: 1;">
-            <label for="manufactureMonth">İstehsal ayı</label>
+            <label for="manufactureMonth">İstehsal ayı *</label>
             <select id="manufactureMonth">
-              <option value="01">Yanvar</option>
-              <option value="02">Fevral</option>
-              <option value="03">Mart</option>
-              <option value="04">Aprel</option>
-              <option value="05">May</option>
-              <option value="06">İyun</option>
-              <option value="07">İyul</option>
-              <option value="08">Avqust</option>
-              <option value="09">Sentyabr</option>
-              <option value="10">Oktyabr</option>
-              <option value="11">Noyabr</option>
-              <option value="12">Dekabr</option>
+              <option value="01">Yanvar</option><option value="02">Fevral</option><option value="03">Mart</option>
+              <option value="04">Aprel</option><option value="05">May</option><option value="06">İyun</option>
+              <option value="07">İyul</option><option value="08">Avqust</option><option value="09">Sentyabr</option>
+              <option value="10">Oktyabr</option><option value="11">Noyabr</option><option value="12">Dekabr</option>
             </select>
           </div>
         </div>
 
+        <h3 style="font-size: 13px; color: rgba(255,255,255,0.7); margin: 36px 0 20px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600;">2. Avtomobilin Qiyməti və Logistika (USD)</h3>
+
         <div class="form-group">
-          <label for="carCost">6. Avtomobilin qiyməti (İnvoys / Alış dəyəri USD $)</label>
-          <input type="number" id="carCost" placeholder="Məsələn: 8500" min="0">
+          <label for="carCost">İnvoys (Alış) qiyməti (USD) *</label>
+          <input type="number" id="carCost" placeholder="Avtomobilin xalis dəyəri" min="0">
+        </div>
+
+        <div class="form-group">
+          <label for="shippingCost">Daşınma xərci (USD) *</label>
+          <input type="number" id="shippingCost" placeholder="Quru və dəniz nəqliyyatı cəmi" min="0">
+        </div>
+
+        <div class="form-group">
+          <label for="otherCost">Digər xərclər (USD)</label>
+          <input type="number" id="otherCost" placeholder="Hərrac rüsumu, sığorta və s. (yoxdursa 0)" min="0" value="0">
         </div>
 
         <button type="button" class="btn-calc" id="calcCustomsBtn">Hesabla</button>
@@ -111,74 +136,46 @@
       <div class="loader" id="loader"></div>
 
       <div class="result-box" id="customsResult">
-        <div class="result-row">
-          <span>Gömrük rüsumu (15%):</span>
-          <span id="dutyCost" style="color: #fff;">0 AZN</span>
-        </div>
-        <div class="result-row">
-          <span>Aksiz vergisi:</span>
-          <span id="exciseCost" style="color: #fff;">0 AZN</span>
-        </div>
-        <div class="result-row">
-          <span>ƏDV (18%):</span>
-          <span id="vatCost" style="color: #fff;">0 AZN</span>
-        </div>
-        <div class="result-row">
-          <span>Xidmət haqqı və vəsiqə:</span>
-          <span id="serviceCost" style="color: #fff;">0 AZN</span>
-        </div>
-        <div class="result-row" style="font-weight: 700; font-size: 16px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px; margin-top: 10px;">
-          <span style="color: #25D366;">YEKUN CƏM:</span>
-          <span id="totalCustomsCost" style="color: #25D366;">0 AZN</span>
+        <h3 style="font-size: 16px; color: #fff; margin-bottom: 16px; text-align: center; letter-spacing: 1px; font-weight: 600;">HESABLANMIŞ RÜSUMLAR</h3>
+        
+        <div id="dutyRowsContainer"></div>
+        
+        <div class="usd-rate" id="usdRate" style="font-size: 13px; font-weight: 600; color: #3498db; text-align: left; margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.05);"></div>
+        
+        <div id="legalNotice" style="font-size: 11px; line-height: 1.5; color: rgba(255,255,255,0.4); text-align: left; margin-top: 8px; font-style: italic;"></div>
+
+        <div class="result-total">
+          <span style="color: #25D366;">Yekun Gömrük Rüsumu</span>
+          <span id="totalCustomsCost" style="color: #25D366; font-weight: 700;">0.00 AZN</span>
         </div>
       </div>
-      <div class="error-box" id="customsError">Xahiş edirik bütün xanaları düzgün doldurun.</div>
+      
+      <div class="error-box" id="customsError"></div>
     </div>
   </section>
 
   <section class="contact-section" id="contactSection">
     <div class="contact-grid">
-      
       <a href="https://wa.me/994704444408" target="_blank" class="contact-card wa-card">
-        <div class="card-icon">
-          <img src="Logo/whatsapp.png" alt="WhatsApp" width="36" height="36">
-        </div>
-        <h3>WhatsApp</h3>
-        <p>Canlı Dəstək</p>
+        <div class="card-icon"><img src="Logo/whatsapp.png" alt="WhatsApp" width="36" height="36"></div>
+        <h3>WhatsApp</h3><p>Canlı Dəstək</p>
       </a>
-
       <a href="https://www.instagram.com/carzon.az" target="_blank" class="contact-card insta-card">
-        <div class="card-icon">
-          <img src="Logo/instagram.png" alt="Instagram" width="36" height="36">
-        </div>
-        <h3>Instagram</h3>
-        <p>@carzon.az</p>
+        <div class="card-icon"><img src="Logo/instagram.png" alt="Instagram" width="36" height="36"></div>
+        <h3>Instagram</h3><p>@carzon.az</p>
       </a>
-
       <a href="https://www.tiktok.com/@carzon.az" target="_blank" class="contact-card tiktok-card">
-        <div class="card-icon">
-          <img src="Logo/tiktok.png" alt="TikTok" width="34" height="34">
-        </div>
-        <h3>TikTok</h3>
-        <p>Videolarımız</p>
+        <div class="card-icon"><img src="Logo/tiktok.png" alt="TikTok" width="34" height="34"></div>
+        <h3>TikTok</h3><p>Videolarımız</p>
       </a>
-
       <a href="tel:+994704444408" class="contact-card call-card">
-        <div class="card-icon">
-          <img src="Logo/call.png" alt="Zəng" width="36" height="36">
-        </div>
-        <h3>Zəng Et</h3>
-        <p>+994 70 444 44 08</p>
+        <div class="card-icon"><img src="Logo/call.png" alt="Zəng" width="36" height="36"></div>
+        <h3>Zəng Et</h3><p>+994 70 444 44 08</p>
       </a>
-
       <a href="mailto:info@carzon.az" class="contact-card mail-card">
-        <div class="card-icon">
-          <img src="Logo/mail.png" alt="E-poçt" width="36" height="36">
-        </div>
-        <h3>E-Poçt</h3>
-        <p>info@carzon.az</p>
+        <div class="card-icon"><img src="Logo/mail.png" alt="E-poçt" width="36" height="36"></div>
+        <h3>E-Poçt</h3><p>info@carzon.az</p>
       </a>
-
     </div>
   </section>
 
@@ -186,41 +183,27 @@
     <p>© 2026 CARZON. Bütün hüquqlar qorunur.</p>
   </footer>
 
+  <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Yuxarı qayıt">↑</button>
+
   <a href="https://wa.me/994704444408" target="_blank" class="whatsapp-sticky" aria-label="WhatsApp">
     <img src="Logo/whatsapp-sabit.png" alt="WhatsApp" width="34" height="34">
   </a>
 
   <script src="script.js"></script>
-
   <script>
-    document.getElementById('navContactBtn').addEventListener('click', function() {
-      const target = document.getElementById('contactSection');
-      if (!target) return;
-
-      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - 80;
-      const startPosition = window.pageYOffset;
-      const distance = targetPosition - startPosition;
-      
-      let startTime = null;
-      const duration = 400; // Sizin bəyəndiyiniz ideal sürət
-
-      function easeOutCubic(t, b, c, d) {
-        t /= d;
-        t--;
-        return c * (t * t * t + 1) + b;
-      }
-
-      function animation(currentTime) {
-        if (startTime === null) startTime = currentTime;
-        const timeElapsed = currentTime - startTime;
-        const run = easeOutCubic(timeElapsed, startPosition, distance, duration);
-        window.scrollTo(0, run);
-        if (timeElapsed < duration) requestAnimationFrame(animation);
-      }
-
-      requestAnimationFrame(animation);
-    });
+    // Gömrük səhifəsinə özəl əlaqə düyməsi ssenarisi
+    const localContactBtn = document.getElementById('navContactBtn');
+    if(localContactBtn) {
+      localContactBtn.addEventListener('click', function() {
+        const contactSec = document.getElementById('contactSection');
+        if(contactSec) {
+          window.scrollTo({
+            top: (contactSec.getBoundingClientRect().top + window.pageYOffset - 90),
+            behavior: 'smooth'
+          });
+        }
+      });
+    }
   </script>
-
 </body>
 </html>
