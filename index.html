@@ -55,7 +55,7 @@
       padding: 0 20px; /* Açılmamışdan qabaq daxili boşluğu sıfırlayırıq */
     }
 
-    /* Hesablaya basdıqda bu sinif aktivləşəcək və qutu rəvan açılacaq */
+    /* Hesablaya basdıqda bu sinif aktivləşəcək və qutu rəvan açılacak */
     .result-box.show {
       max-height: 200px; /* Qutunun daxilindəki kontentə uyğun maksimum hündürlük */
       opacity: 1;
@@ -78,8 +78,9 @@
     <div class="nav-links" id="navLinks">
       <a href="#mainNav" class="nav-link nav-link--active" id="navHomeBtn" data-index="0">Ana Səhifə</a>
       <a href="#scrollToCalc" class="nav-link" id="navShippingBtn" data-index="1">Daşınma</a>
-      <a href="gomruk.html" class="nav-link" data-index="2">Gömrük</a>
-      <a href="haqqimizda.html" class="nav-link" data-index="3">Haqqımızda</a>
+      <a href="təxmin.html" class="nav-link" data-index="2">Ağıllı Hesablama</a>
+      <a href="gomruk.html" class="nav-link" data-index="3">Rəsmi Gömrük</a>
+      <a href="haqqimizda.html" class="nav-link" data-index="4">Haqqımızda</a>
     </div>
     
     <div class="nav-contacts">
@@ -178,182 +179,58 @@
     <img src="Logo/whatsapp-sabit.png" alt="WhatsApp" width="34" height="34">
   </a>
 
+  <script src="logisticData.js"></script>
   <script src="script.js"></script>
   
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // Meydança məlumat bazası
-      const auctionData = {
-        copart: [
-          "NJ - Somerville", "FL - Miami Central", "GA - Savannah", "IN - Indianapolis", "NJ - Glassboro East",
-          "NJ - Trenton", "VA - Richmond East", "FL - Jacksonville North", "PA - Philadelphia", "NC - Gastonia",
-          "SC - North Charleston", "SC - Columbia", "GA - Tifton", "FL - Orlando South", "GA - Fairburn",
-          "GA - Macon", "GA - Augusta", "NJ - Glassboro West", "PA - Philadelphia East", "PA - Philadelphia East-Sublot",
-          "NY - Newburgh", "NC - Mocksville", "SC - Spartanburg", "NC - China Grove", "NC - Concord",
-          "NC - Mebane", "AL - Mobile South", "FL - Tampa South", "NY - Albany", "GA - Atlanta East",
-          "GA - Atlanta North", "GA - Atlanta South", "GA - Atlanta West", "FL - Orlando North", "NC - Lumberton",
-          "NC - Raleigh", "NC - Raleigh North", "ND - Bismarck", "GA - Cartersville", "CT - Hartford",
-          "CT - Hartford Springfield", "NY - Long Island", "TX - Houston", "TX - Houston East", "FL - Punta Gorda South",
-          "PA - Harrisburg", "PA - York Haven", "AL - Dothan", "FL - Tampa North", "DC - Washington DC",
-          "DE - Seaford", "RI - Exeter", "MD - Baltimore", "MD - Baltimore East", "MA - South Boston",
-          "AL - Copart Alabama Ctu", "AL - Birmingham", "AL - Mobile", "AL - Montgomery", "MA - North Boston",
-          "MA - West Warren", "MA - Freetown", "PA - Chambersburg", "FL - Ft. Pierce", "FL - Ocala",
-          "FL - Punta Gorda", "FL - Tallahassee", "FL - West Palm Beach", "WI - Milwaukee North", "IL - Chicago North",
-          "IL - Chicago South", "WI - Appleton", "NH - Candia", "PA - Scranton", "VA - Fredericksburg",
-          "TN - Knoxville", "TN - Memphis", "WI - Madison South", "FL - Miami North", "FL - Miami South",
-          "NY - Syracuse", "OH - Akron", "MN - Minneapolis North", "MN - St. Cloud", "IA - Davenport",
-          "WI - Milwaukee South", "AL - Tanner", "TN - Nashville", "TX - Lufkin", "TX - Waco",
-          "TX - Corpus Christi", "TX - Austin", "TX - Crashedtoys Dallas", "TX - Dallas", "TX - Dallas South",
-          "TX - Ft. Worth", "TX - San Antonio", "TX - Longview", "VA - Danville", "NY - Rochester",
-          "MS - Grenada", "MS - Jackson", "IA - Des Moines", "ME - Lyman", "OH - Dayton",
-          "VA - Hampton", "VA - Richmond", "ME - Windham", "PA - Altoona", "PA - Pittsburgh West",
-          "PA - Pittsburgh North", "PA - Pittsburgh South", "LA - Baton Rouge", "LA - Shreveport", "TX - McAllen",
-          "TX - North Austin", "FL - Clewiston", "IL - Peoria", "IL - Southern Illinois", "IL - Wheeling",
-          "NE - Lincoln", "KY - Earlington", "IN - Cicero", "IN - Dyer", "IN - Fort Wayne",
-          "TX - Abilene", "TX - Amarillo", "MN - Minneapolis", "NY - Buffalo", "OH - Cleveland West",
-          "OH - Columbus", "LA - New Orleans", "OH - Cleveland East", "KY - Lexington East", "KY - Lexington West",
-          "KY - Louisville", "KY - Walton", "MO - Columbia", "OK - Oklahoma City", "OK - Tulsa",
-          "TX - El Paso", "TX - Andrews", "MO - Sikeston", "MO - Springfield", "MO - St. Louis",
-          "VT - Rutland", "AL - Cusseta", "AR - Fayetteville", "AR - Little Rock", "WV - Charleston",
-          "NC - Lagrange", "MI - Detroit", "MI - Kincheloe", "KS - Wichita", "LA - Vinton",
-          "MI - Flint", "MI - Ionia", "MI - Lansing", "MI - Wayland", "NM - Albuquerque",
-          "KS - Kansas City", "CO - Denver", "CO - Denver Central", "CO - Denver South", "IA - Cedar Rapids",
-          "CA - Los Angeles", "CO - Colorado Springs", "SD - Rapid City", "CA - Sun Valley", "CA - Rancho Cucamonga",
-          "CA - Adelanto", "CA - Long Beach", "CA - Mentone", "CA - Van Nuys", "CA - San Bernardino",
-          "CA - Bakersfield", "CA - Hayward", "CA - San Diego", "WY - Casper", "NV - Las Vegas West",
-          "NV - Reno", "NV - 57 Storage", "NV - Las Vegas", "AZ - Phoenix", "CA - Fresno",
-          "CA - So Sacramento", "UT - Ogden", "UT - Salt Lake City", "CA - Martinez", "CA - Antelope",
-          "CA - Sacramento", "CA - Vallejo", "CA - San Jose", "AZ - Tucson", "WA - Graham",
-          "WA - Pasco", "CA - Redding", "OR - Eugene", "OR - Portland North", "WA - Spokane",
-          "ID - Boise", "OR - Portland South", "WA - North Seattle", "AZ - Phoenix North", "WA - Spanaway",
-          "CA - Napa", "MT - Billings", "MT - Helena", "AK - Anchorage", "AK - Anchorage South",
-          "HI - Honolulu"
-        ],
-        iaai: [
-          "GA - Savannah", "NJ - Central New Jersey", "NC - Gastonia", "NY - Albany", "NJ - Englishtown",
-          "SC - Charleston", "FL - Fort Pierce", "AL - Birmingham", "PA - Philadelphia", "SC - Greenville",
-          "KY - Earlington", "RI - Providence", "TX - Houston", "MI - Detroit", "CT - Hartford",
-          "VA - Fredericksburg", "TX - San Antonio-South", "LA - Shreveport", "FL - West Palm Beach", "NJ - Avenel New Jersey",
-          "NJ - Sayreville", "SC - Lexington", "GA - Macon", "GA - Tifton", "NC - Asheville",
-          "TX - Corpus Christi", "NC - Raleigh", "PA - Bridgeport", "NJ - Port Murray", "NJ - Southern New Jersey",
-          "GA - Atlanta", "GA - Atlanta East", "GA - Atlanta North", "GA - Atlanta South", "NC - Greensboro",
-          "NY - Staten Island", "NC - Concord", "NY - Newburgh", "NC - Charlotte", "NC - Wilmington",
-          "NC - High Point", "CT - Hartford-South", "KS - Kansas City", "NY - Long Island", "PA - York Springs",
-          "AL - Dothan", "FL - Fort Myers", "NY - Monticello", "TX - Houston South", "TX - Houston-North",
-          "DE - New Castle", "MD - Dundalk", "MD - Elkton", "MD - Metro DC", "LA - Baton Rouge",
-          "MS - Gulf Coast", "PA - Scranton", "AL - Huntsville", "MS - Jackson", "FL - Jacksonville",
-          "TN - Knoxville", "MA - Taunton", "MA - Templeton", "TN - Chattanooga", "MD - Baltimore",
-          "IL - Lincoln", "MA - Boston - Shirley", "IN - Indianapolis", "NH - Manchester", "CA - North Hollywood",
-          "VA - Northern Virginia", "OK - Oklahoma City", "LA - Lafayette", "FL - Miami-North", "PA - Altoona",
-          "LA - New Orleans", "LA - New Orleans East", "WI - Appleton", "IA - Des Moines", "MN - Minneapolis/St. Paul",
-          "MS - Grenada", "MN - Minneapolis", "VA - Richmond", "IL - Chicago-North", "IL - Chicago-South",
-          "IL - Chicago-West", "IA - Davenport", "VA - Culpeper", "VA - Suffolk", "MI - Grand Rapids",
-          "TX - Austin", "TX - Dallas", "TX - Dallas/Ft Worth", "WI - Milwaukee", "MN - Minneapolis South",
-          "VA - Pulaski", "VA - Roanoke", "NY - Rochester", "NY - Syracuse", "VA - Tidewater",
-          "TX - Fort Worth North", "TX - Longview", "TN - Memphis", "TN - Nashville", "AR - Little Rock",
-          "PA - Pittsburgh", "PA - Pittsburgh-North", "ME - Portland - Gorham", "FL - Tampa", "FL - Tampa North",
-          "ME - Virtual Lane A", "ME - Virtual Lane B", "ME - Virtual Lane C", "IN - Fort Wayne",
-          "CA - Los Angeles South", "NY - Buffalo", "KY - Louisville North", "TX - Abilene", "PA - Erie",
-          "MO - Kansas City East", "TX - McAllen", "St. Cloud", "KY - Bowling Green", "OH - Akron-Canton",
-          "OH - Cincinnati", "OH - Cincinnati-South", "OH - Cleveland", "OH - Columbus", "ME - Online Exclusive",
-          "KY - Paducah", "FL - Pensacola", "KY - Ashland", "TX - Lubbock", "MO - Springfield",
-          "OK - Tulsa", "VT - Burlington", "WV - Buckhannon", "OH - Dayton", "FL - Clearwater",
-          "FL - Orlando", "FL - Orlando-North", "WV - Shady Spring", "AR - Fayetteville", "TX - Permian Basin",
-          "TX - El Paso", "GA - Lake City", "TX - Amarillo", "KS - Wichita", "IL - REC RIDES - Online-Exclusive",
-          "IN - South Bend", "IL - Specialty Division", "IL - St. Louis", "IL - Dream Rides", "MI - Flint",
-          "WI - Portage", "NM - Albuquerque", "CO - Denver East", "CO - Colorado Springs", "Austin North",
-          "NE - Omaha", "CO - Western Colorado", "CA - Los Angeles", "CA - Riverside", "CA - ACE - Carson",
-          "CA - Anaheim", "CA - ACE - Perris", "CA - ACE - Perris 2", "CA - Anaheim Consolidated", "CA - Colton",
-          "CA - Fontana", "CA - High Desert", "CA - Santa Clarita", "CA - San Jose", "CA - San Diego",
-          "SD - Sioux Falls", "NV - Las Vegas", "CA - Fresno", "AZ - Phoenix", "AZ - Tucson",
-          "CA - Fremont", "ND - Fargo", "CA - Sacramento", "CA - East Bay", "UT - Salt Lake City",
-          "NV - Reno", "CA - Stockton", "WY - Casper", "UT - Provo", "WA - Seattle",
-          "OR - Eugene", "Portland", "OR - Portland South", "OR - Portland West", "WA - Spokane",
-          "ID - Boise", "MT - Billings", "MT - Missoula", "AK - Anchorage", "HI - Honolulu"
-        ],
-        manheim: [
-          "NJ - New Jersey", "SC - Lugoff Mobile Auction", "MA - New England", "GA - Georgia", "GA - MyCentralAuction",
-          "NC - North Carolina", "SC - Darlington", "SC - Greer Service Center", "GA - Atlanta", "GA - Rome Auto Auction Powered by Manheim",
-          "GA - Warner Robins", "IL - Chicago", "IL - Sycamore", "IN - Indianapolis", "IN - Louisville",
-          "IA - Iowa", "NC - Statesville", "NC - Wilmington", "FL - St. Pete", "FL - Tampa",
-          "NC - Charlotte", "NC - King Mobile Auction", "FL - Jacksonville", "PA - Philadelphia", "NJ - NY Metro Skyline",
-          "PA - Pennsylvania", "FL - Orlando", "MS - Mississippi", "TN - Nashville", "TX - Houston",
-          "FL - Central Florida", "FL - Daytona Beach", "TX - Texas Hobby", "FL - Lakeland", "FL - Pensacola",
-          "LA - Lafayette", "LA - New Orleans", "PA - Keystone Pennsylvania", "FL - Fort Myers", "MD - Baltimore-Washington",
-          "FL - Fort Lauderdale", "FL - Palm Beach", "NY - Albany", "4 Star Auto Auction", "FL - Hollywood",
-          "TX - Arlington Mobile Auction", "TX - Dallas", "TX - Dallas-Fort Worth", "TX - Hudson Oaks Mobile Auction", "VA - Fredericksburg",
-          "MO - Kansas City", "TX - Park Place Auto Auction", "TX - San Antonio", "VA - Harrisonburg", "VA - Roanoke Mobile Auction",
-          "VA - Virginia Beach", "AR - Little Rock", "TX - Decatur Mobile Auction", "WI - Milwaukee", "MO - St. Louis",
-          "MO - St. Louis Mobile Auction", "MN - Minneapolis", "MN - Northstar Minnesota", "MI - Detroit", "MI - Flint",
-          "OH - Cincinnati", "OH - Cleveland", "OH - Ohio", "PA - Pittsburgh", "PA - Reading Mobile Auction",
-          "NC - Greensboro", "NC - Raleigh", "KS - Olathe Mobile Auction", "TX - El Paso", "GA - Marietta",
-          "NE - Omaha", "PA - Manheim Pennsylvania", "OK - Tulsa", "FL - Melbourne", "NY - Syosset",
-          "VA - Richmond", "KS - Wichita Mobile Auction", "FL - Coral Spring", "WV - Charleston", "CO - Denver",
-          "NM - New Mexico", "CA - Oceanside", "CA - Riverside", "NV - Nevada", "NV - Las Vegas Mobile Auction",
-          "CA - California", "CA - Southern California", "CA - Los Angeles", "UT - Utah", "CA - Fresno",
-          "AZ - Phoenix", "AZ - Tucson", "CA - San Francisco Bay", "WA - Seattle", "WA - Burlington Mobile Auction",
-          "UT - Provo", "OR - Medford Mobile Auction", "OR - Portland", "CA - Tracy"
-        ],
-        canada: [
-          "AB - Calgary", "AB - Edmonton", "NB - Moncton", "NS - Halifax", "ON - Cookstown",
-          "ON - London", "ON - Ottawa", "ON - Toronto", "QC - Montreal"
-        ]
-      };
-
       const auctionSelect = document.getElementById("auctionSelect");
       const locationSelect = document.getElementById("locationSelect");
+      const shippingResult = document.getElementById("shippingResult");
+      const shipCostDisplay = document.getElementById("shipCost");
 
       if (auctionSelect && locationSelect) {
         auctionSelect.addEventListener("change", function() {
           const selectedAuction = this.value;
 
-          if (!selectedAuction) {
+          if (!selectedAuction || !window.logisticAuctionData || !window.logisticAuctionData[selectedAuction]) {
             locationSelect.innerHTML = '<option value="">Əvvəlcə hərrac seçin...</option>';
             locationSelect.disabled = true;
+            if (shippingResult) shippingResult.classList.remove("show");
             return;
           }
 
           let optionsHtml = '<option value="">-- Meydança Seçin --</option>';
-          auctionData[selectedAuction].forEach(function(loc) {
+          Object.keys(window.logisticAuctionData[selectedAuction]).forEach(function(loc) {
             optionsHtml += `<option value="${loc}">${loc}</option>`;
           });
 
           locationSelect.innerHTML = optionsHtml;
           locationSelect.disabled = false;
+          if (shippingResult) shippingResult.classList.remove("show");
         });
-      }
 
-      // HESABLA FUNKSİYASI (İNDİ "SHOW" KLASSINI ƏLAVƏ EDƏRƏK QUTUNU AÇIR)
-      const calcShippingBtn = document.getElementById("calcShippingBtn");
-      const loader = document.getElementById("loader");
-      const shippingResult = document.getElementById("shippingResult");
-      const shipCostSpan = document.getElementById("shipCost");
+        locationSelect.addEventListener("change", function() {
+          const selectedAuction = auctionSelect.value;
+          const selectedLocation = this.value;
 
-      if (calcShippingBtn) {
-        calcShippingBtn.addEventListener("click", function() {
-          if (!auctionSelect.value || !locationSelect.value) {
-            alert("Zəhmət olmasa, əvvəlcə Hərrac və Meydança seçin!");
+          if (!selectedAuction || !selectedLocation || !window.logisticAuctionData[selectedAuction]) {
+            if (shippingResult) shippingResult.classList.remove("show");
             return;
           }
 
-          // Əvvəlki nəticəni tam bağlayırıq
-          if (shippingResult) shippingResult.classList.remove("show");
-          // Çarxı göstəririk
-          if (loader) loader.style.display = "block";
+          const cost = window.logisticAuctionData[selectedAuction][selectedLocation] || 0;
+          
+          if (shipCostDisplay) {
+            shipCostDisplay.textContent = `$${cost}`;
+          }
 
-          setTimeout(function() {
-            if (loader) loader.style.display = "none";
-            
-            // Qiymət yerinə $0 yazırıq
-            if (shipCostSpan) shipCostSpan.innerText = "$0";
-            
-            // CSS `.show` sinfini bura əlavə edərək qutunu görünən edirik
-            if (shippingResult) shippingResult.classList.add("show");
-          }, 800);
+          if (shippingResult) {
+            shippingResult.classList.add("show");
+          }
         });
       }
 
-      // NAV-BAR SLIDE LOGIKASI
       const navLinksContainer = document.querySelector(".nav-links");
       const hamburger = document.getElementById("hamburger");
       const navLinks = document.getElementById("navLinks");
@@ -419,16 +296,6 @@
       initSlidePosition();
       setTimeout(initSlidePosition, 40);
       window.addEventListener("resize", updateSlidePosition);
-
-      if (hamburger && navLinks) {
-        hamburger.addEventListener("click", function() {
-          hamburger.classList.toggle("open");
-          navLinks.classList.toggle("open");
-          if (navLinks.classList.contains("open")) {
-            setTimeout(updateSlidePosition, 50);
-          }
-        });
-      }
 
       function smoothScrollTo(targetId, offset = 80) {
         if (hamburger && navLinks && navLinks.classList.contains("open")) {
