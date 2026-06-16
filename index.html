@@ -4,8 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CARZON — ABŞ Avtomobil Xidməti</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='512' height='512'><rect width='512' height='512' fill='%230b1220'/><path d='M360 150 C310 95, 202 95, 152 150 C100 208, 100 304, 152 362 C202 417, 310 417, 360 362' fill='none' stroke='%23ffffff' stroke-width='54' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="Logo/main-logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="Logo/main-logo.png">
+  
+  <link rel="icon" type="image/png" sizes="192x192" href="Logo/main-logo.png">
+  
+  <link rel="apple-touch-icon" href="Logo/main-logo.png">
+
   <link rel="stylesheet" href="style.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
   <style>
     /* Kənardan gələn zaman sürüşməni ləğv edib, rəvan ağarma (opacity) effekti yaradan lüks CSS sinfi */
     .fade-load .nav-links::before {
@@ -46,23 +58,77 @@
 
     /* KALKULYATOR NƏTİCƏ QUTUSUNUN RƏVAN AÇILMASI ÜÇÜN CSS */
     .result-box {
-      display: block !important; /* Blok quruluşunu saxlayırıq */
+      display: block !important;
       max-height: 0;
       opacity: 0;
       overflow: hidden;
       transition: max-height 0.5s ease-out, opacity 0.4s ease-out, padding 0.4s ease-out;
       margin-top: 0;
-      padding: 0 20px; /* Açılmamışdan qabaq daxili boşluğu sıfırlayırıq */
+      padding: 0 20px;
     }
 
-    /* Hesablaya basdıqda bu sinif aktivləşəcək və qutu rəvan açılacak */
+    /* Hesablaya basdıqda bu sinif aktivləşəcək və qutu rəvan açılacaq */
     .result-box.show {
-      max-height: 200px; /* Qutunun daxilindəki kontentə uyğun maksimum hündürlük */
+      max-height: 200px;
       opacity: 1;
       margin-top: 20px;
       padding: 20px;
     }
+
+    /* SELECT2 PREMİUM QARANLIQ TEMA STİLLƏRİ */
+    .select2-container--default .select2-selection--single {
+      background-color: #111a2e !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      border-radius: 8px !important;
+      height: 48px !important;
+      display: flex !important;
+      align-items: center !important;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+      color: #fff !important;
+      padding-left: 15px !important;
+      line-height: 46px !important;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__arrow {
+      height: 46px !important;
+    }
+    .select2-dropdown {
+      background-color: #111a2e !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      border-radius: 8px !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+    }
+    .select2-search--dropdown {
+      padding: 10px !important;
+    }
+    .select2-container--default .select2-search--dropdown .select2-search__field {
+      background-color: #0b1220 !important;
+      color: #fff !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      border-radius: 6px !important;
+      padding: 8px 12px !important;
+      outline: none !important;
+    }
+    .select2-results__option {
+      color: rgba(255, 255, 255, 0.8) !important;
+      padding: 10px 15px !important;
+    }
+    .select2-container--default .select2-results__option--highlighted[aria-selected] {
+      background-color: #3498db !important;
+      color: #fff !important;
+    }
+    .select2-container--default .select2-results__option[aria-selected=true] {
+      background-color: #1e293b !important;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__placeholder {
+      color: rgba(255, 255, 255, 0.4) !important;
+    }
+    .select2-container--default.select2-container--disabled .select2-selection--single {
+      background-color: #0b1220 !important;
+      opacity: 0.6 !important;
+    }
   </style>
+
   <script>
     if (window.location.hash === "#scrollToCalc") {
       localStorage.setItem("prevNavIndex", "1");
@@ -73,12 +139,12 @@
 <body>
 
   <nav class="main-nav" id="mainNav">
-    <a href="index.html" class="nav-logo">CARZON</a>
+    <a href="index.html" class="nav-logo">CAR<span>ZON</span></a>
     
     <div class="nav-links" id="navLinks">
       <a href="#mainNav" class="nav-link nav-link--active" id="navHomeBtn" data-index="0">Ana Səhifə</a>
       <a href="#scrollToCalc" class="nav-link" id="navShippingBtn" data-index="1">Daşınma</a>
-      <a href="təxmin.html" class="nav-link" data-index="2">Ağıllı Hesablama</a>
+      <a href="agillihesab.html" class="nav-link" data-index="2">Ağıllı Hesablama</a>
       <a href="gomruk.html" class="nav-link" data-index="3">Rəsmi Gömrük</a>
       <a href="haqqimizda.html" class="nav-link" data-index="4">Haqqımızda</a>
     </div>
@@ -111,26 +177,25 @@
   <section class="calc-section" id="scrollToCalc">
     <div class="calc-container">
       <h2 style="text-align: center; margin-bottom: 24px; font-size: 28px;">Daşınma Hesablama</h2>
+      
       <form id="shippingForm" onsubmit="return false;">
-        
         <div class="form-group">
           <label for="auctionSelect">1. Hərrac Seçin</label>
-          <select id="auctionSelect">
+          <select id="auctionSelect" style="width: 100%;">
             <option value="">-- Hərrac Seçin --</option>
             <option value="copart">Copart</option>
             <option value="iaai">IAAI</option>
             <option value="manheim">Manheim</option>
-            <option value="canada">Kanada (Canada)</option>
+            <option value="Kanada (Canada)">Kanada (Canada)</option>
           </select>
         </div>
 
         <div class="form-group">
           <label for="locationSelect">2. Meydança (Location) Seçin</label>
-          <select id="locationSelect" disabled>
+          <select id="locationSelect" style="width: 100%;" disabled>
             <option value="">Əvvəlcə hərrac seçin...</option>
           </select>
         </div>
-
       </form>
 
       <div class="loader" id="loader" style="display: none;"></div>
@@ -181,222 +246,5 @@
 
   <script src="logisticData.js"></script>
   <script src="script.js"></script>
-  
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const auctionSelect = document.getElementById("auctionSelect");
-      const locationSelect = document.getElementById("locationSelect");
-      const shippingResult = document.getElementById("shippingResult");
-      const shipCostDisplay = document.getElementById("shipCost");
-
-      if (auctionSelect && locationSelect) {
-        auctionSelect.addEventListener("change", function() {
-          const selectedAuction = this.value;
-
-          if (!selectedAuction || !window.logisticAuctionData || !window.logisticAuctionData[selectedAuction]) {
-            locationSelect.innerHTML = '<option value="">Əvvəlcə hərrac seçin...</option>';
-            locationSelect.disabled = true;
-            if (shippingResult) shippingResult.classList.remove("show");
-            return;
-          }
-
-          let optionsHtml = '<option value="">-- Meydança Seçin --</option>';
-          Object.keys(window.logisticAuctionData[selectedAuction]).forEach(function(loc) {
-            optionsHtml += `<option value="${loc}">${loc}</option>`;
-          });
-
-          locationSelect.innerHTML = optionsHtml;
-          locationSelect.disabled = false;
-          if (shippingResult) shippingResult.classList.remove("show");
-        });
-
-        locationSelect.addEventListener("change", function() {
-          const selectedAuction = auctionSelect.value;
-          const selectedLocation = this.value;
-
-          if (!selectedAuction || !selectedLocation || !window.logisticAuctionData[selectedAuction]) {
-            if (shippingResult) shippingResult.classList.remove("show");
-            return;
-          }
-
-          const cost = window.logisticAuctionData[selectedAuction][selectedLocation] || 0;
-          
-          if (shipCostDisplay) {
-            shipCostDisplay.textContent = `$${cost}`;
-          }
-
-          if (shippingResult) {
-            shippingResult.classList.add("show");
-          }
-        });
-      }
-
-      const navLinksContainer = document.querySelector(".nav-links");
-      const hamburger = document.getElementById("hamburger");
-      const navLinks = document.getElementById("navLinks");
-      const allLinks = document.querySelectorAll(".nav-link");
-
-      const hasAnchor = window.location.hash === "#scrollToCalc";
-      
-      if (hasAnchor) {
-        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('nav-link--active'));
-        const shipBtn = document.getElementById('navShippingBtn');
-        if (shipBtn) shipBtn.classList.add('nav-link--active');
-      }
-
-      function initSlidePosition() {
-        const activeLink = document.querySelector(".nav-link--active");
-        if (!activeLink || !navLinksContainer) return;
-
-        const containerRect = navLinksContainer.getBoundingClientRect();
-        const activeRect = activeLink.getBoundingClientRect();
-
-        if (window.innerWidth > 768) {
-          navLinksContainer.style.setProperty("--slide-left", `${activeRect.left - containerRect.left}px`);
-          navLinksContainer.style.setProperty("--slide-width", `${activeRect.width}px`);
-        } else {
-          navLinksContainer.style.setProperty("--slide-top", `${activeRect.top - containerRect.top}px`);
-          navLinksContainer.style.setProperty("--slide-height", `${activeRect.height}px`);
-        }
-
-        if (document.documentElement.classList.contains("fade-load")) {
-          setTimeout(() => {
-            document.documentElement.classList.add("fade-load-active");
-            setTimeout(() => {
-              document.documentElement.classList.remove("fade-load", "fade-load-active");
-            }, 400);
-          }, 50);
-        }
-      }
-
-      function updateSlidePosition() {
-        const activeLink = document.querySelector(".nav-link--active");
-        if (!activeLink || !navLinksContainer) return;
-
-        const containerRect = navLinksContainer.getBoundingClientRect();
-        const activeRect = activeLink.getBoundingClientRect();
-
-        if (window.innerWidth > 768) {
-          const leftPosition = activeRect.left - containerRect.left;
-          navLinksContainer.style.setProperty("--slide-left", `${leftPosition}px`);
-          navLinksContainer.style.setProperty("--slide-width", `${activeRect.width}px`);
-        } else {
-          const topPosition = activeRect.top - containerRect.top;
-          navLinksContainer.style.setProperty("--slide-top", `${topPosition}px`);
-          navLinksContainer.style.setProperty("--slide-height", `${activeRect.height}px`);
-        }
-      }
-
-      allLinks.forEach(link => {
-        link.addEventListener("click", function() {
-          localStorage.setItem("prevNavIndex", this.getAttribute("data-index"));
-        });
-      });
-
-      initSlidePosition();
-      setTimeout(initSlidePosition, 40);
-      window.addEventListener("resize", updateSlidePosition);
-
-      function smoothScrollTo(targetId, offset = 80) {
-        if (hamburger && navLinks && navLinks.classList.contains("open")) {
-          hamburger.classList.remove("open");
-          navLinks.classList.remove("open");
-        }
-        const target = document.getElementById(targetId);
-        if (!target) return;
-
-        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-        const startPosition = window.pageYOffset;
-        const distance = targetPosition - startPosition;
-        let startTime = null;
-        const duration = 500;
-
-        function easeOutCubic(t, b, c, d) { t /= d; t--; return c * (t * t * t + 1) + b; }
-        function animation(currentTime) {
-          if (startTime === null) startTime = currentTime;
-          const timeElapsed = currentTime - startTime;
-          const run = easeOutCubic(timeElapsed, startPosition, distance, duration);
-          window.scrollTo(0, run);
-          if (timeElapsed < duration) requestAnimationFrame(animation);
-        }
-        requestAnimationFrame(animation);
-      }
-
-      if (document.getElementById('navContactBtn')) {
-        document.getElementById('navContactBtn').addEventListener('click', function() {
-          smoothScrollTo('contactSection');
-        });
-      }
-      if (document.getElementById('heroScrollBtn')) {
-        document.getElementById('heroScrollBtn').addEventListener('click', function() {
-          smoothScrollTo('scrollToCalc');
-        });
-      }
-      if (document.getElementById('navShippingBtn')) {
-        document.getElementById('navShippingBtn').addEventListener('click', function(e) {
-          e.preventDefault();
-          smoothScrollTo('scrollToCalc');
-          const shipBtn = document.getElementById('navShippingBtn');
-          document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('nav-link--active'));
-          shipBtn.classList.add('nav-link--active');
-          localStorage.setItem("prevNavIndex", "1");
-          updateSlidePosition();
-        });
-      }
-      if (document.getElementById('navHomeBtn')) {
-        document.getElementById('navHomeBtn').addEventListener('click', function(e) {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-          const hBtn = document.getElementById('navHomeBtn');
-          document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('nav-link--active'));
-          hBtn.classList.add('nav-link--active');
-          localStorage.setItem("prevNavIndex", "0");
-          updateSlidePosition();
-        });
-      }
-
-      let isInitialLoad = true;
-      if (hasAnchor) isInitialLoad = false; 
-
-      const homeBtn = document.getElementById('navHomeBtn');
-      const shippingBtn = document.getElementById('navShippingBtn');
-      const calcSection = document.getElementById('scrollToCalc');
-
-      if (calcSection && homeBtn && shippingBtn) {
-        const observerOptions = { root: null, rootMargin: '-50% 0px -50% 0px', threshold: 0 };
-        const observer = new IntersectionObserver(function(entries) {
-          entries.forEach(entry => {
-            if (isInitialLoad) {
-              setTimeout(() => { isInitialLoad = false; }, 600);
-              return;
-            }
-
-            if (entry.isIntersecting) {
-              homeBtn.classList.remove('nav-link--active');
-              shippingBtn.classList.add('nav-link--active');
-              localStorage.setItem("prevNavIndex", "1");
-            } else if (window.pageYOffset < calcSection.offsetTop - 200) {
-              shippingBtn.classList.remove('nav-link--active');
-              homeBtn.classList.add('nav-link--active');
-              localStorage.setItem("prevNavIndex", "0");
-            }
-            updateSlidePosition();
-          });
-        }, observerOptions);
-        observer.observe(calcSection);
-      }
-
-      const topBtn = document.getElementById("scrollToTopBtn");
-      if (topBtn) {
-        window.addEventListener("scroll", function() {
-          if (window.pageYOffset > 400) topBtn.classList.add("show");
-          else topBtn.classList.remove("show");
-        });
-        topBtn.addEventListener("click", function() {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-      }
-    });
-  </script>
 </body>
 </html>

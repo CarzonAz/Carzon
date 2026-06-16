@@ -4,7 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gömrük Kalkulyatoru — CARZON</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='512' height='512'><rect width='512' height='512' fill='%230b1220'/><path d='M360 150 C310 95, 202 95, 152 150 C100 208, 100 304, 152 362 C202 417, 310 417, 360 362' fill='none' stroke='%23ffffff' stroke-width='54' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+  <link rel="icon" type="image/png" sizes="32x32" href="Logo/main-logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="Logo/main-logo.png">
+  
+  <link rel="icon" type="image/png" sizes="192x192" href="Logo/main-logo.png">
+  
+  <link rel="apple-touch-icon" href="Logo/main-logo.png">
   <link rel="stylesheet" href="style.css">
   <style>
     .fade-load .nav-links::before {
@@ -53,7 +58,7 @@
     <div class="nav-links" id="navLinks">
       <a href="index.html" class="nav-link" id="navHomeBtn" data-index="0">Ana Səhifə</a>
       <a href="index.html#scrollToCalc" class="nav-link" data-index="1">Daşınma</a>
-      <a href="təxmin.html" class="nav-link" data-index="2">Ağıllı Hesablama</a>
+      <a href="agillihesab.html" class="nav-link" data-index="2">Ağıllı Hesablama</a>
       <a href="gomruk.html" class="nav-link nav-link--active" id="navCustomsBtn" data-index="3">Rəsmi Gömrük</a>
       <a href="haqqimizda.html" class="nav-link" data-index="4">Haqqımızda</a>
     </div>
@@ -86,17 +91,11 @@
           </select>
         </div>
 
-        <div class="form-group">
-          <label for="commerceType">Ticarət rejimi *</label>
-          <select id="commerceType">
-            <option value="0">Digər Ölkələr (ABŞ, Avropa, Koreya, Çin - Rüsumlu)</option>
-            <option value="1">Azad Ticarət Sazişi (MDB ölkələri istehsalı - Rüsumsuz)</option>
-          </select>
-        </div>
+        <input type="hidden" id="commerceType" value="0">
 
         <div class="form-group">
           <label for="engine">Mühərrikin həcmi (sm³) *</label>
-          <input type="number" id="engine" placeholder="Məsələn: 2000 (Elektrik üçün 0 yazın)" min="0">
+          <input type="number" id="engine" step="any" placeholder="Məs: 1.6 və ya 1597 (Elektrik üçün 0 yazın)" min="0">
         </div>
 
         <div class="form-group" style="display: flex; gap: 16px;">
@@ -153,10 +152,7 @@
           <input type="number" id="shippingCost" placeholder="Logistika taşıma bədəlini əllə daxil edin" min="0">
         </div>
 
-        <div class="form-group">
-          <label for="otherCost">Digər xərclər (USD)</label>
-          <input type="number" id="otherCost" placeholder="Hərrac rüsumu, sığorta və s. (yoxdursa 0)" min="0" value="0">
-        </div>
+        <input type="hidden" id="otherCost" value="0">
 
         <button type="button" class="btn-calc" id="calcCustomsBtn">Gömrüyü Hesabla</button>
       </form>

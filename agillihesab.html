@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ağıllı Maliyyə Təxmini — CARZON</title>
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="Logo/main-logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="Logo/main-logo.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="Logo/main-logo.png">
+  <link rel="apple-touch-icon" href="Logo/main-logo.png">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <style>
+    /* =========================================
+        HAQQIMIZDA SƏHİFƏSİ İLƏ EYNİLƏŞDİRİLMİŞ QLOBAL AYARLAR
+        ========================================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* NAVİQASİYA XƏTASINI ARADAN QALDIRAN ABSOLYUT CSS GÜCÜ */
+    @media (min-width: 769px) {
+      .nav-links .nav-link[data-index="2"].nav-link--active {
+        position: relative !important;
+      }
+      .nav-links a:not([data-index="2"]) {
+        background: transparent !important;
+        color: rgba(255, 255, 255, 0.6) !important;
+      }
+      .nav-links::before {
+        display: none !important; 
+      }
+      .nav-links .nav-link--active {
+        background: #ffffff !important;
+        color: #111a2e !important;
+        border-radius: 30px !important;
+        font-weight: 600 !important;
+        padding: 10px 24px !important;
+        transition: all 0.3s ease !important;
+      }
+    }
+
+    /* Kənardan gələn zaman sürüşməni ləğv edib, rəvan ağarma (opacity) effekti yaradan lüks CSS sinfi */
+    .fade-load .nav-links::before {
+      transition: opacity 0.4s ease-out !important;
+      opacity: 0 !important;
+    }
+    .fade-load-active .nav-links::before {
+      opacity: 1 !important;
+    }
+
+    /* =========================================
+        MOBİL NAV-BAR VƏ RESPONSIVE OPTİMALLAŞDIRILMASI
+        ========================================= */
+    @media (max-width: 768px) {
+      .main-nav {
+        z-index: 9999 !important;
+      }
+      .nav-links.active, .nav-links.open {
+        z-index: 9998 !important;
+      }
+      
+      .nav-contacts {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+      }
+
+      .nav-contacts .nav-contact-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #ffffff !important;
+        color: #111a2e !important;
+        padding: 8px 16px !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        border-radius: 10px !important;
+        border: none !important;
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+        transition: all 0.2s ease;
+      }
+
+      .nav-contacts .nav-contact-btn span {
+        display: inline-block !important;
+      }
+    }
+
+    /* =========================================
+        KART VƏ FORM DİZAYNI (RESPONSIVE FIXED)
+        ========================================= */
+    .calc-title-badge h1 {
+      text-align: center; 
+      font-size: 28px; 
+      color: #fff; 
+      margin-bottom: 10px;
+    }
+    .calc-title-badge p {
+      text-align: center; 
+      color: rgba(255,255,255,0.6); 
+      max-width: 600px; 
+      margin: 0 auto 30px; 
+      font-size: 14px;
+      padding: 0 10px;
+    }
+    .tahmin-card {
+      background: rgba(17, 26, 46, 0.6); 
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 32px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      max-width: 800px;
+      margin: 0 auto 40px auto; 
+      width: 100%;
+    }
+    
+    /* Grid sisteminin xanaları sındırmaması üçün düzəliş */
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    
+    /* Tək qalan geniş xanalar üçün xüsusi sinif */
+    .form-grid-full {
+      grid-column: span 2;
+    }
+
+    .form-grid-compact {
+      margin-bottom: 0;
+      gap: 20px;
+    }
+    .form-group {
+      width: 100%;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    .form-control {
+      width: 100% !important;
+      height: 48px;
+      background-color: rgba(17, 26, 46, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      color: #fff;
+      padding: 0 15px;
+      font-size: 14px;
+      outline: none;
+      display: block;
+    }
+
+    .form-control::-webkit-outer-spin-button,
+    .form-control::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    .form-control[type="number"] {
+      -moz-appearance: textfield;
+    }
+
+    .form-control:focus {
+      border-color: #3498db;
+    }
+    .btn-calc {
+      width: 100%;
+      padding: 15px;
+      background: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 10px;
+    }
+    .btn-calc:hover {
+      background: #2980b9;
+    }
+
+    /* =========================================
+        NƏTİCƏ QUTUSU VƏ DETALLAR
+        ========================================= */
+    .tahmin-loader {
+      display: none;
+      text-align: center;
+      margin: 20px 0;
+      color: #3498db;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .tahmin-error {
+      display: none;
+      background: #e74c3c;
+      color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    .tahmin-result-box {
+      background: rgba(17, 26, 46, 0.4); 
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      display: none;
+    }
+    .tahmin-result-title {
+      font-size: 16px;
+      color: #fff;
+      margin-bottom: 20px;
+      text-align: center;
+      letter-spacing: 1px;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 10px;
+    }
+    .tahmin-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+      flex-wrap: wrap; /* Daşmanın qarşısını alır */
+      gap: 10px;
+    }
+    .tahmin-row strong { color: #fff; text-align: right; }
+    .row-highlight-blue { background: rgba(52, 152, 219, 0.08); }
+    .row-highlight-yellow { background: rgba(241, 196, 15, 0.08); }
+    .text-yellow { color: #f1c40f; font-weight: 600; }
+    
+    .tahmin-total-box {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: center;
+      border: 1px solid rgba(37, 211, 102, 0.2);
+    }
+    .total-title {
+      color: #25D366;
+      font-size: 14px;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 5px;
+    }
+    .total-azn {
+      color: #25D366;
+      font-size: 32px;
+      font-weight: 800;
+      margin: 0;
+    }
+    .total-usd {
+      color: rgba(255,255,255,0.5);
+      font-size: 14px;
+      display: block;
+      margin-top: 5px;
+    }
+    .notice-text {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.4);
+      margin-top: 20px;
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
+    /* =========================================
+        SELECT2 PREMİUM RESPONSİVE STILLƏRİ
+        ========================================= */
+    .select2-container {
+      width: 100% !important; /* Select2-nin qutudan çıxmasını əngəlləyir */
+    }
+    .select2-container--default .select2-selection--single {
+      background-color: rgba(17, 26, 46, 0.8) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      border-radius: 8px !important;
+      height: 48px !important;
+      display: flex !important;
+      align-items: center !important;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+      color: #fff !important;
+      padding-left: 15px !important;
+      padding-right: 30px !important;
+      line-height: 46px !important;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__arrow {
+      height: 46px !important;
+      right: 10px !important;
+    }
+    .select2-dropdown {
+      background-color: #111a2e !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      border-radius: 8px !important;
+      z-index: 99999 !important;
+    }
+    .select2-search--dropdown {
+      padding: 10px !important;
+    }
+    .select2-container--default .select2-search--dropdown .select2-search__field {
+      background-color: #0b1220 !important;
+      color: #fff !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      border-radius: 6px !important;
+      padding: 8px 12px !important;
+    }
+    .select2-results__option {
+      color: rgba(255, 255, 255, 0.8) !important;
+      padding: 10px 15px !important;
+    }
+    .select2-container--default .select2-results__option--highlighted[aria-selected] {
+      background-color: #3498db !important;
+      color: #fff !important;
+    }
+
+    /* =========================================
+        MÜKƏMMƏL RESPONSIVE REJİMLƏRİ (MOBILE/TABLET)
+        ========================================= */
+    .calc-section {
+      max-width: 1000px; 
+      padding-top: 140px; 
+      margin: 0 auto; 
+      padding-left: 20px; 
+      padding-right: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .calc-section { 
+        padding-top: 110px; 
+        padding-left: 15px; 
+        padding-right: 15px; 
+      }
+      .form-grid { 
+        grid-template-columns: 1fr; /* Mobil və planşetdə xanalar alt-alta düşür */
+        gap: 15px; 
+        margin-bottom: 15px;
+      }
+      .form-grid-full {
+        grid-column: span 1;
+      }
+      .form-grid-compact {
+        gap: 15px;
+      }
+      .tahmin-card { 
+        padding: 20px; 
+      }
+      .calc-title-badge h1 { 
+        font-size: 22px !important; 
+      }
+      .total-azn { 
+        font-size: 26px !important; 
+      }
+    }
+
+    @media (max-width: 480px) {
+      .tahmin-card { 
+        padding: 16px; 
+      }
+      .tahmin-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 10px 5px;
+      }
+      .tahmin-row strong { 
+        align-self: flex-end; 
+      }
+      .total-azn {
+        font-size: 22px !important;
+      }
+    }
+  </style>
+
+  <script>
+    localStorage.setItem("prevNavIndex", "2");
+    document.documentElement.classList.add("fade-load");
+  </script>
+</head>
+<body>
+
+  <nav class="main-nav" id="mainNav">
+    <a href="index.html" class="nav-logo">CARZON</a>
+    
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="nav-link" data-index="0">Ana Səhifə</a>
+      <a href="index.html#scrollToCalc" class="nav-link" data-index="1">Daşınma</a>
+      <a href="agillihesab.html" class="nav-link nav-link--active" data-index="2">Ağıllı Hesablama</a>
+      <a href="gomruk.html" class="nav-link" data-index="3">Rəsmi Gömrük</a>
+      <a href="haqqimizda.html" class="nav-link" data-index="4">Haqqımızda</a>
+    </div>
+    
+    <div class="nav-contacts">
+      <button class="nav-contact-btn" id="navContactBtn"><span>Əlaqə</span></button>
+      <button class="hamburger" id="hamburger" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="calc-section">
+    <div class="calc-container">
+      
+      <div class="calc-title-badge">
+        <h1>Ağıllı Hesablama Kalkulyatoru</h1>
+        <p>ABŞ hərraclarından Azərbaycana çatdırılma və rəsmi gömrük xərclərini real vaxt rejimində təxmin edin.</p>
+      </div>
+
+      <div class="tahmin-card">
+        <form id="tahminForm" onsubmit="return false;">
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="tahminAuction">Hərrac Platforması *</label>
+              <select id="tahminAuction" style="width: 100%;">
+                <option value="">-- Hərrac Seçin --</option>
+                <option value="copart">Copart</option>
+                <option value="iaai">IAAI</option>
+                <option value="manheim">Manheim</option>
+                <option value="canada">Kanada (Canada)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="tahminLocation">Meydança / Region *</label>
+              <select id="tahminLocation" style="width: 100%;" disabled>
+                <option value="">Əvvəlcə hərrac seçin...</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="bidPrice">Təxmini Uduş (USD) *</label>
+              <input type="number" id="bidPrice" class="form-control" inputmode="decimal" placeholder="Məsələn: 5000" min="1">
+            </div>
+
+            <div class="form-group">
+              <label for="engineType">Mühərrikin növü *</label>
+              <select id="engineType" class="form-control">
+                <option value="0">Benzin</option>
+                <option value="1">Dizel</option>
+                <option value="2">Qaz (LPG)</option>
+                <option value="3">Hibrid (Benzin + Elektrik)</option>
+                <option value="4">Hibrid (Dizel + Elektrik)</option>
+                <option value="5">Elektrik</option>
+                <option value="6">Plug-in Hibrid</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group form-grid-full">
+              <label for="engine">Mühərrikin həcmi (sm³ və ya Litr) *</label>
+              <input type="number" id="engine" class="form-control" inputmode="decimal" step="any" placeholder="Məs: 1.6 və ya 1597" min="0">
+            </div>
+          </div>
+
+          <div class="form-grid form-grid-compact">
+            <div class="form-group">
+              <label for="manufactureYear">İl *</label>
+              <select id="manufactureYear" class="form-control">
+                <option value="2026">2026</option>
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="manufactureMonth">Ay *</label>
+              <select id="manufactureMonth" class="form-control">
+                <option value="01">Yanvar</option>
+                <option value="02">Fevral</option>
+                <option value="03">Mart</option>
+                <option value="04">Aprel</option>
+                <option value="05">May</option>
+                <option value="06">İyun</option>
+                <option value="07">İyul</option>
+                <option value="08">Avqust</option>
+                <option value="09">Sentyabr</option>
+                <option value="10">Oktyabr</option>
+                <option value="11">Noyabr</option>
+                <option value="12">Dekabr</option>
+              </select>
+            </div>
+          </div>
+
+          <input type="hidden" id="commerceType" value="0">
+
+          <button type="button" class="btn-calc" id="calcTahminBtn">Yekun Qiyməti Hesabla</button>
+        </form>
+
+        <div class="tahmin-loader" id="tahminLoader">
+          <p>Dövlət Gömrük Komitəsinə rəsmi sorğu göndərilir, zəhmət olmasa gözləyin...</p>
+        </div>
+        <div class="tahmin-error" id="tahminError"></div>
+
+        <div class="tahmin-result-box" id="tahminResult">
+          <h3 class="tahmin-result-title">XƏRC MADDƏLƏRİNİN DETALLARI</h3>
+          
+          <div class="tahmin-row">
+            <span>Hərrac Uduş Qiyməti:</span>
+            <strong><span id="resBidUsd">$-</span> (<span id="resBidAzn">- AZN</span>)</strong>
+          </div>
+          <div class="tahmin-row">
+            <span>Hərrac Komissiyası/Vergisi (+):</span>
+            <strong><span id="resFeeUsd">$-</span> (<span id="resFeeAzn">- AZN</span>)</strong>
+          </div>
+          <div class="tahmin-row row-highlight-blue">
+            <span>Xalis İnvoys Qiyməti:</span>
+            <strong><span id="resInvoiceUsd">$-</span> (<span id="resInvoiceAzn">- AZN</span>)</strong>
+          </div>
+          <div class="tahmin-row">
+            <span>ABŞ/Kanada Daxili + Okean Logistikası:</span>
+            <strong><span id="resUsaShipUsd">$-</span> (<span id="resUsaShipAzn">- AZN</span>)</strong>
+          </div>
+          <div class="tahmin-row">
+            <span>Poti Limanından Bakıya Daşınma (Sabit):</span>
+            <strong><span id="resPotiUsd">$-</span> (<span id="resPotiAzn">- AZN</span>)</strong>
+          </div>
+          <div class="tahmin-row row-highlight-yellow">
+            <span class="text-yellow">Dövlət Gömrük Rüsumları:</span>
+            <strong class="text-yellow"><span id="resCustomsAzn">- AZN</span></strong>
+          </div>
+          <div class="tahmin-row">
+            <span>Torpaq Basdı Qiyməti (Sabit):</span>
+            <strong><span id="resTopraqBasdiAzn">- AZN</span></strong>
+          </div>
+          
+          <div class="tahmin-total-box">
+            <span class="total-title">Təxmini Gömrük daxil Bakı təhvil qiyməti</span>
+            <h3 id="totalFinalAzn" class="total-azn">0.00 AZN</h3>
+            <span id="totalFinalUsd" class="total-usd">($0.00)</span>
+          </div>
+
+          <p class="notice-text" id="legalNotice"></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contactSection">
+    <div class="contact-grid">
+      <a href="https://wa.me/994704444408" target="_blank" class="contact-card wa-card">
+        <div class="card-icon"><img src="Logo/whatsapp.png" alt="WhatsApp" width="36" height="36"></div>
+        <h3>WhatsApp</h3><p>Canlı Dəstək</p>
+      </a>
+      <a href="https://www.instagram.com/carzon.az" target="_blank" class="contact-card insta-card">
+        <div class="card-icon"><img src="Logo/instagram.png" alt="Instagram" width="36" height="36"></div>
+        <h3>Instagram</h3><p>@carzon.az</p>
+      </a>
+      <a href="https://www.tiktok.com/@carzon.az" target="_blank" class="contact-card tiktok-card">
+        <div class="card-icon"><img src="Logo/tiktok.png" alt="TikTok" width="34" height="34"></div>
+        <h3>TikTok</h3><p>Videolarımız</p>
+      </a>
+      <a href="tel:+994704444408" class="contact-card call-card">
+        <div class="card-icon"><img src="Logo/call.png" alt="Zəng" width="36" height="36"></div>
+        <h3>Zəng Et</h3><p>+994 70 444 44 08</p>
+      </a>
+      <a href="mailto:info@carzon.az" class="contact-card mail-card">
+        <div class="card-icon"><img src="Logo/mail.png" alt="E-poçt" width="36" height="36"></div>
+        <h3>E-Poçt</h3><p>info@carzon.az</p>
+      </a>
+    </div>
+  </section>
+
+  <footer style="text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.05); font-size: 14px; color: rgba(255,255,255,0.4);">
+    <p>© 2026 CARZON. Bütün hüquqlar qorunur.</p>
+  </footer>
+
+  <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Yuxarı qayıt">↑</button>
+  <a href="https://wa.me/994704444408" target="_blank" class="whatsapp-sticky" aria-label="WhatsApp">
+    <img src="Logo/whatsapp-sabit.png" alt="WhatsApp" width="34" height="34">
+  </a>
+
+  <script src="logisticData.js"></script>
+  <script src="script.js"></script> 
+  <script src="agillihesab.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll(".nav-links .nav-link").forEach(link => {
+        if(link.getAttribute("data-index") !== "2") {
+          link.classList.remove("nav-link--active");
+        } else {
+          link.classList.add("nav-link--active");
+        }
+      });
+
+      const localContactBtn = document.getElementById('navContactBtn');
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+      const navLinksContainer = document.querySelector(".nav-links");
+
+      if (localContactBtn) {
+        localContactBtn.addEventListener('click', function() {
+          if (hamburger && navLinks && (navLinks.classList.contains("open") || navLinks.classList.contains("active"))) {
+            hamburger.classList.remove("open");
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("open");
+            navLinks.classList.remove("active");
+          }
+          const contactSec = document.getElementById('contactSection');
+          if (contactSec) {
+            window.scrollTo({
+              top: (contactSec.getBoundingClientRect().top + window.pageYOffset - 80),
+              behavior: 'smooth'
+            });
+          }
+        });
+      }
+
+      if (navLinksContainer && document.documentElement.classList.contains("fade-load")) {
+        const activeLink = document.querySelector(".nav-link--active");
+        if (activeLink) {
+          const containerRect = navLinksContainer.getBoundingClientRect();
+          const activeRect = activeLink.getBoundingClientRect();
+          if (window.innerWidth > 768) {
+            navLinksContainer.style.setProperty("--slide-left", `${activeRect.left - containerRect.left}px`);
+            navLinksContainer.style.setProperty("--slide-width", `${activeRect.width}px`);
+          } else {
+            navLinksContainer.style.setProperty("--slide-top", `${activeRect.top - containerRect.top}px`);
+            navLinksContainer.style.setProperty("--slide-height", `${activeRect.height}px`);
+          }
+        }
+        setTimeout(() => {
+          document.documentElement.classList.add("fade-load-active");
+          setTimeout(() => {
+            document.documentElement.classList.remove("fade-load", "fade-load-active");
+          }, 400);
+        }, 50);
+      }
+    });
+  </script>
+
+</body>
+</html>

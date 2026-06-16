@@ -48,115 +48,208 @@ document.addEventListener("DOMContentLoaded", function() {
   window.addEventListener("resize", updateSlidePosition);
 
   // ==========================================================================
-  // 🌟 AKTİV SƏHİFƏ VƏ İNDEKS TƏYİNİ SİSTEMİ (XƏTANIN HƏLLİ)
+  // 🌟 AKTİV SƏHİFƏ VƏ İNDEKS TƏYİNİ SİSTEMİ (Ana Səhifə Fix)
   // ==========================================================================
   const currentPath = window.location.pathname;
-  let activeIndex = localStorage.getItem("prevNavIndex");
-
-  allLinks.forEach(link => link.classList.remove("nav-link--active"));
+  const hasAnchor = window.location.hash === "#scrollToCalc";
+  let activeIndex = "0";
 
   if (currentPath.includes("gomruk.html")) {
     activeIndex = "3";
   } else if (currentPath.includes("haqqimizda.html")) {
     activeIndex = "4";
-  } else if (currentPath.includes("t%C9%99xmin.html") || currentPath.includes("təxmin.html")) {
+  } else if (currentPath.includes("t%C9%99xmin.html") || currentPath.includes("təxmin.html") || currentPath.includes("agillihesab.html")) {
     activeIndex = "2";
   } else {
-    if (window.location.hash === "#scrollToCalc") {
+    if (hasAnchor) {
       activeIndex = "1";
-    } else if (!activeIndex || activeIndex === "2" || activeIndex === "3" || activeIndex === "4") {
+    } else {
       activeIndex = "0";
     }
   }
 
+  allLinks.forEach(link => link.classList.remove("nav-link--active"));
   const activeTarget = Array.from(allLinks).find(l => l.getAttribute("data-index") === activeIndex);
   if (activeTarget) {
     activeTarget.classList.add("nav-link--active");
-    setTimeout(updateSlidePosition, 150);
   }
 
+  setTimeout(function() {
+    updateSlidePosition();
+    if (document.documentElement.classList.contains("fade-load")) {
+      document.documentElement.classList.add("fade-load-active");
+      setTimeout(() => {
+        document.documentElement.classList.remove("fade-load", "fade-load-active");
+      }, 400);
+    }
+  }, 50);
+
+  allLinks.forEach(link => {
+    link.addEventListener("click", function() {
+      localStorage.setItem("prevNavIndex", this.getAttribute("data-index"));
+    });
+  });
+
   // ==========================================================================
-  // DAŞINMA KALKULYATORU MEXANİZMİ (index.html) - LOGISTIC DATA BAĞLANTISI
+  // DAŞINMA KALKULYATORU MEXANİZMİ (Select2 Premium & Avto-Fokus İnteqrasiyası)
   // ==========================================================================
   const auctionSelect = document.getElementById("auctionSelect");
   const locationSelect = document.getElementById("locationSelect");
-  const calcShippingBtn = document.getElementById("calcShippingBtn");
-  const loader = document.getElementById("loader");
   const shippingResult = document.getElementById("shippingResult");
+  const shipCostDisplay = document.getElementById("shipCost");
 
-  if (auctionSelect && locationSelect) {
-    auctionSelect.addEventListener("change", function() {
-      const selectedAuction = auctionSelect.value;
-      locationSelect.innerHTML = "";
+  if (typeof jQuery !== 'undefined' && typeof jQuery.fn.select2 !== 'undefined') {
+    jQuery('#auctionSelect').select2({
+      minimumResultsForSearch: -1,
+      width: '100%'
+    });
 
-      if (!selectedAuction) {
-        locationSelect.innerHTML = '<option value="">Əvvəlcə hərrac seçin...</option>';
-        locationSelect.disabled = true;
-        return;
-      }
+    jQuery('#locationSelect').select2({
+      placeholder: "-- Meydança Seçin --",
+      allowClear: true,
+      width: '100%'
+    });
 
-      locationSelect.disabled = false;
-      
-      const locationsData = window.logisticAuctionData ? window.logisticAuctionData[selectedAuction] : null;
-      
-      let initialOption = document.createElement("option");
-      initialOption.value = "";
-      initialOption.text = "-- Meydança Seçin --";
-      locationSelect.appendChild(initialOption);
-
-      if (locationsData) {
-        Object.keys(locationsData).forEach(locName => {
-          let opt = document.createElement("option");
-          opt.value = locationsData[locName]; 
-          opt.text = locName; 
-          locationSelect.appendChild(opt);
-        });
-      }
+    jQuery('#locationSelect').on('select2:open', function() {
+      setTimeout(() => {
+        const searchField = document.querySelector('.select2-search__field');
+        if (searchField) {
+          searchField.focus();
+        }
+      }, 10);
     });
   }
 
-  if (calcShippingBtn) {
-    calcShippingBtn.addEventListener("click", function() {
-      if (!auctionSelect.value || !locationSelect.value) {
-        alert("Zəhmət olmasa həm hərracı, həm də meydançanı seçin.");
+  if (auctionSelect && locationSelect) {
+    jQuery('#auctionSelect').on('change', function() {
+      const selectedAuction = this.value; // Artıq buradan "Kanada (Canada)" gələcək
+
+      if (!selectedAuction || !window.logisticAuctionData || !window.logisticAuctionData[selectedAuction]) {
+        jQuery('#locationSelect').html('<option value="">Əvvəlcə hərrac seçin...</option>').prop('disabled', true).val(null).trigger('change');
+        if (shippingResult) shippingResult.classList.remove("show");
         return;
       }
 
-      if (loader) loader.classList.add("show");
+      let optionsHtml = '<option value=""></option>';
+      Object.keys(window.logisticAuctionData[selectedAuction]).forEach(function(loc) {
+        optionsHtml += `<option value="${loc}">${loc}</option>`;
+      });
+
+      jQuery('#locationSelect').html(optionsHtml).prop('disabled', false).val(null).trigger('change');
       if (shippingResult) shippingResult.classList.remove("show");
+    });
 
-      setTimeout(() => {
-        if (loader) loader.classList.remove("show");
+    jQuery('#locationSelect').on('change', function () {
+      const selectedAuction = auctionSelect.value;
+      const selectedLocation = jQuery(this).val();
 
-        const basePrice = parseFloat(locationSelect.value);
-        const land = basePrice * 0.35;
-        const ocean = basePrice * 0.65;
-        const insurance = (land + ocean) * 0.015;
-        const total = land + ocean + insurance;
+      if (!selectedAuction || !selectedLocation || !window.logisticAuctionData[selectedAuction]) {
+        if (shippingResult) shippingResult.classList.remove("show");
+        return;
+      }
 
-        document.getElementById("shipCost").innerText = `$${total.toFixed(2)}`;
-        document.getElementById("resLandCost").innerText = `$${land.toFixed(2)}`;
-        document.getElementById("resOceanCost").innerText = `$${ocean.toFixed(2)}`;
-        document.getElementById("resInsuranceCost").innerText = `$${insurance.toFixed(2)}`;
+      const cost = window.logisticAuctionData[selectedAuction][selectedLocation] || 0;
+      
+      if (shipCostDisplay) {
+        shipCostDisplay.textContent = `$${cost}`;
+      }
 
-        if (shippingResult) {
-          shippingResult.classList.add("show");
-          const scrollPos = shippingResult.getBoundingClientRect().top + window.pageYOffset - 140;
-          window.scrollTo({ top: scrollPos, behavior: "smooth" });
-        }
-      }, 1200);
+      if (shippingResult) {
+        shippingResult.classList.add("show");
+      }
+
+      jQuery(this).blur();
     });
   }
 
   // ==========================================================================
   // 🔥 RƏSMİ GÖMRÜK HESABLANMASI MEXANİZMİ (gomruk.html)
   // ==========================================================================
+  const engineInputEl = document.getElementById("engine");
+
+  function handleEngineConversion(inputField) {
+    let val = parseFloat(inputField.value) || 0;
+    if (val > 0 && val <= 7) {
+      inputField.value = Math.round((val * 1000) - 3);
+    }
+  }
+
+  if (engineInputEl) {
+    engineInputEl.addEventListener("blur", function() {
+      handleEngineConversion(this);
+    });
+  }
+
+  // 🌟 İSTEHSAL AYI ÜÇÜN KLAVİATURADAN SÜRƏTLİ RƏQƏM SEÇİM MEXANİZMİ
+  const manufactureMonthEl = document.getElementById("manufactureMonth");
+  let monthBuffer = "";
+  let monthTimeout = null;
+
+  if (manufactureMonthEl) {
+    manufactureMonthEl.addEventListener("keydown", function(e) {
+      if (e.key >= "0" && e.key <= "9") {
+        e.preventDefault(); 
+        
+        clearTimeout(monthTimeout);
+        monthBuffer += e.key;
+
+        if (monthBuffer.length > 2) {
+          monthBuffer = e.key;
+        }
+
+        let targetMonthNum = parseInt(monthBuffer, 10);
+        
+        if (targetMonthNum >= 1 && targetMonthNum <= 12) {
+          let formattedValue = targetMonthNum.toString().padStart(2, '0');
+          this.value = formattedValue;
+          this.dispatchEvent(new Event('change')); 
+        }
+
+        monthTimeout = setTimeout(() => {
+          monthBuffer = "";
+        }, 1000);
+      }
+    });
+
+    manufactureMonthEl.addEventListener("blur", function() {
+      monthBuffer = "";
+    });
+  }
+
+  // 🌟 BÜTÜN XANALARDA ENTER-LƏ NÖVBƏTİYƏ KEÇİD SİSTEMİ
+  const customsForm = document.getElementById("customsForm");
+  if (customsForm) {
+    const interactiveElements = Array.from(customsForm.querySelectorAll("input:not([type='hidden']), select"));
+
+    interactiveElements.forEach((element, index) => {
+      element.addEventListener("keydown", function(e) {
+        if (e.key === "Enter") {
+          e.preventDefault(); 
+
+          if (this.id === "engine") {
+            handleEngineConversion(this);
+          }
+
+          const nextElement = interactiveElements[index + 1];
+          if (nextElement) {
+            nextElement.focus(); 
+          } else {
+            const calcBtn = document.getElementById("calcCustomsBtn");
+            if (calcBtn) {
+              calcBtn.click();
+            }
+          }
+        }
+      });
+    });
+  }
+
   const calcCustomsBtn = document.getElementById("calcCustomsBtn");
   if (calcCustomsBtn) {
     calcCustomsBtn.addEventListener("click", async function() {
       const engineType = document.getElementById("engineType").value;
       const commerceType = document.getElementById("commerceType").value;
-      const engineVolume = document.getElementById("engine").value;
+      let engineInput = document.getElementById("engine").value; 
       const manufactureYear = document.getElementById("manufactureYear").value;
       const manufactureMonth = document.getElementById("manufactureMonth").value;
       
@@ -168,13 +261,21 @@ document.addEventListener("DOMContentLoaded", function() {
       const customsResult = document.getElementById("customsResult");
       const loaderCustoms = document.getElementById("loader");
 
-      if (engineVolume === "" && engineType !== "5") {
+      if (engineInput === "" && engineType !== "5") {
         alert("Zəhmət olmasa mühərrik həcmini daxil edin.");
         return;
       }
       if (carCost <= 0) {
         alert("Zəhmət olmasa avtomobilin alış (invoys) qiymətini düzgün daxil edin.");
         return;
+      }
+
+      let engineVolume = parseFloat(engineInput) || 0;
+      if (engineVolume > 0 && engineVolume <= 7) {
+        engineVolume = Math.round((engineVolume * 1000) - 3);
+        if (engineInputEl) engineInputEl.value = engineVolume; 
+      } else {
+        engineVolume = Math.round(engineVolume);
       }
 
       if (customsError) customsError.style.display = "none";
@@ -187,7 +288,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const requestData = {
         autoType: "0", 
         engineType: engineType.toString(),
-        engine: parseInt(engineVolume) || 0,
+        engine: parseInt(engineVolume) || 0, 
         commerceType: commerceType.toString(),
         issueDate: formattedDate,
         price: parseFloat(totalUsdPrice)
@@ -263,8 +364,122 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // ==========================================================================
-  // SCROLL INTERSECTIONS & BACK TO TOP BUTTON
+  // SCROLL ANIMATIONS, NAVIGATION & SCROLL INTERSECTIONS
   // ==========================================================================
+  function smoothScrollTo(targetId, offset = 80) {
+    if (hamburger && navLinks && navLinks.classList.contains("open")) {
+      hamburger.classList.remove("open");
+      navLinks.classList.remove("open");
+    }
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
+    const duration = 500;
+
+    function easeOutCubic(t, b, c, d) { t /= d; t--; return c * (t * t * t + 1) + b; }
+    function animation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const run = easeOutCubic(timeElapsed, startPosition, distance, duration);
+      window.scrollTo(0, run);
+      if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+    requestAnimationFrame(animation);
+  }
+
+  const heroScrollBtn = document.getElementById('heroScrollBtn');
+  if (heroScrollBtn) {
+    heroScrollBtn.addEventListener('click', function() {
+      smoothScrollTo('scrollToCalc');
+    });
+  }
+
+  const navContactBtn = document.getElementById('navContactBtn');
+  if (navContactBtn) {
+    navContactBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      smoothScrollTo('contactSection');
+    });
+  }
+
+  // 🌟 DAŞINMA LİNKİNİN İDARƏ EDİLMƏSİ (DÜZƏLDİLDİ)
+  const navShippingBtn = document.getElementById('navShippingBtn');
+  if (navShippingBtn) {
+    navShippingBtn.addEventListener('click', function(e) {
+      const isIndexPage = currentPath === '/' || currentPath.endsWith('index.html');
+      if (!isIndexPage) {
+        localStorage.setItem("prevNavIndex", "1");
+        return;
+      }
+      
+      e.preventDefault();
+      smoothScrollTo('scrollToCalc');
+      allLinks.forEach(l => l.classList.remove('nav-link--active'));
+      this.classList.add('nav-link--active');
+      localStorage.setItem("prevNavIndex", "1");
+      updateSlidePosition();
+    });
+  }
+
+  // 🌟 ANA SƏHİFƏ LİNKİNİN İDARƏ EDİLMƏSİ
+  const navHomeBtn = document.getElementById('navHomeBtn');
+  if (navHomeBtn) {
+    navHomeBtn.addEventListener('click', function(e) {
+      const isIndexPage = currentPath === '/' || currentPath.endsWith('index.html');
+      if (!isIndexPage) {
+        localStorage.setItem("prevNavIndex", "0");
+        return;
+      }
+
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      allLinks.forEach(l => l.classList.remove('nav-link--active'));
+      this.classList.add('nav-link--active');
+      localStorage.setItem("prevNavIndex", "0");
+      updateSlidePosition();
+    });
+  }
+
+  const calcSection = document.getElementById('scrollToCalc');
+  let isInitialLoad = true; 
+
+  if (calcSection && navHomeBtn && navShippingBtn) {
+    const observerOptions = { root: null, rootMargin: '-40% 0px -40% 0px', threshold: 0 };
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (isInitialLoad) {
+          isInitialLoad = false;
+          return;
+        }
+
+        const isIndexPage = currentPath === '/' || currentPath.endsWith('index.html');
+        if (!isIndexPage) return;
+
+        if (window.pageYOffset < 150) {
+          allLinks.forEach(l => l.classList.remove('nav-link--active'));
+          navHomeBtn.classList.add('nav-link--active');
+          localStorage.setItem("prevNavIndex", "0");
+        } else {
+          if (entry.isIntersecting) {
+            allLinks.forEach(l => l.classList.remove('nav-link--active'));
+            navShippingBtn.classList.add('nav-link--active');
+            localStorage.setItem("prevNavIndex", "1");
+          } else if (window.pageYOffset < calcSection.offsetTop - 300) {
+            allLinks.forEach(l => l.classList.remove('nav-link--active'));
+            navHomeBtn.classList.add('nav-link--active');
+            localStorage.setItem("prevNavIndex", "0");
+          }
+        }
+        updateSlidePosition();
+      });
+    }, observerOptions);
+    observer.observe(calcSection);
+  }
+
   const topBtn = document.getElementById("scrollToTopBtn");
   if (topBtn) {
     window.addEventListener("scroll", function() {
@@ -274,44 +489,5 @@ document.addEventListener("DOMContentLoaded", function() {
     topBtn.addEventListener("click", function() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
-  }
-
-  const localContactBtn = document.getElementById('navContactBtn');
-  if (localContactBtn) {
-    localContactBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      const contactSec = document.getElementById('contactSection');
-      if (contactSec) {
-        const targetPos = contactSec.getBoundingClientRect().top + window.pageYOffset - 90;
-        window.scrollTo({ top: targetPos, behavior: "smooth" });
-      }
-    });
-  }
-
-  const calcSection = document.getElementById('scrollToCalc');
-  if (calcSection) {
-    let isInitialLoad = window.location.hash === '#scrollToCalc' ? false : true;
-    const observerOptions = { root: null, rootMargin: '-50% 0px -50% 0px', threshold: 0 };
-    const observer = new IntersectionObserver(function(entries) {
-      entries.forEach(entry => {
-        if (isInitialLoad) {
-          setTimeout(() => { isInitialLoad = false; }, 600);
-          return;
-        }
-
-        const homeBtn = Array.from(allLinks).find(l => l.getAttribute('href') === 'index.html' || l.getAttribute('href') === '#');
-        const shipBtn = Array.from(allLinks).find(l => l.getAttribute('href') === '#scrollToCalc' || l.getAttribute('href') === 'index.html#scrollToCalc');
-
-        if (entry.isIntersecting && shipBtn) {
-          allLinks.forEach(l => l.classList.remove('nav-link--active'));
-          shipBtn.classList.add('nav-link--active');
-        } else if (window.pageYOffset < calcSection.offsetTop - 200 && homeBtn) {
-          allLinks.forEach(l => l.classList.remove('nav-link--active'));
-          homeBtn.classList.add('nav-link--active');
-        }
-        updateSlidePosition();
-      });
-    }, observerOptions);
-    observer.observe(calcSection);
   }
 });
