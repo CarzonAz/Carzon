@@ -3,7 +3,7 @@
 // Fayl Adı: agillihesab.js
 // ==========================================================================
 
-const TAHMIN_API_URL = "https://wandering-bonus-bcd2.abuzerovniko.workers.dev";
+const TAHMIN_API_URL = "https://bitter-sound-401e.thehashimov.workers.dev/";
 const TAHMIN_AZN_RATE = 1.7000;          // Sabit valyuta məzənnəsi (kurs)
 const SABIT_POTI_TO_BAKU_USD = 350.00;    // Poti - Bakı arası daşınma (sabit)
 const SABIT_TOPRAQ_BASDI_AZN = 300.00;    // Torpaq basdı qiyməti (sabit)
