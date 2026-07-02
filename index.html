@@ -243,6 +243,53 @@
     <img src="Logo/whatsapp-sabit.png" alt="WhatsApp" width="34" height="34">
   </a>
 
+<script>
+    const YOUTUBE_API_KEY = "AIzaSyDX17mS1QGsOJGXnHuAdWfyVR2kzyxS2uY";
+    const PLAYLIST_ID = "UUDjRDQDyXXbpDMlQK1oESTQ"; 
+    const MAX_SHORTS = 6; // Səhifəni yormamaq üçün eyni anda maksimum 6 video gətiririk (Gələn ay 20 video yükləsən belə təmiz qalacaq)
+
+    async function carzonShortsYukle() {
+      const wrapper = document.getElementById("shortsWrapper");
+      const status = document.getElementById("shortsStatus");
+      const url = `https://www.googleapis.com/youtube/v3/playlistItems?key=${YOUTUBE_API_KEY}&playlistId=${PLAYLIST_ID}&part=snippet&maxResults=${MAX_SHORTS}`;
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (data.items && data.items.length > 0) {
+          status.remove();
+          
+          data.items.forEach(item => {
+            const videoId = item.snippet.resourceId.videoId;
+            const shortsLink = `https://www.youtube.com/shorts/${videoId}`;
+
+            const kartHtml = `
+              <div class="shorts-mini-card">
+                <div style="width: 100%; aspect-ratio: 9/16; background: #000;">
+                  <iframe 
+                    src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&rel=0&playsinline=1" 
+                    style="width: 100%; height: 100%; border: none;"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                  </iframe>
+                </div>
+                <div class="shorts-overlay-click" onclick="window.open('${shortsLink}', '_blank')"></div>
+              </div>
+            `;
+            wrapper.innerHTML += kartHtml;
+          });
+        } else {
+          status.innerText = "Hələlik video tapılmadı.";
+        }
+      } catch (error) {
+        console.error("YouTube Error:", error);
+        status.innerText = "Sistem fəaliyyətdədir.";
+      }
+    }
+    document.addEventListener("DOMContentLoaded", carzonShortsYukle);
+  </script>
+  
   <script src="logisticData.js"></script>
   <script src="script.js"></script>
 </body>
