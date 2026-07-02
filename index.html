@@ -4,16 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CARZON — ABŞ Avtomobil Xidməti</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="https://www.car-zon.az/Logo/main-logo.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="https://www.car-zon.az/Logo/main-logo.png">
-  <link rel="shortcut icon" href="https://www.car-zon.az/Logo/main-logo.png" type="image/png">
-  <link rel="apple-touch-icon" href="https://www.car-zon.az/Logo/main-logo.png">    
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.carzon.az/Logo/main-logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://www.carzon.az/Logo/main-logo.png">
+  <link rel="shortcut icon" href="https://www.carzon.az/Logo/main-logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="https://www.carzon.az/Logo/main-logo.png">    
 
   <link rel="stylesheet" href="style.css">
-
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
   <style>
     /* Kənardan gələn zaman sürüşməni ləğv edib, rəvan ağarma (opacity) effekti yaradan lüks CSS sinfi */
@@ -64,7 +61,7 @@
       padding: 0 20px;
     }
 
-    /* Hesablaya basdıqda bu sinif aktivləşəcək və qutu rəvan açılacaq */
+    /* Hesablaya basdıqda bu sinif aktivləşəcək və qutu rəvan açılacak */
     .result-box.show {
       max-height: 200px;
       opacity: 1;
@@ -125,7 +122,7 @@
       opacity: 0.6 !important;
     }
 
-    /* GƏLƏCƏYƏ UYĞUN LÜKS YOUTUBE SHORTS KARUSEL STİLLƏRİ */
+    /* YOUTUBE SHORTS KARUSEL STİLLƏRİ */
     .shorts-scroll-container {
       display: flex;
       gap: 20px;
@@ -148,7 +145,7 @@
     }
     .shorts-mini-card {
       background: #111a2e;
-      flex: 0 0 240px; /* Videolar çoxalsa belə ölçü sabit qalır və yana sürüşür */
+      flex: 0 0 240px;
       border-radius: 16px;
       overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.05);
@@ -259,7 +256,7 @@
 
   <section class="contact-section" id="contactSection">
     <div class="contact-grid">
-      <a href="https://wa.me/994101101516" target="_blank" class="contact-card wa-card">
+      <a href="https://wa.me/994704444408" target="_blank" class="contact-card wa-card">
         <div class="card-icon"><img src="Logo/whatsapp.png" alt="WhatsApp" width="36" height="36"></div>
         <h3>WhatsApp</h3><p>Canlı Dəstək</p>
       </a>
@@ -271,11 +268,11 @@
         <div class="card-icon"><img src="Logo/tiktok.png" alt="TikTok" width="34" height="34"></div>
         <h3>TikTok</h3><p>Videolarımız</p>
       </a>
-      <a href="tel:+994101101516" class="contact-card call-card">
+      <a href="tel:+994704444408" class="contact-card call-card">
         <div class="card-icon"><img src="Logo/call.png" alt="Zəng" width="36" height="36"></div>
         <h3>Zəng Et</h3><p>+994 70 444 44 08</p>
       </a>
-      <a href="mailto:info@car-zon.az" class="contact-card mail-card">
+      <a href="mailto:info@carzon.az" class="contact-card mail-card">
         <div class="card-icon"><img src="Logo/mail.png" alt="E-poçt" width="36" height="36"></div>
         <h3>E-Poçt</h3><p>info@carzon.az</p>
       </a>
@@ -288,62 +285,63 @@
 
   <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Yuxarı qayıt">↑</button>
 
-  <a href="https://wa.me/994101101516" target="_blank" class="whatsapp-sticky" aria-label="WhatsApp">
+  <a href="https://wa.me/994704444408" target="_blank" class="whatsapp-sticky" aria-label="WhatsApp">
     <img src="Logo/whatsapp-sabit.png" alt="WhatsApp" width="34" height="34">
   </a>
 
-<script>
-  // Senin Cloudflare Worker linkin
-  const WORKER_URL = "https://curly-limit-b9d4.thehashimov.workers.dev/"; 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-  async function carzonShortsYukle() {
-    const wrapper = document.getElementById("shortsWrapper");
-    const status = document.getElementById("shortsStatus");
+  <script>
+    // Sənin Cloudflare Worker Linkin
+    const WORKER_URL = "https://curly-limit-b9d4.thehashimov.workers.dev/"; 
 
-    try {
-      // Worker'a gizli güvenli isteği gönderiyoruz
-      const response = await fetch(WORKER_URL);
-      const data = await response.json();
+    async function carzonShortsYukle() {
+      const wrapper = document.getElementById("shortsWrapper");
+      const status = document.getElementById("shortsStatus");
 
-      // Worker'dan gelen ham YouTube verisini kontrol ediyoruz
-      if (data.items && data.items.length > 0) {
-        status.remove();
-        wrapper.innerHTML = ""; // İçeriği temizle
+      try {
+        const response = await fetch(WORKER_URL);
+        const data = await response.json();
 
-        data.items.forEach(item => {
-          // Orijinal YouTube veri şablonunu parçalıyoruz
-          if (item.snippet && item.snippet.resourceId) {
-            const videoId = item.snippet.resourceId.videoId;
-            const shortsLink = `https://www.youtube.com/shorts/${videoId}`;
+        if (data.items && data.items.length > 0) {
+          if (status) status.remove();
+          wrapper.innerHTML = ""; // Mövcud yazını sıfırla
 
-            // Tarayıcıların engellememesi için autoplay=1 ve mute=1 parametrelerini iframe'e gömüyoruz
-            const kartHtml = `
-              <div class="shorts-mini-card">
-                <div style="width: 100%; aspect-ratio: 9/16; background: #000;">
-                  <iframe 
-                    src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&rel=0&playsinline=1" 
-                    style="width: 100%; height: 100%; border: none;"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                  </iframe>
+          data.items.forEach(item => {
+            // Struktur fərqliliyi yaranarsa xəta verməməsi üçün tam zəmanətli oxuma üsulu:
+            if (item.snippet && item.snippet.resourceId) {
+              const videoId = item.snippet.resourceId.videoId;
+              const shortsLink = `https://www.youtube.com/shorts/${videoId}`;
+
+              // URL parametrləri tam köhnə koddakı kimi tənzimləndi (autoplay, mute, loop mütləqdir!)
+              const kartHtml = `
+                <div class="shorts-mini-card">
+                  <div style="width: 100%; aspect-ratio: 9/16; background: #000;">
+                    <iframe 
+                      src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&rel=0&playsinline=1" 
+                      style="width: 100%; height: 100%; border: none;"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen>
+                    </iframe>
+                  </div>
+                  <div class="shorts-overlay-click" onclick="window.open('${shortsLink}', '_blank')"></div>
                 </div>
-                <div class="shorts-overlay-click" onclick="window.open('${shortsLink}', '_blank')"></div>
-              </div>
-            `;
-            wrapper.innerHTML += kartHtml;
-          }
-        });
-      } else {
-        status.innerText = "Hələlik video tapılmadı.";
+              `;
+              wrapper.innerHTML += kartHtml;
+            }
+          });
+        } else {
+          if (status) status.innerText = "Hələlik video tapılmadı.";
+        }
+      } catch (error) {
+        console.error("Worker bağlantı xətası:", error);
+        if (status) status.innerText = "Sistem fəaliyyətdədir.";
       }
-    } catch (error) {
-      console.error("Worker verisi okunurken hata oluştu:", error);
-      status.innerText = "Sistem fəaliyyətdədir.";
     }
-  }
 
-  document.addEventListener("DOMContentLoaded", carzonShortsYukle);
-</script>
+    document.addEventListener("DOMContentLoaded", carzonShortsYukle);
+  </script>
 
   <script src="logisticData.js"></script>
   <script src="script.js"></script>
