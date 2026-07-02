@@ -289,60 +289,6 @@
     <img src="Logo/whatsapp-sabit.png" alt="WhatsApp" width="34" height="34">
   </a>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
-  <script>
-    // Sənin Cloudflare Worker Linkin
-    const WORKER_URL = "https://curly-limit-b9d4.thehashimov.workers.dev/"; 
-
-    async function carzonShortsYukle() {
-      const wrapper = document.getElementById("shortsWrapper");
-      const status = document.getElementById("shortsStatus");
-
-      try {
-        const response = await fetch(WORKER_URL);
-        const data = await response.json();
-
-        if (data.items && data.items.length > 0) {
-          if (status) status.remove();
-          wrapper.innerHTML = ""; // Mövcud yazını sıfırla
-
-          data.items.forEach(item => {
-            // Struktur fərqliliyi yaranarsa xəta verməməsi üçün tam zəmanətli oxuma üsulu:
-            if (item.snippet && item.snippet.resourceId) {
-              const videoId = item.snippet.resourceId.videoId;
-              const shortsLink = `https://www.youtube.com/shorts/${videoId}`;
-
-              // URL parametrləri tam köhnə koddakı kimi tənzimləndi (autoplay, mute, loop mütləqdir!)
-              const kartHtml = `
-                <div class="shorts-mini-card">
-                  <div style="width: 100%; aspect-ratio: 9/16; background: #000;">
-                    <iframe 
-                      src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&rel=0&playsinline=1" 
-                      style="width: 100%; height: 100%; border: none;"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                      allowfullscreen>
-                    </iframe>
-                  </div>
-                  <div class="shorts-overlay-click" onclick="window.open('${shortsLink}', '_blank')"></div>
-                </div>
-              `;
-              wrapper.innerHTML += kartHtml;
-            }
-          });
-        } else {
-          if (status) status.innerText = "Hələlik video tapılmadı.";
-        }
-      } catch (error) {
-        console.error("Worker bağlantı xətası:", error);
-        if (status) status.innerText = "Sistem fəaliyyətdədir.";
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", carzonShortsYukle);
-  </script>
-
   <script src="logisticData.js"></script>
   <script src="script.js"></script>
 </body>
