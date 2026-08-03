@@ -3,10 +3,10 @@
 // Fayl Adı: agillihesab.js
 // ==========================================================================
 
-const TAHMIN_API_URL = "https://bitter-sound-401e.thehashimov.workers.dev/";
+const TAHMIN_API_URL = "https://wandering-bonus-bcd2.abuzerovniko.workers.dev";
 const TAHMIN_AZN_RATE = 1.7000;          // Sabit valyuta məzənnəsi (kurs)
 const SABIT_POTI_TO_BAKU_USD = 350.00;    // Poti - Bakı arası daşınma (sabit)
-const SABIT_TOPRAQ_BASDI_AZN = 300.00;    // Torpaq basdı qiyməti (sabit)
+const SABIT_TOPRAQ_BASDI_AZN = 500.00;    // Torpaq basdı qiyməti (sabit)
 
 /**
  * Rəqəmləri minliklərə ayıran funksiya (Məs: 23224.20 -> 23 224.20)
@@ -16,123 +16,114 @@ function formatMoney(num) {
 }
 
 /**
- * RƏSMİ VERGİ VƏ KOMİSSİYA MEXANİZMİ
+ * carzon_analyzer_user.js-dən köçürülmüş RƏSMİ funksiya:
+ * Bəzi "girdaplı" (round-number) qiymətlərdə hərraclar +0.01 fərqlə fərqli pilləyə keçir.
  */
-function calculateAuctionBuyerFee(auction, price) {
+function getSafeCheckPrice(price) {
+  const sinirDegerler = [5000, 5500, 6000, 6500, 7000, 7500, 8000, 8500, 9000, 10000, 10500, 11000, 11500, 12000, 12500, 15000];
+  return sinirDegerler.includes(price) ? price + 0.01 : price;
+}
+
+/** RƏSMİ COPART Buyer Fee cədvəli (Sedan/Yüngül) — carzon_analyzer_user.js-dən köçürülüb */
+function buyerFeeCopart(lotPrice) {
+  const checkPrice = getSafeCheckPrice(parseFloat(lotPrice) || 0);
+  const fees = [
+    { max: 50, fee: 1 }, { max: 100, fee: 1 }, { max: 200, fee: 25 }, { max: 300, fee: 60 },
+    { max: 350, fee: 85 }, { max: 400, fee: 100 }, { max: 450, fee: 125 }, { max: 500, fee: 135 },
+    { max: 550, fee: 145 }, { max: 600, fee: 155 }, { max: 700, fee: 170 }, { max: 800, fee: 195 },
+    { max: 900, fee: 215 }, { max: 1000, fee: 230 }, { max: 1200, fee: 250 }, { max: 1300, fee: 270 },
+    { max: 1400, fee: 285 }, { max: 1500, fee: 300 }, { max: 1600, fee: 315 }, { max: 1700, fee: 330 },
+    { max: 1800, fee: 350 }, { max: 2000, fee: 390 }, { max: 2400, fee: 415 }, { max: 2500, fee: 425 },
+    { max: 3000, fee: 460 }, { max: 3500, fee: 505 }, { max: 4000, fee: 555 }, { max: 4500, fee: 600 },
+    { max: 5000, fee: 625 }, { max: 5500, fee: 650 }, { max: 6000, fee: 675 }, { max: 6500, fee: 700 },
+    { max: 7000, fee: 720 }, { max: 7500, fee: 755 }, { max: 8000, fee: 775 }, { max: 8500, fee: 800 },
+    { max: 9000, fee: 820 }, { max: 10000, fee: 820 }, { max: 10500, fee: 850 }, { max: 11000, fee: 850 },
+    { max: 11500, fee: 850 }, { max: 12000, fee: 860 }, { max: 12500, fee: 875 }, { max: 15000, fee: 890 }
+  ];
+  for (let i = 0; i < fees.length; i++) {
+    if (checkPrice <= fees[i].max) return fees[i].fee;
+  }
+  return checkPrice * 0.06;
+}
+
+/** RƏSMİ COPART Buyer Fee cədvəli (SUV / Truck / Pickup — Ağır Texnika) — carzon_analyzer_user.js-dən köçürülüb */
+function buyerFeeHeavyVehiclesCopart(lotPrice) {
+  const checkPrice = getSafeCheckPrice(parseFloat(lotPrice) || 0);
+  const fees = [
+    { max: 50, fee: 90 }, { max: 100, fee: 115 }, { max: 200, fee: 165 }, { max: 300, fee: 210 },
+    { max: 350, fee: 235 }, { max: 400, fee: 250 }, { max: 450, fee: 275 }, { max: 500, fee: 300 },
+    { max: 550, fee: 320 }, { max: 600, fee: 330 }, { max: 700, fee: 360 }, { max: 800, fee: 390 },
+    { max: 900, fee: 425 }, { max: 1000, fee: 450 }, { max: 1200, fee: 475 }, { max: 1300, fee: 500 },
+    { max: 1400, fee: 520 }, { max: 1500, fee: 540 }, { max: 1600, fee: 560 }, { max: 1700, fee: 585 },
+    { max: 1800, fee: 610 }, { max: 2000, fee: 635 }, { max: 2400, fee: 670 }, { max: 2500, fee: 700 },
+    { max: 3000, fee: 735 }, { max: 3500, fee: 755 }, { max: 4000, fee: 775 }, { max: 4500, fee: 795 },
+    { max: 5000, fee: 815 }, { max: 5500, fee: 835 }, { max: 6000, fee: 855 }, { max: 6500, fee: 875 },
+    { max: 7000, fee: 885 }, { max: 7500, fee: 895 }, { max: 8000, fee: 920 }, { max: 8500, fee: 940 },
+    { max: 9000, fee: 965 }, { max: 10000, fee: 965 }, { max: 15000, fee: 1030 }
+  ];
+  for (let i = 0; i < fees.length; i++) {
+    if (checkPrice <= fees[i].max) return fees[i].fee;
+  }
+  return checkPrice * 0.06;
+}
+
+/** RƏSMİ İnternet/Live Bid Fee cədvəli (Copart və IAAI hər ikisi üçün ortaq) — carzon_analyzer_user.js-dən köçürülüb */
+function getInternetBidFee(lotPrice) {
+  const checkPrice = parseFloat(lotPrice) || 0;
+  const feeThresholds = [
+    { max: 100, fee: 0 }, { max: 500, fee: 50 }, { max: 1000, fee: 65 },
+    { max: 1500, fee: 85 }, { max: 2000, fee: 95 }, { max: 4000, fee: 110 },
+    { max: 6000, fee: 125 }, { max: 8000, fee: 145 }
+  ];
+  for (let i = 0; i < feeThresholds.length; i++) {
+    if (checkPrice <= feeThresholds[i].max) return feeThresholds[i].fee;
+  }
+  return 160;
+}
+
+/** RƏSMİ IAAI Buyer Fee cədvəli — carzon_analyzer_user.js-dən köçürülüb */
+function buyerFeeIAAI(lotPrice) {
+  const checkPrice = getSafeCheckPrice(parseFloat(lotPrice) || 0);
+  const fees = [
+    { max: 100, fee: 1 }, { max: 200, fee: 25 }, { max: 300, fee: 60 }, { max: 350, fee: 85 },
+    { max: 400, fee: 100 }, { max: 450, fee: 125 }, { max: 500, fee: 135 }, { max: 550, fee: 145 },
+    { max: 600, fee: 155 }, { max: 700, fee: 170 }, { max: 800, fee: 195 }, { max: 900, fee: 215 },
+    { max: 1000, fee: 230 }, { max: 1200, fee: 250 }, { max: 1300, fee: 270 }, { max: 1400, fee: 285 },
+    { max: 1500, fee: 300 }, { max: 1600, fee: 315 }, { max: 1700, fee: 330 }, { max: 1800, fee: 350 },
+    { max: 2000, fee: 370 }, { max: 2400, fee: 390 }, { max: 2500, fee: 425 }, { max: 3000, fee: 460 },
+    { max: 3500, fee: 505 }, { max: 4000, fee: 555 }, { max: 4500, fee: 600 }, { max: 5000, fee: 625 },
+    { max: 5500, fee: 650 }, { max: 6000, fee: 675 }, { max: 6500, fee: 700 }, { max: 7000, fee: 720 },
+    { max: 7500, fee: 755 }, { max: 8000, fee: 775 }, { max: 8500, fee: 800 }, { max: 10000, fee: 820 },
+    { max: 11500, fee: 850 }, { max: 12000, fee: 860 }, { max: 12500, fee: 875 }, { max: 15000, fee: 890 }
+  ];
+  for (let i = 0; i < fees.length; i++) {
+    if (checkPrice <= fees[i].max) return fees[i].fee;
+  }
+  return checkPrice * 0.06;
+}
+
+/**
+ * RƏSMİ VERGİ VƏ KOMİSSİYA MEXANİZMİ
+ * Copart/IAAI hissəsi carzon_analyzer_user.js-dəki window.calculateAuctionBuyerFee
+ * funksiyasından BİRƏBİR köçürülüb (eyni rəsmi cədvəllər). Manheim/Kanada üçün
+ * carzon_analyzer_user.js-də rəsmi cədvəl olmadığından əvvəlki təxmini məntiq saxlanılıb.
+ */
+function calculateAuctionBuyerFee(auction, price, isHeavy = false, isBrokerChecked = false) {
   let totalFee = 0;
   const esnekBeklemePayi = 75.00;
 
   if (auction === "copart") {
-    let buyerFee = 0;
-    if (price <= 49.99) buyerFee = 25.00;
-    else if (price <= 99.99) buyerFee = 45.00;
-    else if (price <= 199.99) buyerFee = 80.00;
-    else if (price <= 299.99) buyerFee = 120.00;
-    else if (price <= 399.99) buyerFee = 120.00;
-    else if (price <= 499.99) buyerFee = 160.00;
-    else if (price <= 549.99) buyerFee = 185.00;
-    else if (price <= 599.99) buyerFee = 185.00;
-    else if (price <= 699.99) buyerFee = 210.00;
-    else if (price <= 799.99) buyerFee = 230.00;
-    else if (price <= 899.99) buyerFee = 250.00;
-    else if (price <= 999.99) buyerFee = 275.00;
-    else if (price <= 1199.99) buyerFee = 325.00;
-    else if (price <= 1299.99) buyerFee = 350.00;
-    else if (price <= 1399.99) buyerFee = 365.00;
-    else if (price <= 1499.99) buyerFee = 380.00;
-    else if (price <= 1599.99) buyerFee = 390.00;
-    else if (price <= 1699.99) buyerFee = 410.00;
-    else if (price <= 1799.99) buyerFee = 420.00;
-    else if (price <= 1999.99) buyerFee = 440.00;
-    else if (price <= 2399.99) buyerFee = 470.00;
-    else if (price <= 2499.99) buyerFee = 480.00;
-    else if (price <= 2999.99) buyerFee = 500.00;
-    else if (price <= 3499.99) buyerFee = 600.00;
-    else if (price <= 3999.99) buyerFee = 675.00;
-    else if (price <= 4499.99) buyerFee = 710.00;
-    else if (price <= 5999.99) buyerFee = 750.00; 
-    else if (price <= 7499.99) buyerFee = 800.00; 
-    else if (price <= 7999.99) buyerFee = 815.00;
-    else if (price <= 9999.99) buyerFee = 840.00; 
-    else if (price <= 14999.99) buyerFee = 850.00; 
-    else buyerFee = price * 0.0725;
-
-    let bidFee = 0;
-    if (price <= 99.99) bidFee = 0;
-    else if (price <= 499.99) bidFee = 49.00;
-    else if (price <= 999.99) bidFee = 59.00;
-    else if (price <= 1499.99) bidFee = 79.00;
-    else if (price <= 1999.99) bidFee = 89.00;
-    else if (price <= 3999.99) bidFee = 99.00;
-    else if (price <= 5999.99) bidFee = 109.00;
-    else if (price <= 7999.99) bidFee = 139.00;
-    else bidFee = 149.00;
-
-    const gateFee = 79.00;
-    const envFee = 15.00;
-
-    totalFee = buyerFee + bidFee + gateFee + envFee + esnekBeklemePayi;
+    // Rəsmi Copart məntiqi: 95 (service) + 15 (env) + 20 (title) + buyerFee + internetFee
+    const buyerFee = isHeavy ? buyerFeeHeavyVehiclesCopart(price) : buyerFeeCopart(price);
+    const internetFee = getInternetBidFee(price);
+    totalFee = 95 + 15 + 20 + buyerFee + internetFee + esnekBeklemePayi;
 
   } else if (auction === "iaai") {
-    let highVolumeFee = 0;
-    if (price <= 99.99) highVolumeFee = 1.00;
-    else if (price <= 199.99) highVolumeFee = 25.00;
-    else if (price <= 299.99) highVolumeFee = 60.00;
-    else if (price <= 349.99) highVolumeFee = 85.00;
-    else if (price <= 399.99) highVolumeFee = 100.00;
-    else if (price <= 449.99) highVolumeFee = 125.00;
-    else if (price <= 499.99) highVolumeFee = 135.00;
-    else if (price <= 549.99) highVolumeFee = 145.00;
-    else if (price <= 599.99) highVolumeFee = 155.00;
-    else if (price <= 699.99) highVolumeFee = 170.00;
-    else if (price <= 799.99) highVolumeFee = 195.00;
-    else if (price <= 899.99) highVolumeFee = 215.00;
-    else if (price <= 999.99) highVolumeFee = 230.00;
-    else if (price <= 1199.99) highVolumeFee = 250.00;
-    else if (price <= 1299.99) highVolumeFee = 270.00;
-    else if (price <= 1399.99) highVolumeFee = 285.00;
-    else if (price <= 1499.99) highVolumeFee = 300.00;
-    else if (price <= 1599.99) highVolumeFee = 315.00;
-    else if (price <= 1699.99) highVolumeFee = 330.00;
-    else if (price <= 1799.99) highVolumeFee = 350.00;
-    else if (price <= 1999.99) highVolumeFee = 370.00;
-    else if (price <= 2399.99) highVolumeFee = 390.00;
-    else if (price <= 2499.99) highVolumeFee = 425.00;
-    else if (price <= 2999.99) highVolumeFee = 460.00;
-    else if (price <= 3499.99) highVolumeFee = 505.00;
-    else if (price <= 3999.99) highVolumeFee = 555.00;
-    else if (price <= 4499.99) highVolumeFee = 600.00;
-    else if (price <= 4999.99) highVolumeFee = 625.00;
-    else if (price <= 5499.99) highVolumeFee = 650.00;
-    else if (price <= 5999.99) highVolumeFee = 675.00;
-    else if (price <= 6499.99) highVolumeFee = 700.00;
-    else if (price <= 6999.99) highVolumeFee = 720.00;
-    else if (price <= 7499.99) highVolumeFee = 755.00;
-    else if (price <= 7999.99) highVolumeFee = 775.00;
-    else if (price <= 8499.99) highVolumeFee = 800.00;
-    else if (price <= 9999.99) highVolumeFee = 820.00;
-    else if (price <= 11499.99) highVolumeFee = 850.00;
-    else if (price <= 11999.99) highVolumeFee = 860.00;
-    else if (price <= 12499.99) highVolumeFee = 875.00;
-    else if (price <= 14999.99) highVolumeFee = 890.00;
-    else highVolumeFee = price * 0.06;
-
-    let liveOnlineFee = 0;
-    if (price <= 99.99) liveOnlineFee = 0;
-    else if (price <= 499.99) liveOnlineFee = 50.00;
-    else if (price <= 99.99) liveOnlineFee = 65.00; 
-    else if (price <= 1499.99) liveOnlineFee = 85.00;
-    else if (price <= 1999.99) liveOnlineFee = 95.00;
-    else if (price <= 3999.99) liveOnlineFee = 110.00;
-    else if (price <= 5999.99) liveOnlineFee = 125.00;
-    else if (price <= 7999.99) liveOnlineFee = 145.00;
-    else liveOnlineFee = 160.00;
-
-    const serviceFee = 95.00;
-    const envFee = 15.00;
-    const titleFee = 20.00;
-
-    totalFee = highVolumeFee + liveOnlineFee + serviceFee + envFee + titleFee + esnekBeklemePayi;
+    // Rəsmi IAAI məntiqi: 95 (service) + 15 (env) + 20 (title) + buyerFee + internetFee (+ 35 broker)
+    const buyerFee = buyerFeeIAAI(price);
+    const internetFee = getInternetBidFee(price);
+    totalFee = 95 + 15 + 20 + buyerFee + internetFee + esnekBeklemePayi;
+    if (isBrokerChecked) totalFee += 35;
 
   } else if (auction === "manheim") {
     let manheimBuyerFee = 0;
@@ -188,6 +179,8 @@ document.addEventListener("DOMContentLoaded", function() {
     engineInput: document.getElementById("engine"),
     engineType: document.getElementById("engineType"),
     bidPrice: document.getElementById("bidPrice"),
+    vehicleBodyType: document.getElementById("vehicleBodyType"),
+    iaaiBrokerFee: document.getElementById("iaaiBrokerFee"),
     manufactureYear: document.getElementById("manufactureYear"),
     manufactureMonth: document.getElementById("manufactureMonth"),
     commerceType: document.getElementById("commerceType"),
