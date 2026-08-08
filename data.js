@@ -7361,8 +7361,8 @@ const carData = {
           "name": "2017 II Restyling (3.0 V6 Twin-Turbo)",
           "type": "Sedan",
           "fuel": "Benzin",
-          "minPrice": 22000,
-          "maxPrice": 29000,
+          "minPrice": 28000,
+          "maxPrice": 36000,
           "image": "images/cars/Lincoln_MKZ_1_1786212131104.webp"
         }
       ]
