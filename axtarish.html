@@ -808,14 +808,23 @@
     }
 
     function openDirectBidCars(brand, model, gen, engine, type) {
-      const yearMatch = gen ? gen.match(/\b((?:19|20)\d{2})\b/g) : null;
-      const yFrom = yearMatch ? yearMatch[0] : "1900";
-      const yTo = yearMatch ? (yearMatch[1] || yearMatch[0]) : "2027";
-      const fullQuery = encodeURIComponent(`${brand} ${model}`).replace(/%20/g, "+");
-      let url = `https://bid.cars/en/search/results?search-type=typing&query=${fullQuery}&year-from=${yFrom}&year-to=${yTo}&auction-type=All`;
-      if (engine && parseFloat(engine) > 0) url += `&engine-size-to=${parseFloat(engine)}`;
-      window.open(url, '_blank');
-    }
+  const yearMatch = gen ? gen.match(/\b((?:19|20)\d{2})\b/g) : null;
+  const yFrom = yearMatch ? yearMatch[0] : "1900";
+  const yTo = yearMatch ? (yearMatch[1] || yearMatch[0]) : "2027";
+  const fullQuery = encodeURIComponent(`${brand} ${model}`).replace(/%20/g, "+");
+  
+  // Əsas URL strukturu
+  let url = `https://bid.cars/en/search/results?search-type=typing&query=${fullQuery}&year-from=${yFrom}&year-to=${yTo}&auction-type=All`;
+  
+  // Mühərrik həcmi varsa, həm FROM, həm TO parametrlərini əlavə edirik
+  if (engine && parseFloat(engine) > 0) {
+    const engVal = parseFloat(engine);
+    url += `&engine-size-from=${engVal}&engine-size-to=${engVal}`;
+  }
+  
+  window.open(url, '_blank');
+}
+
 
     function openDirectGoogle(brand, model, gen) {
       const query = encodeURIComponent(`${brand} ${model} ${gen} USA`);
