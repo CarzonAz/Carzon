@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CARZON - Avtomobil Axtarış Və Büdcə Portalı</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    /* RESET & CORE FIXES */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* NAV LIVE SEARCH */
+    .main-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      z-index: 1000;
+      padding: 12px 0;
+      height: 70px;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 1.25rem;
+      text-decoration: none;
+      color: #0f172a;
+    }
+
+    .nav-search-box {
+      position: relative;
+      flex: 1;
+      max-width: 440px;
+      margin: 0 15px;
+    }
+
+    .nav-search-box input {
+      width: 100%;
+      height: 42px;
+      padding: 0 38px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 21px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #0f172a;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+
+    .nav-search-box input:focus {
+      background: #ffffff;
+      border-color: #2563eb;
+      box-shadow: 0 0 12px rgba(37, 99, 235, 0.15);
+    }
+
+    .nav-search-box .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #64748b;
+      width: 18px;
+      height: 18px;
+      pointer-events: none;
+    }
+
+    .nav-search-box .clear-btn {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #64748b;
+      cursor: pointer;
+      display: none;
+      padding: 4px;
+      border-radius: 50%;
+    }
+
+    .search-page-section {
+      max-width: 1200px;
+      margin: 110px auto 40px auto !important;
+      padding: 0 16px;
+    }
+
+    .hero-header {
+      text-align: center;
+      margin-bottom: 25px !important;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px !important;
+      font-size: 0.85rem !important;
+      margin-bottom: 10px !important;
+      background: #eff6ff;
+      color: #2563eb;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .hero-title {
+      font-size: 2rem !important;
+      font-weight: 800;
+      margin-bottom: 6px !important;
+      color: #0f172a;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem !important;
+      color: #64748b;
+    }
+
+    /* SEARCH CARDS & FORM STYLES */
+    .search-mode-selector {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .mode-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #64748b;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .mode-btn.active-budget {
+      background: #10b981;
+      color: #ffffff;
+      border-color: #10b981;
+    }
+
+    .mode-btn.active-brand {
+      background: #8b5cf6;
+      color: #ffffff;
+      border-color: #8b5cf6;
+    }
+
+    .mode-btn.active-param {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+    }
+
+    .search-card-wrapper {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      border: 1px solid #e2e8f0;
+    }
+
+    .search-card {
+      display: none;
+    }
+
+    .search-card.active {
+      display: block;
+    }
+
+    .budget-input-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 16px;
+      align-items: end;
+      margin-top: 15px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .full-select,
+    .input-with-icon input {
+      width: 100%;
+      height: 44px;
+      padding-left: 55px !important;
+      /* Dəyər yazıldıqda AZN yazısının üstünə düşməməsi üçün soldan məsafə */
+      padding-right: 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .input-with-icon {
+      position: relative;
+    }
+
+    .currency-tag {
+      position: absolute;
+      left: 14px;
+      /* Sağ yerinə sola keçirildi */
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+
+    .btn-budget-search {
+      height: 44px;
+      padding: 0 24px;
+      background: #10b981;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+
+    .btn-budget-search:hover {
+      opacity: 0.95;
+    }
+
+    /* GRID STİLİ */
+    .body-types-grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)) !important;
+      gap: 16px !important;
+      margin-top: 25px !important;
+      margin-bottom: 30px !important;
+      align-items: stretch !important;
+      width: 100% !important;
+    }
+
+    .body-type-card {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 20px 12px !important;
+      background: #ffffff !important;
+      border: 1.5px solid #e2e8f0 !important;
+      border-radius: 16px !important;
+      cursor: pointer !important;
+      transition: all 0.25s ease !important;
+      text-align: center !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02) !important;
+      margin: 0 !important;
+      width: 100% !important;
+    }
+
+    .body-type-card:hover,
+    .body-type-card.active {
+      border-color: #2563eb !important;
+      background: #f8fafc !important;
+      transform: translateY(-3px) !important;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.12) !important;
+    }
+
+    .body-type-card .body-icon {
+      width: 44px;
+      height: 44px;
+      background: #eff6ff;
+      color: #2563eb;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .body-type-card .body-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .body-type-card .body-count {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #64748b;
+      background: #f1f5f9;
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+
+    /* MODEL CARDS GRID */
+    .compact-models-grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+      gap: 20px !important;
+      margin-top: 20px !important;
+      width: 100% !important;
+    }
+
+    .compact-car-card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* QARA ÇƏRÇİVƏ PROBLEMİNİN HƏLLİ - FON AĞA DƏYİŞDİRİLDİ */
+    .compact-img-box {
+      height: 190px !important;
+      position: relative;
+      background: #ffffff !important;
+      border-bottom: 1px solid #e2e8f0;
+      overflow: hidden;
+    }
+
+    .compact-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .compact-fuel-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(15, 23, 42, 0.75);
+      color: #ffffff;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      backdrop-filter: blur(4px);
+    }
+
+    .compact-info-box {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .compact-brand-title {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #0f172a;
+    }
+
+    .compact-sub-info {
+      font-size: 0.82rem;
+      color: #64748b;
+      margin: 6px 0 12px 0;
+    }
+
+    .compact-price {
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: #10b981;
+      margin-bottom: 14px;
+    }
+
+    .compact-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .btn-compact-bid,
+    .btn-compact-google {
+      padding: 8px;
+      border-radius: 8px;
+      border: none;
+      font-weight: 700;
+      font-size: 0.8rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .btn-compact-bid {
+      background: #eff6ff;
+      color: #2563eb;
+    }
+
+    .btn-compact-google {
+      background: #f1f5f9;
+      color: #475569;
+    }
+
+    .engine-filter-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .engine-btn-group {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .engine-filter-btn {
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #475569;
+      cursor: pointer;
+    }
+
+    .engine-filter-btn.active {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+    }
+
+    @media (max-width: 768px) {
+      .budget-input-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .body-types-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)) !important;
+      }
+
+      .search-page-section {
+        margin-top: 90px !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="main-nav" id="mainNav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <i data-lucide="car-front"></i>
+        <span>CAR<b>ZON</b></span>
+      </a>
+      <!-- GLOBAL LIVE SEARCH -->
+      <div class="nav-search-box">
+        <i data-lucide="search" class="search-icon"></i>
+        <input type="text" id="globalSearchInput" placeholder="Model, marka və ya il daxil edin..."
+          oninput="handleGlobalSearch(this.value)">
+        <button class="clear-btn" id="btnClearSearch" onclick="clearGlobalSearch()">
+          <i data-lucide="x" style="width:16px; height:16px;"></i>
+        </button>
+      </div>
+      <div class="nav-contacts">
+        <a href="#contactSection" class="nav-contact-btn" id="navContactBtn"
+          style="text-decoration:none; font-weight:700; color:#2563eb; display:flex; align-items:center; gap:6px;">
+          <i data-lucide="phone-call"></i>
+          <span>Əlaqə</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN SEARCH SECTION -->
+  <section class="search-page-section">
+    <!-- HERO HEADER -->
+    <div class="hero-header">
+      <div class="hero-badge">
+        <i data-lucide="sparkles"></i>
+        <span>Carzon Ağıllı Avtomobil Seçimi</span>
+      </div>
+      <h1 class="hero-title">Xəyalınızdakı Avtomobili Tapın</h1>
+      <p class="hero-subtitle">Büdcənizə və ya istədiyiniz parametrlərə uyğun ən dəqiq həllər</p>
+    </div>
+
+    <!-- SEARCH MODE SELECTOR -->
+    <div class="search-mode-selector">
+      <button class="mode-btn active-budget" id="btnModeBudget" onclick="switchSearchMode('budget')">
+        <i data-lucide="wallet"></i>
+        <span>Büdcəyə Görə</span>
+      </button>
+
+      <!-- ƏLAVƏ EDİLƏN REJİM: MARKA VƏ MÜHƏRRİKƏ GÖRƏ -->
+      <button class="mode-btn" id="btnModeBrand" onclick="switchSearchMode('brand')">
+        <i data-lucide="car"></i>
+        <span>Marka və Mühərrikə Görə</span>
+      </button>
+
+      <button class="mode-btn" id="btnModeParam" onclick="switchSearchMode('param')">
+        <i data-lucide="sliders-horizontal"></i>
+        <span>Parametrlərə Görə</span>
+      </button>
+    </div>
+
+    <!-- SEARCH CARDS CONTAINER -->
+    <div class="search-card-wrapper">
+
+      <!-- 1. BUDGET SEARCH -->
+      <div class="search-card active" id="budgetSearchCard">
+        <div class="search-title-badge">
+          <div>
+            <h2 style="margin:0; font-size:1.2rem;">Büdcəyə Görə Axtarış</h2>
+            <p style="margin:4px 0 0 0; color:#64748b; font-size:0.85rem;">Mühərrik növü və maksimum büdcənizi (AZN)
+              daxil edin</p>
+          </div>
+        </div>
+        <div class="budget-input-wrapper">
+          <div class="form-group">
+            <label for="budgetFuelTypeSelect">
+              <i data-lucide="fuel"></i> 1. Mühərrik Növü
+            </label>
+            <select id="budgetFuelTypeSelect" class="full-select">
+              <option value="">-- Bütün Mühərrik Növləri --</option>
+              <option value="Benzin">Benzin</option>
+              <option value="Dizel">Dizel</option>
+              <option value="Hybrid">Hibrid (HEV)</option>
+              <option value="Plug-in Hybrid">Plug-in Hibrid (PHEV)</option>
+              <option value="Electric">Elektrik (EV)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="userBudgetAZN">
+              <i data-lucide="coins"></i> 2. Maksimum Büdcəniz (AZN)
+            </label>
+            <div class="input-with-icon">
+              <input type="number" id="userBudgetAZN" placeholder="Məsələn: 22000"
+                onkeypress="handleBudgetEnter(event)">
+              <span class="currency-tag">AZN</span>
+            </div>
+          </div>
+          <button class="btn-budget-search" onclick="searchByBudgetAZN()">
+            <span>Nəticələri Göstər</span>
+            <i data-lucide="arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- 2. MARKA VƏ MÜHƏRRİKƏ GÖRƏ AXTARIŞ (YENİ KART) -->
+      <div class="search-card" id="brandSearchCard">
+        <div class="search-title-badge">
+          <div>
+            <h2 style="margin:0; font-size:1.2rem;">Marka və Mühərrikə Görə Axtarış</h2>
+            <p style="margin:4px 0 0 0; color:#64748b; font-size:0.85rem;">Markanı seçin, sonra model və mühərrik
+              həcmini filtrləyin</p>
+          </div>
+        </div>
+        <form onsubmit="return false;" style="margin-top:15px;">
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:16px;">
+            <div class="form-group">
+              <label for="brandSelect"><i data-lucide="award"></i> 1. Marka</label>
+              <select id="brandSelect" class="full-select" onchange="onBrandChange()">
+                <option value="">-- Marka Seçin --</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="brandModelSelect"><i data-lucide="car"></i> 2. Model (İstəyə görə)</label>
+              <select id="brandModelSelect" class="full-select" disabled onchange="onBrandModelChange()">
+                <option value="">-- Əvvəlcə Marka Seçin --</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="brandEngineSelect"><i data-lucide="gauge"></i> 3. Mühərrik Həcmi</label>
+              <select id="brandEngineSelect" class="full-select" disabled>
+                <option value="">-- Əvvəlcə Marka Seçin --</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn-budget-search" style="margin-top: 20px; background: #8b5cf6;"
+            onclick="searchByBrandAndEngine()">
+            <span>Nəticələri Göstər</span>
+            <i data-lucide="search"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- 3. PARAMETRLƏRƏ GÖRƏ AXTARIŞ -->
+      <div class="search-card" id="paramSearchCard">
+        <div class="search-title-badge">
+          <div>
+            <h2 style="margin:0; font-size:1.2rem;">Parametrlərə Görə Axtarış</h2>
+            <p style="margin:4px 0 0 0; color:#64748b; font-size:0.85rem;">Mühərrik növü, kuza və mühərrik həcmini
+              seçərək uyğun avtomobilləri görün</p>
+          </div>
+        </div>
+        <form id="carSearchForm" onsubmit="return false;" style="margin-top:15px;">
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:16px;">
+            <div class="form-group">
+              <label for="fuelTypeSelect"><i data-lucide="fuel"></i> 1. Mühərrik Növü</label>
+              <select id="fuelTypeSelect" class="full-select" onchange="onFuelChangeParam()">
+                <option value="">-- Bütün Mühərrik Növləri --</option>
+                <option value="Benzin">Benzin</option>
+                <option value="Dizel">Dizel</option>
+                <option value="Hybrid">Hibrid (HEV)</option>
+                <option value="Plug-in Hybrid">Plug-in Hibrid (PHEV)</option>
+                <option value="Electric">Elektrik (EV)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="bodyStyleSelect"><i data-lucide="car"></i> 2. Kuza Növü</label>
+              <select id="bodyStyleSelect" class="full-select" onchange="onBodyChangeParam()">
+                <option value="">-- Bütün Kuzalar --</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="engineSelect"><i data-lucide="gauge"></i> 3. Mühərrik Həcmi</label>
+              <select id="engineSelect" class="full-select">
+                <option value="">-- Bütün Mühərriklər --</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn-budget-search" style="margin-top: 20px; background: #2563eb;" onclick="searchByParams()">
+            <span>Nəticələri Göstər</span>
+            <i data-lucide="search"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- RESULTS CONTAINER -->
+    <div id="resultsContainer" style="margin-top:25px;"></div>
+  </section>
+
+  <!-- SCRIPTS -->
+  <script src="data.js"></script>
+  <script>
+    $(document).ready(function () {
+      lucide.createIcons();
+      initParamDropdowns();
+      initBrandDropdowns();
+    });
+
+    let globalGroupedData = {};
+    let currentBodyCars = [];
+
+    // Yanacaq növünü eyniləşdirən köməkçi funksiya
+    function matchFuelType(selectedFuel, carFuel) {
+      if (!selectedFuel) return true;
+      const s = selectedFuel.toLowerCase();
+      const c = (carFuel || "").toLowerCase();
+      if (s === "benzin" && (c === "benzin" || c === "gasoline")) return true;
+      if (s === "dizel" && (c === "dizel" || c === "diesel")) return true;
+      if (s === "electric" && (c === "electric" || c === "elektrik" || c === "ev")) return true;
+      if (s === "hybrid" && (c === "hybrid" || c === "hibrid" || c === "hev")) return true;
+      if (s === "plug-in hybrid" && (c === "plug-in hybrid" || c === "phev")) return true;
+      return s === c;
+    }
+
+    function scrollToTarget(targetElement) {
+      setTimeout(() => {
+        const el = $(targetElement);
+        if (el.length) {
+          $('html, body').animate({ scrollTop: el.offset().top - 90 }, 400);
+        }
+      }, 100);
+    }
+
+    function handleGlobalSearch(query) {
+      const queryTrim = query.trim().toLowerCase();
+      const clearBtn = $('#btnClearSearch');
+      const container = $('#resultsContainer');
+
+      if (queryTrim.length > 0) clearBtn.show();
+      else {
+        clearBtn.hide();
+        container.empty();
+        return;
+      }
+
+      if (typeof carData === 'undefined') return;
+
+      let searchResults = [];
+      for (const eng in carData) {
+        for (const brand in carData[eng]) {
+          for (const model in carData[eng][brand]) {
+            carData[eng][brand][model].forEach(item => {
+              if (typeof item === 'object') {
+                const fullSearchText = `${brand} ${model} ${item.name || ''} ${eng} ${item.type || ''} ${item.fuel || ''}`.toLowerCase();
+                if (fullSearchText.includes(queryTrim)) {
+                  searchResults.push({
+                    engine: eng,
+                    brand: brand,
+                    model: model,
+                    generation: item.name,
+                    fuel: item.fuel || "Benzin",
+                    type: item.type || "Digər",
+                    minPrice: item.minPrice,
+                    maxPrice: item.maxPrice,
+                    image: item.image || ""
+                  });
+                }
+              }
+            });
+          }
+        }
+      }
+
+      container.empty();
+      if (searchResults.length === 0) {
+        container.html(`
+          <div style="text-align:center; padding:40px; color:#64748b;">
+            <i data-lucide="frown" style="width:40px; height:40px; margin-bottom:10px;"></i>
+            <h3>Nəticə Tapılmadı</h3>
+            <p>"<b>${query}</b>" axtarışına uyğun avtomobil tapılmadı.</p>
+          </div>
+        `);
+        lucide.createIcons();
+        return;
+      }
+
+      searchResults.sort((a, b) => (a.minPrice || 0) - (b.minPrice || 0));
+      container.html(`
+        <h3 style="margin-bottom:15px;"><i data-lucide="search"></i> Axtarış nəticələri: ${searchResults.length} avtomobil</h3>
+        <div class="compact-models-grid" id="modelsGridContainer"></div>
+      `);
+      renderModelsGrid(searchResults);
+      scrollToTarget("#resultsContainer");
+    }
+
+    function clearGlobalSearch() {
+      $('#globalSearchInput').val('');
+      $('#btnClearSearch').hide();
+      $('#resultsContainer').empty();
+    }
+
+    function switchSearchMode(mode) {
+      $('#resultsContainer').empty();
+      clearGlobalSearch();
+
+      $('.search-card').removeClass('active');
+      $('.mode-btn').removeClass('active-budget active-brand active-param');
+
+      if (mode === 'budget') {
+        $('#budgetSearchCard').addClass('active');
+        $('#btnModeBudget').addClass('active-budget');
+      } else if (mode === 'brand') {
+        $('#brandSearchCard').addClass('active');
+        $('#btnModeBrand').addClass('active-brand');
+      } else {
+        $('#paramSearchCard').addClass('active');
+        $('#btnModeParam').addClass('active-param');
+      }
+    }
+
+    function openDirectBidCars(brand, model, gen, engine, type) {
+      const yearMatch = gen ? gen.match(/\b((?:19|20)\d{2})\b/g) : null;
+      const yFrom = yearMatch ? yearMatch[0] : "1900";
+      const yTo = yearMatch ? (yearMatch[1] || yearMatch[0]) : "2027";
+      const fullQuery = encodeURIComponent(`${brand} ${model}`).replace(/%20/g, "+");
+      let url = `https://bid.cars/en/search/results?search-type=typing&query=${fullQuery}&year-from=${yFrom}&year-to=${yTo}&auction-type=All`;
+      if (engine && parseFloat(engine) > 0) url += `&engine-size-to=${parseFloat(engine)}`;
+      window.open(url, '_blank');
+    }
+
+    function openDirectGoogle(brand, model, gen) {
+      const query = encodeURIComponent(`${brand} ${model} ${gen} USA`);
+      window.open(`https://www.google.com/search?tbm=isch&q=${query}`, '_blank');
+    }
+
+    function handleBudgetEnter(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        searchByBudgetAZN();
+      }
+    }
+
+    function searchByBudgetAZN() {
+      const budget = parseFloat($('#userBudgetAZN').val());
+      const selectedFuelType = $('#budgetFuelTypeSelect').val();
+      const container = $('#resultsContainer');
+      container.empty();
+
+      if (!budget || budget <= 0) return alert("Zəhmət olmasa düzgün AZN məbləği daxil edin!");
+      if (typeof carData === 'undefined') return alert("Məlumat bazası tapılmadı!");
+
+      globalGroupedData = {};
+      let totalCarCount = 0;
+
+      for (const engine in carData) {
+        for (const brand in carData[engine]) {
+          for (const model in carData[engine][brand]) {
+            carData[engine][brand][model].forEach(item => {
+              if (typeof item === 'object' && item.minPrice && item.minPrice <= budget) {
+                const itemFuel = item.fuel || "Benzin";
+                const itemType = item.type || "Digər";
+                if (matchFuelType(selectedFuelType, itemFuel)) {
+                  if (!globalGroupedData[itemType]) globalGroupedData[itemType] = {};
+                  if (!globalGroupedData[itemType][brand]) globalGroupedData[itemType][brand] = [];
+                  globalGroupedData[itemType][brand].push({
+                    engine: engine,
+                    brand: brand,
+                    model: model,
+                    generation: item.name,
+                    fuel: itemFuel,
+                    type: itemType,
+                    minPrice: item.minPrice,
+                    maxPrice: item.maxPrice,
+                    image: item.image || ""
+                  });
+                  totalCarCount++;
+                }
+              }
+            });
+          }
+        }
+      }
+
+      const bodyTypes = Object.keys(globalGroupedData).sort();
+      if (bodyTypes.length === 0) {
+        container.html(`
+          <div style="text-align:center; padding:40px; color:#64748b;">
+            <i data-lucide="frown" style="width:40px; height:40px; margin-bottom:10px;"></i>
+            <h3>Nəticə Tapılmadı</h3>
+            <p>Seçilmiş parametrlərə və büdcəyə uyğun avtomobil tapılmadı.</p>
+          </div>
+        `);
+        lucide.createIcons();
+        return;
+      }
+
+      let bodyCardsHtml = '<div class="body-types-grid">';
+      bodyCardsHtml += `
+        <div class="body-type-card active" onclick="selectBodyType('all', this, true)">
+          <div class="body-icon"><i data-lucide="layers"></i></div>
+          <div class="body-name">Hamısı</div>
+          <div class="body-count">${totalCarCount} Avtomobil</div>
+        </div>
+      `;
+
+      bodyTypes.forEach(bodyType => {
+        let count = 0;
+        Object.keys(globalGroupedData[bodyType]).forEach(b => count += globalGroupedData[bodyType][b].length);
+        bodyCardsHtml += `
+          <div class="body-type-card" onclick="selectBodyType('${bodyType}', this, true)">
+            <div class="body-icon"><i data-lucide="car"></i></div>
+            <div class="body-name">${bodyType}</div>
+            <div class="body-count">${count} Avtomobil</div>
+          </div>
+        `;
+      });
+
+      bodyCardsHtml += '</div><div id="selectedBodyDetails"></div>';
+      container.html(bodyCardsHtml);
+      lucide.createIcons();
+      selectBodyType('all', $('.body-type-card').first(), false);
+      scrollToTarget("#resultsContainer");
+    }
+
+    function selectBodyType(bodyType, element, shouldScroll = true) {
+      $('.body-type-card').removeClass('active');
+      $(element).addClass('active');
+      const detailsContainer = $('#selectedBodyDetails');
+      detailsContainer.empty();
+      currentBodyCars = [];
+
+      if (bodyType === 'all') {
+        Object.keys(globalGroupedData).forEach(bType => {
+          Object.keys(globalGroupedData[bType]).forEach(brand => {
+            globalGroupedData[bType][brand].forEach(car => currentBodyCars.push(car));
+          });
+        });
+      } else {
+        const rawBrands = globalGroupedData[bodyType];
+        Object.keys(rawBrands).forEach(brand => {
+          rawBrands[brand].forEach(car => currentBodyCars.push(car));
+        });
+      }
+
+      currentBodyCars.sort((a, b) => a.minPrice - b.minPrice);
+
+      const engineSizes = [...new Set(currentBodyCars.map(c => c.engine))]
+        .filter(Boolean)
+        .sort((a, b) => parseFloat(a) - parseFloat(b));
+
+      let engineFilterBtns = `<button class="engine-filter-btn active" onclick="filterByEngine('all', this)">Hamısı (${currentBodyCars.length})</button>`;
+      engineSizes.forEach((eng) => {
+        const count = currentBodyCars.filter(c => c.engine === eng).length;
+        const label = parseFloat(eng) === 0 ? "EV (Elektrik)" : `${eng}L`;
+        engineFilterBtns += `<button class="engine-filter-btn" onclick="filterByEngine('${eng}', this)">${label} (${count})</button>`;
+      });
+
+      const displayTitle = bodyType === 'all' ? 'Bütün Modellər' : `${bodyType} Modelləri`;
+      detailsContainer.html(`
+        <div id="modelsHeaderAnchor" style="margin-bottom:15px;">
+          <h3 style="margin:0 0 10px 0;"><i data-lucide="car"></i> ${displayTitle}</h3>
+          <div class="engine-filter-wrapper">
+            <span style="font-size:0.85rem; font-weight:700; color:#475569;"><i data-lucide="gauge"></i> Mühərrik:</span>
+            <div class="engine-btn-group">${engineFilterBtns}</div>
+          </div>
+        </div>
+        <div class="compact-models-grid" id="modelsGridContainer"></div>
+      `);
+      lucide.createIcons();
+      filterByEngine('all', null);
+
+      if (shouldScroll) {
+        scrollToTarget("#modelsHeaderAnchor");
+      }
+    }
+
+    function filterByEngine(engineSize, btnElement) {
+      if (btnElement) {
+        $('.engine-filter-btn').removeClass('active');
+        $(btnElement).addClass('active');
+      }
+      let filtered = currentBodyCars;
+      if (engineSize !== 'all') {
+        filtered = currentBodyCars.filter(car => car.engine === engineSize);
+      }
+      renderModelsGrid(filtered);
+    }
+
+    function renderModelsGrid(carsList) {
+      const gridContainer = $('#modelsGridContainer');
+      gridContainer.empty();
+
+      if (carsList.length === 0) {
+        gridContainer.html('<div style="color:#64748b; padding:20px;">Bu parametrlərdə model tapılmadı.</div>');
+        return;
+      }
+
+      let modelsHtml = '';
+      carsList.forEach(car => {
+        const fallbackSvg = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><rect width='100%' height='100%' fill='%23f8fafc'/><text x='50%' y='50%' fill='%2364748b' font-size='12' text-anchor='middle' dy='.3em'>Şəkil Yoxdur</text></svg>";
+        const imgSrc = car.image ? car.image : fallbackSvg;
+        const engineLabel = parseFloat(car.engine) === 0 ? "EV" : `${car.engine}L`;
+
+        modelsHtml += `
+          <div class="compact-car-card">
+            <div class="compact-img-box">
+              <img src="${imgSrc}" alt="${car.brand} ${car.model}" onerror="this.src='${fallbackSvg}'">
+              <span class="compact-fuel-badge">${car.fuel}</span>
+            </div>
+            <div class="compact-info-box">
+              <div>
+                <div class="compact-brand-title">${car.brand.toUpperCase()} ${car.model}</div>
+                <div class="compact-sub-info">${car.generation} • <b>${engineLabel}</b> • ${car.type}</div>
+                <div class="compact-price">~${car.minPrice ? car.minPrice.toLocaleString() : 'N/A'} - ${car.maxPrice ? car.maxPrice.toLocaleString() : 'N/A'} AZN</div>
+              </div>
+              <div class="compact-actions">
+                <button class="btn-compact-bid" onclick="openDirectBidCars('${car.brand}', '${car.model}', '${car.generation}', '${car.engine}', '${car.type}')">
+                  Bid.Cars <i data-lucide="external-link"></i>
+                </button>
+                <button class="btn-compact-google" onclick="openDirectGoogle('${car.brand}', '${car.model}', '${car.generation}')">
+                  Google <i data-lucide="search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      gridContainer.html(modelsHtml);
+      lucide.createIcons();
+    }
+
+    /* MARKA VƏ MÜHƏRRİK FİLTRİ FUNKSİYALARI */
+    function initBrandDropdowns() {
+      if (typeof carData === 'undefined') return;
+      const brands = new Set();
+      for (const eng in carData) {
+        for (const brand in carData[eng]) {
+          brands.add(brand);
+        }
+      }
+      fillSelect('#brandSelect', Array.from(brands).sort(), '-- Marka Seçin --');
+    }
+
+    function onBrandChange() {
+      const selectedBrand = $('#brandSelect').val();
+      if (!selectedBrand) {
+        resetSelect('#brandModelSelect', '-- Əvvəlcə Marka Seçin --');
+        resetSelect('#brandEngineSelect', '-- Əvvəlcə Marka Seçin --');
+        return;
+      }
+
+      const models = new Set();
+      const engines = new Set();
+
+      for (const eng in carData) {
+        if (carData[eng][selectedBrand]) {
+          engines.add(eng);
+          for (const model in carData[eng][selectedBrand]) {
+            models.add(model);
+          }
+        }
+      }
+
+      fillSelect('#brandModelSelect', Array.from(models).sort(), '-- Bütün Modellər --');
+      fillEngineSelectCustom('#brandEngineSelect', Array.from(engines));
+    }
+
+    function onBrandModelChange() {
+      const selectedBrand = $('#brandSelect').val();
+      const selectedModel = $('#brandModelSelect').val();
+
+      if (!selectedBrand) return;
+
+      const engines = new Set();
+
+      for (const eng in carData) {
+        if (carData[eng][selectedBrand]) {
+          if (!selectedModel) {
+            engines.add(eng);
+          } else if (carData[eng][selectedBrand][selectedModel]) {
+            engines.add(eng);
+          }
+        }
+      }
+
+      fillEngineSelectCustom('#brandEngineSelect', Array.from(engines));
+    }
+
+    function fillEngineSelectCustom(selector, sortedEnginesArray) {
+      const sortedEngines = sortedEnginesArray.sort((a, b) => parseFloat(a) - parseFloat(b));
+      let options = `<option value="">-- Bütün Mühərriklər --</option>`;
+      sortedEngines.forEach(eng => {
+        const label = parseFloat(eng) === 0 ? "EV (Elektrik)" : `${eng}L`;
+        options += `<option value="${eng}">${label}</option>`;
+      });
+      $(selector).html(options).prop('disabled', false);
+    }
+
+    function searchByBrandAndEngine() {
+      const brand = $('#brandSelect').val();
+      const model = $('#brandModelSelect').val();
+      const engine = $('#brandEngineSelect').val();
+      const container = $('#resultsContainer');
+
+      if (!brand) return alert("Zəhmət olmasa ən azı Marka seçin!");
+
+      let matchedCars = [];
+
+      for (const eng in carData) {
+        if (!engine || eng === engine) {
+          if (carData[eng][brand]) {
+            for (const mdl in carData[eng][brand]) {
+              if (!model || mdl === model) {
+                carData[eng][brand][mdl].forEach(item => {
+                  matchedCars.push({
+                    engine: eng,
+                    brand: brand,
+                    model: mdl,
+                    generation: item.name,
+                    fuel: item.fuel || "Benzin",
+                    type: item.type || "Digər",
+                    minPrice: item.minPrice,
+                    maxPrice: item.maxPrice,
+                    image: item.image || ""
+                  });
+                });
+              }
+            }
+          }
+        }
+      }
+
+      container.empty();
+
+      if (matchedCars.length === 0) {
+        container.html(`
+          <div style="text-align:center; padding:40px; color:#64748b;">
+            <i data-lucide="frown" style="width:40px; height:40px; margin-bottom:10px;"></i>
+            <h3>Nəticə Tapılmadı</h3>
+            <p>Seçilmiş marka və parametrlərə uyğun avtomobil tapılmadı.</p>
+          </div>
+        `);
+        lucide.createIcons();
+        return;
+      }
+
+      matchedCars.sort((a, b) => (a.minPrice || 0) - (b.minPrice || 0));
+      container.html(`
+        <h3 style="margin-bottom:15px;"><i data-lucide="check-circle-2"></i> ${brand.toUpperCase()} üçün tapılan avtomobillər (${matchedCars.length})</h3>
+        <div class="compact-models-grid" id="modelsGridContainer"></div>
+      `);
+      renderModelsGrid(matchedCars);
+      scrollToTarget("#resultsContainer");
+    }
+
+    /* PARAMETRLƏRƏ GÖRƏ AXTARIŞ FUNKSİYALARI */
+    function initParamDropdowns() {
+      if (typeof carData === 'undefined') return;
+
+      const bodies = new Set();
+      const engines = new Set();
+
+      for (const eng in carData) {
+        engines.add(eng);
+        for (const brand in carData[eng]) {
+          for (const model in carData[eng][brand]) {
+            carData[eng][brand][model].forEach(item => {
+              if (item.type) bodies.add(item.type);
+            });
+          }
+        }
+      }
+
+      fillSelect('#bodyStyleSelect', Array.from(bodies).sort(), '-- Bütün Kuzalar --');
+      fillEngineSelectCustom('#engineSelect', Array.from(engines));
+    }
+
+    function onFuelChangeParam() {
+      updateParamOptions();
+    }
+
+    function onBodyChangeParam() {
+      updateParamOptions();
+    }
+
+    function updateParamOptions() {
+      if (typeof carData === 'undefined') return;
+
+      const fuel = $('#fuelTypeSelect').val();
+      const body = $('#bodyStyleSelect').val();
+
+      const bodies = new Set();
+      const engines = new Set();
+
+      for (const eng in carData) {
+        for (const brand in carData[eng]) {
+          for (const model in carData[eng][brand]) {
+            carData[eng][brand][model].forEach(item => {
+              const itemFuel = item.fuel || "Benzin";
+              const isFuelMatch = matchFuelType(fuel, itemFuel);
+              const isBodyMatch = !body || item.type === body;
+
+              if (isFuelMatch) {
+                if (item.type) bodies.add(item.type);
+              }
+
+              if (isFuelMatch && isBodyMatch) {
+                engines.add(eng);
+              }
+            });
+          }
+        }
+      }
+
+      const currentBody = $('#bodyStyleSelect').val();
+      fillSelect('#bodyStyleSelect', Array.from(bodies).sort(), '-- Bütün Kuzalar --');
+      $('#bodyStyleSelect').val(currentBody);
+
+      fillEngineSelectCustom('#engineSelect', Array.from(engines));
+    }
+
+    function searchByParams() {
+      const fuel = $('#fuelTypeSelect').val();
+      const body = $('#bodyStyleSelect').val();
+      const engine = $('#engineSelect').val();
+      const container = $('#resultsContainer');
+      container.empty();
+
+      let matchedCars = [];
+
+      for (const eng in carData) {
+        const isEngineMatch = !engine || eng === engine;
+
+        if (isEngineMatch) {
+          for (const brand in carData[eng]) {
+            for (const model in carData[eng][brand]) {
+              carData[eng][brand][model].forEach(item => {
+                const itemFuel = item.fuel || "Benzin";
+                const isFuelMatch = matchFuelType(fuel, itemFuel);
+                const isBodyMatch = !body || item.type === body;
+
+                if (isFuelMatch && isBodyMatch) {
+                  matchedCars.push({
+                    engine: eng,
+                    brand: brand,
+                    model: model,
+                    generation: item.name,
+                    fuel: itemFuel,
+                    type: item.type || "Digər",
+                    minPrice: item.minPrice,
+                    maxPrice: item.maxPrice,
+                    image: item.image || ""
+                  });
+                }
+              });
+            }
+          }
+        }
+      }
+
+      if (matchedCars.length === 0) {
+        container.html(`
+          <div style="text-align:center; padding:40px; color:#64748b;">
+            <i data-lucide="frown" style="width:40px; height:40px; margin-bottom:10px;"></i>
+            <h3>Nəticə Tapılmadı</h3>
+            <p>Seçilmiş parametrlərə uyğun avtomobil tapılmadı.</p>
+          </div>
+        `);
+        lucide.createIcons();
+        return;
+      }
+
+      matchedCars.sort((a, b) => (a.minPrice || 0) - (b.minPrice || 0));
+      container.html(`
+        <h3 style="margin-bottom:15px;"><i data-lucide="check-circle-2"></i> Tapılan Avtomobillər (${matchedCars.length})</h3>
+        <div class="compact-models-grid" id="modelsGridContainer"></div>
+      `);
+      renderModelsGrid(matchedCars);
+      scrollToTarget("#resultsContainer");
+    }
+
+    function resetSelect(selector, placeholder) {
+      $(selector).html(`<option value="">${placeholder}</option>`).prop('disabled', true);
+    }
+
+    function fillSelect(selector, items, placeholder) {
+      let options = `<option value="">${placeholder}</option>`;
+      items.forEach(item => {
+        options += `<option value="${item}">${item}</option>`;
+      });
+      $(selector).html(options).prop('disabled', false);
+    }
+  </script>
+</body>
+
+</html>
