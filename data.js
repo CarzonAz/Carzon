@@ -709,7 +709,7 @@ const carData = {
         {
           "name": "2017-2018 Ford Focus Mk3 1.0 EcoBoost",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 13000,
           "maxPrice": 15500,
           "image": "images/cars/indir.jpg"
@@ -717,7 +717,7 @@ const carData = {
         {
           "name": "2017-2018 Ford Focus Mk3 1.0 EcoBoost",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 13000,
           "maxPrice": 15500,
           "image": "images/cars/2014-focus-20.jpg"
@@ -727,7 +727,7 @@ const carData = {
         {
           "name": "2018-2021 Ford EcoSport 1.0 EcoBoost",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 14500,
           "maxPrice": 17500,
           "image": "images/cars/542963-ford-ecosport-2018-2022-quoi-savoir-avant-d-acheter.jpeg"
@@ -741,7 +741,7 @@ const carData = {
         {
           "name": "2024-2026 Chevrolet Trax 2nd Gen 1.2T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 24000,
           "maxPrice": 28000,
           "image": "images/cars/images (18).jpg"
@@ -753,7 +753,7 @@ const carData = {
         {
           "name": "2017-2020 Mitsubishi Mirage 1st Restyle 1.2L",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 10000,
           "maxPrice": 12500,
           "image": "images/cars/2017_mitsubishi_mirage_4dr-hatchback_gt_fq_oem_1_1600.avif"
@@ -761,7 +761,7 @@ const carData = {
         {
           "name": "2021-2024 Mitsubishi Mirage 2nd Restyle 1.2L",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 12500,
           "maxPrice": 15000,
           "image": "images/cars/2021_mitsubishi_mirage_4dr-hatchback_carbonite-edition_fq_oem_1_1600.avif"
@@ -771,7 +771,7 @@ const carData = {
         {
           "name": "2017-2020 Mitsubishi Mirage G4 1st Restyle 1.2L",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 10000,
           "maxPrice": 12500,
           "image": "images/cars/images (30).jpg"
@@ -779,7 +779,7 @@ const carData = {
         {
           "name": "2021-2024 Mitsubishi Mirage G4 2nd Restyle 1.2L",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 12500,
           "maxPrice": 15000,
           "image": "images/cars/2021_mitsubishi_mirage-g4_sedan_carbonite-edition_fq_oem_1_1600.avif"
@@ -805,7 +805,7 @@ const carData = {
         {
           "name": "2021-2023 Chevrolet Trailblazer Pre-Facelift 1.3T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 26000,
           "image": "images/cars/2021_Chevrolet_TrailBlazer_RS_AWD,_front_7.11.20.jpg"
@@ -813,7 +813,7 @@ const carData = {
         {
           "name": "2024-2026 Chevrolet Trailblazer Facelift 1.3T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 26000,
           "maxPrice": 30000,
           "image": "images/cars/2026-trailblazer-gallery-ext-07_892x762.avif"
@@ -825,7 +825,7 @@ const carData = {
         {
           "name": "2019-2023 Fiat 500X Facelift 1.3T MultiAir",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 22000,
           "image": "images/cars/FIAT_500X_1.jpg"
@@ -837,7 +837,7 @@ const carData = {
         {
           "name": "2019-2023 Jeep Renegade Facelift 1.3T MultiAir",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 19000,
           "maxPrice": 23000,
           "image": "images/cars/JEEP_Renegade_1.jpg"
@@ -851,7 +851,7 @@ const carData = {
         {
           "name": "2017-2020 Audi A3 8V Facelift 1.4 TFSI",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 19000,
           "maxPrice": 23000,
           "image": "images/cars/AUDI_A3_1.jpg"
@@ -863,7 +863,7 @@ const carData = {
         {
           "name": "2017-2018 Chevrolet Cruze J400 Pre-Facelift 1.4T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 13500,
           "maxPrice": 15500,
           "image": "images/cars/images (25).jpg"
@@ -871,7 +871,7 @@ const carData = {
         {
           "name": "2017-2018 Chevrolet Cruze J400 Pre-Facelift 1.4T",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 13500,
           "maxPrice": 15500,
           "image": "images/cars/images (17).jpg"
@@ -879,7 +879,7 @@ const carData = {
         {
           "name": "2019 Chevrolet Cruze J400 Facelift 1.4T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 15000,
           "maxPrice": 17000,
           "image": "images/cars/chevrolet-cruze-2019-2024-1782051149.9450848.jpg"
@@ -887,7 +887,7 @@ const carData = {
         {
           "name": "2019 Chevrolet Cruze J400 Facelift 1.4T",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 15000,
           "maxPrice": 17000,
           "image": "images/cars/2019-Chevrolet-Cruze-Red-Hot-Premier-Hatch.jpeg"
@@ -897,7 +897,7 @@ const carData = {
         {
           "name": "2017-2020 Chevrolet Sonic Facelift 1.4T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 12000,
           "maxPrice": 14500,
           "image": "images/cars/2018-Chevrolet-Sonic-007.avif"
@@ -905,7 +905,7 @@ const carData = {
         {
           "name": "2017-2020 Chevrolet Sonic Facelift 1.4T",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 12000,
           "maxPrice": 14500,
           "image": "images/cars/2018_chevrolet_sonic_4dr-hatchback_lt_fq_oem_1_1600.avif"
@@ -915,7 +915,7 @@ const carData = {
         {
           "name": "2017-2022 Chevrolet Spark M400 1.4L",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 11000,
           "maxPrice": 13500,
           "image": "images/cars/2017-chevrolet-sparkactiv-001-1646682661.avif"
@@ -925,7 +925,7 @@ const carData = {
         {
           "name": "2017-2022 Chevrolet Trax 1st Gen Facelift 1.4T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 15500,
           "maxPrice": 19000,
           "image": "images/cars/images (19).jpg"
@@ -937,7 +937,7 @@ const carData = {
         {
           "name": "2017-2019 Fiat 500 Pop Lounge Turbo 1.4L",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 12000,
           "maxPrice": 14500,
           "image": "images/cars/FIAT_500_1.webp"
@@ -947,7 +947,7 @@ const carData = {
         {
           "name": "2017-2020 Fiat 124 Spider 1.4T MultiAir",
           "type": "Convertible",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 20000,
           "maxPrice": 24000,
           "image": "images/cars/FIAT_124Spider_1.webp"
@@ -957,7 +957,7 @@ const carData = {
         {
           "name": "2018-2020 Fiat 500L Facelift 1.4T",
           "type": "Minivan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 14000,
           "maxPrice": 17000,
           "image": "images/cars/FIAT_500L_1.jpg"
@@ -969,7 +969,7 @@ const carData = {
         {
           "name": "2017-2018 Hyundai Elantra AD Eco Pre-Facelift 1.4T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 14500,
           "maxPrice": 16500,
           "image": "images/cars/HYUNDAI_Elantra_1.png"
@@ -977,7 +977,7 @@ const carData = {
         {
           "name": "2019-2020 Hyundai Elantra AD Eco Facelift 1.4T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 16000,
           "maxPrice": 18000,
           "image": "images/cars/HYUNDAI_Elantra_2.jpg"
@@ -989,7 +989,7 @@ const carData = {
         {
           "name": "2017-2018 Jeep Renegade BU Pre-Facelift 1.4T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 16500,
           "maxPrice": 19500,
           "image": "images/cars/JEEP_Renegade_1.jpg"
@@ -1001,7 +1001,7 @@ const carData = {
         {
           "name": "2019-2021 Volkswagen Golf Mk7.5 1.4 TSI",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 21000,
           "image": "images/cars/VOLKSWAGEN_Golf_1.jpg"
@@ -1011,7 +1011,7 @@ const carData = {
         {
           "name": "2017-2018 Volkswagen Jetta Mk6 Facelift 1.4 TSI",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 14000,
           "maxPrice": 16500,
           "image": "images/cars/VOLKSWAGEN_Jetta_1.jpg"
@@ -1019,7 +1019,7 @@ const carData = {
         {
           "name": "2019-2021 Volkswagen Jetta Mk7 1.4 TSI",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 17000,
           "maxPrice": 20000,
           "image": "images/cars/VOLKSWAGEN_Jetta_2.png"
@@ -1053,7 +1053,7 @@ const carData = {
         {
           "name": "2018-2021 Chevrolet Equinox 3rd Gen Pre-Facelift 1.5T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 16000,
           "maxPrice": 19500,
           "image": "images/cars/2018-2021-chevrolet-equinox-v0-vd3vph8rrabe1.jpg"
@@ -1061,7 +1061,7 @@ const carData = {
         {
           "name": "2022-2024 Chevrolet Equinox 3rd Gen Facelift 1.5T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 20000,
           "maxPrice": 24000,
           "image": "images/cars/images (15).jpg"
@@ -1069,7 +1069,7 @@ const carData = {
         {
           "name": "2025-2026 Chevrolet Equinox 4th Gen 1.5T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 27000,
           "maxPrice": 31000,
           "image": "images/cars/2025-chevrolet-equinox-activ-pr-102-67f019835c500.avif"
@@ -1079,7 +1079,7 @@ const carData = {
         {
           "name": "2016-2018 Chevrolet Malibu 9th Gen Pre-Facelift 1.5T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 15000,
           "maxPrice": 17500,
           "image": "images/cars/2016_chevrolet_malibu_sedan_premier_fq_oem_1_1600.avif"
@@ -1087,7 +1087,7 @@ const carData = {
         {
           "name": "2019-2025 Chevrolet Malibu 9th Gen Facelift 1.5T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 23000,
           "image": "images/cars/2019-chevrolet-malibu-rs-117-1568289288.avif"
@@ -1109,7 +1109,7 @@ const carData = {
         {
           "name": "2021-2024 Ford Bronco Sport 1st Gen 1.5 EcoBoost",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 25000,
           "maxPrice": 31000,
           "image": "images/cars/car_FORD_BroncoSport_1786202971648.jpg"
@@ -1117,7 +1117,7 @@ const carData = {
         {
           "name": "2025-2026 Ford Bronco Sport Facelift 1.5T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 37000,
           "image": "images/cars/FORD_BroncoSport_2.png"
@@ -1127,7 +1127,7 @@ const carData = {
         {
           "name": "2017-2019 Ford Escape 3rd Gen Facelift 1.5 EcoBoost",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 15500,
           "maxPrice": 18500,
           "image": "images/cars/FORD_Escape_1.jpg"
@@ -1135,7 +1135,7 @@ const carData = {
         {
           "name": "2020-2022 Ford Escape 4th Gen Pre-Facelift 1.5T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 20000,
           "maxPrice": 24000,
           "image": "images/cars/FORD_Escape_2.png"
@@ -1143,7 +1143,7 @@ const carData = {
         {
           "name": "2023-2026 Ford Escape 4th Gen Facelift 1.5T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 25000,
           "maxPrice": 31000,
           "image": "images/cars/FORD_Escape_3.jpg"
@@ -1153,7 +1153,7 @@ const carData = {
         {
           "name": "2017-2020 Ford Fusion 2nd Gen Facelift 1.5 EcoBoost",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 16000,
           "maxPrice": 19500,
           "image": "images/cars/FORD_Fusion_1.jpg"
@@ -1165,7 +1165,7 @@ const carData = {
         {
           "name": "2018-2021 GMC Terrain 2nd Gen Pre-Facelift 1.5T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 17500,
           "maxPrice": 21000,
           "image": "images/cars/GMC_Terrain_1.png"
@@ -1173,7 +1173,7 @@ const carData = {
         {
           "name": "2022-2024 GMC Terrain 2nd Gen Facelift 1.5T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 21500,
           "maxPrice": 25000,
           "image": "images/cars/GMC_Terrain_2.jpg"
@@ -1181,7 +1181,7 @@ const carData = {
         {
           "name": "2025-2026 GMC Terrain 3rd Gen 1.5T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 28000,
           "maxPrice": 33000,
           "image": "images/cars/GMC_Terrain_3.jpg"
@@ -1193,7 +1193,7 @@ const carData = {
         {
           "name": "2018-2020 Honda Accord 10th Gen Pre-Facelift 1.5T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 21000,
           "maxPrice": 24500,
           "image": "images/cars/HONDA_Accord_1.jpg"
@@ -1201,7 +1201,7 @@ const carData = {
         {
           "name": "2021-2022 Honda Accord 10th Gen Facelift 1.5T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 24500,
           "maxPrice": 28000,
           "image": "images/cars/HONDA_Accord_2.webp"
@@ -1209,7 +1209,7 @@ const carData = {
         {
           "name": "2023-2026 Honda Accord 11th Gen 1.5T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 28000,
           "maxPrice": 35000,
           "image": "images/cars/HONDA_Accord_3.jpg"
@@ -1219,7 +1219,7 @@ const carData = {
         {
           "name": "2017-2018 Honda Civic 10th Gen Pre-Facelift 1.5T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 17500,
           "maxPrice": 20000,
           "image": "images/cars/HONDA_Civic_1.jpg"
@@ -1227,7 +1227,7 @@ const carData = {
         {
           "name": "2017-2018 Honda Civic 10th Gen Pre-Facelift 1.5T",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 17500,
           "maxPrice": 20000,
           "image": "images/cars/HONDA_Civic_2.jpg"
@@ -1235,7 +1235,7 @@ const carData = {
         {
           "name": "2019-2021 Honda Civic 10th Gen Facelift 1.5T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 20000,
           "maxPrice": 23500,
           "image": "images/cars/HONDA_Civic_3.jpg"
@@ -1243,7 +1243,7 @@ const carData = {
         {
           "name": "2019-2021 Honda Civic 10th Gen Facelift 1.5T",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 20000,
           "maxPrice": 23500,
           "image": "images/cars/HONDA_Civic_4.jpg"
@@ -1251,7 +1251,7 @@ const carData = {
         {
           "name": "2022-2025 Honda Civic 11th Gen 1.5T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 24000,
           "maxPrice": 32000,
           "image": "images/cars/HONDA_Civic_5.jpg"
@@ -1259,7 +1259,7 @@ const carData = {
         {
           "name": "2022-2025 Honda Civic 11th Gen 1.5T",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 24000,
           "maxPrice": 32000,
           "image": "images/cars/HONDA_Civic_6.png"
@@ -1279,7 +1279,7 @@ const carData = {
         {
           "name": "2017-2019 Honda CR-V 5th Gen Pre-Facelift 1.5T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 25500,
           "image": "images/cars/HONDA_CRV_1.jpg"
@@ -1287,7 +1287,7 @@ const carData = {
         {
           "name": "2020-2022 Honda CR-V 5th Gen Facelift 1.5T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 25500,
           "maxPrice": 29000,
           "image": "images/cars/HONDA_CRV_2.jpg"
@@ -1295,7 +1295,7 @@ const carData = {
         {
           "name": "2023-2026 Honda CR-V 6th Gen 1.5T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 30000,
           "maxPrice": 38000,
           "image": "images/cars/HONDA_CRV_3.jpg"
@@ -1305,7 +1305,7 @@ const carData = {
         {
           "name": "2018-2020 Honda Fit 3rd Gen Facelift 1.5L",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 13500,
           "maxPrice": 16500,
           "image": "images/cars/HONDA_Fit_1.jpg"
@@ -1327,7 +1327,7 @@ const carData = {
         {
           "name": "2017-2021 Mini Cooper F55 F56 Facelift 1 1.5T",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 16000,
           "maxPrice": 21000,
           "image": "images/cars/MINI_Cooper_1.jpg"
@@ -1335,7 +1335,7 @@ const carData = {
         {
           "name": "2022-2024 Mini Cooper F55 F56 Facelift 2 1.5T",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 26000,
           "image": "images/cars/MINI_Cooper_2.jpg"
@@ -1347,7 +1347,7 @@ const carData = {
         {
           "name": "2018-2020 Mitsubishi Eclipse Cross Pre-Facelift 1.5T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 17000,
           "maxPrice": 20000,
           "image": "images/cars/MITSUBISHI_EclipseCross_1.jpg"
@@ -1355,7 +1355,7 @@ const carData = {
         {
           "name": "2022-2025 Mitsubishi Eclipse Cross Facelift 1.5T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 20500,
           "maxPrice": 24500,
           "image": "images/cars/MITSUBISHI_EclipseCross_2.jpg"
@@ -1367,7 +1367,7 @@ const carData = {
         {
           "name": "2022-2023 Nissan Rogue T33 1.5 VC-Turbo Pre-Facelift",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 24000,
           "maxPrice": 28000,
           "image": "images/cars/NISSAN_Rogue_1.jpg"
@@ -1375,7 +1375,7 @@ const carData = {
         {
           "name": "2024-2026 Nissan Rogue T33 1.5 VC-Turbo Facelift",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 28500,
           "maxPrice": 34000,
           "image": "images/cars/NISSAN_Rogue_2.webp"
@@ -1387,7 +1387,7 @@ const carData = {
         {
           "name": "2017-2020 Toyota Yaris iA 1.5L",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 13000,
           "maxPrice": 16000,
           "image": "images/cars/TOYOTA_Yaris_1.jpg"
@@ -1395,7 +1395,7 @@ const carData = {
         {
           "name": "2017-2020 Toyota Yaris iA 1.5L",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 13000,
           "maxPrice": 16000,
           "image": "images/cars/TOYOTA_Yaris_2.jpg"
@@ -1407,7 +1407,7 @@ const carData = {
         {
           "name": "2022-2024 Volkswagen Jetta Mk7 Facelift 1.5 TSI",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 21000,
           "maxPrice": 25000,
           "image": "images/cars/VOLKSWAGEN_Jetta_1.jpg"
@@ -1415,7 +1415,7 @@ const carData = {
         {
           "name": "2025-2026 Volkswagen Jetta Mk7 2nd Facelift 1.5 TSI",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 26000,
           "maxPrice": 30000,
           "image": "images/cars/VOLKSWAGEN_Jetta_2.jpg"
@@ -1425,7 +1425,7 @@ const carData = {
         {
           "name": "2022-2024 Volkswagen Taos Pre-Facelift 1.5 TSI",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 26000,
           "image": "images/cars/VOLKSWAGEN_Taos_1.jpg"
@@ -1433,7 +1433,7 @@ const carData = {
         {
           "name": "2025-2026 Volkswagen Taos Facelift 1.5 TSI",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 26500,
           "maxPrice": 31000,
           "image": "images/cars/VOLKSWAGEN_Taos_2.jpg"
@@ -1467,7 +1467,7 @@ const carData = {
         {
           "name": "2017-2019 Ford Fiesta ST 1.6 EcoBoost",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 15000,
           "maxPrice": 18000,
           "image": "images/cars/FORD_Fiesta_1.jpg"
@@ -1479,7 +1479,7 @@ const carData = {
         {
           "name": "2017 Hyundai Accent HC Pre-Facelift",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 12000,
           "maxPrice": 14000,
           "image": "images/cars/HYUNDAI_Accent_1.jpg"
@@ -1487,7 +1487,7 @@ const carData = {
         {
           "name": "2018-2019 Hyundai Accent 5th Gen Pre-Facelift",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 14000,
           "maxPrice": 16500,
           "image": "images/cars/HYUNDAI_Accent_2.jpg"
@@ -1495,7 +1495,7 @@ const carData = {
         {
           "name": "2020-2022 Hyundai Accent 5th Gen Facelift",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 16500,
           "maxPrice": 19000,
           "image": "images/cars/HYUNDAI_Accent_3.jpg"
@@ -1505,7 +1505,7 @@ const carData = {
         {
           "name": "2017-2020 Hyundai Elantra AD Sport 1.6T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 16000,
           "maxPrice": 19500,
           "image": "images/cars/HYUNDAI_Elantra_1.jpg"
@@ -1513,7 +1513,7 @@ const carData = {
         {
           "name": "2021-2023 Hyundai Elantra CN7 N Line 1.6T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 26000,
           "image": "images/cars/HYUNDAI_Elantra_2.jpg"
@@ -1521,7 +1521,7 @@ const carData = {
         {
           "name": "2024-2026 Hyundai Elantra CN7 Facelift N Line",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 26500,
           "maxPrice": 31000,
           "image": "images/cars/HYUNDAI_Elantra_3.jpg"
@@ -1565,7 +1565,7 @@ const carData = {
         {
           "name": "2018-2021 Hyundai Kona 1st Gen Pre-Facelift 1.6T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 18500,
           "maxPrice": 21500,
           "image": "images/cars/HYUNDAI_Kona_1.jpg"
@@ -1573,7 +1573,7 @@ const carData = {
         {
           "name": "2022-2023 Hyundai Kona 1st Gen Facelift 1.6T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 25000,
           "image": "images/cars/HYUNDAI_Kona_2.jpg"
@@ -1581,7 +1581,7 @@ const carData = {
         {
           "name": "2024-2026 Hyundai Kona 2nd Gen N Line 1.6T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 27000,
           "maxPrice": 32000,
           "image": "images/cars/HYUNDAI_Kona_3.jpg"
@@ -1617,7 +1617,7 @@ const carData = {
         {
           "name": "2017-2019 Hyundai Sonata LF Eco Facelift 1.6T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 16500,
           "maxPrice": 19500,
           "image": "images/cars/HYUNDAI_Sonata_1.jpg"
@@ -1625,7 +1625,7 @@ const carData = {
         {
           "name": "2020-2023 Hyundai Sonata DN8 1.6T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 21000,
           "maxPrice": 25000,
           "image": "images/cars/HYUNDAI_Sonata_2.jpg"
@@ -1635,7 +1635,7 @@ const carData = {
         {
           "name": "2017-2018 Hyundai Tucson TL 1.6T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 18500,
           "maxPrice": 22000,
           "image": "images/cars/HYUNDAI_Tucson_1.jpg"
@@ -1669,7 +1669,7 @@ const carData = {
         {
           "name": "2017-2018 Hyundai Veloster 1st Gen Turbo 1.6T",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 14500,
           "maxPrice": 17000,
           "image": "images/cars/HYUNDAI_Veloster_1.png"
@@ -1677,7 +1677,7 @@ const carData = {
         {
           "name": "2019-2021 Hyundai Veloster 2nd Gen Turbo R-Spec 1.6T",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 21500,
           "image": "images/cars/HYUNDAI_Veloster_2.jpg"
@@ -1687,7 +1687,7 @@ const carData = {
         {
           "name": "2020-2022 Hyundai Venue 1.6 DPI",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 16500,
           "maxPrice": 19000,
           "image": "images/cars/HYUNDAI_Venue_1.jpg"
@@ -1695,7 +1695,7 @@ const carData = {
         {
           "name": "2023-2026 Hyundai Venue 1.6L",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 19500,
           "maxPrice": 22500,
           "image": "images/cars/HYUNDAI_Venue_2.jpg"
@@ -1717,7 +1717,7 @@ const carData = {
         {
           "name": "2017-2018 Kia Forte YD SX Turbo 1.6T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 15500,
           "maxPrice": 18000,
           "image": "images/cars/KIA_Forte_1.jpg"
@@ -1725,7 +1725,7 @@ const carData = {
         {
           "name": "2020-2024 Kia Forte BD GT 1.6T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 19500,
           "maxPrice": 25000,
           "image": "images/cars/KIA_Forte_2.png"
@@ -1735,7 +1735,7 @@ const carData = {
         {
           "name": "2025-2026 Kia K4 GT-Line Turbo 1.6T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 29000,
           "maxPrice": 34000,
           "image": "images/cars/KIA_K4_1.jpg"
@@ -1745,7 +1745,7 @@ const carData = {
         {
           "name": "2021-2024 Kia K5 DL3 1.6T Turbo",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 23000,
           "maxPrice": 27500,
           "image": "images/cars/KIA_K5_1.jpg"
@@ -1789,7 +1789,7 @@ const carData = {
         {
           "name": "2017-2020 Kia Optima JF 1.6T LX Turbo",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 16500,
           "maxPrice": 21000,
           "image": "images/cars/KIA_Optima_1.jpg"
@@ -1799,7 +1799,7 @@ const carData = {
         {
           "name": "2018-2020 Kia Rio YB Pre-Facelift 1.6L",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 13000,
           "maxPrice": 15500,
           "image": "images/cars/KIA_Rio_1.jpg"
@@ -1807,7 +1807,7 @@ const carData = {
         {
           "name": "2018-2020 Kia Rio YB Pre-Facelift 1.6L",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 13000,
           "maxPrice": 15500,
           "image": "images/cars/KIA_Rio_2.jpg"
@@ -1815,7 +1815,7 @@ const carData = {
         {
           "name": "2021-2023 Kia Rio YB Facelift 1.6L",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 16000,
           "maxPrice": 19000,
           "image": "images/cars/KIA_Rio_3.jpg"
@@ -1823,7 +1823,7 @@ const carData = {
         {
           "name": "2021-2023 Kia Rio YB Facelift 1.6L",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 16000,
           "maxPrice": 19000,
           "image": "images/cars/KIA_Rio_4.webp"
@@ -1833,7 +1833,7 @@ const carData = {
         {
           "name": "2021-2023 Kia Seltos Pre-Facelift 1.6T Turbo",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 25500,
           "image": "images/cars/KIA_Seltos_1.jpg"
@@ -1841,7 +1841,7 @@ const carData = {
         {
           "name": "2024-2026 Kia Seltos Facelift 1.6T Turbo 8AT",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 26000,
           "maxPrice": 30000,
           "image": "images/cars/KIA_Seltos_2.jpg"
@@ -1885,7 +1885,7 @@ const carData = {
         {
           "name": "2017-2019 Kia Soul PS Exclaim Turbo 1.6T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 15000,
           "maxPrice": 17500,
           "image": "images/cars/KIA_Soul_1.jpg"
@@ -1893,7 +1893,7 @@ const carData = {
         {
           "name": "2020-2022 Kia Soul SK3 GT-Line Turbo 1.6T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 21000,
           "image": "images/cars/KIA_Soul_2.jpg"
@@ -1939,7 +1939,7 @@ const carData = {
         {
           "name": "2017 Nissan Juke F15 1.6 DIG-T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 14000,
           "maxPrice": 16500,
           "image": "images/cars/NISSAN_Juke_1.jpg"
@@ -1949,7 +1949,7 @@ const carData = {
         {
           "name": "2018-2020 Nissan Kicks P15 Pre-Facelift 1.6L",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 14500,
           "maxPrice": 17000,
           "image": "images/cars/NISSAN_Kicks_1.png"
@@ -1957,7 +1957,7 @@ const carData = {
         {
           "name": "2021-2024 Nissan Kicks P15 Facelift 1.6L",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 17500,
           "maxPrice": 20500,
           "image": "images/cars/NISSAN_Kicks_2.jpg"
@@ -1965,7 +1965,7 @@ const carData = {
         {
           "name": "2025-2026 Nissan Kicks 2nd Gen 1.6L",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 26000,
           "image": "images/cars/NISSAN_Kicks_3.jpg"
@@ -1975,7 +1975,7 @@ const carData = {
         {
           "name": "2017-2019 Nissan Sentra B17 SR Turbo NISMO 1.6T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 15500,
           "maxPrice": 18500,
           "image": "images/cars/NISSAN_Sentra_1.jpg"
@@ -1985,7 +1985,7 @@ const carData = {
         {
           "name": "2017-2019 Nissan Versa N17 2nd Gen 1.6L",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 11000,
           "maxPrice": 13500,
           "image": "images/cars/NISSAN_Versa_1.png"
@@ -1993,7 +1993,7 @@ const carData = {
         {
           "name": "2020-2022 Nissan Versa N18 3rd Gen Pre-Facelift 1.6L",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 14500,
           "maxPrice": 17000,
           "image": "images/cars/NISSAN_Versa_2.jpg"
@@ -2001,7 +2001,7 @@ const carData = {
         {
           "name": "2023-2025 Nissan Versa N18 3rd Gen Facelift 1.6L",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 17500,
           "maxPrice": 20000,
           "image": "images/cars/NISSAN_Versa_3.png"
@@ -2013,7 +2013,7 @@ const carData = {
         {
           "name": "2023-2026 Toyota GR Corolla G16E-GTS 1.6T AWD",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 42000,
           "maxPrice": 52000,
           "image": "images/cars/TOYOTA_GRCorolla_1.jpg"
@@ -2037,7 +2037,7 @@ const carData = {
         {
           "name": "2017-2018 Chevrolet Sonic Facelift 1.8L",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 11500,
           "maxPrice": 13500,
           "image": "images/cars/143fdee354cfba7c31dc2775be7a2859.jpg"
@@ -2045,7 +2045,7 @@ const carData = {
         {
           "name": "2017-2018 Chevrolet Sonic Facelift 1.8L",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 11500,
           "maxPrice": 13500,
           "image": "images/cars/chevrolet-sonic-2017-2021-1647409870.322387.jpg"
@@ -2057,7 +2057,7 @@ const carData = {
         {
           "name": "2017-2018 Honda HR-V RU Pre-Facelift 1.8L",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 17000,
           "maxPrice": 19500,
           "image": "images/cars/HONDA_HRV_1.jpg"
@@ -2065,7 +2065,7 @@ const carData = {
         {
           "name": "2019-2022 Honda HR-V RU Facelift 1.8L",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 20000,
           "maxPrice": 23500,
           "image": "images/cars/HONDA_HRV_2.jpg"
@@ -2089,7 +2089,7 @@ const carData = {
         {
           "name": "2017-2019 Nissan Sentra B17 Facelift 1.8L",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 13500,
           "maxPrice": 16000,
           "image": "images/cars/NISSAN_Sentra_1.jpg"
@@ -2101,15 +2101,15 @@ const carData = {
         {
           "name": "2017-2019 Toyota Corolla E170 Facelift 1.8L",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 15500,
           "maxPrice": 19000,
           "image": "images/cars/TOYOTA_Corolla_1.jpg"
         },
         {
-          "name": "2020-2022 Toyota Corolla E210 1.8L Gasoline",
+          "name": "2020-2022 Toyota Corolla E210 1.8L Benzin",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 19500,
           "maxPrice": 23500,
           "image": "images/cars/TOYOTA_Corolla_2.jpg"
@@ -2163,7 +2163,7 @@ const carData = {
         {
           "name": "2017 Volkswagen Beetle A5 Facelift 1.8 TSI",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 16000,
           "maxPrice": 19000,
           "image": "images/cars/VOLKSWAGEN_Beetle_1.jpg"
@@ -2173,7 +2173,7 @@ const carData = {
         {
           "name": "2017 Volkswagen Golf Mk7 1.8 TSI",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 15000,
           "maxPrice": 17500,
           "image": "images/cars/VOLKSWAGEN_Golf_1.jpg"
@@ -2181,7 +2181,7 @@ const carData = {
         {
           "name": "2017 Volkswagen Golf Mk7 1.8 TSI",
           "type": "Station Wagon",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 15000,
           "maxPrice": 17500,
           "image": "images/cars/VOLKSWAGEN_Golf_2.jpg"
@@ -2189,7 +2189,7 @@ const carData = {
         {
           "name": "2018 Volkswagen Golf Mk7.5 1.8 TSI",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 20500,
           "image": "images/cars/VOLKSWAGEN_Golf_3.jpg"
@@ -2197,7 +2197,7 @@ const carData = {
         {
           "name": "2018 Volkswagen Golf Mk7.5 1.8 TSI",
           "type": "Station Wagon",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 20500,
           "image": "images/cars/VOLKSWAGEN_Golf_4.jpg"
@@ -2207,7 +2207,7 @@ const carData = {
         {
           "name": "2017-2018 Volkswagen Jetta Mk6 Facelift 1.8 TSI",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 14000,
           "maxPrice": 16500,
           "image": "images/cars/VOLKSWAGEN_Jetta_1.jpg"
@@ -2217,7 +2217,7 @@ const carData = {
         {
           "name": "2017 Volkswagen Passat NMS 1.8 TSI",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 15500,
           "maxPrice": 18000,
           "image": "images/cars/VOLKSWAGEN_Passat_1.jpg"
@@ -2231,7 +2231,7 @@ const carData = {
         {
           "name": "2017-2022 Alfa Romeo Giulia Pre-Facelift 2.0T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 30000,
           "image": "images/cars/ALFAROMEO_Giulia_1.jpg"
@@ -2239,7 +2239,7 @@ const carData = {
         {
           "name": "2023-2025 Alfa Romeo Giulia Facelift 2.0T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 40000,
           "image": "images/cars/ALFAROMEO_Giulia_2.webp"
@@ -2249,7 +2249,7 @@ const carData = {
         {
           "name": "2023-2025 Alfa Romeo Stelvio Facelift 2.0T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 39000,
           "image": "images/cars/ALFAROMEO_Stelvio_2.jpg"
@@ -2261,7 +2261,7 @@ const carData = {
         {
           "name": "2017-2020 Audi A3 8V Facelift 2.0 TFSI",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 23000,
           "image": "images/cars/AUDI_A3_1.jpg"
@@ -2269,7 +2269,7 @@ const carData = {
         {
           "name": "2022-2025 Audi A3 8Y 40 TFSI 2.0T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 26000,
           "maxPrice": 32000,
           "image": "images/cars/AUDI_A3_2.jpg"
@@ -2279,7 +2279,7 @@ const carData = {
         {
           "name": "2017-2019 Audi A4 B9 Pre-Facelift 2.0T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 19000,
           "maxPrice": 24000,
           "image": "images/cars/AUDI_A4_1.jpg"
@@ -2287,7 +2287,7 @@ const carData = {
         {
           "name": "2020-2024 Audi A4 B9.5 Facelift 2.0T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 25000,
           "maxPrice": 33000,
           "image": "images/cars/AUDI_A4_2.jpg"
@@ -2297,7 +2297,7 @@ const carData = {
         {
           "name": "2018-2019 Audi A5 F5 Pre-Facelift 2.0T",
           "type": "Coupe",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 23000,
           "maxPrice": 28000,
           "image": "images/cars/AUDI_A5_1.jpg"
@@ -2305,7 +2305,7 @@ const carData = {
         {
           "name": "2018-2019 Audi A5 F5 Pre-Facelift 2.0T",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 23000,
           "maxPrice": 28000,
           "image": "images/cars/AUDI_A5_2.jpg"
@@ -2313,7 +2313,7 @@ const carData = {
         {
           "name": "2020-2024 Audi A5 F5.5 Facelift 2.0T",
           "type": "Coupe",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 29000,
           "maxPrice": 37000,
           "image": "images/cars/AUDI_A5_3.png"
@@ -2321,7 +2321,7 @@ const carData = {
         {
           "name": "2020-2024 Audi A5 F5.5 Facelift 2.0T",
           "type": "Hatchback",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 29000,
           "maxPrice": 37000,
           "image": "images/cars/AUDI_A5_4.jpg"
@@ -2331,7 +2331,7 @@ const carData = {
         {
           "name": "2019-2024 Audi A6 C8 45 TFSI 2.0T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 28000,
           "maxPrice": 42000,
           "image": "images/cars/AUDI_A6_1.jpg"
@@ -2341,7 +2341,7 @@ const carData = {
         {
           "name": "2017-2018 Audi Q3 8U Facelift 2.0T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 17500,
           "maxPrice": 21000,
           "image": "images/cars/AUDI_Q3_1.jpg"
@@ -2349,7 +2349,7 @@ const carData = {
         {
           "name": "2019-2025 Audi Q3 F3 40 45 TFSI 2.0T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 24000,
           "maxPrice": 35000,
           "image": "images/cars/AUDI_Q3_2.jpg"
@@ -2359,7 +2359,7 @@ const carData = {
         {
           "name": "2018-2020 Audi Q5 FY Pre-Facelift 2.0T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 27000,
           "image": "images/cars/AUDI_Q5_1.png"
@@ -2367,7 +2367,7 @@ const carData = {
         {
           "name": "2021-2025 Audi Q5 FY Facelift Sportback 2.0T",
           "type": "Crossover",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 28000,
           "maxPrice": 40000,
           "image": "images/cars/AUDI_Q5_2.jpg"
@@ -2377,7 +2377,7 @@ const carData = {
         {
           "name": "2017-2019 Audi Q7 4M Pre-Facelift 45 TFSI 2.0T",
           "type": "SUV",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 25000,
           "maxPrice": 32000,
           "image": "images/cars/AUDI_Q7_1.jpg"
@@ -2385,7 +2385,7 @@ const carData = {
         {
           "name": "2020-2025 Audi Q7 4M Facelift 45 TFSI 2.0T",
           "type": "SUV",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 34000,
           "maxPrice": 48000,
           "image": "images/cars/AUDI_Q7_2.jpg"
@@ -2395,7 +2395,7 @@ const carData = {
         {
           "name": "2017-2020 Audi S3 8V Facelift 2.0T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 25000,
           "maxPrice": 32000,
           "image": "images/cars/AUDI_S3_1.jpg"
@@ -2403,7 +2403,7 @@ const carData = {
         {
           "name": "2022-2025 Audi S3 8Y 2.0T",
           "type": "Sedan",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 35000,
           "maxPrice": 43000,
           "image": "images/cars/AUDI_S3_2.jpg"
@@ -2413,7 +2413,7 @@ const carData = {
         {
           "name": "2017-2023 Audi TT 8S 2.0 TFSI",
           "type": "Coupe",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 35000,
           "image": "images/cars/AUDI_TT_1.jpg"
@@ -2421,7 +2421,7 @@ const carData = {
         {
           "name": "2017-2023 Audi TT 8S 2.0 TFSI",
           "type": "Convertible",
-          "fuel": "Gasoline",
+          "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 35000,
           "image": "images/cars/AUDI_TT_2.webp"
