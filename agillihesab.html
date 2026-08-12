@@ -116,6 +116,8 @@
       font-size: 14px;
       padding: 0 10px;
     }
+    
+    
 
     .tahmin-card {
       background: rgba(17, 26, 46, 0.6); 
@@ -580,6 +582,59 @@
       .tahmin-card { padding: 16px; }
       .compact-models-grid { grid-template-columns: 1fr; }
     }
+    
+    .smart-search-wrapper {
+  position: relative;
+  max-width: 1050px;
+  margin: 0 auto 20px auto;
+}
+.smart-search-input {
+  width: 100%;
+  height: 54px;
+  background: rgba(17, 26, 46, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #fff;
+  padding: 0 45px 0 45px;
+  font-size: 15px;
+  outline: none;
+}
+.smart-search-input:focus { border-color: #3498db; }
+.smart-search-wrapper i.search-icon {
+  position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+  color: rgba(255,255,255,0.4); pointer-events: none;
+}
+.smart-search-clear {
+  position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; color: rgba(255,255,255,0.4);
+  cursor: pointer; font-size: 16px; display: none;
+}
+.smart-suggestions {
+  position: absolute; top: 60px; left: 0; right: 0;
+  background: #111a2e; border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px; max-height: 340px; overflow-y: auto;
+  z-index: 500; display: none; box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+.smart-suggestions.show { display: block; }
+.smart-suggestion-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 14px; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.smart-suggestion-item:last-child { border-bottom: none; }
+.smart-suggestion-item:hover, .smart-suggestion-item.kb-active {
+  background: rgba(52, 152, 219, 0.15);
+}
+.smart-suggestion-item img {
+  width: 46px; height: 34px; object-fit: cover; border-radius: 6px; background: #eef1f5;
+}
+.smart-suggestion-text { display: flex; flex-direction: column; }
+.smart-suggestion-title { font-size: 13.5px; font-weight: 700; color: #fff; }
+.smart-suggestion-title mark { background: #3498db; color: #fff; border-radius: 3px; padding: 0 2px; }
+.smart-suggestion-sub { font-size: 11.5px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+.smart-suggestion-price { margin-left: auto; font-size: 12px; font-weight: 700; color: #25D366; white-space: nowrap; }
+.smart-no-results { padding: 16px; text-align: center; color: rgba(255,255,255,0.5); font-size: 13px; }
+
+    
   </style>
 
   <script>
@@ -615,6 +670,17 @@
         <h1>Xəyalındakı Avtomobili Tap</h1>
         <p>Büdcənizə və ya istədiyiniz marka, mühərrik və kuza parametrlərinə uyğun ən dəqiq avtomobil təkliflərini görün.</p>
       </div>
+
+      <div class="smart-search-wrapper">
+  <i class="fa-solid fa-magnifying-glass search-icon"></i>
+  <input type="text" id="smartSearchInput" class="smart-search-input"
+         placeholder="Marka və ya model yazın... məs: 530E, Tesla, Sportage"
+         autocomplete="off">
+  <button type="button" class="smart-search-clear" id="smartSearchClear" onclick="clearSmartSearch()">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <div class="smart-suggestions" id="smartSuggestions"></div>
+</div>
 
       <div class="tahmin-card">
 
@@ -1236,6 +1302,142 @@
       renderModelsGrid(matchedCars);
       scrollToTarget("#resultsContainer");
     }
+
+      /* =========================================
+    CANLI AXTARIŞ (HƏRF-HƏRF)
+    ========================================= */
+let smartSearchIndex = [];
+let smartKbIndex = -1;
+
+function buildSmartSearchIndex() {
+  smartSearchIndex = [];
+  if (typeof carData === 'undefined') return;
+  for (const eng in carData) {
+    for (const brand in carData[eng]) {
+      for (const model in carData[eng][brand]) {
+        carData[eng][brand][model].forEach(item => {
+          smartSearchIndex.push({
+            engine: eng,
+            brand,
+            model,
+            generation: item.name,
+            fuel: item.fuel || "Benzin",
+            type: item.type || "Digər",
+            minPrice: item.minPrice,
+            maxPrice: item.maxPrice,
+            image: item.image || "",
+            searchText: `${brand} ${model} ${item.name}`.toLowerCase()
+          });
+        });
+      }
+    }
+  }
+}
+
+function normalizeAz(str) {
+  return (str || "").toLowerCase();
+}
+
+function highlightMatch(text, query) {
+  if (!query) return text;
+  const idx = normalizeAz(text).indexOf(normalizeAz(query));
+  if (idx === -1) return text;
+  return text.slice(0, idx) + "<mark>" + text.slice(idx, idx + query.length) + "</mark>" + text.slice(idx + query.length);
+}
+
+function renderSmartSuggestions(query) {
+  const box = $('#smartSuggestions');
+  const q = normalizeAz(query.trim());
+
+  if (!q) {
+    box.removeClass('show').empty();
+    return;
+  }
+
+  const matches = smartSearchIndex.filter(car => car.searchText.includes(q)).slice(0, 12);
+  smartKbIndex = -1;
+
+  if (matches.length === 0) {
+    box.html('<div class="smart-no-results">Uyğun avtomobil tapılmadı.</div>').addClass('show');
+    return;
+  }
+
+  let html = '';
+  matches.forEach((car, i) => {
+    const engineLabel = parseFloat(car.engine) === 0 ? "EV" : `${car.engine}L`;
+    const title = `${car.brand.toUpperCase()} ${car.model}`;
+    html += `
+      <div class="smart-suggestion-item" data-index="${i}" onclick="selectSmartSuggestion(${i})">
+        <img src="${car.image || ''}" onerror="this.style.visibility='hidden'">
+        <div class="smart-suggestion-text">
+          <div class="smart-suggestion-title">${highlightMatch(title, query)}</div>
+          <div class="smart-suggestion-sub">${car.generation} • ${engineLabel} • ${car.fuel}</div>
+        </div>
+        <div class="smart-suggestion-price">${car.minPrice ? car.minPrice.toLocaleString() : 'N/A'} AZN</div>
+      </div>
+    `;
+  });
+
+  box.data('matches', matches).html(html).addClass('show');
+}
+
+function selectSmartSuggestion(i) {
+  const matches = $('#smartSuggestions').data('matches') || [];
+  const car = matches[i];
+  if (!car) return;
+
+  $('#smartSuggestions').removeClass('show');
+  $('#smartSearchInput').val(`${car.brand} ${car.model}`);
+
+  const results = smartSearchIndex.filter(c => c.brand === car.brand && c.model === car.model);
+  const container = $('#resultsContainer');
+  container.html(`
+    <h3><i class="fa-solid fa-circle-check"></i> "${car.brand.toUpperCase()} ${car.model}" üçün nəticələr (${results.length})</h3>
+    <div class="compact-models-grid" id="modelsGridContainer"></div>
+  `);
+  renderModelsGrid(results.sort((a, b) => (a.minPrice || 0) - (b.minPrice || 0)));
+  scrollToTarget("#resultsContainer");
+}
+
+function clearSmartSearch() {
+  $('#smartSearchInput').val('').trigger('focus');
+  $('#smartSuggestions').removeClass('show').empty();
+  $('#smartSearchClear').hide();
+}
+
+$(document).on('input', '#smartSearchInput', function () {
+  const val = $(this).val();
+  $('#smartSearchClear').toggle(!!val);
+  renderSmartSuggestions(val);
+});
+
+$(document).on('keydown', '#smartSearchInput', function (e) {
+  const items = $('#smartSuggestions .smart-suggestion-item');
+  if (!items.length) return;
+
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    smartKbIndex = Math.min(smartKbIndex + 1, items.length - 1);
+    items.removeClass('kb-active').eq(smartKbIndex).addClass('kb-active');
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    smartKbIndex = Math.max(smartKbIndex - 1, 0);
+    items.removeClass('kb-active').eq(smartKbIndex).addClass('kb-active');
+  } else if (e.key === 'Enter') {
+    e.preventDefault();
+    if (smartKbIndex >= 0) items.eq(smartKbIndex).trigger('click');
+    else items.first().trigger('click');
+  } else if (e.key === 'Escape') {
+    $('#smartSuggestions').removeClass('show');
+  }
+});
+
+$(document).on('click', function (e) {
+  if (!$(e.target).closest('.smart-search-wrapper').length) {
+    $('#smartSuggestions').removeClass('show');
+  }
+});
+
 
     $(document).ready(function () {
       initParamDropdowns();
