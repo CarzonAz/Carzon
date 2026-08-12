@@ -1,17 +1,5 @@
 const carData = {
   "0.0": {
-    "ACURA": {
-      "ZDX": [
-        {
-          "name": "2024 Acura ZDX EV",
-          "type": "SUV",
-          "fuel": "Electric",
-          "minPrice": 75000,
-          "maxPrice": 95000,
-          "image": "images/cars/ACURA_ZDX_1_1786219213497.webp"
-        }
-      ]
-    },
     "AUDI": {
       "A6 e-tron": [
         {
@@ -20,7 +8,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 85000,
           "maxPrice": 110000,
-          "image": "images/cars/AUDI_A6etron_1_1786219230523.webp"
+          "image": "images/cars/AUDI_A6etron_1_1786219230523.jpg"
         }
       ],
       "e-tron": [
@@ -28,17 +16,17 @@ const carData = {
           "name": "2019-2022 Audi e-tron (Pre-Facelift)",
           "type": "SUV",
           "fuel": "Electric",
-          "minPrice": 42000,
-          "maxPrice": 58000,
-          "image": "images/cars/AUDI_etron_1_1786219234349.webp"
+          "minPrice": 37000,
+          "maxPrice": 47000,
+          "image": "images/cars/AUDI_etron_1_1786219234349.jpg"
         },
         {
           "name": "2023-2026 Audi Q8 e-tron (Facelift)",
           "type": "SUV",
           "fuel": "Electric",
-          "minPrice": 62000,
-          "maxPrice": 82000,
-          "image": "images/cars/AUDI_etron_2_1786220286995.webp"
+          "minPrice": 54000,
+          "maxPrice": 65000,
+          "image": "images/cars/AUDI_etron_2_1786220286995.jpg"
         }
       ],
       "e-tron GT": [
@@ -46,47 +34,17 @@ const carData = {
           "name": "2022-2024 Audi e-tron GT (Pre-Facelift)",
           "type": "Coupe Sedan",
           "fuel": "Electric",
-          "minPrice": 95000,
-          "maxPrice": 125000,
-          "image": "images/cars/AUDI_etronGT_1_1786219239302.webp"
+          "minPrice": 58000,
+          "maxPrice": 66000,
+          "image": "images/cars/AUDI_etronGT_1_1786219239302.png"
         },
         {
           "name": "2025-2026 Audi e-tron GT (Facelift)",
           "type": "Coupe Sedan",
           "fuel": "Electric",
-          "minPrice": 130000,
-          "maxPrice": 165000,
-          "image": "images/cars/AUDI_etronGT_2_1786220295647.webp"
-        }
-      ],
-      "Q4 e-tron": [
-        {
-          "name": "2022-2025 Audi Q4 e-tron",
-          "type": "SUV",
-          "fuel": "Electric",
-          "minPrice": 60000,
-          "maxPrice": 80000,
-          "image": "images/cars/AUDI_Q4etron_1_1786219244837.webp"
-        }
-      ],
-      "Q4 Sportback e-tron": [
-        {
-          "name": "2025 Audi Q4 Sportback e-tron",
-          "type": "SUV",
-          "fuel": "Electric",
-          "minPrice": 68000,
+          "minPrice": 75000,
           "maxPrice": 85000,
-          "image": "images/cars/AUDI_Q4Sportbacketron_1_1786219249915.webp"
-        }
-      ],
-      "Q6 e-tron": [
-        {
-          "name": "2025 Audi Q6 e-tron",
-          "type": "SUV",
-          "fuel": "Electric",
-          "minPrice": 90000,
-          "maxPrice": 120000,
-          "image": "images/cars/AUDI_Q6etron_1_1786219253383.webp"
+          "image": "images/cars/AUDI_etronGT_2_1786220295647.jpg"
         }
       ]
     },
@@ -96,17 +54,17 @@ const carData = {
           "name": "2014-2017 BMW i3 (Pre-LCI)",
           "type": "Hatchback",
           "fuel": "Electric",
-          "minPrice": 15000,
-          "maxPrice": 21000,
-          "image": "images/cars/BMW_i3_1_1786219262106.webp"
+          "minPrice": 14500,
+          "maxPrice": 18500,
+          "image": "images/cars/BMW_i3_1_1786219262106.jpg"
         },
         {
           "name": "2018-2022 BMW i3 / i3s (LCI Restyling)",
           "type": "Hatchback",
           "fuel": "Electric",
-          "minPrice": 22000,
-          "maxPrice": 30000,
-          "image": "images/cars/BMW_i3_2_1786220313503.webp"
+          "minPrice": 18500,
+          "maxPrice": 23500,
+          "image": "images/cars/BMW_i3_2_1786220313503.jpg"
         }
       ],
       "i4": [
@@ -114,17 +72,17 @@ const carData = {
           "name": "2022-2024 BMW i4 (Pre-LCI)",
           "type": "Coupe Sedan",
           "fuel": "Electric",
-          "minPrice": 58000,
-          "maxPrice": 75000,
-          "image": "images/cars/BMW_i4_1_1786219270473.webp"
+          "minPrice": 36500,
+          "maxPrice": 50000,
+          "image": "images/cars/BMW_i4_1_1786219270473.jpg"
         },
         {
           "name": "2025-2026 BMW i4 (LCI Restyling)",
           "type": "Coupe Sedan",
           "fuel": "Electric",
-          "minPrice": 78000,
-          "maxPrice": 95000,
-          "image": "images/cars/BMW_i4_2_1786220318701.webp"
+          "minPrice": 44000,
+          "maxPrice": 60000,
+          "image": "images/cars/BMW_i4_2_1786220318701.jpg"
         }
       ],
       "i5": [
@@ -132,9 +90,9 @@ const carData = {
           "name": "2024-2026 BMW i5",
           "type": "Sedan",
           "fuel": "Electric",
-          "minPrice": 95000,
-          "maxPrice": 130000,
-          "image": "images/cars/BMW_i5_1_1786219274620.webp"
+          "minPrice": 53000,
+          "maxPrice": 67000,
+          "image": "images/cars/BMW_i5_1_1786219274620.jpg"
         }
       ],
       "i7": [
@@ -142,19 +100,19 @@ const carData = {
           "name": "2023-2026 BMW i7",
           "type": "Sedan",
           "fuel": "Electric",
-          "minPrice": 150000,
-          "maxPrice": 210000,
-          "image": "images/cars/BMW_i7_1_1786219278946.webp"
+          "minPrice": 75000,
+          "maxPrice": 95000,
+          "image": "images/cars/BMW_i7_1_1786219278946.jpg"
         }
       ],
       "iX": [
         {
-          "name": "2022-2026 BMW iX",
+          "name": "2022-2026 BMW ",
           "type": "SUV",
           "fuel": "Electric",
-          "minPrice": 110000,
-          "maxPrice": 160000,
-          "image": "images/cars/BMW_iX_1_1786219283665.webp"
+          "minPrice": 55000,
+          "maxPrice": 70000,
+          "image": "images/cars/BMW_iX_1_1786219283665.png"
         }
       ]
     },
@@ -166,27 +124,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 180000,
           "maxPrice": 240000,
-          "image": "images/cars/CADILLAC_EscaladeIQ_1_1786219295740.webp"
-        }
-      ],
-      "Lyriq": [
-        {
-          "name": "2023-2026 Cadillac Lyriq",
-          "type": "SUV",
-          "fuel": "Electric",
-          "minPrice": 80000,
-          "maxPrice": 110000,
-          "image": "images/cars/CADILLAC_Lyriq_1_1786219300921.webp"
-        }
-      ],
-      "Optiq": [
-        {
-          "name": "2025-2026 Cadillac Optiq",
-          "type": "SUV",
-          "fuel": "Electric",
-          "minPrice": 70000,
-          "maxPrice": 90000,
-          "image": "images/cars/CADILLAC_Optiq_1_1786220335261.webp"
+          "image": "images/cars/CADILLAC_EscaladeIQ_1_1786219295740.jpg"
         }
       ]
     },
@@ -208,7 +146,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 28000,
           "maxPrice": 36000,
-          "image": "images/cars/CHEVROLET_BoltEUV_1_1786219321794.webp"
+          "image": "images/cars/CHEVROLET_BoltEUV_1_1786219321794.jpg"
         }
       ],
       "Bolt EV": [
@@ -218,7 +156,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 18000,
           "maxPrice": 25000,
-          "image": "images/cars/CHEVROLET_BoltEV_1_1786219331332.webp"
+          "image": "images/cars/CHEVROLET_BoltEV_1_1786219331332.jpg"
         },
         {
           "name": "2022-2023 Chevrolet Bolt EV (Restyling)",
@@ -226,7 +164,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 26000,
           "maxPrice": 34000,
-          "image": "images/cars/CHEVROLET_BoltEV_2_1786220346247.webp"
+          "image": "images/cars/CHEVROLET_BoltEV_2_1786220346247.jpg"
         }
       ],
       "Equinox EV": [
@@ -236,7 +174,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 50000,
           "maxPrice": 68000,
-          "image": "images/cars/CHEVROLET_EquinoxEV_1_1786219339906.webp"
+          "image": "images/cars/CHEVROLET_EquinoxEV_1_1786219339906.jpg"
         }
       ],
       "Silverado EV": [
@@ -246,7 +184,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 110000,
           "maxPrice": 150000,
-          "image": "images/cars/CHEVROLET_SilveradoEV_1_1786219349985.webp"
+          "image": "images/cars/CHEVROLET_SilveradoEV_1_1786219349985.png"
         }
       ]
     },
@@ -256,21 +194,9 @@ const carData = {
           "name": "2024-2025 Dodge Charger Daytona EV",
           "type": "Coupe",
           "fuel": "Electric",
-          "minPrice": 85000,
-          "maxPrice": 120000,
-          "image": "images/cars/DODGE_ChargerDaytona_1_1786219363869.webp"
-        }
-      ]
-    },
-    "FISKER": {
-      "Ocean": [
-        {
-          "name": "2023 Fisker Ocean",
-          "type": "SUV",
-          "fuel": "Electric",
-          "minPrice": 55000,
-          "maxPrice": 80000,
-          "image": "images/cars/FISKER_Ocean_1_1786219385440.webp"
+          "minPrice": 42000,
+          "maxPrice": 60000,
+          "image": "images/cars/DODGE_ChargerDaytona_1_1786219363869.jpg"
         }
       ]
     },
@@ -280,9 +206,9 @@ const carData = {
           "name": "2022-2023 Ford E-Transit 350",
           "type": "Van",
           "fuel": "Electric",
-          "minPrice": 60000,
-          "maxPrice": 80000,
-          "image": "images/cars/FORD_ETransit_1_1786219405056.webp"
+          "minPrice": 30000,
+          "maxPrice": 40000,
+          "image": "images/cars/FORD_ETransit_1_1786219405056.jpg"
         }
       ],
       "F-150 Lightning": [
@@ -290,9 +216,9 @@ const carData = {
           "name": "2022-2025 Ford F-150 Lightning",
           "type": "Pickup",
           "fuel": "Electric",
-          "minPrice": 85000,
-          "maxPrice": 140000,
-          "image": "images/cars/FORD_F150Lightning_1_1786219414608.webp"
+          "minPrice": 55000,
+          "maxPrice": 90000,
+          "image": "images/cars/FORD_F150Lightning_1_1786219414608.jpg"
         }
       ],
       "Mustang Mach-E": [
@@ -300,9 +226,9 @@ const carData = {
           "name": "2021-2025 Ford Mustang Mach-E",
           "type": "SUV",
           "fuel": "Electric",
-          "minPrice": 55000,
-          "maxPrice": 85000,
-          "image": "images/cars/FORD_MustangMachE_1_1786219421010.webp"
+          "minPrice": 30000,
+          "maxPrice": 45000,
+          "image": "images/cars/FORD_MustangMachE_1_1786219421010.jpg"
         }
       ]
     },
@@ -312,9 +238,9 @@ const carData = {
           "name": "2023 Genesis Electrified G80",
           "type": "Sedan",
           "fuel": "Electric",
-          "minPrice": 90000,
-          "maxPrice": 120000,
-          "image": "images/cars/GENESIS_ElectrifiedG80_1_1786219442110.webp"
+          "minPrice": 40000,
+          "maxPrice": 55000,
+          "image": "images/cars/GENESIS_ElectrifiedG80_1_1786219442110.jpg"
         }
       ],
       "Electrified GV70": [
@@ -322,9 +248,9 @@ const carData = {
           "name": "2023-2025 Genesis Electrified GV70",
           "type": "SUV",
           "fuel": "Electric",
-          "minPrice": 85000,
-          "maxPrice": 110000,
-          "image": "images/cars/GENESIS_ElectrifiedGV70_1_1786219448265.webp"
+          "minPrice": 45000,
+          "maxPrice": 65000,
+          "image": "images/cars/GENESIS_ElectrifiedGV70_1_1786219448265.jpg"
         }
       ],
       "GV60": [
@@ -332,8 +258,8 @@ const carData = {
           "name": "2024 Genesis GV60",
           "type": "Crossover",
           "fuel": "Electric",
-          "minPrice": 75000,
-          "maxPrice": 95000,
+          "minPrice": 28000,
+          "maxPrice": 40000,
           "image": "images/cars/GENESIS_GV60_1_1786219452310.webp"
         }
       ]
@@ -346,7 +272,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 140000,
           "maxPrice": 200000,
-          "image": "images/cars/GMC_HummerEV_1_1786219462460.webp"
+          "image": "images/cars/GMC_HummerEV_1_1786219462460.jpg"
         }
       ],
       "Sierra EV": [
@@ -356,7 +282,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 130000,
           "maxPrice": 170000,
-          "image": "images/cars/GMC_SierraEV_1_1786219467330.webp"
+          "image": "images/cars/GMC_SierraEV_1_1786219467330.jpg"
         }
       ]
     },
@@ -366,17 +292,17 @@ const carData = {
           "name": "2017-2019 Hyundai Ioniq Electric (Dorestyling)",
           "type": "Hatchback",
           "fuel": "Electric",
-          "minPrice": 19000,
-          "maxPrice": 24000,
-          "image": "images/cars/HYUNDAI_Ioniq_1_1786219481642.webp"
+          "minPrice": 17000,
+          "maxPrice": 20000,
+          "image": "images/cars/HYUNDAI_Ioniq_1_1786219481642.jpg"
         },
         {
           "name": "2020-2022 Hyundai Ioniq Electric (Restyling)",
           "type": "Hatchback",
           "fuel": "Electric",
-          "minPrice": 25000,
-          "maxPrice": 32000,
-          "image": "images/cars/HYUNDAI_Ioniq_2_1786220360841.webp"
+          "minPrice": 20000,
+          "maxPrice": 28000,
+          "image": "images/cars/HYUNDAI_Ioniq_2_1786220360841.jpg"
         }
       ],
       "Ioniq 5": [
@@ -384,17 +310,17 @@ const carData = {
           "name": "2022-2024 Hyundai Ioniq 5 (Pre-Facelift)",
           "type": "Crossover",
           "fuel": "Electric",
-          "minPrice": 48000,
-          "maxPrice": 65000,
-          "image": "images/cars/HYUNDAI_Ioniq5_1_1786219492487.webp"
+          "minPrice": 22000,
+          "maxPrice": 32000,
+          "image": "images/cars/HYUNDAI_Ioniq5_1_1786219492487.jpg"
         },
         {
           "name": "2025-2026 Hyundai Ioniq 5 (Facelift)",
           "type": "Crossover",
           "fuel": "Electric",
-          "minPrice": 66000,
-          "maxPrice": 78000,
-          "image": "images/cars/HYUNDAI_Ioniq5_2_1786220366087.webp"
+          "minPrice": 28000,
+          "maxPrice": 35000,
+          "image": "images/cars/HYUNDAI_Ioniq5_2_1786220366087.jpg"
         }
       ],
       "Ioniq 6": [
@@ -402,9 +328,9 @@ const carData = {
           "name": "2023-2025 Hyundai Ioniq 6",
           "type": "Sedan",
           "fuel": "Electric",
-          "minPrice": 58000,
-          "maxPrice": 78000,
-          "image": "images/cars/HYUNDAI_Ioniq6_1_1786219495804.webp"
+          "minPrice": 25000,
+          "maxPrice": 35000,
+          "image": "images/cars/HYUNDAI_Ioniq6_1_1786219495804.jpg"
         }
       ],
       "Kona Electric": [
@@ -414,7 +340,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 26000,
           "maxPrice": 34000,
-          "image": "images/cars/HYUNDAI_KonaElectric_1_1786220379583.webp"
+          "image": "images/cars/HYUNDAI_KonaElectric_1_1786220379583.jpg"
         },
         {
           "name": "2022-2023 Hyundai Kona Electric (Restyling Mk1)",
@@ -422,7 +348,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 35000,
           "maxPrice": 42000,
-          "image": "images/cars/HYUNDAI_KonaElectric_2_1786220387581.webp"
+          "image": "images/cars/HYUNDAI_KonaElectric_2_1786220387581.jpg"
         },
         {
           "name": "2024-2026 Hyundai Kona Electric (Mk2 Generation)",
@@ -430,7 +356,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 43000,
           "maxPrice": 52000,
-          "image": "images/cars/HYUNDAI_KonaElectric_3_1786220391779.webp"
+          "image": "images/cars/HYUNDAI_KonaElectric_3_1786220391779.jpg"
         }
       ]
     },
@@ -442,7 +368,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 50000,
           "maxPrice": 80000,
-          "image": "images/cars/JAGUAR_IPace_1_1786219510575.webp"
+          "image": "images/cars/JAGUAR_IPace_1_1786219510575.jpg"
         }
       ]
     },
@@ -454,7 +380,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 100000,
           "maxPrice": 130000,
-          "image": "images/cars/JEEP_WagoneerS_1_1786219520391.webp"
+          "image": "images/cars/JEEP_WagoneerS_1_1786219520391.jpg"
         }
       ]
     },
@@ -466,7 +392,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 50000,
           "maxPrice": 68000,
-          "image": "images/cars/KIA_EV6_1_1786219529164.webp"
+          "image": "images/cars/KIA_EV6_1_1786219529164.jpg"
         },
         {
           "name": "2025-2026 KIA EV6 (Facelift)",
@@ -474,7 +400,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 70000,
           "maxPrice": 85000,
-          "image": "images/cars/KIA_EV6_2_1786220401309.webp"
+          "image": "images/cars/KIA_EV6_2_1786220401309.jpg"
         }
       ],
       "EV9": [
@@ -484,7 +410,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 85000,
           "maxPrice": 115000,
-          "image": "images/cars/KIA_EV9_1_1786219533311.webp"
+          "image": "images/cars/KIA_EV9_1_1786219533311.jpg"
         }
       ],
       "Niro EV": [
@@ -494,7 +420,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 28000,
           "maxPrice": 36000,
-          "image": "images/cars/KIA_NiroEV_1_1786219537288.webp"
+          "image": "images/cars/KIA_NiroEV_1_1786219537288.jpg"
         },
         {
           "name": "2023-2026 KIA Niro EV (Mk2 Generation)",
@@ -502,7 +428,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 38000,
           "maxPrice": 48000,
-          "image": "images/cars/KIA_NiroEV_2_1786220408266.webp"
+          "image": "images/cars/KIA_NiroEV_2_1786220408266.jpg"
         }
       ]
     },
@@ -514,33 +440,12 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 75000,
           "maxPrice": 100000,
-          "image": "images/cars/LEXUS_RZ_1_1786219544972.webp"
-        }
-      ]
-    },
-    "LUCID": {
-      "Air": [
-        {
-          "name": "2022-2026 Lucid Air",
-          "type": "Sedan",
-          "fuel": "Electric",
-          "minPrice": 110000,
-          "maxPrice": 180000,
-          "image": "images/cars/LUCID_Air_1_1786219549770.webp"
+          "image": "images/cars/LEXUS_RZ_1_1786219544972.jpg"
         }
       ]
     },
     "MERCEDES-BENZ": {
-      "B-Class": [
-        {
-          "name": "2014-2017 Mercedes-Benz B250e",
-          "type": "Hatchback",
-          "fuel": "Electric",
-          "minPrice": 22000,
-          "maxPrice": 27000,
-          "image": "images/cars/MERCEDESBENZ_BClass_1_1786219556080.webp"
-        }
-      ],
+      "B-Class": [],
       "EQB": [
         {
           "name": "2022-2023 Mercedes-Benz EQB (Pre-Facelift)",
@@ -548,7 +453,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 58000,
           "maxPrice": 72000,
-          "image": "images/cars/MERCEDESBENZ_EQB_1_1786219564115.webp"
+          "image": "images/cars/MERCEDESBENZ_EQB_1_1786219564115.jpg"
         },
         {
           "name": "2024-2026 Mercedes-Benz EQB (Facelift)",
@@ -556,7 +461,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 73000,
           "maxPrice": 88000,
-          "image": "images/cars/MERCEDESBENZ_EQB_2_1786220424771.webp"
+          "image": "images/cars/MERCEDESBENZ_EQB_2_1786220424771.jpg"
         }
       ],
       "EQE": [
@@ -566,7 +471,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 95000,
           "maxPrice": 130000,
-          "image": "images/cars/MERCEDESBENZ_EQE_1_1786219569521.webp"
+          "image": "images/cars/MERCEDESBENZ_EQE_1_1786219569521.jpg"
         }
       ],
       "EQS": [
@@ -576,7 +481,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 110000,
           "maxPrice": 150000,
-          "image": "images/cars/MERCEDESBENZ_EQS_1_1786219577824.webp"
+          "image": "images/cars/MERCEDESBENZ_EQS_1_1786219577824.jpg"
         },
         {
           "name": "2025-2026 Mercedes-Benz EQS (Facelift Grille)",
@@ -584,7 +489,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 155000,
           "maxPrice": 195000,
-          "image": "images/cars/MERCEDESBENZ_EQS_2_1786220433366.webp"
+          "image": "images/cars/MERCEDESBENZ_EQS_2_1786220433366.jpg"
         }
       ],
       "G-Class": [
@@ -594,7 +499,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 220000,
           "maxPrice": 280000,
-          "image": "images/cars/MERCEDESBENZ_GClass_1_1786219582573.webp"
+          "image": "images/cars/MERCEDESBENZ_GClass_1_1786219582573.jpg"
         }
       ]
     },
@@ -606,7 +511,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 52000,
           "maxPrice": 72000,
-          "image": "images/cars/NISSAN_Ariya_1_1786219593714.webp"
+          "image": "images/cars/NISSAN_Ariya_1_1786219593714.jpg"
         }
       ],
       "Leaf": [
@@ -616,7 +521,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 18000,
           "maxPrice": 25000,
-          "image": "images/cars/NISSAN_Leaf_1_1786219604656.webp"
+          "image": "images/cars/NISSAN_Leaf_1_1786219604656.jpg"
         },
         {
           "name": "2023-2025 Nissan Leaf Mk2 (Restyling)",
@@ -624,37 +529,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 26000,
           "maxPrice": 33000,
-          "image": "images/cars/NISSAN_Leaf_2_1786220444457.webp"
-        }
-      ]
-    },
-    "POLESTAR": {
-      "Polestar 2": [
-        {
-          "name": "2021-2023 Polestar 2 (Pre-Facelift Grille)",
-          "type": "Coupe Sedan",
-          "fuel": "Electric",
-          "minPrice": 42000,
-          "maxPrice": 55000,
-          "image": "images/cars/POLESTAR_Polestar2_1_1786219608865.webp"
-        },
-        {
-          "name": "2024-2026 Polestar 2 (SmartZone Restyling)",
-          "type": "Coupe Sedan",
-          "fuel": "Electric",
-          "minPrice": 56000,
-          "maxPrice": 70000,
-          "image": "images/cars/POLESTAR_Polestar2_2_1786220452796.webp"
-        }
-      ],
-      "Polestar 3": [
-        {
-          "name": "2025 Polestar 3",
-          "type": "SUV",
-          "fuel": "Electric",
-          "minPrice": 90000,
-          "maxPrice": 120000,
-          "image": "images/cars/POLESTAR_Polestar3_1_1786219613920.webp"
+          "image": "images/cars/NISSAN_Leaf_2_1786220444457.jpg"
         }
       ]
     },
@@ -666,7 +541,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 110000,
           "maxPrice": 160000,
-          "image": "images/cars/PORSCHE_MacanEV_1_1786219622744.webp"
+          "image": "images/cars/PORSCHE_MacanEV_1_1786219622744.jpg"
         }
       ],
       "Taycan": [
@@ -676,7 +551,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 95000,
           "maxPrice": 150000,
-          "image": "images/cars/PORSCHE_Taycan_1_1786219628158.webp"
+          "image": "images/cars/PORSCHE_Taycan_1_1786219628158.jpg"
         },
         {
           "name": "2025-2026 Porsche Taycan (Facelift)",
@@ -688,44 +563,6 @@ const carData = {
         }
       ]
     },
-    "RIVIAN": {
-      "R1S": [
-        {
-          "name": "2022-2024 Rivian R1S (Gen 1)",
-          "type": "Off-Road SUV",
-          "fuel": "Electric",
-          "minPrice": 105000,
-          "maxPrice": 135000,
-          "image": "images/cars/RIVIAN_R1S_1_1786220475139.webp"
-        },
-        {
-          "name": "2025-2026 Rivian R1S (Gen 2 Refresh)",
-          "type": "Off-Road SUV",
-          "fuel": "Electric",
-          "minPrice": 138000,
-          "maxPrice": 165000,
-          "image": "images/cars/RIVIAN_R1S_2_1786220470013.webp"
-        }
-      ],
-      "R1T": [
-        {
-          "name": "2022-2024 Rivian R1T (Gen 1)",
-          "type": "Pickup",
-          "fuel": "Electric",
-          "minPrice": 95000,
-          "maxPrice": 125000,
-          "image": "images/cars/RIVIAN_R1T_1_1786220495072.webp"
-        },
-        {
-          "name": "2025-2026 Rivian R1T (Gen 2 Refresh)",
-          "type": "Pickup",
-          "fuel": "Electric",
-          "minPrice": 128000,
-          "maxPrice": 150000,
-          "image": "images/cars/RIVIAN_R1T_2_1786220484988.webp"
-        }
-      ]
-    },
     "SMART": {
       "Fortwo": [
         {
@@ -734,19 +571,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 14000,
           "maxPrice": 19000,
-          "image": "images/cars/SMART_Fortwo_1_1786219654832.webp"
-        }
-      ]
-    },
-    "SUBARU": {
-      "Solterra": [
-        {
-          "name": "2023-2025 Subaru Solterra EV",
-          "type": "SUV",
-          "fuel": "Electric",
-          "minPrice": 55000,
-          "maxPrice": 72000,
-          "image": "images/cars/SUBARU_Solterra_1_1786219659718.webp"
+          "image": "images/cars/SMART_Fortwo_1_1786219654832.jpg"
         }
       ]
     },
@@ -758,7 +583,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 130000,
           "maxPrice": 200000,
-          "image": "images/cars/TESLA_Cybertruck_1_1786219677510.webp"
+          "image": "images/cars/TESLA_Cybertruck_1_1786219677510.jpg"
         }
       ],
       "Model 3": [
@@ -766,17 +591,17 @@ const carData = {
           "name": "2018-2023 Tesla Model 3 (Dorestyling)",
           "type": "Sedan",
           "fuel": "Electric",
-          "minPrice": 28000,
-          "maxPrice": 42000,
-          "image": "images/cars/TESLA_Model3_1_1786219681580.webp"
+          "minPrice": 22000,
+          "maxPrice": 27000,
+          "image": "images/cars/TESLA_Model3_1_1786219681580.jpg"
         },
         {
           "name": "2024-2026 Tesla Model 3 (Highland Restyling)",
           "type": "Sedan",
           "fuel": "Electric",
-          "minPrice": 44000,
-          "maxPrice": 62000,
-          "image": "images/cars/TESLA_Model3_2_1786220504700.webp"
+          "minPrice": 30000,
+          "maxPrice": 35000,
+          "image": "images/cars/TESLA_Model3_2_1786220504700.jpg"
         }
       ],
       "Model S": [
@@ -786,7 +611,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 38000,
           "maxPrice": 62000,
-          "image": "images/cars/TESLA_ModelS_1_1786219741483.webp"
+          "image": "images/cars/TESLA_ModelS_1_1786219741483.jpg"
         },
         {
           "name": "2021-2026 Tesla Model S (Plaid / Restyling Interior)",
@@ -794,7 +619,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 68000,
           "maxPrice": 115000,
-          "image": "images/cars/TESLA_ModelS_2_1786220513657.webp"
+          "image": "images/cars/TESLA_ModelS_2_1786220513657.png"
         }
       ],
       "Model X": [
@@ -804,7 +629,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 48000,
           "maxPrice": 72000,
-          "image": "images/cars/TESLA_ModelX_1_1786219758360.webp"
+          "image": "images/cars/TESLA_ModelX_1_1786219758360.jpg"
         },
         {
           "name": "2021-2026 Tesla Model X (Plaid / Restyling Interior)",
@@ -812,7 +637,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 78000,
           "maxPrice": 130000,
-          "image": "images/cars/TESLA_ModelX_2_1786220535207.webp"
+          "image": "images/cars/TESLA_ModelX_2_1786220535207.jpg"
         }
       ],
       "Model Y": [
@@ -822,7 +647,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 36000,
           "maxPrice": 52000,
-          "image": "images/cars/TESLA_ModelY_1_1786220558202.webp"
+          "image": "images/cars/TESLA_ModelY_1_1786220558202.jpg"
         },
         {
           "name": "2025-2026 Tesla Model Y (Juniper Restyling)",
@@ -830,7 +655,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 54000,
           "maxPrice": 72000,
-          "image": "images/cars/TESLA_ModelY_2_1786220544960.webp"
+          "image": "images/cars/TESLA_ModelY_2_1786220544960.jpg"
         }
       ]
     },
@@ -842,31 +667,10 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 52000,
           "maxPrice": 72000,
-          "image": "images/cars/TOYOTA_bZ4X_1_1786219787617.webp"
+          "image": "images/cars/TOYOTA_bZ4X_1_1786219787617.jpg"
         }
       ],
-      "Mirai": [
-        {
-          "name": "2021-2026 Toyota Mirai FCEV (Mk2 Generation)",
-          "type": "Sedan",
-          "fuel": "Electric",
-          "minPrice": 42000,
-          "maxPrice": 58000,
-          "image": "images/cars/TOYOTA_Mirai_1_1786219791712.webp"
-        }
-      ]
-    },
-    "VINFAST": {
-      "VF 8": [
-        {
-          "name": "2024 VinFast VF 8 Plus",
-          "type": "SUV",
-          "fuel": "Electric",
-          "minPrice": 60000,
-          "maxPrice": 78000,
-          "image": "images/cars/VINFAST_VF8_1_1786219799172.webp"
-        }
-      ]
+      "Mirai": []
     },
     "VOLKSWAGEN": {
       "e-Golf": [
@@ -876,7 +680,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 20000,
           "maxPrice": 27000,
-          "image": "images/cars/VOLKSWAGEN_eGolf_1_1786219835827.webp"
+          "image": "images/cars/VOLKSWAGEN_eGolf_1_1786219835827.jpg"
         }
       ],
       "ID.4": [
@@ -886,7 +690,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 38000,
           "maxPrice": 52000,
-          "image": "images/cars/VOLKSWAGEN_ID4_1_1786219844182.webp"
+          "image": "images/cars/VOLKSWAGEN_ID4_1_1786219844182.jpg"
         },
         {
           "name": "2024-2026 Volkswagen ID.4 (Tech/Power Restyling)",
@@ -894,47 +698,7 @@ const carData = {
           "fuel": "Electric",
           "minPrice": 54000,
           "maxPrice": 68000,
-          "image": "images/cars/VOLKSWAGEN_ID4_2_1786220574098.webp"
-        }
-      ]
-    },
-    "VOLVO": {
-      "EX30": [
-        {
-          "name": "2025 Volvo EX30",
-          "type": "SUV",
-          "fuel": "Electric",
-          "minPrice": 48000,
-          "maxPrice": 62000,
-          "image": "images/cars/VOLVO_EX30_1_1786219851084.webp"
-        }
-      ],
-      "EX90": [
-        {
-          "name": "2025 Volvo EX90",
-          "type": "SUV",
-          "fuel": "Electric",
-          "minPrice": 105000,
-          "maxPrice": 140000,
-          "image": "images/cars/VOLVO_EX90_1_1786219859256.webp"
-        }
-      ],
-      "XC40 Recharge / EX40": [
-        {
-          "name": "2021-2023 Volvo XC40 Recharge (Pre-Facelift)",
-          "type": "SUV",
-          "fuel": "Electric",
-          "minPrice": 48000,
-          "maxPrice": 62000,
-          "image": "images/cars/VOLVO_XC40RechargeEX40_1_1786220611682.webp"
-        },
-        {
-          "name": "2024-2026 Volvo EX40 / XC40 Recharge (Restyling)",
-          "type": "SUV",
-          "fuel": "Electric",
-          "minPrice": 63000,
-          "maxPrice": 75000,
-          "image": "images/cars/VOLVO_XC40RechargeEX40_2_1786220595736.webp"
+          "image": "images/cars/VOLKSWAGEN_ID4_2_1786220574098.jpg"
         }
       ]
     }
@@ -948,7 +712,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 13000,
           "maxPrice": 15500,
-          "image": "images/cars/indir.webp"
+          "image": "images/cars/indir.jpg"
         },
         {
           "name": "2017-2018 Ford Focus Mk3 1.0 EcoBoost",
@@ -956,7 +720,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 13000,
           "maxPrice": 15500,
-          "image": "images/cars/2014-focus-20.webp"
+          "image": "images/cars/2014-focus-20.jpg"
         }
       ],
       "Ecosport": [
@@ -966,42 +730,12 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 14500,
           "maxPrice": 17500,
-          "image": "images/cars/542963-ford-ecosport-2018-2022-quoi-savoir-avant-d-acheter.webp"
+          "image": "images/cars/542963-ford-ecosport-2018-2022-quoi-savoir-avant-d-acheter.jpeg"
         }
       ]
     }
   },
   "1.2": {
-    "BUICK": {
-      "Encore GX": [
-        {
-          "name": "2020-2023 Buick Encore GX Pre-Facelift 1.2T",
-          "type": "Crossover",
-          "fuel": "Gasoline",
-          "minPrice": 19000,
-          "maxPrice": 23000,
-          "image": "images/cars/buick-encore-gx-2020-2023-1723792107.0363445.webp"
-        },
-        {
-          "name": "2024-2026 Buick Encore GX Facelift 1.2T",
-          "type": "Crossover",
-          "fuel": "Gasoline",
-          "minPrice": 24000,
-          "maxPrice": 28000,
-          "image": "images/cars/images (29).webp"
-        }
-      ],
-      "Envista": [
-        {
-          "name": "2024-2026 Buick Envista 1st Gen 1.2T",
-          "type": "Crossover",
-          "fuel": "Gasoline",
-          "minPrice": 25000,
-          "maxPrice": 29000,
-          "image": "images/cars/2024-buick-envista-f34.webp"
-        }
-      ]
-    },
     "CHEVROLET": {
       "Trax": [
         {
@@ -1010,7 +744,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 24000,
           "maxPrice": 28000,
-          "image": "images/cars/images (18).webp"
+          "image": "images/cars/images (18).jpg"
         }
       ]
     },
@@ -1022,7 +756,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 10000,
           "maxPrice": 12500,
-          "image": "images/cars/2017_mitsubishi_mirage_4dr-hatchback_gt_fq_oem_1_1600.webp"
+          "image": "images/cars/2017_mitsubishi_mirage_4dr-hatchback_gt_fq_oem_1_1600.avif"
         },
         {
           "name": "2021-2024 Mitsubishi Mirage 2nd Restyle 1.2L",
@@ -1030,7 +764,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 12500,
           "maxPrice": 15000,
-          "image": "images/cars/2021_mitsubishi_mirage_4dr-hatchback_carbonite-edition_fq_oem_1_1600.webp"
+          "image": "images/cars/2021_mitsubishi_mirage_4dr-hatchback_carbonite-edition_fq_oem_1_1600.avif"
         }
       ],
       "Mirage G4": [
@@ -1040,7 +774,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 10000,
           "maxPrice": 12500,
-          "image": "images/cars/images (30).webp"
+          "image": "images/cars/images (30).jpg"
         },
         {
           "name": "2021-2024 Mitsubishi Mirage G4 2nd Restyle 1.2L",
@@ -1048,7 +782,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 12500,
           "maxPrice": 15000,
-          "image": "images/cars/2021_mitsubishi_mirage-g4_sedan_carbonite-edition_fq_oem_1_1600.webp"
+          "image": "images/cars/2021_mitsubishi_mirage-g4_sedan_carbonite-edition_fq_oem_1_1600.avif"
         }
       ]
     }
@@ -1062,27 +796,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 38000,
           "maxPrice": 45000,
-          "image": "images/cars/2023-alfa-romeo-tonale-veloce-front-angle-on-road.webp"
-        }
-      ]
-    },
-    "BUICK": {
-      "Encore GX": [
-        {
-          "name": "2020-2023 Buick Encore GX Pre-Facelift 1.3T",
-          "type": "Crossover",
-          "fuel": "Gasoline",
-          "minPrice": 21000,
-          "maxPrice": 25000,
-          "image": "images/cars/2020_buick_encore_gx_angularfront.webp"
-        },
-        {
-          "name": "2024-2026 Buick Encore GX Facelift 1.3T",
-          "type": "Crossover",
-          "fuel": "Gasoline",
-          "minPrice": 25000,
-          "maxPrice": 29000,
-          "image": "images/cars/BUICK_EncoreGX_2.webp"
+          "image": "images/cars/2023-alfa-romeo-tonale-veloce-front-angle-on-road.jpg"
         }
       ]
     },
@@ -1094,7 +808,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 22000,
           "maxPrice": 26000,
-          "image": "images/cars/2021_Chevrolet_TrailBlazer_RS_AWD,_front_7.11.20.webp"
+          "image": "images/cars/2021_Chevrolet_TrailBlazer_RS_AWD,_front_7.11.20.jpg"
         },
         {
           "name": "2024-2026 Chevrolet Trailblazer Facelift 1.3T",
@@ -1102,19 +816,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 26000,
           "maxPrice": 30000,
-          "image": "images/cars/2026-trailblazer-gallery-ext-07_892x762.webp"
-        }
-      ]
-    },
-    "DODGE": {
-      "Hornet": [
-        {
-          "name": "2023-2026 Dodge Hornet R/T 1.3T PHEV",
-          "type": "Crossover",
-          "fuel": "Plug-in Hybrid",
-          "minPrice": 34000,
-          "maxPrice": 40000,
-          "image": "images/cars/DODGE_Hornet_1.webp"
+          "image": "images/cars/2026-trailblazer-gallery-ext-07_892x762.avif"
         }
       ]
     },
@@ -1126,7 +828,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 18000,
           "maxPrice": 22000,
-          "image": "images/cars/FIAT_500X_1.webp"
+          "image": "images/cars/FIAT_500X_1.jpg"
         }
       ]
     },
@@ -1138,7 +840,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 19000,
           "maxPrice": 23000,
-          "image": "images/cars/JEEP_Renegade_1.webp"
+          "image": "images/cars/JEEP_Renegade_1.jpg"
         }
       ]
     }
@@ -1152,19 +854,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 19000,
           "maxPrice": 23000,
-          "image": "images/cars/AUDI_A3_1.webp"
-        }
-      ]
-    },
-    "BUICK": {
-      "Encore": [
-        {
-          "name": "2017-2022 Buick Encore 1st Gen Facelift 1.4T",
-          "type": "Crossover",
-          "fuel": "Gasoline",
-          "minPrice": 16000,
-          "maxPrice": 20000,
-          "image": "images/cars/BUICK_Encore_1.webp"
+          "image": "images/cars/AUDI_A3_1.jpg"
         }
       ]
     },
@@ -1176,7 +866,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 13500,
           "maxPrice": 15500,
-          "image": "images/cars/images (25).webp"
+          "image": "images/cars/images (25).jpg"
         },
         {
           "name": "2017-2018 Chevrolet Cruze J400 Pre-Facelift 1.4T",
@@ -1184,7 +874,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 13500,
           "maxPrice": 15500,
-          "image": "images/cars/images (17).webp"
+          "image": "images/cars/images (17).jpg"
         },
         {
           "name": "2019 Chevrolet Cruze J400 Facelift 1.4T",
@@ -1192,7 +882,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 15000,
           "maxPrice": 17000,
-          "image": "images/cars/chevrolet-cruze-2019-2024-1782051149.9450848.webp"
+          "image": "images/cars/chevrolet-cruze-2019-2024-1782051149.9450848.jpg"
         },
         {
           "name": "2019 Chevrolet Cruze J400 Facelift 1.4T",
@@ -1200,7 +890,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 15000,
           "maxPrice": 17000,
-          "image": "images/cars/2019-Chevrolet-Cruze-Red-Hot-Premier-Hatch.webp"
+          "image": "images/cars/2019-Chevrolet-Cruze-Red-Hot-Premier-Hatch.jpeg"
         }
       ],
       "Sonic": [
@@ -1210,7 +900,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 12000,
           "maxPrice": 14500,
-          "image": "images/cars/2018-Chevrolet-Sonic-007.webp"
+          "image": "images/cars/2018-Chevrolet-Sonic-007.avif"
         },
         {
           "name": "2017-2020 Chevrolet Sonic Facelift 1.4T",
@@ -1218,7 +908,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 12000,
           "maxPrice": 14500,
-          "image": "images/cars/2018_chevrolet_sonic_4dr-hatchback_lt_fq_oem_1_1600.webp"
+          "image": "images/cars/2018_chevrolet_sonic_4dr-hatchback_lt_fq_oem_1_1600.avif"
         }
       ],
       "Spark": [
@@ -1228,7 +918,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 11000,
           "maxPrice": 13500,
-          "image": "images/cars/2017-chevrolet-sparkactiv-001-1646682661.webp"
+          "image": "images/cars/2017-chevrolet-sparkactiv-001-1646682661.avif"
         }
       ],
       "Trax": [
@@ -1238,7 +928,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 15500,
           "maxPrice": 19000,
-          "image": "images/cars/images (19).webp"
+          "image": "images/cars/images (19).jpg"
         }
       ]
     },
@@ -1270,7 +960,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 14000,
           "maxPrice": 17000,
-          "image": "images/cars/FIAT_500L_1.webp"
+          "image": "images/cars/FIAT_500L_1.jpg"
         }
       ]
     },
@@ -1282,7 +972,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 14500,
           "maxPrice": 16500,
-          "image": "images/cars/HYUNDAI_Elantra_1.webp"
+          "image": "images/cars/HYUNDAI_Elantra_1.png"
         },
         {
           "name": "2019-2020 Hyundai Elantra AD Eco Facelift 1.4T",
@@ -1290,7 +980,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 16000,
           "maxPrice": 18000,
-          "image": "images/cars/HYUNDAI_Elantra_2.webp"
+          "image": "images/cars/HYUNDAI_Elantra_2.jpg"
         }
       ]
     },
@@ -1302,7 +992,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 16500,
           "maxPrice": 19500,
-          "image": "images/cars/JEEP_Renegade_1.webp"
+          "image": "images/cars/JEEP_Renegade_1.jpg"
         }
       ]
     },
@@ -1314,7 +1004,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 18000,
           "maxPrice": 21000,
-          "image": "images/cars/VOLKSWAGEN_Golf_1.webp"
+          "image": "images/cars/VOLKSWAGEN_Golf_1.jpg"
         }
       ],
       "Jetta": [
@@ -1324,7 +1014,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 14000,
           "maxPrice": 16500,
-          "image": "images/cars/VOLKSWAGEN_Jetta_1.webp"
+          "image": "images/cars/VOLKSWAGEN_Jetta_1.jpg"
         },
         {
           "name": "2019-2021 Volkswagen Jetta Mk7 1.4 TSI",
@@ -1332,42 +1022,12 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 17000,
           "maxPrice": 20000,
-          "image": "images/cars/VOLKSWAGEN_Jetta_2.webp"
+          "image": "images/cars/VOLKSWAGEN_Jetta_2.png"
         }
       ]
     }
   },
   "1.5": {
-    "ACURA": {
-      "ADX": [
-        {
-          "name": "2025-2026 Acura ADX 1st Gen 1.5T",
-          "type": "Crossover",
-          "fuel": "Gasoline",
-          "minPrice": 42000,
-          "maxPrice": 50000,
-          "image": "images/cars/ACURA_ADX_1.webp"
-        }
-      ],
-      "Integra": [
-        {
-          "name": "2023-2026 Acura Integra DE4 Liftback 1.5T",
-          "type": "Sedan",
-          "fuel": "Gasoline",
-          "minPrice": 35000,
-          "maxPrice": 42000,
-          "image": "images/cars/ACURA_Integra_1.webp"
-        },
-        {
-          "name": "2023-2026 Acura Integra DE4 Liftback 1.5T",
-          "type": "Hatchback",
-          "fuel": "Gasoline",
-          "minPrice": 35000,
-          "maxPrice": 42000,
-          "image": "images/cars/ACURA_Integra_2.webp"
-        }
-      ]
-    },
     "BMW": {
       "i8": [
         {
@@ -1376,7 +1036,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 85000,
           "maxPrice": 105000,
-          "image": "images/cars/BMW_i8_1.webp"
+          "image": "images/cars/BMW_i8_1.jpg"
         },
         {
           "name": "2018-2020 BMW i8 Facelift 1.5T PHEV",
@@ -1384,7 +1044,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 85000,
           "maxPrice": 105000,
-          "image": "images/cars/BMW_i8_2.webp"
+          "image": "images/cars/BMW_i8_2.jpg"
         }
       ]
     },
@@ -1396,7 +1056,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 16000,
           "maxPrice": 19500,
-          "image": "images/cars/2018-2021-chevrolet-equinox-v0-vd3vph8rrabe1.webp"
+          "image": "images/cars/2018-2021-chevrolet-equinox-v0-vd3vph8rrabe1.jpg"
         },
         {
           "name": "2022-2024 Chevrolet Equinox 3rd Gen Facelift 1.5T",
@@ -1404,7 +1064,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 20000,
           "maxPrice": 24000,
-          "image": "images/cars/images (15).webp"
+          "image": "images/cars/images (15).jpg"
         },
         {
           "name": "2025-2026 Chevrolet Equinox 4th Gen 1.5T",
@@ -1412,7 +1072,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 27000,
           "maxPrice": 31000,
-          "image": "images/cars/2025-chevrolet-equinox-activ-pr-102-67f019835c500.webp"
+          "image": "images/cars/2025-chevrolet-equinox-activ-pr-102-67f019835c500.avif"
         }
       ],
       "Malibu": [
@@ -1422,7 +1082,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 15000,
           "maxPrice": 17500,
-          "image": "images/cars/2016_chevrolet_malibu_sedan_premier_fq_oem_1_1600.webp"
+          "image": "images/cars/2016_chevrolet_malibu_sedan_premier_fq_oem_1_1600.avif"
         },
         {
           "name": "2019-2025 Chevrolet Malibu 9th Gen Facelift 1.5T",
@@ -1430,7 +1090,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 18000,
           "maxPrice": 23000,
-          "image": "images/cars/2019-chevrolet-malibu-rs-117-1568289288.webp"
+          "image": "images/cars/2019-chevrolet-malibu-rs-117-1568289288.avif"
         }
       ],
       "Volt": [
@@ -1440,7 +1100,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 17000,
           "maxPrice": 20000,
-          "image": "images/cars/2017-chevrolet-volt-5dr-hb-premier-angular-front-exterior-view_100544663_l.webp"
+          "image": "images/cars/2017-chevrolet-volt-5dr-hb-premier-angular-front-exterior-view_100544663_l.jpg"
         }
       ]
     },
@@ -1452,7 +1112,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 25000,
           "maxPrice": 31000,
-          "image": "images/cars/car_FORD_BroncoSport_1786202971648.webp"
+          "image": "images/cars/car_FORD_BroncoSport_1786202971648.jpg"
         },
         {
           "name": "2025-2026 Ford Bronco Sport Facelift 1.5T",
@@ -1460,7 +1120,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 32000,
           "maxPrice": 37000,
-          "image": "images/cars/FORD_BroncoSport_2.webp"
+          "image": "images/cars/FORD_BroncoSport_2.png"
         }
       ],
       "Escape": [
@@ -1470,7 +1130,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 15500,
           "maxPrice": 18500,
-          "image": "images/cars/FORD_Escape_1.webp"
+          "image": "images/cars/FORD_Escape_1.jpg"
         },
         {
           "name": "2020-2022 Ford Escape 4th Gen Pre-Facelift 1.5T",
@@ -1478,7 +1138,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 20000,
           "maxPrice": 24000,
-          "image": "images/cars/FORD_Escape_2.webp"
+          "image": "images/cars/FORD_Escape_2.png"
         },
         {
           "name": "2023-2026 Ford Escape 4th Gen Facelift 1.5T",
@@ -1486,7 +1146,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 25000,
           "maxPrice": 31000,
-          "image": "images/cars/FORD_Escape_3.webp"
+          "image": "images/cars/FORD_Escape_3.jpg"
         }
       ],
       "Fusion": [
@@ -1496,7 +1156,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 16000,
           "maxPrice": 19500,
-          "image": "images/cars/FORD_Fusion_1.webp"
+          "image": "images/cars/FORD_Fusion_1.jpg"
         }
       ]
     },
@@ -1508,7 +1168,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 17500,
           "maxPrice": 21000,
-          "image": "images/cars/GMC_Terrain_1.webp"
+          "image": "images/cars/GMC_Terrain_1.png"
         },
         {
           "name": "2022-2024 GMC Terrain 2nd Gen Facelift 1.5T",
@@ -1516,7 +1176,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 21500,
           "maxPrice": 25000,
-          "image": "images/cars/GMC_Terrain_2.webp"
+          "image": "images/cars/GMC_Terrain_2.jpg"
         },
         {
           "name": "2025-2026 GMC Terrain 3rd Gen 1.5T",
@@ -1524,7 +1184,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 28000,
           "maxPrice": 33000,
-          "image": "images/cars/GMC_Terrain_3.webp"
+          "image": "images/cars/GMC_Terrain_3.jpg"
         }
       ]
     },
@@ -1536,7 +1196,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 21000,
           "maxPrice": 24500,
-          "image": "images/cars/HONDA_Accord_1.webp"
+          "image": "images/cars/HONDA_Accord_1.jpg"
         },
         {
           "name": "2021-2022 Honda Accord 10th Gen Facelift 1.5T",
@@ -1552,7 +1212,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 28000,
           "maxPrice": 35000,
-          "image": "images/cars/HONDA_Accord_3.webp"
+          "image": "images/cars/HONDA_Accord_3.jpg"
         }
       ],
       "Civic": [
@@ -1562,7 +1222,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 17500,
           "maxPrice": 20000,
-          "image": "images/cars/HONDA_Civic_1.webp"
+          "image": "images/cars/HONDA_Civic_1.jpg"
         },
         {
           "name": "2017-2018 Honda Civic 10th Gen Pre-Facelift 1.5T",
@@ -1570,7 +1230,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 17500,
           "maxPrice": 20000,
-          "image": "images/cars/HONDA_Civic_2.webp"
+          "image": "images/cars/HONDA_Civic_2.jpg"
         },
         {
           "name": "2019-2021 Honda Civic 10th Gen Facelift 1.5T",
@@ -1578,7 +1238,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 20000,
           "maxPrice": 23500,
-          "image": "images/cars/HONDA_Civic_3.webp"
+          "image": "images/cars/HONDA_Civic_3.jpg"
         },
         {
           "name": "2019-2021 Honda Civic 10th Gen Facelift 1.5T",
@@ -1586,7 +1246,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 20000,
           "maxPrice": 23500,
-          "image": "images/cars/HONDA_Civic_4.webp"
+          "image": "images/cars/HONDA_Civic_4.jpg"
         },
         {
           "name": "2022-2025 Honda Civic 11th Gen 1.5T",
@@ -1594,7 +1254,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 24000,
           "maxPrice": 32000,
-          "image": "images/cars/HONDA_Civic_5.webp"
+          "image": "images/cars/HONDA_Civic_5.jpg"
         },
         {
           "name": "2022-2025 Honda Civic 11th Gen 1.5T",
@@ -1602,7 +1262,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 24000,
           "maxPrice": 32000,
-          "image": "images/cars/HONDA_Civic_6.webp"
+          "image": "images/cars/HONDA_Civic_6.png"
         }
       ],
       "Clarity": [
@@ -1612,7 +1272,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 20000,
           "maxPrice": 24000,
-          "image": "images/cars/HONDA_Clarity_1.webp"
+          "image": "images/cars/HONDA_Clarity_1.jpg"
         }
       ],
       "CR-V": [
@@ -1622,7 +1282,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 22000,
           "maxPrice": 25500,
-          "image": "images/cars/HONDA_CRV_1.webp"
+          "image": "images/cars/HONDA_CRV_1.jpg"
         },
         {
           "name": "2020-2022 Honda CR-V 5th Gen Facelift 1.5T",
@@ -1630,7 +1290,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 25500,
           "maxPrice": 29000,
-          "image": "images/cars/HONDA_CRV_2.webp"
+          "image": "images/cars/HONDA_CRV_2.jpg"
         },
         {
           "name": "2023-2026 Honda CR-V 6th Gen 1.5T",
@@ -1638,7 +1298,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 30000,
           "maxPrice": 38000,
-          "image": "images/cars/HONDA_CRV_3.webp"
+          "image": "images/cars/HONDA_CRV_3.jpg"
         }
       ],
       "Fit": [
@@ -1648,7 +1308,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 13500,
           "maxPrice": 16500,
-          "image": "images/cars/HONDA_Fit_1.webp"
+          "image": "images/cars/HONDA_Fit_1.jpg"
         }
       ],
       "Insight": [
@@ -1658,7 +1318,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 20000,
           "maxPrice": 24000,
-          "image": "images/cars/HONDA_Insight_1.webp"
+          "image": "images/cars/HONDA_Insight_1.jpg"
         }
       ]
     },
@@ -1670,7 +1330,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 16000,
           "maxPrice": 21000,
-          "image": "images/cars/MINI_Cooper_1.webp"
+          "image": "images/cars/MINI_Cooper_1.jpg"
         },
         {
           "name": "2022-2024 Mini Cooper F55 F56 Facelift 2 1.5T",
@@ -1678,7 +1338,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 22000,
           "maxPrice": 26000,
-          "image": "images/cars/MINI_Cooper_2.webp"
+          "image": "images/cars/MINI_Cooper_2.jpg"
         }
       ]
     },
@@ -1690,7 +1350,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 17000,
           "maxPrice": 20000,
-          "image": "images/cars/MITSUBISHI_EclipseCross_1.webp"
+          "image": "images/cars/MITSUBISHI_EclipseCross_1.jpg"
         },
         {
           "name": "2022-2025 Mitsubishi Eclipse Cross Facelift 1.5T",
@@ -1698,7 +1358,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 20500,
           "maxPrice": 24500,
-          "image": "images/cars/MITSUBISHI_EclipseCross_2.webp"
+          "image": "images/cars/MITSUBISHI_EclipseCross_2.jpg"
         }
       ]
     },
@@ -1710,7 +1370,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 24000,
           "maxPrice": 28000,
-          "image": "images/cars/NISSAN_Rogue_1.webp"
+          "image": "images/cars/NISSAN_Rogue_1.jpg"
         },
         {
           "name": "2024-2026 Nissan Rogue T33 1.5 VC-Turbo Facelift",
@@ -1730,7 +1390,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 13000,
           "maxPrice": 16000,
-          "image": "images/cars/TOYOTA_Yaris_1.webp"
+          "image": "images/cars/TOYOTA_Yaris_1.jpg"
         },
         {
           "name": "2017-2020 Toyota Yaris iA 1.5L",
@@ -1738,7 +1398,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 13000,
           "maxPrice": 16000,
-          "image": "images/cars/TOYOTA_Yaris_2.webp"
+          "image": "images/cars/TOYOTA_Yaris_2.jpg"
         }
       ]
     },
@@ -1750,7 +1410,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 21000,
           "maxPrice": 25000,
-          "image": "images/cars/VOLKSWAGEN_Jetta_1.webp"
+          "image": "images/cars/VOLKSWAGEN_Jetta_1.jpg"
         },
         {
           "name": "2025-2026 Volkswagen Jetta Mk7 2nd Facelift 1.5 TSI",
@@ -1758,7 +1418,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 26000,
           "maxPrice": 30000,
-          "image": "images/cars/VOLKSWAGEN_Jetta_2.webp"
+          "image": "images/cars/VOLKSWAGEN_Jetta_2.jpg"
         }
       ],
       "Taos": [
@@ -1768,7 +1428,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 22000,
           "maxPrice": 26000,
-          "image": "images/cars/VOLKSWAGEN_Taos_1.webp"
+          "image": "images/cars/VOLKSWAGEN_Taos_1.jpg"
         },
         {
           "name": "2025-2026 Volkswagen Taos Facelift 1.5 TSI",
@@ -1776,24 +1436,12 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 26500,
           "maxPrice": 31000,
-          "image": "images/cars/VOLKSWAGEN_Taos_2.webp"
+          "image": "images/cars/VOLKSWAGEN_Taos_2.jpg"
         }
       ]
     }
   },
   "1.6": {
-    "BUICK": {
-      "Cascada": [
-        {
-          "name": "2017-2019 Buick Cascada 1.6 Turbo",
-          "type": "Convertible",
-          "fuel": "Gasoline",
-          "minPrice": 17000,
-          "maxPrice": 20000,
-          "image": "images/cars/BUICK_Cascada_1.webp"
-        }
-      ]
-    },
     "CHEVROLET": {
       "Cruze": [
         {
@@ -1802,7 +1450,7 @@ const carData = {
           "fuel": "Diesel",
           "minPrice": 14500,
           "maxPrice": 17500,
-          "image": "images/cars/2017-chevrolet-cruze-diesel-first-drive-review-car-and-driver-photo-677562-s-original.webp"
+          "image": "images/cars/2017-chevrolet-cruze-diesel-first-drive-review-car-and-driver-photo-677562-s-original.avif"
         },
         {
           "name": "2017-2019 Chevrolet Cruze J400 Turbo Diesel",
@@ -1822,7 +1470,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 15000,
           "maxPrice": 18000,
-          "image": "images/cars/FORD_Fiesta_1.webp"
+          "image": "images/cars/FORD_Fiesta_1.jpg"
         }
       ]
     },
@@ -1834,7 +1482,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 12000,
           "maxPrice": 14000,
-          "image": "images/cars/HYUNDAI_Accent_1.webp"
+          "image": "images/cars/HYUNDAI_Accent_1.jpg"
         },
         {
           "name": "2018-2019 Hyundai Accent 5th Gen Pre-Facelift",
@@ -1842,7 +1490,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 14000,
           "maxPrice": 16500,
-          "image": "images/cars/HYUNDAI_Accent_2.webp"
+          "image": "images/cars/HYUNDAI_Accent_2.jpg"
         },
         {
           "name": "2020-2022 Hyundai Accent 5th Gen Facelift",
@@ -1850,7 +1498,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 16500,
           "maxPrice": 19000,
-          "image": "images/cars/HYUNDAI_Accent_3.webp"
+          "image": "images/cars/HYUNDAI_Accent_3.jpg"
         }
       ],
       "Elantra": [
@@ -1860,7 +1508,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 16000,
           "maxPrice": 19500,
-          "image": "images/cars/HYUNDAI_Elantra_1.webp"
+          "image": "images/cars/HYUNDAI_Elantra_1.jpg"
         },
         {
           "name": "2021-2023 Hyundai Elantra CN7 N Line 1.6T",
@@ -1868,7 +1516,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 22000,
           "maxPrice": 26000,
-          "image": "images/cars/HYUNDAI_Elantra_2.webp"
+          "image": "images/cars/HYUNDAI_Elantra_2.jpg"
         },
         {
           "name": "2024-2026 Hyundai Elantra CN7 Facelift N Line",
@@ -1876,7 +1524,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 26500,
           "maxPrice": 31000,
-          "image": "images/cars/HYUNDAI_Elantra_3.webp"
+          "image": "images/cars/HYUNDAI_Elantra_3.jpg"
         }
       ],
       "Ioniq": [
@@ -1886,7 +1534,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 17000,
           "maxPrice": 19500,
-          "image": "images/cars/HYUNDAI_Ioniq_1.webp"
+          "image": "images/cars/HYUNDAI_Ioniq_1.jpg"
         },
         {
           "name": "2017-2019 Hyundai Ioniq Pre-Facelift PHEV",
@@ -1894,7 +1542,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 18000,
           "maxPrice": 20000,
-          "image": "images/cars/HYUNDAI_Ioniq_2.webp"
+          "image": "images/cars/HYUNDAI_Ioniq_2.jpg"
         },
         {
           "name": "2020-2022 Hyundai Ioniq Facelift Hybrid",
@@ -1902,7 +1550,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 20500,
           "maxPrice": 23000,
-          "image": "images/cars/HYUNDAI_Ioniq_3.webp"
+          "image": "images/cars/HYUNDAI_Ioniq_3.jpg"
         },
         {
           "name": "2020-2022 Hyundai Ioniq Facelift PHEV",
@@ -1910,7 +1558,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 21500,
           "maxPrice": 24000,
-          "image": "images/cars/HYUNDAI_Ioniq_4.webp"
+          "image": "images/cars/HYUNDAI_Ioniq_4.jpg"
         }
       ],
       "Kona": [
@@ -1920,7 +1568,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 18500,
           "maxPrice": 21500,
-          "image": "images/cars/HYUNDAI_Kona_1.webp"
+          "image": "images/cars/HYUNDAI_Kona_1.jpg"
         },
         {
           "name": "2022-2023 Hyundai Kona 1st Gen Facelift 1.6T",
@@ -1928,7 +1576,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 22000,
           "maxPrice": 25000,
-          "image": "images/cars/HYUNDAI_Kona_2.webp"
+          "image": "images/cars/HYUNDAI_Kona_2.jpg"
         },
         {
           "name": "2024-2026 Hyundai Kona 2nd Gen N Line 1.6T",
@@ -1936,7 +1584,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 27000,
           "maxPrice": 32000,
-          "image": "images/cars/HYUNDAI_Kona_3.webp"
+          "image": "images/cars/HYUNDAI_Kona_3.jpg"
         }
       ],
       "Santa Fe": [
@@ -1946,7 +1594,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 30000,
           "maxPrice": 35000,
-          "image": "images/cars/HYUNDAI_SantaFe_1.webp"
+          "image": "images/cars/HYUNDAI_SantaFe_1.jpg"
         },
         {
           "name": "2021-2023 Hyundai Santa Fe TM Facelift 1.6T PHEV",
@@ -1954,7 +1602,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 32000,
           "maxPrice": 36000,
-          "image": "images/cars/HYUNDAI_SantaFe_2.webp"
+          "image": "images/cars/HYUNDAI_SantaFe_2.jpg"
         },
         {
           "name": "2024-2026 Hyundai Santa Fe MX5 5th Gen 1.6T Hybrid",
@@ -1962,7 +1610,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 38000,
           "maxPrice": 46000,
-          "image": "images/cars/HYUNDAI_SantaFe_3.webp"
+          "image": "images/cars/HYUNDAI_SantaFe_3.jpg"
         }
       ],
       "Sonata": [
@@ -1972,7 +1620,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 16500,
           "maxPrice": 19500,
-          "image": "images/cars/HYUNDAI_Sonata_1.webp"
+          "image": "images/cars/HYUNDAI_Sonata_1.jpg"
         },
         {
           "name": "2020-2023 Hyundai Sonata DN8 1.6T",
@@ -1980,7 +1628,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 21000,
           "maxPrice": 25000,
-          "image": "images/cars/HYUNDAI_Sonata_2.webp"
+          "image": "images/cars/HYUNDAI_Sonata_2.jpg"
         }
       ],
       "Tucson": [
@@ -1990,7 +1638,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 18500,
           "maxPrice": 22000,
-          "image": "images/cars/HYUNDAI_Tucson_1.webp"
+          "image": "images/cars/HYUNDAI_Tucson_1.jpg"
         },
         {
           "name": "2022-2024 Hyundai Tucson NX4 1.6T Hybrid",
@@ -1998,7 +1646,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 29000,
           "maxPrice": 33500,
-          "image": "images/cars/HYUNDAI_Tucson_2.webp"
+          "image": "images/cars/HYUNDAI_Tucson_2.jpg"
         },
         {
           "name": "2022-2024 Hyundai Tucson NX4 1.6T PHEV",
@@ -2006,7 +1654,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 31000,
           "maxPrice": 35000,
-          "image": "images/cars/HYUNDAI_Tucson_3.webp"
+          "image": "images/cars/HYUNDAI_Tucson_3.jpg"
         },
         {
           "name": "2025-2026 Hyundai Tucson NX4 Facelift 1.6T Hybrid",
@@ -2014,7 +1662,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 35500,
           "maxPrice": 41000,
-          "image": "images/cars/HYUNDAI_Tucson_4.webp"
+          "image": "images/cars/HYUNDAI_Tucson_4.jpg"
         }
       ],
       "Veloster": [
@@ -2024,7 +1672,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 14500,
           "maxPrice": 17000,
-          "image": "images/cars/HYUNDAI_Veloster_1.webp"
+          "image": "images/cars/HYUNDAI_Veloster_1.png"
         },
         {
           "name": "2019-2021 Hyundai Veloster 2nd Gen Turbo R-Spec 1.6T",
@@ -2032,7 +1680,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 18000,
           "maxPrice": 21500,
-          "image": "images/cars/HYUNDAI_Veloster_2.webp"
+          "image": "images/cars/HYUNDAI_Veloster_2.jpg"
         }
       ],
       "Venue": [
@@ -2042,7 +1690,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 16500,
           "maxPrice": 19000,
-          "image": "images/cars/HYUNDAI_Venue_1.webp"
+          "image": "images/cars/HYUNDAI_Venue_1.jpg"
         },
         {
           "name": "2023-2026 Hyundai Venue 1.6L",
@@ -2050,7 +1698,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 19500,
           "maxPrice": 22500,
-          "image": "images/cars/HYUNDAI_Venue_2.webp"
+          "image": "images/cars/HYUNDAI_Venue_2.jpg"
         }
       ]
     },
@@ -2062,7 +1710,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 48000,
           "maxPrice": 56000,
-          "image": "images/cars/KIA_Carnival_1.webp"
+          "image": "images/cars/KIA_Carnival_1.jpg"
         }
       ],
       "Forte": [
@@ -2072,7 +1720,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 15500,
           "maxPrice": 18000,
-          "image": "images/cars/KIA_Forte_1.webp"
+          "image": "images/cars/KIA_Forte_1.jpg"
         },
         {
           "name": "2020-2024 Kia Forte BD GT 1.6T",
@@ -2080,7 +1728,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 19500,
           "maxPrice": 25000,
-          "image": "images/cars/KIA_Forte_2.webp"
+          "image": "images/cars/KIA_Forte_2.png"
         }
       ],
       "K4": [
@@ -2090,7 +1738,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 29000,
           "maxPrice": 34000,
-          "image": "images/cars/KIA_K4_1.webp"
+          "image": "images/cars/KIA_K4_1.jpg"
         }
       ],
       "K5": [
@@ -2100,7 +1748,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 23000,
           "maxPrice": 27500,
-          "image": "images/cars/KIA_K5_1.webp"
+          "image": "images/cars/KIA_K5_1.jpg"
         }
       ],
       "Niro": [
@@ -2110,7 +1758,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 17000,
           "maxPrice": 20500,
-          "image": "images/cars/KIA_Niro_1.webp"
+          "image": "images/cars/KIA_Niro_1.jpg"
         },
         {
           "name": "2018-2022 Kia Niro DE 1st Gen PHEV",
@@ -2118,7 +1766,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 18500,
           "maxPrice": 22000,
-          "image": "images/cars/KIA_Niro_2.webp"
+          "image": "images/cars/KIA_Niro_2.jpg"
         },
         {
           "name": "2023-2026 Kia Niro SG2 2nd Gen Hybrid",
@@ -2126,7 +1774,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 24000,
           "maxPrice": 28000,
-          "image": "images/cars/KIA_Niro_3.webp"
+          "image": "images/cars/KIA_Niro_3.jpg"
         },
         {
           "name": "2023-2026 Kia Niro SG2 2nd Gen PHEV",
@@ -2134,7 +1782,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 26000,
           "maxPrice": 30000,
-          "image": "images/cars/KIA_Niro_4.webp"
+          "image": "images/cars/KIA_Niro_4.jpg"
         }
       ],
       "Optima": [
@@ -2144,7 +1792,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 16500,
           "maxPrice": 21000,
-          "image": "images/cars/KIA_Optima_1.webp"
+          "image": "images/cars/KIA_Optima_1.jpg"
         }
       ],
       "Rio": [
@@ -2154,7 +1802,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 13000,
           "maxPrice": 15500,
-          "image": "images/cars/KIA_Rio_1.webp"
+          "image": "images/cars/KIA_Rio_1.jpg"
         },
         {
           "name": "2018-2020 Kia Rio YB Pre-Facelift 1.6L",
@@ -2162,7 +1810,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 13000,
           "maxPrice": 15500,
-          "image": "images/cars/KIA_Rio_2.webp"
+          "image": "images/cars/KIA_Rio_2.jpg"
         },
         {
           "name": "2021-2023 Kia Rio YB Facelift 1.6L",
@@ -2170,7 +1818,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 16000,
           "maxPrice": 19000,
-          "image": "images/cars/KIA_Rio_3.webp"
+          "image": "images/cars/KIA_Rio_3.jpg"
         },
         {
           "name": "2021-2023 Kia Rio YB Facelift 1.6L",
@@ -2188,7 +1836,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 22000,
           "maxPrice": 25500,
-          "image": "images/cars/KIA_Seltos_1.webp"
+          "image": "images/cars/KIA_Seltos_1.jpg"
         },
         {
           "name": "2024-2026 Kia Seltos Facelift 1.6T Turbo 8AT",
@@ -2196,7 +1844,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 26000,
           "maxPrice": 30000,
-          "image": "images/cars/KIA_Seltos_2.webp"
+          "image": "images/cars/KIA_Seltos_2.jpg"
         }
       ],
       "Sorento": [
@@ -2206,7 +1854,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 32000,
           "maxPrice": 36000,
-          "image": "images/cars/KIA_Sorento_1.webp"
+          "image": "images/cars/KIA_Sorento_1.jpg"
         },
         {
           "name": "2021-2023 Kia Sorento MQ4 1.6T PHEV",
@@ -2214,7 +1862,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 34000,
           "maxPrice": 38000,
-          "image": "images/cars/KIA_Sorento_2.webp"
+          "image": "images/cars/KIA_Sorento_2.jpg"
         },
         {
           "name": "2024-2026 Kia Sorento MQ4 Facelift 1.6T Hybrid",
@@ -2222,7 +1870,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 39000,
           "maxPrice": 44000,
-          "image": "images/cars/KIA_Sorento_3.webp"
+          "image": "images/cars/KIA_Sorento_3.jpg"
         },
         {
           "name": "2024-2026 Kia Sorento MQ4 Facelift 1.6T PHEV",
@@ -2230,7 +1878,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 41000,
           "maxPrice": 46000,
-          "image": "images/cars/KIA_Sorento_4.webp"
+          "image": "images/cars/KIA_Sorento_4.jpg"
         }
       ],
       "Soul": [
@@ -2240,7 +1888,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 15000,
           "maxPrice": 17500,
-          "image": "images/cars/KIA_Soul_1.webp"
+          "image": "images/cars/KIA_Soul_1.jpg"
         },
         {
           "name": "2020-2022 Kia Soul SK3 GT-Line Turbo 1.6T",
@@ -2248,7 +1896,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 18000,
           "maxPrice": 21000,
-          "image": "images/cars/KIA_Soul_2.webp"
+          "image": "images/cars/KIA_Soul_2.jpg"
         }
       ],
       "Sportage": [
@@ -2258,7 +1906,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 31000,
           "maxPrice": 35000,
-          "image": "images/cars/KIA_Sportage_1.webp"
+          "image": "images/cars/KIA_Sportage_1.jpg"
         },
         {
           "name": "2023-2024 Kia Sportage NQ5 1.6T PHEV",
@@ -2266,7 +1914,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 33000,
           "maxPrice": 37000,
-          "image": "images/cars/KIA_Sportage_2.webp"
+          "image": "images/cars/KIA_Sportage_2.jpg"
         },
         {
           "name": "2025-2026 Kia Sportage NQ5 Facelift 1.6T Hybrid",
@@ -2274,7 +1922,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 37500,
           "maxPrice": 42000,
-          "image": "images/cars/KIA_Sportage_3.webp"
+          "image": "images/cars/KIA_Sportage_3.jpg"
         },
         {
           "name": "2025-2026 Kia Sportage NQ5 Facelift 1.6T PHEV",
@@ -2282,7 +1930,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 39500,
           "maxPrice": 44000,
-          "image": "images/cars/KIA_Sportage_4.webp"
+          "image": "images/cars/KIA_Sportage_4.jpg"
         }
       ]
     },
@@ -2294,7 +1942,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 14000,
           "maxPrice": 16500,
-          "image": "images/cars/NISSAN_Juke_1.webp"
+          "image": "images/cars/NISSAN_Juke_1.jpg"
         }
       ],
       "Kicks": [
@@ -2304,7 +1952,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 14500,
           "maxPrice": 17000,
-          "image": "images/cars/NISSAN_Kicks_1.webp"
+          "image": "images/cars/NISSAN_Kicks_1.png"
         },
         {
           "name": "2021-2024 Nissan Kicks P15 Facelift 1.6L",
@@ -2312,7 +1960,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 17500,
           "maxPrice": 20500,
-          "image": "images/cars/NISSAN_Kicks_2.webp"
+          "image": "images/cars/NISSAN_Kicks_2.jpg"
         },
         {
           "name": "2025-2026 Nissan Kicks 2nd Gen 1.6L",
@@ -2320,7 +1968,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 22000,
           "maxPrice": 26000,
-          "image": "images/cars/NISSAN_Kicks_3.webp"
+          "image": "images/cars/NISSAN_Kicks_3.jpg"
         }
       ],
       "Sentra": [
@@ -2330,7 +1978,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 15500,
           "maxPrice": 18500,
-          "image": "images/cars/NISSAN_Sentra_1.webp"
+          "image": "images/cars/NISSAN_Sentra_1.jpg"
         }
       ],
       "Versa": [
@@ -2340,7 +1988,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 11000,
           "maxPrice": 13500,
-          "image": "images/cars/NISSAN_Versa_1.webp"
+          "image": "images/cars/NISSAN_Versa_1.png"
         },
         {
           "name": "2020-2022 Nissan Versa N18 3rd Gen Pre-Facelift 1.6L",
@@ -2348,7 +1996,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 14500,
           "maxPrice": 17000,
-          "image": "images/cars/NISSAN_Versa_2.webp"
+          "image": "images/cars/NISSAN_Versa_2.jpg"
         },
         {
           "name": "2023-2025 Nissan Versa N18 3rd Gen Facelift 1.6L",
@@ -2356,7 +2004,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 17500,
           "maxPrice": 20000,
-          "image": "images/cars/NISSAN_Versa_3.webp"
+          "image": "images/cars/NISSAN_Versa_3.png"
         }
       ]
     },
@@ -2368,7 +2016,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 42000,
           "maxPrice": 52000,
-          "image": "images/cars/TOYOTA_GRCorolla_1.webp"
+          "image": "images/cars/TOYOTA_GRCorolla_1.jpg"
         }
       ]
     }
@@ -2382,7 +2030,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 16000,
           "maxPrice": 19500,
-          "image": "images/cars/images (16).webp"
+          "image": "images/cars/images (16).jpg"
         }
       ],
       "Sonic": [
@@ -2392,7 +2040,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 11500,
           "maxPrice": 13500,
-          "image": "images/cars/143fdee354cfba7c31dc2775be7a2859.webp"
+          "image": "images/cars/143fdee354cfba7c31dc2775be7a2859.jpg"
         },
         {
           "name": "2017-2018 Chevrolet Sonic Facelift 1.8L",
@@ -2400,7 +2048,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 11500,
           "maxPrice": 13500,
-          "image": "images/cars/chevrolet-sonic-2017-2021-1647409870.322387.webp"
+          "image": "images/cars/chevrolet-sonic-2017-2021-1647409870.322387.jpg"
         }
       ]
     },
@@ -2412,7 +2060,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 17000,
           "maxPrice": 19500,
-          "image": "images/cars/HONDA_HRV_1.webp"
+          "image": "images/cars/HONDA_HRV_1.jpg"
         },
         {
           "name": "2019-2022 Honda HR-V RU Facelift 1.8L",
@@ -2420,7 +2068,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 20000,
           "maxPrice": 23500,
-          "image": "images/cars/HONDA_HRV_2.webp"
+          "image": "images/cars/HONDA_HRV_2.jpg"
         }
       ]
     },
@@ -2432,7 +2080,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 22000,
           "maxPrice": 26000,
-          "image": "images/cars/LEXUS_CT_1.webp"
+          "image": "images/cars/LEXUS_CT_1.png"
         }
       ]
     },
@@ -2444,7 +2092,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 13500,
           "maxPrice": 16000,
-          "image": "images/cars/NISSAN_Sentra_1.webp"
+          "image": "images/cars/NISSAN_Sentra_1.jpg"
         }
       ]
     },
@@ -2456,7 +2104,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 15500,
           "maxPrice": 19000,
-          "image": "images/cars/TOYOTA_Corolla_1.webp"
+          "image": "images/cars/TOYOTA_Corolla_1.jpg"
         },
         {
           "name": "2020-2022 Toyota Corolla E210 1.8L Gasoline",
@@ -2464,7 +2112,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 19500,
           "maxPrice": 23500,
-          "image": "images/cars/TOYOTA_Corolla_2.webp"
+          "image": "images/cars/TOYOTA_Corolla_2.jpg"
         },
         {
           "name": "2020-2026 Toyota Corolla E210 1.8L Hybrid",
@@ -2472,7 +2120,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 22000,
           "maxPrice": 29000,
-          "image": "images/cars/TOYOTA_Corolla_3.webp"
+          "image": "images/cars/TOYOTA_Corolla_3.jpg"
         }
       ],
       "Prius": [
@@ -2482,7 +2130,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 17500,
           "maxPrice": 20500,
-          "image": "images/cars/TOYOTA_Prius_1.webp"
+          "image": "images/cars/TOYOTA_Prius_1.jpg"
         },
         {
           "name": "2017-2018 Toyota Prius Prime 1.8L PHEV",
@@ -2490,7 +2138,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 18500,
           "maxPrice": 21500,
-          "image": "images/cars/TOYOTA_Prius_2.webp"
+          "image": "images/cars/TOYOTA_Prius_2.jpg"
         },
         {
           "name": "2019-2022 Toyota Prius XW50 Facelift 1.8L HEV",
@@ -2498,7 +2146,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 21000,
           "maxPrice": 25000,
-          "image": "images/cars/TOYOTA_Prius_3.webp"
+          "image": "images/cars/TOYOTA_Prius_3.jpg"
         },
         {
           "name": "2019-2022 Toyota Prius Prime Facelift 1.8L PHEV",
@@ -2506,7 +2154,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 22000,
           "maxPrice": 26000,
-          "image": "images/cars/TOYOTA_Prius_4.webp"
+          "image": "images/cars/TOYOTA_Prius_4.jpg"
         }
       ]
     },
@@ -2518,7 +2166,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 16000,
           "maxPrice": 19000,
-          "image": "images/cars/VOLKSWAGEN_Beetle_1.webp"
+          "image": "images/cars/VOLKSWAGEN_Beetle_1.jpg"
         }
       ],
       "Golf": [
@@ -2528,7 +2176,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 15000,
           "maxPrice": 17500,
-          "image": "images/cars/VOLKSWAGEN_Golf_1.webp"
+          "image": "images/cars/VOLKSWAGEN_Golf_1.jpg"
         },
         {
           "name": "2017 Volkswagen Golf Mk7 1.8 TSI",
@@ -2536,7 +2184,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 15000,
           "maxPrice": 17500,
-          "image": "images/cars/VOLKSWAGEN_Golf_2.webp"
+          "image": "images/cars/VOLKSWAGEN_Golf_2.jpg"
         },
         {
           "name": "2018 Volkswagen Golf Mk7.5 1.8 TSI",
@@ -2544,7 +2192,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 18000,
           "maxPrice": 20500,
-          "image": "images/cars/VOLKSWAGEN_Golf_3.webp"
+          "image": "images/cars/VOLKSWAGEN_Golf_3.jpg"
         },
         {
           "name": "2018 Volkswagen Golf Mk7.5 1.8 TSI",
@@ -2552,7 +2200,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 18000,
           "maxPrice": 20500,
-          "image": "images/cars/VOLKSWAGEN_Golf_4.webp"
+          "image": "images/cars/VOLKSWAGEN_Golf_4.jpg"
         }
       ],
       "Jetta": [
@@ -2562,7 +2210,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 14000,
           "maxPrice": 16500,
-          "image": "images/cars/VOLKSWAGEN_Jetta_1.webp"
+          "image": "images/cars/VOLKSWAGEN_Jetta_1.jpg"
         }
       ],
       "Passat": [
@@ -2572,60 +2220,12 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 15500,
           "maxPrice": 18000,
-          "image": "images/cars/VOLKSWAGEN_Passat_1.webp"
+          "image": "images/cars/VOLKSWAGEN_Passat_1.jpg"
         }
       ]
     }
   },
   "2.0": {
-    "ACURA": {
-      "Integra": [
-        {
-          "name": "2024-2026 Acura Integra Type S 2.0T",
-          "type": "Sedan",
-          "fuel": "Gasoline",
-          "minPrice": 48000,
-          "maxPrice": 55000,
-          "image": "images/cars/ACURA_Integra_1.webp"
-        },
-        {
-          "name": "2024-2026 Acura Integra Type S 2.0T",
-          "type": "Hatchback",
-          "fuel": "Gasoline",
-          "minPrice": 48000,
-          "maxPrice": 55000,
-          "image": "images/cars/ACURA_Integra_2.webp"
-        }
-      ],
-      "RDX": [
-        {
-          "name": "2019-2021 Acura RDX 3rd Gen Pre-Facelift 2.0T",
-          "type": "Crossover",
-          "fuel": "Gasoline",
-          "minPrice": 28000,
-          "maxPrice": 33000,
-          "image": "images/cars/ACURA_RDX_1.webp"
-        },
-        {
-          "name": "2022-2026 Acura RDX 3rd Gen Facelift 2.0T",
-          "type": "Crossover",
-          "fuel": "Gasoline",
-          "minPrice": 34000,
-          "maxPrice": 42000,
-          "image": "images/cars/ACURA_RDX_2.webp"
-        }
-      ],
-      "TLX": [
-        {
-          "name": "2021-2025 Acura TLX 2nd Gen 2.0T",
-          "type": "Sedan",
-          "fuel": "Gasoline",
-          "minPrice": 29000,
-          "maxPrice": 38000,
-          "image": "images/cars/ACURA_TLX_1.webp"
-        }
-      ]
-    },
     "ALFA ROMEO": {
       "Giulia": [
         {
@@ -2634,7 +2234,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 22000,
           "maxPrice": 30000,
-          "image": "images/cars/ALFAROMEO_Giulia_1.webp"
+          "image": "images/cars/ALFAROMEO_Giulia_1.jpg"
         },
         {
           "name": "2023-2025 Alfa Romeo Giulia Facelift 2.0T",
@@ -2647,20 +2247,12 @@ const carData = {
       ],
       "Stelvio": [
         {
-          "name": "2018-2022 Alfa Romeo Stelvio Pre-Facelift 2.0T",
-          "type": "Crossover",
-          "fuel": "Gasoline",
-          "minPrice": 23000,
-          "maxPrice": 31000,
-          "image": "images/cars/ALFAROMEO_Stelvio_1.webp"
-        },
-        {
           "name": "2023-2025 Alfa Romeo Stelvio Facelift 2.0T",
           "type": "Crossover",
           "fuel": "Gasoline",
           "minPrice": 32000,
           "maxPrice": 39000,
-          "image": "images/cars/ALFAROMEO_Stelvio_2.webp"
+          "image": "images/cars/ALFAROMEO_Stelvio_2.jpg"
         }
       ]
     },
@@ -2672,7 +2264,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 18000,
           "maxPrice": 23000,
-          "image": "images/cars/AUDI_A3_1.webp"
+          "image": "images/cars/AUDI_A3_1.jpg"
         },
         {
           "name": "2022-2025 Audi A3 8Y 40 TFSI 2.0T",
@@ -2680,7 +2272,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 26000,
           "maxPrice": 32000,
-          "image": "images/cars/AUDI_A3_2.webp"
+          "image": "images/cars/AUDI_A3_2.jpg"
         }
       ],
       "A4": [
@@ -2690,7 +2282,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 19000,
           "maxPrice": 24000,
-          "image": "images/cars/AUDI_A4_1.webp"
+          "image": "images/cars/AUDI_A4_1.jpg"
         },
         {
           "name": "2020-2024 Audi A4 B9.5 Facelift 2.0T",
@@ -2698,7 +2290,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 25000,
           "maxPrice": 33000,
-          "image": "images/cars/AUDI_A4_2.webp"
+          "image": "images/cars/AUDI_A4_2.jpg"
         }
       ],
       "A5": [
@@ -2708,7 +2300,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 23000,
           "maxPrice": 28000,
-          "image": "images/cars/AUDI_A5_1.webp"
+          "image": "images/cars/AUDI_A5_1.jpg"
         },
         {
           "name": "2018-2019 Audi A5 F5 Pre-Facelift 2.0T",
@@ -2716,7 +2308,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 23000,
           "maxPrice": 28000,
-          "image": "images/cars/AUDI_A5_2.webp"
+          "image": "images/cars/AUDI_A5_2.jpg"
         },
         {
           "name": "2020-2024 Audi A5 F5.5 Facelift 2.0T",
@@ -2724,7 +2316,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 29000,
           "maxPrice": 37000,
-          "image": "images/cars/AUDI_A5_3.webp"
+          "image": "images/cars/AUDI_A5_3.png"
         },
         {
           "name": "2020-2024 Audi A5 F5.5 Facelift 2.0T",
@@ -2732,7 +2324,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 29000,
           "maxPrice": 37000,
-          "image": "images/cars/AUDI_A5_4.webp"
+          "image": "images/cars/AUDI_A5_4.jpg"
         }
       ],
       "A6": [
@@ -2742,7 +2334,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 28000,
           "maxPrice": 42000,
-          "image": "images/cars/AUDI_A6_1.webp"
+          "image": "images/cars/AUDI_A6_1.jpg"
         }
       ],
       "Q3": [
@@ -2752,7 +2344,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 17500,
           "maxPrice": 21000,
-          "image": "images/cars/AUDI_Q3_1.webp"
+          "image": "images/cars/AUDI_Q3_1.jpg"
         },
         {
           "name": "2019-2025 Audi Q3 F3 40 45 TFSI 2.0T",
@@ -2760,7 +2352,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 24000,
           "maxPrice": 35000,
-          "image": "images/cars/AUDI_Q3_2.webp"
+          "image": "images/cars/AUDI_Q3_2.jpg"
         }
       ],
       "Q5": [
@@ -2770,7 +2362,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 22000,
           "maxPrice": 27000,
-          "image": "images/cars/AUDI_Q5_1.webp"
+          "image": "images/cars/AUDI_Q5_1.png"
         },
         {
           "name": "2021-2025 Audi Q5 FY Facelift Sportback 2.0T",
@@ -2778,7 +2370,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 28000,
           "maxPrice": 40000,
-          "image": "images/cars/AUDI_Q5_2.webp"
+          "image": "images/cars/AUDI_Q5_2.jpg"
         }
       ],
       "Q7": [
@@ -2788,7 +2380,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 25000,
           "maxPrice": 32000,
-          "image": "images/cars/AUDI_Q7_1.webp"
+          "image": "images/cars/AUDI_Q7_1.jpg"
         },
         {
           "name": "2020-2025 Audi Q7 4M Facelift 45 TFSI 2.0T",
@@ -2796,7 +2388,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 34000,
           "maxPrice": 48000,
-          "image": "images/cars/AUDI_Q7_2.webp"
+          "image": "images/cars/AUDI_Q7_2.jpg"
         }
       ],
       "S3": [
@@ -2806,7 +2398,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 25000,
           "maxPrice": 32000,
-          "image": "images/cars/AUDI_S3_1.webp"
+          "image": "images/cars/AUDI_S3_1.jpg"
         },
         {
           "name": "2022-2025 Audi S3 8Y 2.0T",
@@ -2814,7 +2406,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 35000,
           "maxPrice": 43000,
-          "image": "images/cars/AUDI_S3_2.webp"
+          "image": "images/cars/AUDI_S3_2.jpg"
         }
       ],
       "TT": [
@@ -2824,7 +2416,7 @@ const carData = {
           "fuel": "Gasoline",
           "minPrice": 22000,
           "maxPrice": 35000,
-          "image": "images/cars/AUDI_TT_1.webp"
+          "image": "images/cars/AUDI_TT_1.jpg"
         },
         {
           "name": "2017-2023 Audi TT 8S 2.0 TFSI",
@@ -2844,7 +2436,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 20000,
           "maxPrice": 26000,
-          "image": "images/cars/BMW_2Series_1.webp"
+          "image": "images/cars/BMW_2Series_1.jpg"
         },
         {
           "name": "2022-2026 (G42 Coupe 230i 2.0T)",
@@ -2852,7 +2444,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 31000,
           "maxPrice": 40000,
-          "image": "images/cars/BMW_2Series_2.webp"
+          "image": "images/cars/BMW_2Series_2.jpg"
         },
         {
           "name": "2020-2024 (F44 228i Gran Coupe 2.0T)",
@@ -2860,7 +2452,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 24000,
           "maxPrice": 31000,
-          "image": "images/cars/BMW_2Series_3.webp"
+          "image": "images/cars/BMW_2Series_3.jpg"
         },
         {
           "name": "2020-2024 (F44 M235i Gran Coupe 2.0T)",
@@ -2868,7 +2460,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 39000,
-          "image": "images/cars/BMW_2Series_4.webp"
+          "image": "images/cars/BMW_2Series_4.jpg"
         }
       ],
       "3 Series": [
@@ -2878,7 +2470,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 22000,
-          "image": "images/cars/BMW_3Series_1.webp"
+          "image": "images/cars/BMW_3Series_1.jpg"
         },
         {
           "name": "2017-2018 (F30 LCI 328d 2.0 Diesel)",
@@ -2886,7 +2478,7 @@ const carData = {
           "fuel": "Dizel",
           "minPrice": 17500,
           "maxPrice": 21500,
-          "image": "images/cars/BMW_3Series_2.webp"
+          "image": "images/cars/BMW_3Series_2.jpg"
         },
         {
           "name": "2017-2018 (F31 LCI 328d Wagon 2.0 Diesel)",
@@ -2894,7 +2486,7 @@ const carData = {
           "fuel": "Dizel",
           "minPrice": 19000,
           "maxPrice": 23000,
-          "image": "images/cars/BMW_3Series_3.webp"
+          "image": "images/cars/BMW_3Series_3.jpg"
         },
         {
           "name": "2019-2022 (G20 Pre-LCI 330i 2.0T)",
@@ -2910,7 +2502,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 25000,
           "maxPrice": 33000,
-          "image": "images/cars/BMW_3Series_5.webp"
+          "image": "images/cars/BMW_3Series_5.jpg"
         },
         {
           "name": "2023-2026 (G20 LCI 330i 2.0T)",
@@ -2918,7 +2510,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 33000,
           "maxPrice": 42000,
-          "image": "images/cars/BMW_3Series_6.webp"
+          "image": "images/cars/BMW_3Series_6.jpg"
         },
         {
           "name": "2023-2026 (G20 LCI 330e PHEV)",
@@ -2936,7 +2528,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 20000,
           "maxPrice": 27000,
-          "image": "images/cars/BMW_4Series_1.webp"
+          "image": "images/cars/BMW_4Series_1.jpg"
         },
         {
           "name": "2017-2020 (F32 / F36 LCI 430i 2.0T)",
@@ -2944,7 +2536,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 20000,
           "maxPrice": 27000,
-          "image": "images/cars/BMW_4Series_2.webp"
+          "image": "images/cars/BMW_4Series_2.jpg"
         },
         {
           "name": "2021-2026 (G22 / G26 430i 2.0T)",
@@ -2952,7 +2544,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 45000,
-          "image": "images/cars/BMW_4Series_3.webp"
+          "image": "images/cars/BMW_4Series_3.jpg"
         },
         {
           "name": "2021-2026 (G22 / G26 430i 2.0T)",
@@ -2960,7 +2552,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 45000,
-          "image": "images/cars/BMW-4-serija_2021_Kupeja_2651914536.webp"
+          "image": "images/cars/BMW-4-serija_2021_Kupeja_2651914536.jpg"
         }
       ],
       "5 Series": [
@@ -2970,7 +2562,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 29000,
-          "image": "images/cars/P90237243-the-new-bmw-5-series-sedan-m-sport-10-2016-2249px.webp"
+          "image": "images/cars/P90237243-the-new-bmw-5-series-sedan-m-sport-10-2016-2249px.jpg"
         },
         {
           "name": "2017-2020 (G30 Pre-LCI 530e PHEV)",
@@ -2986,7 +2578,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 30000,
           "maxPrice": 38000,
-          "image": "images/cars/2021-bmw-540i-xdrive-370-edit-1608066218.webp"
+          "image": "images/cars/2021-bmw-540i-xdrive-370-edit-1608066218.avif"
         },
         {
           "name": "2021-2023 (G30 LCI 530e PHEV)",
@@ -2994,7 +2586,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 31500,
           "maxPrice": 39500,
-          "image": "images/cars/images.webp"
+          "image": "images/cars/images.jpg"
         },
         {
           "name": "2024-2027 (G60 530i 2.0T)",
@@ -3002,7 +2594,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 43000,
           "maxPrice": 52000,
-          "image": "images/cars/images (1).webp"
+          "image": "images/cars/images (1).jpg"
         }
       ],
       "X1": [
@@ -3012,7 +2604,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 18500,
           "maxPrice": 26000,
-          "image": "images/cars/BMW_X1_1.webp"
+          "image": "images/cars/BMW_X1_1.jpg"
         },
         {
           "name": "2023-2026 (U11 xDrive28i / M35i 2.0T)",
@@ -3020,7 +2612,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 31000,
           "maxPrice": 40000,
-          "image": "images/cars/BMW_X1_2.webp"
+          "image": "images/cars/BMW_X1_2.jpg"
         }
       ],
       "X2": [
@@ -3030,7 +2622,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 20000,
           "maxPrice": 28000,
-          "image": "images/cars/BMW_X2_1.webp"
+          "image": "images/cars/BMW_X2_1.png"
         },
         {
           "name": "2024-2026 (U10 xDrive28i / M35i 2.0T)",
@@ -3038,7 +2630,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 34000,
           "maxPrice": 42000,
-          "image": "images/cars/BMW_X2_2.webp"
+          "image": "images/cars/BMW_X2_2.jpg"
         }
       ],
       "X3": [
@@ -3048,7 +2640,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 21000,
-          "image": "images/cars/BMW_X3_1.webp"
+          "image": "images/cars/BMW_X3_1.jpg"
         },
         {
           "name": "2017 (F25 LCI xDrive28d 2.0 Diesel)",
@@ -3056,7 +2648,7 @@ const carData = {
           "fuel": "Dizel",
           "minPrice": 17500,
           "maxPrice": 21000,
-          "image": "images/cars/BMW_X3_2.webp"
+          "image": "images/cars/BMW_X3_2.jpg"
         },
         {
           "name": "2018-2021 (G01 Pre-LCI xDrive30i / sDrive30i 2.0T)",
@@ -3064,7 +2656,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 23000,
           "maxPrice": 31000,
-          "image": "images/cars/BMW_X3_3.webp"
+          "image": "images/cars/BMW_X3_3.jpg"
         },
         {
           "name": "2022-2024 (G01 LCI xDrive30i 2.0T)",
@@ -3072,7 +2664,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 41000,
-          "image": "images/cars/BMW_X3_4.webp"
+          "image": "images/cars/BMW_X3_4.jpg"
         },
         {
           "name": "2025-2026 (G45 30 xDrive 2.0T)",
@@ -3080,7 +2672,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 42000,
           "maxPrice": 48000,
-          "image": "images/cars/BMW_X3_5.webp"
+          "image": "images/cars/BMW_X3_5.jpg"
         }
       ],
       "X4": [
@@ -3090,7 +2682,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 28000,
           "maxPrice": 35000,
-          "image": "images/cars/BMW_X4_1.webp"
+          "image": "images/cars/BMW_X4_1.jpg"
         },
         {
           "name": "2022-2025 (G02 LCI xDrive30i 2.0T)",
@@ -3098,7 +2690,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 36000,
           "maxPrice": 45000,
-          "image": "images/cars/BMW_X4_2.webp"
+          "image": "images/cars/BMW_X4_2.jpg"
         }
       ],
       "X5": [
@@ -3108,7 +2700,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 23000,
           "maxPrice": 28000,
-          "image": "images/cars/BMW_X5_1.webp"
+          "image": "images/cars/BMW_X5_1.jpg"
         }
       ],
       "Z4": [
@@ -3118,61 +2710,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 35000,
           "maxPrice": 48000,
-          "image": "images/cars/BMW_Z4_1.webp"
-        }
-      ]
-    },
-    "BUICK": {
-      "Envision": [
-        {
-          "name": "2017-2020 (1-ci nəsil 2.0T)",
-          "type": "Crossover",
-          "fuel": "Benzin",
-          "minPrice": 17000,
-          "maxPrice": 21000,
-          "image": "images/cars/BUICK_Envision_1.webp"
-        },
-        {
-          "name": "2021-2023 (2-ci nəsil Pre-Facelift 2.0T)",
-          "type": "Crossover",
-          "fuel": "Benzin",
-          "minPrice": 22000,
-          "maxPrice": 27000,
-          "image": "images/cars/BUICK_Envision_2.webp"
-        },
-        {
-          "name": "2024-2026 (2-ci nəsil Facelift 2.0T)",
-          "type": "Crossover",
-          "fuel": "Benzin",
-          "minPrice": 28000,
-          "maxPrice": 34000,
-          "image": "images/cars/BUICK_Envision_3.webp"
-        }
-      ],
-      "Regal": [
-        {
-          "name": "2017 (5-ci nəsil 2.0T)",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 13500,
-          "maxPrice": 16000,
-          "image": "images/cars/BUICK_Regal_1.webp"
-        },
-        {
-          "name": "2018-2020 (Sportback / TourX 2.0T)",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 16500,
-          "maxPrice": 21000,
-          "image": "images/cars/BUICK_Regal_2.webp"
-        },
-        {
-          "name": "2018-2020 (Sportback / TourX 2.0T)",
-          "type": "Wagon",
-          "fuel": "Benzin",
-          "minPrice": 16500,
-          "maxPrice": 21000,
-          "image": "images/cars/BUICK_Regal_3.webp"
+          "image": "images/cars/BMW_Z4_1.jpg"
         }
       ]
     },
@@ -3184,7 +2722,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 16000,
           "maxPrice": 19500,
-          "image": "images/cars/CADILLAC_ATS_1.webp"
+          "image": "images/cars/CADILLAC_ATS_1.jpg"
         },
         {
           "name": "2017-2019 (2.0T)",
@@ -3192,7 +2730,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 16000,
           "maxPrice": 19500,
-          "image": "images/cars/CADILLAC_ATS_2.webp"
+          "image": "images/cars/CADILLAC_ATS_2.jpg"
         }
       ],
       "CT4": [
@@ -3202,7 +2740,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 24000,
           "maxPrice": 33000,
-          "image": "images/cars/CADILLAC_CT4_1.webp"
+          "image": "images/cars/CADILLAC_CT4_1.jpg"
         }
       ],
       "CT5": [
@@ -3212,7 +2750,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 27000,
           "maxPrice": 35000,
-          "image": "images/cars/CADILLAC_CT5_1.webp"
+          "image": "images/cars/CADILLAC_CT5_1.png"
         },
         {
           "name": "2025-2026 (2.0T Facelift)",
@@ -3220,7 +2758,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 36000,
           "maxPrice": 42000,
-          "image": "images/cars/CADILLAC_CT5_2.webp"
+          "image": "images/cars/CADILLAC_CT5_2.jpg"
         }
       ],
       "CT6": [
@@ -3230,7 +2768,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 21000,
           "maxPrice": 26000,
-          "image": "images/cars/CADILLAC_CT6_1.webp"
+          "image": "images/cars/CADILLAC_CT6_1.jpg"
         }
       ],
       "CTS": [
@@ -3240,7 +2778,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 23000,
-          "image": "images/cars/CADILLAC_CTS_1.webp"
+          "image": "images/cars/CADILLAC_CTS_1.jpg"
         }
       ],
       "XT4": [
@@ -3250,7 +2788,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 21000,
           "maxPrice": 26000,
-          "image": "images/cars/CADILLAC_XT4_1.webp"
+          "image": "images/cars/CADILLAC_XT4_1.jpg"
         },
         {
           "name": "2024-2026 (Facelift 2.0T)",
@@ -3258,7 +2796,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 27000,
           "maxPrice": 33000,
-          "image": "images/cars/CADILLAC_XT4_2.webp"
+          "image": "images/cars/CADILLAC_XT4_2.png"
         }
       ],
       "XT5": [
@@ -3268,7 +2806,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 25000,
           "maxPrice": 34000,
-          "image": "images/cars/CADILLAC_XT5_1.webp"
+          "image": "images/cars/CADILLAC_XT5_1.jpg"
         }
       ],
       "XT6": [
@@ -3278,7 +2816,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 30000,
           "maxPrice": 37000,
-          "image": "images/cars/CADILLAC_XT6_1.webp"
+          "image": "images/cars/CADILLAC_XT6_1.jpg"
         }
       ]
     },
@@ -3290,7 +2828,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 31000,
-          "image": "images/cars/2026_chevrolet_blazer_4dr-suv_3lt_fq_oem_1_1600.webp"
+          "image": "images/cars/2026_chevrolet_blazer_4dr-suv_3lt_fq_oem_1_1600.avif"
         }
       ],
       "Camaro": [
@@ -3300,7 +2838,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 19000,
           "maxPrice": 28000,
-          "image": "images/cars/2019-chevrolet-camaro-2-0t-1le-6mt-106-1539790974.webp"
+          "image": "images/cars/2019-chevrolet-camaro-2-0t-1le-6mt-106-1539790974.avif"
         }
       ],
       "City Express": [
@@ -3310,7 +2848,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 12000,
           "maxPrice": 15000,
-          "image": "images/cars/2017_chevrolet_city-express_cargo-minivan_lt_fq_oem_2_1600.webp"
+          "image": "images/cars/2017_chevrolet_city-express_cargo-minivan_lt_fq_oem_2_1600.avif"
         }
       ],
       "Equinox": [
@@ -3320,7 +2858,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 17500,
           "maxPrice": 21500,
-          "image": "images/cars/2018_chevrolet_equinox_4dr-suv_lt_fq_oem_1_1600.webp"
+          "image": "images/cars/2018_chevrolet_equinox_4dr-suv_lt_fq_oem_1_1600.avif"
         }
       ],
       "Malibu": [
@@ -3338,19 +2876,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 20000,
           "maxPrice": 25000,
-          "image": "images/cars/2021_chevrolet_malibu_sedan_premier_fq_oem_1_1600.webp"
-        }
-      ]
-    },
-    "DODGE": {
-      "Hornet": [
-        {
-          "name": "2023-2026 (GT 2.0T)",
-          "type": "Crossover",
-          "fuel": "Benzin",
-          "minPrice": 27000,
-          "maxPrice": 34000,
-          "image": "images/cars/DODGE_Hornet_1.webp"
+          "image": "images/cars/2021_chevrolet_malibu_sedan_premier_fq_oem_1_1600.avif"
         }
       ]
     },
@@ -3362,7 +2888,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 28000,
           "maxPrice": 36000,
-          "image": "images/cars/FORD_BroncoSport_1.webp"
+          "image": "images/cars/FORD_BroncoSport_1.jpg"
         }
       ],
       "C-MAX": [
@@ -3372,7 +2898,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 12000,
           "maxPrice": 14500,
-          "image": "images/cars/FORD_CMAX_1.webp"
+          "image": "images/cars/FORD_CMAX_1.jpg"
         },
         {
           "name": "2017-2018 (2.0L Energi PHEV)",
@@ -3380,7 +2906,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 12500,
           "maxPrice": 15000,
-          "image": "images/cars/FORD_CMAX_2.webp"
+          "image": "images/cars/FORD_CMAX_2.jpg"
         }
       ],
       "Ecosport": [
@@ -3390,7 +2916,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 14000,
           "maxPrice": 18000,
-          "image": "images/cars/FORD_Ecosport_1.webp"
+          "image": "images/cars/FORD_Ecosport_1.jpg"
         }
       ],
       "Edge": [
@@ -3400,7 +2926,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 16000,
           "maxPrice": 19500,
-          "image": "images/cars/FORD_Edge_1.webp"
+          "image": "images/cars/FORD_Edge_1.jpg"
         },
         {
           "name": "2019-2024 (2-ci nəsil Facelift 2.0T)",
@@ -3408,7 +2934,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 21000,
           "maxPrice": 30000,
-          "image": "images/cars/FORD_Edge_2.webp"
+          "image": "images/cars/FORD_Edge_2.jpg"
         }
       ],
       "Escape": [
@@ -3418,7 +2944,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 15500,
           "maxPrice": 18500,
-          "image": "images/cars/FORD_Escape_1.webp"
+          "image": "images/cars/FORD_Escape_1.jpg"
         },
         {
           "name": "2020-2022 (4-cü nəsil Pre-Facelift 2.0T)",
@@ -3426,7 +2952,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 20000,
           "maxPrice": 24000,
-          "image": "images/cars/FORD_Escape_2.webp"
+          "image": "images/cars/FORD_Escape_2.jpg"
         },
         {
           "name": "2020-2022 (4-cü nəsil Pre-Facelift 2.0 Hybrid)",
@@ -3434,7 +2960,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 21000,
           "maxPrice": 25000,
-          "image": "images/cars/FORD_Escape_3.webp"
+          "image": "images/cars/FORD_Escape_3.jpg"
         },
         {
           "name": "2023-2026 (4-cü nəsil Facelift 2.0T)",
@@ -3442,7 +2968,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 26000,
           "maxPrice": 32000,
-          "image": "images/cars/FORD_Escape_4.webp"
+          "image": "images/cars/FORD_Escape_4.jpg"
         },
         {
           "name": "2023-2026 (4-cü nəsil Facelift 2.0 Hybrid)",
@@ -3450,7 +2976,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 27000,
           "maxPrice": 33000,
-          "image": "images/cars/FORD_Escape_5.webp"
+          "image": "images/cars/FORD_Escape_5.jpg"
         }
       ],
       "Focus": [
@@ -3460,7 +2986,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 12000,
           "maxPrice": 14500,
-          "image": "images/cars/FORD_Focus_1.webp"
+          "image": "images/cars/FORD_Focus_1.jpg"
         },
         {
           "name": "2017-2018 (Mk3 Facelift 2.0L)",
@@ -3468,7 +2994,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 12000,
           "maxPrice": 14500,
-          "image": "images/cars/FORD_Focus_2.webp"
+          "image": "images/cars/FORD_Focus_2.jpg"
         },
         {
           "name": "2017-2018 (ST 2.0 EcoBoost)",
@@ -3476,7 +3002,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 17000,
           "maxPrice": 21000,
-          "image": "images/cars/FORD_Focus_3.webp"
+          "image": "images/cars/FORD_Focus_3.jpg"
         }
       ],
       "Fusion": [
@@ -3486,7 +3012,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 15000,
           "maxPrice": 19000,
-          "image": "images/cars/FORD_Fusion_1.webp"
+          "image": "images/cars/FORD_Fusion_1.jpg"
         },
         {
           "name": "2017-2020 (2-ci nəsil Facelift 2.0 Hybrid)",
@@ -3494,7 +3020,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 16000,
           "maxPrice": 19500,
-          "image": "images/cars/FORD_Fusion_2.webp"
+          "image": "images/cars/FORD_Fusion_2.jpg"
         },
         {
           "name": "2017-2020 (2-ci nəsil Facelift 2.0 Energi PHEV)",
@@ -3502,7 +3028,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 16500,
           "maxPrice": 20000,
-          "image": "images/cars/FORD_Fusion_3.webp"
+          "image": "images/cars/FORD_Fusion_3.jpg"
         }
       ],
       "Maverick": [
@@ -3512,7 +3038,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 24000,
           "maxPrice": 29000,
-          "image": "images/cars/FORD_Maverick_1.webp"
+          "image": "images/cars/FORD_Maverick_1.jpg"
         },
         {
           "name": "2025-2026 (2.0 EcoBoost Facelift)",
@@ -3520,7 +3046,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 29500,
           "maxPrice": 35000,
-          "image": "images/cars/FORD_Maverick_2.webp"
+          "image": "images/cars/FORD_Maverick_2.png"
         }
       ],
       "Transit Connect": [
@@ -3530,7 +3056,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 25000,
-          "image": "images/cars/FORD_TransitConnect_1.webp"
+          "image": "images/cars/FORD_TransitConnect_1.jpg"
         }
       ]
     },
@@ -3542,7 +3068,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 27000,
-          "image": "images/cars/GENESIS_G70_1.webp"
+          "image": "images/cars/GENESIS_G70_1.jpg"
         },
         {
           "name": "2022-2024 (Facelift 2.0T)",
@@ -3550,7 +3076,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 28000,
           "maxPrice": 34000,
-          "image": "images/cars/GENESIS_G70_2.webp"
+          "image": "images/cars/GENESIS_G70_2.jpg"
         }
       ]
     },
@@ -3562,7 +3088,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 21000,
           "maxPrice": 28000,
-          "image": "images/cars/GMC_Acadia_1.webp"
+          "image": "images/cars/GMC_Acadia_1.jpg"
         }
       ],
       "Terrain": [
@@ -3572,7 +3098,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 18500,
           "maxPrice": 23000,
-          "image": "images/cars/GMC_Terrain_1.webp"
+          "image": "images/cars/GMC_Terrain_1.png"
         }
       ]
     },
@@ -3584,7 +3110,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 28000,
-          "image": "images/cars/HONDA_Accord_1.webp"
+          "image": "images/cars/HONDA_Accord_1.jpg"
         },
         {
           "name": "2020-2022 (10-cu nəsil 2.0 Hybrid)",
@@ -3600,7 +3126,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 28000,
           "maxPrice": 36000,
-          "image": "images/cars/HONDA_Accord_3.webp"
+          "image": "images/cars/HONDA_Accord_3.jpg"
         }
       ],
       "Civic": [
@@ -3610,7 +3136,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 15500,
           "maxPrice": 19500,
-          "image": "images/cars/HONDA_Civic_1.webp"
+          "image": "images/cars/HONDA_Civic_1.png"
         },
         {
           "name": "2017-2021 (10-cu nəsil 2.0L K20C2)",
@@ -3618,7 +3144,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 15500,
           "maxPrice": 19500,
-          "image": "images/cars/HONDA_Civic_2.webp"
+          "image": "images/cars/HONDA_Civic_2.jpg"
         },
         {
           "name": "2022-2024 (11-ci nəsil 2.0L K20C2)",
@@ -3626,7 +3152,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 21000,
           "maxPrice": 25000,
-          "image": "images/cars/HONDA_Civic_3.webp"
+          "image": "images/cars/HONDA_Civic_3.jpg"
         },
         {
           "name": "2022-2024 (11-ci nəsil 2.0L K20C2)",
@@ -3634,7 +3160,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 21000,
           "maxPrice": 25000,
-          "image": "images/cars/HONDA_Civic_4.webp"
+          "image": "images/cars/HONDA_Civic_4.jpg"
         },
         {
           "name": "2017-2021 (Type R 2.0T FK8)",
@@ -3642,7 +3168,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 33000,
           "maxPrice": 40000,
-          "image": "images/cars/HONDA_Civic_5.webp"
+          "image": "images/cars/HONDA_Civic_5.jpg"
         },
         {
           "name": "2023-2026 (Type R 2.0T FL5)",
@@ -3650,7 +3176,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 44000,
           "maxPrice": 52000,
-          "image": "images/cars/HONDA_Civic_6.webp"
+          "image": "images/cars/HONDA_Civic_6.jpg"
         },
         {
           "name": "2025-2026 (11-ci nəsil 2.0 Hybrid)",
@@ -3666,7 +3192,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 28000,
           "maxPrice": 33000,
-          "image": "images/cars/HONDA_Civic_8.webp"
+          "image": "images/cars/HONDA_Civic_8.jpg"
         }
       ],
       "CR-V": [
@@ -3676,7 +3202,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 24000,
           "maxPrice": 29000,
-          "image": "images/cars/HONDA_CRV_1.webp"
+          "image": "images/cars/HONDA_CRV_1.jpg"
         },
         {
           "name": "2023-2026 (6-cı nəsil 2.0 Hybrid)",
@@ -3684,7 +3210,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 30000,
           "maxPrice": 38000,
-          "image": "images/cars/HONDA_CRV_2.webp"
+          "image": "images/cars/HONDA_CRV_2.jpg"
         }
       ],
       "HR-V": [
@@ -3694,7 +3220,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 28000,
-          "image": "images/cars/HONDA_HRV_1.webp"
+          "image": "images/cars/HONDA_HRV_1.jpg"
         }
       ]
     },
@@ -3706,7 +3232,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 13500,
           "maxPrice": 16000,
-          "image": "images/cars/HYUNDAI_Elantra_1.webp"
+          "image": "images/cars/HYUNDAI_Elantra_1.jpg"
         },
         {
           "name": "2019-2020 (AD Facelift 2.0L)",
@@ -3714,7 +3240,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 16000,
           "maxPrice": 18500,
-          "image": "images/cars/HYUNDAI_Elantra_2.webp"
+          "image": "images/cars/HYUNDAI_Elantra_2.jpg"
         },
         {
           "name": "2021-2023 (CN7 Pre-Facelift 2.0L)",
@@ -3722,7 +3248,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 19000,
           "maxPrice": 22000,
-          "image": "images/cars/HYUNDAI_Elantra_3.webp"
+          "image": "images/cars/HYUNDAI_Elantra_3.jpg"
         },
         {
           "name": "2021-2023 (CN7 Pre-Facelift 2.0 HEV)",
@@ -3730,7 +3256,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 20000,
           "maxPrice": 23000,
-          "image": "images/cars/HYUNDAI_Elantra_4.webp"
+          "image": "images/cars/HYUNDAI_Elantra_4.jpg"
         },
         {
           "name": "2024-2026 (CN7 Facelift 2.0L)",
@@ -3738,7 +3264,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 23500,
           "maxPrice": 26500,
-          "image": "images/cars/HYUNDAI_Elantra_5.webp"
+          "image": "images/cars/HYUNDAI_Elantra_5.jpg"
         },
         {
           "name": "2024-2026 (CN7 Facelift 2.0 HEV)",
@@ -3746,7 +3272,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 24500,
           "maxPrice": 27500,
-          "image": "images/cars/HYUNDAI_Elantra_6.webp"
+          "image": "images/cars/HYUNDAI_Elantra_6.jpg"
         },
         {
           "name": "2022-2026 (Elantra N 2.0T)",
@@ -3754,7 +3280,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 31000,
           "maxPrice": 38000,
-          "image": "images/cars/HYUNDAI_Elantra_7.webp"
+          "image": "images/cars/HYUNDAI_Elantra_7.jpg"
         }
       ],
       "Kona": [
@@ -3764,7 +3290,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 16000,
           "maxPrice": 19000,
-          "image": "images/cars/HYUNDAI_Kona_1.webp"
+          "image": "images/cars/HYUNDAI_Kona_1.jpg"
         },
         {
           "name": "2022-2023 (1-ci nəsil Facelift 2.0L)",
@@ -3772,7 +3298,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 20000,
           "maxPrice": 24000,
-          "image": "images/cars/HYUNDAI_Kona_2.webp"
+          "image": "images/cars/HYUNDAI_Kona_2.jpg"
         },
         {
           "name": "2022-2023 (Kona N 2.0T)",
@@ -3780,7 +3306,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 26000,
           "maxPrice": 30000,
-          "image": "images/cars/HYUNDAI_Kona_3.webp"
+          "image": "images/cars/HYUNDAI_Kona_3.jpg"
         },
         {
           "name": "2024-2026 (2-ci nəsil 2.0L)",
@@ -3798,7 +3324,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 17500,
           "maxPrice": 20500,
-          "image": "images/cars/HYUNDAI_SantaFe_1_1786208847262.webp"
+          "image": "images/cars/HYUNDAI_SantaFe_1_1786208847262.jpg"
         },
         {
           "name": "2019-2020 (TM 2.0T Turbo)",
@@ -3806,7 +3332,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 21000,
           "maxPrice": 25000,
-          "image": "images/cars/HYUNDAI_SantaFe_2_1786208850960.webp"
+          "image": "images/cars/HYUNDAI_SantaFe_2_1786208850960.jpg"
         }
       ],
       "Sonata": [
@@ -3816,7 +3342,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 15500,
           "maxPrice": 18500,
-          "image": "images/cars/HYUNDAI_Sonata_1_1786208854014.webp"
+          "image": "images/cars/HYUNDAI_Sonata_1_1786208854014.jpg"
         },
         {
           "name": "2017-2019 (LF Facelift 2.0 Hybrid)",
@@ -3824,7 +3350,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 16500,
           "maxPrice": 19500,
-          "image": "images/cars/HYUNDAI_Sonata_2_1786208857508.webp"
+          "image": "images/cars/HYUNDAI_Sonata_2_1786208857508.png"
         },
         {
           "name": "2020-2023 (DN8 Pre-Facelift 2.0 Hybrid)",
@@ -3832,7 +3358,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 21000,
           "maxPrice": 25000,
-          "image": "images/cars/HYUNDAI_Sonata_3_1786208860900.webp"
+          "image": "images/cars/HYUNDAI_Sonata_3_1786208860900.jpg"
         },
         {
           "name": "2024-2026 (DN8 Facelift 2.0 Hybrid)",
@@ -3840,7 +3366,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 26000,
           "maxPrice": 30000,
-          "image": "images/cars/HYUNDAI_Sonata_4_1786208863559.webp"
+          "image": "images/cars/HYUNDAI_Sonata_4_1786208863559.jpg"
         }
       ],
       "Tucson": [
@@ -3850,7 +3376,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 16000,
           "maxPrice": 21000,
-          "image": "images/cars/HYUNDAI_Tucson_1_1786208868032.webp"
+          "image": "images/cars/HYUNDAI_Tucson_1_1786208868032.jpg"
         }
       ],
       "Veloster": [
@@ -3860,7 +3386,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 16500,
           "maxPrice": 19500,
-          "image": "images/cars/HYUNDAI_Veloster_1_1786208884096.webp"
+          "image": "images/cars/HYUNDAI_Veloster_1_1786208884096.jpg"
         },
         {
           "name": "2019-2022 (Veloster N 2.0T)",
@@ -3880,7 +3406,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 17500,
           "maxPrice": 21500,
-          "image": "images/cars/INFINITI_Q50_1_1786208893367.webp"
+          "image": "images/cars/INFINITI_Q50_1_1786208893367.jpg"
         }
       ],
       "Q60": [
@@ -3890,7 +3416,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 19500,
           "maxPrice": 23500,
-          "image": "images/cars/INFINITI_Q60_1_1786208901627.webp"
+          "image": "images/cars/INFINITI_Q60_1_1786208901627.png"
         }
       ],
       "QX30": [
@@ -3900,7 +3426,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 16500,
           "maxPrice": 20000,
-          "image": "images/cars/INFINITI_QX30_1_1786208908324.webp"
+          "image": "images/cars/INFINITI_QX30_1_1786208908324.jpg"
         }
       ],
       "QX50": [
@@ -3910,7 +3436,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 32000,
-          "image": "images/cars/INFINITI_QX50_1_1786208916480.webp"
+          "image": "images/cars/INFINITI_QX50_1_1786208916480.jpg"
         }
       ],
       "QX55": [
@@ -3920,7 +3446,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 30000,
           "maxPrice": 38000,
-          "image": "images/cars/INFINITI_QX55_1_1786208922106.webp"
+          "image": "images/cars/INFINITI_QX55_1_1786208922106.jpg"
         }
       ],
       "QX60": [
@@ -3930,7 +3456,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 42000,
           "maxPrice": 52000,
-          "image": "images/cars/INFINITI_QX60_1_1786208928200.webp"
+          "image": "images/cars/INFINITI_QX60_1_1786208928200.jpg"
         }
       ]
     },
@@ -3942,7 +3468,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 21000,
           "maxPrice": 27000,
-          "image": "images/cars/JAGUAR_EPace_1_1786208932110.webp"
+          "image": "images/cars/JAGUAR_EPace_1_1786208932110.jpg"
         }
       ],
       "F-Pace": [
@@ -3960,7 +3486,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 23000,
           "maxPrice": 30000,
-          "image": "images/cars/JAGUAR_FPace_2_1786208939376.webp"
+          "image": "images/cars/JAGUAR_FPace_2_1786208939376.png"
         },
         {
           "name": "2021-2025 (P250 Facelift 2.0T)",
@@ -3968,7 +3494,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 33000,
           "maxPrice": 42000,
-          "image": "images/cars/JAGUAR_FPace_3_1786208943967.webp"
+          "image": "images/cars/JAGUAR_FPace_3_1786208943967.jpg"
         }
       ],
       "F-Type": [
@@ -3978,7 +3504,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 45000,
-          "image": "images/cars/JAGUAR_FType_1_1786208948983.webp"
+          "image": "images/cars/JAGUAR_FType_1_1786208948983.jpg"
         },
         {
           "name": "2018-2024 (P300 2.0T)",
@@ -3986,7 +3512,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 45000,
-          "image": "images/cars/JAGUAR_FType_2_1786208968157.webp"
+          "image": "images/cars/JAGUAR_FType_2_1786208968157.jpg"
         }
       ],
       "XE": [
@@ -3996,7 +3522,7 @@ const carData = {
           "fuel": "Dizel",
           "minPrice": 16500,
           "maxPrice": 21000,
-          "image": "images/cars/JAGUAR_XE_1_1786208958873.webp"
+          "image": "images/cars/JAGUAR_XE_1_1786208958873.jpg"
         },
         {
           "name": "2017-2020 (20t / 25t / 30t 2.0T)",
@@ -4004,7 +3530,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 17500,
           "maxPrice": 24000,
-          "image": "images/cars/JAGUAR_XE_2_1786208974090.webp"
+          "image": "images/cars/JAGUAR_XE_2_1786208974090.jpg"
         }
       ],
       "XF": [
@@ -4014,7 +3540,7 @@ const carData = {
           "fuel": "Dizel",
           "minPrice": 18500,
           "maxPrice": 23500,
-          "image": "images/cars/JAGUAR_XF_1_1786208978715.webp"
+          "image": "images/cars/JAGUAR_XF_1_1786208978715.jpg"
         },
         {
           "name": "2017-2020 (25t / 30t Pre-Facelift 2.0T)",
@@ -4022,7 +3548,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 20000,
           "maxPrice": 26000,
-          "image": "images/cars/JAGUAR_XF_2_1786208982639.webp"
+          "image": "images/cars/JAGUAR_XF_2_1786208982639.jpg"
         },
         {
           "name": "2021-2024 (P250 Facelift 2.0T)",
@@ -4030,7 +3556,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 28000,
           "maxPrice": 35000,
-          "image": "images/cars/JAGUAR_XF_3_1786208988275.webp"
+          "image": "images/cars/JAGUAR_XF_3_1786208988275.jpg"
         }
       ]
     },
@@ -4042,7 +3568,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 18500,
           "maxPrice": 24000,
-          "image": "images/cars/JEEP_Cherokee_1_1786208991914.webp"
+          "image": "images/cars/JEEP_Cherokee_1_1786208991914.png"
         }
       ],
       "Compass": [
@@ -4052,7 +3578,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 15000,
           "maxPrice": 21000,
-          "image": "images/cars/JEEP_Compass_1_1786209000814.webp"
+          "image": "images/cars/JEEP_Compass_1_1786209000814.jpg"
         },
         {
           "name": "2023-2026 (2.0T Turbo 200 hp)",
@@ -4060,7 +3586,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 28000,
-          "image": "images/cars/JEEP_Compass_2_1786209018542.webp"
+          "image": "images/cars/JEEP_Compass_2_1786209018542.jpg"
         }
       ],
       "Grand Cherokee": [
@@ -4070,19 +3596,10 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 42000,
           "maxPrice": 58000,
-          "image": "images/cars/JEEP_GrandCherokee_1_1786209022880.webp"
+          "image": "images/cars/JEEP_GrandCherokee_1_1786209022880.jpg"
         }
       ],
-      "Patriot": [
-        {
-          "name": "2017 (2.0L World Engine)",
-          "type": "Crossover",
-          "fuel": "Benzin",
-          "minPrice": 11000,
-          "maxPrice": 13500,
-          "image": "images/cars/JEEP_Patriot_1_1786209026065.webp"
-        }
-      ],
+      "Patriot": [],
       "Wrangler": [
         {
           "name": "2018-2023 (JL Pre-Facelift 2.0T Turbo)",
@@ -4090,7 +3607,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 28000,
           "maxPrice": 40000,
-          "image": "images/cars/JEEP_Wrangler_1_1786209032654.webp"
+          "image": "images/cars/JEEP_Wrangler_1_1786209032654.jpg"
         },
         {
           "name": "2021-2023 (JL Pre-Facelift 4xe PHEV)",
@@ -4098,7 +3615,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 32000,
           "maxPrice": 42000,
-          "image": "images/cars/JEEP_Wrangler_2_1786209038927.webp"
+          "image": "images/cars/JEEP_Wrangler_2_1786209038927.jpg"
         },
         {
           "name": "2024-2026 (JL Facelift 2.0T Turbo)",
@@ -4106,7 +3623,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 43000,
           "maxPrice": 50000,
-          "image": "images/cars/JEEP_Wrangler_3_1786209042251.webp"
+          "image": "images/cars/JEEP_Wrangler_3_1786209042251.jpg"
         },
         {
           "name": "2024-2026 (JL Facelift 4xe PHEV)",
@@ -4114,27 +3631,19 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 45000,
           "maxPrice": 52000,
-          "image": "images/cars/JEEP_Wrangler_4_1786209045439.webp"
+          "image": "images/cars/JEEP_Wrangler_4_1786209045439.jpg"
         }
       ]
     },
     "KIA": {
       "Forte": [
         {
-          "name": "2017-2018 (YD Facelift 2.0 Nu)",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 13500,
-          "maxPrice": 16000,
-          "image": "images/cars/KIA_Forte_1_1786209049806.webp"
-        },
-        {
           "name": "2019-2024 (BD 2.0 Nu MPI)",
           "type": "Sedan",
           "fuel": "Benzin",
           "minPrice": 16500,
           "maxPrice": 21000,
-          "image": "images/cars/KIA_Forte_2_1786209054357.webp"
+          "image": "images/cars/KIA_Forte_2_1786209054357.jpg"
         }
       ],
       "K4": [
@@ -4144,7 +3653,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 24000,
           "maxPrice": 28000,
-          "image": "images/cars/KIA_K4_1_1786209057545.webp"
+          "image": "images/cars/KIA_K4_1_1786209057545.jpg"
         }
       ],
       "Optima": [
@@ -4154,7 +3663,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 16000,
           "maxPrice": 21500,
-          "image": "images/cars/KIA_Optima_1_1786209060624.webp"
+          "image": "images/cars/KIA_Optima_1_1786209060624.jpg"
         },
         {
           "name": "2017-2020 (JF 2.0 Hybrid)",
@@ -4162,7 +3671,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 16500,
           "maxPrice": 20500,
-          "image": "images/cars/KIA_Optima_2_1786209068726.webp"
+          "image": "images/cars/KIA_Optima_2_1786209068726.jpg"
         }
       ],
       "Seltos": [
@@ -4172,7 +3681,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 19500,
           "maxPrice": 22500,
-          "image": "images/cars/KIA_Seltos_1_1786209073465.webp"
+          "image": "images/cars/KIA_Seltos_1_1786209073465.jpg"
         },
         {
           "name": "2024-2026 (Facelift 2.0 Nu)",
@@ -4190,7 +3699,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 17500,
           "maxPrice": 21000,
-          "image": "images/cars/KIA_Sorento_1_1786209079059.webp"
+          "image": "images/cars/KIA_Sorento_1_1786209079059.jpg"
         }
       ],
       "Soul": [
@@ -4200,7 +3709,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 13500,
           "maxPrice": 16500,
-          "image": "images/cars/KIA_Soul_1_1786209083285.webp"
+          "image": "images/cars/KIA_Soul_1_1786209083285.jpg"
         },
         {
           "name": "2020-2025 (SK3 2.0L)",
@@ -4208,7 +3717,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 17000,
           "maxPrice": 21000,
-          "image": "images/cars/KIA_Soul_2_1786209086101.webp"
+          "image": "images/cars/KIA_Soul_2_1786209086101.jpg"
         }
       ],
       "Sportage": [
@@ -4218,7 +3727,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 16500,
           "maxPrice": 23000,
-          "image": "images/cars/KIA_Sportage_1_1786209089367.webp"
+          "image": "images/cars/KIA_Sportage_1_1786209089367.jpg"
         }
       ],
       "Stinger": [
@@ -4228,7 +3737,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 28000,
-          "image": "images/cars/KIA_Stinger_1_1786209102077.webp"
+          "image": "images/cars/KIA_Stinger_1_1786209102077.jpg"
         },
         {
           "name": "2018-2021 (2.0T Theta II)",
@@ -4236,7 +3745,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 28000,
-          "image": "images/cars/KIA_Stinger_2_1786209108012.webp"
+          "image": "images/cars/KIA_Stinger_2_1786209108012.jpg"
         }
       ]
     },
@@ -4248,7 +3757,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 48000,
           "maxPrice": 65000,
-          "image": "images/cars/LANDROVER_Defender_1_1786209140997.webp"
+          "image": "images/cars/LANDROVER_Defender_1_1786209140997.jpg"
         }
       ],
       "Discovery Sport": [
@@ -4258,7 +3767,7 @@ const carData = {
           "fuel": "Dizel",
           "minPrice": 18500,
           "maxPrice": 24000,
-          "image": "images/cars/LANDROVER_DiscoverySport_1_1786209117917.webp"
+          "image": "images/cars/LANDROVER_DiscoverySport_1_1786209117917.jpg"
         },
         {
           "name": "2017-2019 (L550 Pre-Facelift 2.0T)",
@@ -4266,7 +3775,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 20000,
           "maxPrice": 26000,
-          "image": "images/cars/LANDROVER_DiscoverySport_2_1786209123134.webp"
+          "image": "images/cars/LANDROVER_DiscoverySport_2_1786209123134.jpg"
         },
         {
           "name": "2020-2025 (L550 Facelift P250 2.0T)",
@@ -4274,7 +3783,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 28000,
           "maxPrice": 42000,
-          "image": "images/cars/LANDROVER_DiscoverySport_3_1786209149223.webp"
+          "image": "images/cars/LANDROVER_DiscoverySport_3_1786209149223.jpg"
         }
       ],
       "Range Rover Evoque": [
@@ -4284,7 +3793,7 @@ const carData = {
           "fuel": "Dizel",
           "minPrice": 19500,
           "maxPrice": 24500,
-          "image": "images/cars/LANDROVER_RangeRoverEvoque_1_1786209154147.webp"
+          "image": "images/cars/LANDROVER_RangeRoverEvoque_1_1786209154147.jpg"
         },
         {
           "name": "2017-2019 (L538 1-ci nəsil 2.0T)",
@@ -4292,7 +3801,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 21000,
           "maxPrice": 26000,
-          "image": "images/cars/LANDROVER_RangeRoverEvoque_2_1786209158631.webp"
+          "image": "images/cars/LANDROVER_RangeRoverEvoque_2_1786209158631.jpg"
         },
         {
           "name": "2020-2026 (L551 2-ci nəsil P250 2.0T)",
@@ -4300,7 +3809,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 45000,
-          "image": "images/cars/LANDROVER_RangeRoverEvoque_3_1786209162632.webp"
+          "image": "images/cars/LANDROVER_RangeRoverEvoque_3_1786209162632.jpg"
         }
       ],
       "Range Rover Velar": [
@@ -4310,7 +3819,7 @@ const carData = {
           "fuel": "Dizel",
           "minPrice": 29000,
           "maxPrice": 37000,
-          "image": "images/cars/LANDROVER_RangeRoverVelar_1_1786209166765.webp"
+          "image": "images/cars/LANDROVER_RangeRoverVelar_1_1786209166765.jpg"
         },
         {
           "name": "2018-2026 (L560 P250 2.0T)",
@@ -4318,7 +3827,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 33000,
           "maxPrice": 52000,
-          "image": "images/cars/LANDROVER_RangeRoverVelar_2_1786209169830.webp"
+          "image": "images/cars/LANDROVER_RangeRoverVelar_2_1786209169830.jpg"
         }
       ]
     },
@@ -4330,7 +3839,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 21000,
           "maxPrice": 27000,
-          "image": "images/cars/LEXUS_IS_1_1786209176833.webp"
+          "image": "images/cars/LEXUS_IS_1_1786209176833.png"
         },
         {
           "name": "2021-2025 (XE30 Facelift IS 300 2.0T)",
@@ -4338,7 +3847,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 29000,
           "maxPrice": 38000,
-          "image": "images/cars/LEXUS_IS_2_1786209180874.webp"
+          "image": "images/cars/LEXUS_IS_2_1786209180874.jpg"
         }
       ],
       "NX": [
@@ -4348,7 +3857,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 31000,
-          "image": "images/cars/LEXUS_NX_1_1786209185464.webp"
+          "image": "images/cars/LEXUS_NX_1_1786209185464.png"
         }
       ],
       "RC": [
@@ -4358,7 +3867,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 23000,
           "maxPrice": 32000,
-          "image": "images/cars/LEXUS_RC_1_1786209196001.webp"
+          "image": "images/cars/LEXUS_RC_1_1786209196001.png"
         }
       ],
       "UX": [
@@ -4368,7 +3877,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 27000,
-          "image": "images/cars/LEXUS_UX_1_1786209199608.webp"
+          "image": "images/cars/LEXUS_UX_1_1786209199608.jpg"
         },
         {
           "name": "2019-2024 (ZA10 UX 250h 2.0 Hybrid)",
@@ -4376,7 +3885,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 24000,
           "maxPrice": 32000,
-          "image": "images/cars/LEXUS_UX_2_1786209204356.webp"
+          "image": "images/cars/LEXUS_UX_2_1786209204356.jpg"
         },
         {
           "name": "2025-2026 (ZA10 UX 300h 2.0 Hybrid)",
@@ -4384,7 +3893,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 35000,
           "maxPrice": 40000,
-          "image": "images/cars/LEXUS_UX_3_1786209215000.webp"
+          "image": "images/cars/LEXUS_UX_3_1786209215000.jpg"
         }
       ]
     },
@@ -4396,7 +3905,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 27000,
           "maxPrice": 32000,
-          "image": "images/cars/LINCOLN_Corsair_1_1786209218692.webp"
+          "image": "images/cars/LINCOLN_Corsair_1_1786209218692.jpg"
         },
         {
           "name": "2023-2026 (Facelift 2.0T)",
@@ -4404,7 +3913,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 33000,
           "maxPrice": 39000,
-          "image": "images/cars/LINCOLN_Corsair_2_1786209223468.webp"
+          "image": "images/cars/LINCOLN_Corsair_2_1786209223468.jpg"
         }
       ],
       "MKC": [
@@ -4414,7 +3923,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 17000,
           "maxPrice": 22000,
-          "image": "images/cars/LINCOLN_MKC_1_1786209227713.webp"
+          "image": "images/cars/LINCOLN_MKC_1_1786209227713.jpg"
         }
       ],
       "MKZ": [
@@ -4424,7 +3933,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 16000,
           "maxPrice": 21000,
-          "image": "images/cars/LINCOLN_MKZ_1_1786209232417.webp"
+          "image": "images/cars/LINCOLN_MKZ_1_1786209232417.jpg"
         },
         {
           "name": "2017-2020 (Facelift 2.0 Hybrid)",
@@ -4432,7 +3941,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 16500,
           "maxPrice": 22000,
-          "image": "images/cars/LINCOLN_MKZ_2_1786209235020.webp"
+          "image": "images/cars/LINCOLN_MKZ_2_1786209235020.jpg"
         }
       ],
       "Nautilus": [
@@ -4442,7 +3951,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 28000,
           "maxPrice": 36000,
-          "image": "images/cars/LINCOLN_Nautilus_1_1786209238603.webp"
+          "image": "images/cars/LINCOLN_Nautilus_1_1786209238603.jpg"
         },
         {
           "name": "2024-2026 (2-ci nəsil 2.0T Benzin)",
@@ -4450,7 +3959,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 42000,
           "maxPrice": 48000,
-          "image": "images/cars/LINCOLN_Nautilus_2_1786209243491.webp"
+          "image": "images/cars/LINCOLN_Nautilus_2_1786209243491.jpg"
         },
         {
           "name": "2024-2026 (2-ci nəsil 2.0 Hybrid)",
@@ -4458,7 +3967,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 44000,
           "maxPrice": 50000,
-          "image": "images/cars/LINCOLN_Nautilus_3_1786209250238.webp"
+          "image": "images/cars/LINCOLN_Nautilus_3_1786209250238.jpg"
         }
       ]
     },
@@ -4470,7 +3979,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 52000,
           "maxPrice": 65000,
-          "image": "images/cars/MASERATI_Grecale_1_1786209253181.webp"
+          "image": "images/cars/MASERATI_Grecale_1_1786209253181.jpg"
         }
       ]
     },
@@ -4482,7 +3991,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 13500,
           "maxPrice": 16500,
-          "image": "images/cars/MAZDA_Mazda3_1_1786209257867.webp"
+          "image": "images/cars/MAZDA_Mazda3_1_1786209257867.jpg"
         },
         {
           "name": "2017-2018 (BN Facelift 2.0 SkyActiv-G)",
@@ -4490,7 +3999,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 13500,
           "maxPrice": 16500,
-          "image": "images/cars/MAZDA_Mazda3_2_1786209261243.webp"
+          "image": "images/cars/MAZDA_Mazda3_2_1786209261243.jpg"
         },
         {
           "name": "2019-2024 (BP 2.0 SkyActiv-G)",
@@ -4498,7 +4007,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 17500,
           "maxPrice": 21000,
-          "image": "images/cars/MAZDA_Mazda3_3_1786209267134.webp"
+          "image": "images/cars/MAZDA_Mazda3_3_1786209267134.jpg"
         },
         {
           "name": "2019-2024 (BP 2.0 SkyActiv-G)",
@@ -4506,7 +4015,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 17500,
           "maxPrice": 21000,
-          "image": "images/cars/MAZDA_Mazda3_4_1786209271062.webp"
+          "image": "images/cars/MAZDA_Mazda3_4_1786209271062.jpg"
         }
       ],
       "CX-3": [
@@ -4516,7 +4025,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 14500,
           "maxPrice": 19500,
-          "image": "images/cars/MAZDA_CX3_1_1786209278742.webp"
+          "image": "images/cars/MAZDA_CX3_1_1786209278742.jpg"
         }
       ],
       "MX-5 Miata": [
@@ -4526,7 +4035,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 19000,
           "maxPrice": 23000,
-          "image": "images/cars/MAZDA_MX5Miata_1_1786209283303.webp"
+          "image": "images/cars/MAZDA_MX5Miata_1_1786209283303.jpg"
         },
         {
           "name": "2019-2026 (ND2 / ND3 2.0L 181hp)",
@@ -4534,7 +4043,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 24000,
           "maxPrice": 32000,
-          "image": "images/cars/MAZDA_MX5Miata_2_1786209290644.webp"
+          "image": "images/cars/MAZDA_MX5Miata_2_1786209290644.jpg"
         }
       ]
     },
@@ -4546,7 +4055,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 23000,
           "maxPrice": 38000,
-          "image": "images/cars/images (4).webp"
+          "image": "images/cars/images (4).jpg"
         }
       ],
       "C-Class": [
@@ -4556,7 +4065,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 19000,
           "maxPrice": 23000,
-          "image": "images/cars/1948318ea657bda30518da807ffcc78f.webp"
+          "image": "images/cars/1948318ea657bda30518da807ffcc78f.jpg"
         },
         {
           "name": "2017-2018 (W205 C 300 2.0T Pre-Facelift)",
@@ -4572,7 +4081,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 24000,
           "maxPrice": 30000,
-          "image": "images/cars/images (5).webp"
+          "image": "images/cars/images (5).jpg"
         },
         {
           "name": "2019-2021 (W205 C 300 2.0T Facelift)",
@@ -4580,7 +4089,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 24000,
           "maxPrice": 30000,
-          "image": "images/cars/589836.webp"
+          "image": "images/cars/589836.avif"
         },
         {
           "name": "2022-2026 (W206 C 300 / AMG C 43 2.0T)",
@@ -4588,7 +4097,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 33000,
           "maxPrice": 58000,
-          "image": "images/cars/2022-mercedes-benz-c-class-118-1613767289.webp"
+          "image": "images/cars/2022-mercedes-benz-c-class-118-1613767289.avif"
         },
         {
           "name": "2024-2026 (W206 AMG C 63 S E Performance)",
@@ -4596,7 +4105,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 75000,
           "maxPrice": 90000,
-          "image": "images/cars/2026_mercedes-benz_c-class_sedan_amg-c-43_fq_oem_1_1280.webp"
+          "image": "images/cars/2026_mercedes-benz_c-class_sedan_amg-c-43_fq_oem_1_1280.avif"
         }
       ],
       "CLA-Class": [
@@ -4606,7 +4115,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 23000,
-          "image": "images/cars/2017_mercedes-benz_cla-class_sedan_amg-cla-45_fq_oem_1_1600.webp"
+          "image": "images/cars/2017_mercedes-benz_cla-class_sedan_amg-cla-45_fq_oem_1_1600.avif"
         },
         {
           "name": "2020-2026 (C118 CLA 250 / AMG CLA 35)",
@@ -4614,7 +4123,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 26000,
           "maxPrice": 42000,
-          "image": "images/cars/cwnx4qaqu5t5wpw8lpg5xmvcm.webp"
+          "image": "images/cars/cwnx4qaqu5t5wpw8lpg5xmvcm.jpg"
         }
       ],
       "CLE-Class": [
@@ -4624,7 +4133,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 55000,
           "maxPrice": 68000,
-          "image": "images/cars/2026_mercedes-benz_cle-pic-6295713166014143086-1024x768.webp"
+          "image": "images/cars/2026_mercedes-benz_cle-pic-6295713166014143086-1024x768.jpeg"
         }
       ],
       "E-Class": [
@@ -4634,7 +4143,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 24000,
           "maxPrice": 31000,
-          "image": "images/cars/63773a_d6a8a4fd31a146aa8bb5b4bd0f91af54~mv2.webp"
+          "image": "images/cars/63773a_d6a8a4fd31a146aa8bb5b4bd0f91af54~mv2.avif"
         },
         {
           "name": "2021-2023 (W213 E 350 Facelift)",
@@ -4642,7 +4151,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 33000,
           "maxPrice": 42000,
-          "image": "images/cars/images (2).webp"
+          "image": "images/cars/images (2).jpg"
         },
         {
           "name": "2024-2026 (W214 E 350 2.0T)",
@@ -4650,7 +4159,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 48000,
           "maxPrice": 58000,
-          "image": "images/cars/2024-mercedesbenz-e350-03.webp"
+          "image": "images/cars/2024-mercedesbenz-e350-03.jpg"
         }
       ],
       "GLA-Class": [
@@ -4660,7 +4169,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 17500,
           "maxPrice": 22000,
-          "image": "images/cars/mercedes-benz_gla-class__645358874bx.webp"
+          "image": "images/cars/mercedes-benz_gla-class__645358874bx.jpg"
         },
         {
           "name": "2021-2026 (H247 GLA 250 / AMG GLA 35)",
@@ -4668,7 +4177,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 27000,
           "maxPrice": 39000,
-          "image": "images/cars/images (6).webp"
+          "image": "images/cars/images (6).jpg"
         }
       ],
       "GLB-Class": [
@@ -4678,7 +4187,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 28000,
           "maxPrice": 45000,
-          "image": "images/cars/images (7).webp"
+          "image": "images/cars/images (7).jpg"
         }
       ],
       "GLC-Class": [
@@ -4688,7 +4197,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 27000,
-          "image": "images/cars/22fscmbnc5b3mbutdc1rha2lc.webp"
+          "image": "images/cars/22fscmbnc5b3mbutdc1rha2lc.jpg"
         },
         {
           "name": "2020-2022 (X253 GLC 300 Facelift)",
@@ -4696,7 +4205,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 28000,
           "maxPrice": 35000,
-          "image": "images/cars/1138363.webp"
+          "image": "images/cars/1138363.avif"
         },
         {
           "name": "2023-2026 (X254 GLC 300 2.0T)",
@@ -4704,7 +4213,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 38000,
           "maxPrice": 48000,
-          "image": "images/cars/2023-mercedesbenz-glc300-10.webp"
+          "image": "images/cars/2023-mercedesbenz-glc300-10.jpg"
         },
         {
           "name": "2024-2026 (X254 GLC 350e PHEV)",
@@ -4712,7 +4221,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 45000,
           "maxPrice": 55000,
-          "image": "images/cars/images (8).webp"
+          "image": "images/cars/images (8).jpg"
         }
       ],
       "GLE-Class": [
@@ -4722,7 +4231,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 38000,
           "maxPrice": 46000,
-          "image": "images/cars/2020-GLE-SUV-GALLERY-002-SET-Q-FI-DR.webp"
+          "image": "images/cars/2020-GLE-SUV-GALLERY-002-SET-Q-FI-DR.avif"
         },
         {
           "name": "2024-2026 (V167 GLE 350 Facelift)",
@@ -4730,7 +4239,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 48000,
           "maxPrice": 58000,
-          "image": "images/cars/001-2024-mercedes-benz-gle-450e-front-in-motion.webp"
+          "image": "images/cars/001-2024-mercedes-benz-gle-450e-front-in-motion.avif"
         },
         {
           "name": "2024-2026 (V167 GLE 450e PHEV)",
@@ -4738,7 +4247,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 55000,
           "maxPrice": 65000,
-          "image": "images/cars/2024-mercedes-benz-gle450e-101-643702f785158.webp"
+          "image": "images/cars/2024-mercedes-benz-gle450e-101-643702f785158.avif"
         }
       ],
       "Metris": [
@@ -4748,7 +4257,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 26000,
-          "image": "images/cars/6-2023-mercedes-benz-metris-exterior.webp"
+          "image": "images/cars/6-2023-mercedes-benz-metris-exterior.avif"
         }
       ],
       "SLC": [
@@ -4758,7 +4267,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 24000,
           "maxPrice": 32000,
-          "image": "images/cars/2017-slc-16c3-012.webp"
+          "image": "images/cars/2017-slc-16c3-012.jpg"
         }
       ],
       "Sprinter": [
@@ -4768,7 +4277,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 44000,
-          "image": "images/cars/images (9).webp"
+          "image": "images/cars/images (9).jpg"
         },
         {
           "name": "2021-2026 (2.0 Turbo Diesel)",
@@ -4776,7 +4285,7 @@ const carData = {
           "fuel": "Dizel",
           "minPrice": 35000,
           "maxPrice": 48000,
-          "image": "images/cars/2026_mercedes-benz_sprinter_cargo-van_2500-144-wb-cargo_fq_oem_1_1280.webp"
+          "image": "images/cars/2026_mercedes-benz_sprinter_cargo-van_2500-144-wb-cargo_fq_oem_1_1280.avif"
         }
       ]
     },
@@ -4788,7 +4297,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 29000,
-          "image": "images/cars/MINI_Clubman_1_1786209301158.webp"
+          "image": "images/cars/MINI_Clubman_1_1786209301158.jpg"
         }
       ],
       "Cooper": [
@@ -4798,7 +4307,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 25000,
-          "image": "images/cars/MINI_Cooper_1_1786209308498.webp"
+          "image": "images/cars/MINI_Cooper_1_1786209308498.jpg"
         },
         {
           "name": "2017-2021 (F55 / F56 Cooper S / JCW 2.0T)",
@@ -4806,7 +4315,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 25000,
-          "image": "images/cars/MINI_Cooper_2_1786209312096.webp"
+          "image": "images/cars/MINI_Cooper_2_1786209312096.png"
         },
         {
           "name": "2022-2024 (F55 / F56 Facelift 2 Cooper S / JCW)",
@@ -4814,7 +4323,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 26000,
           "maxPrice": 32000,
-          "image": "images/cars/MINI_Cooper_3_1786209318581.webp"
+          "image": "images/cars/MINI_Cooper_3_1786209318581.jpg"
         },
         {
           "name": "2022-2024 (F55 / F56 Facelift 2 Cooper S / JCW)",
@@ -4822,7 +4331,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 26000,
           "maxPrice": 32000,
-          "image": "images/cars/MINI_Cooper_4_1786209322898.webp"
+          "image": "images/cars/MINI_Cooper_4_1786209322898.jpg"
         },
         {
           "name": "2025-2026 (F66 5-ci nəsil Cooper S 2.0T)",
@@ -4830,7 +4339,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 38000,
-          "image": "images/cars/MINI_Cooper_5_1786209327323.webp"
+          "image": "images/cars/MINI_Cooper_5_1786209327323.jpg"
         }
       ],
       "Countryman": [
@@ -4840,7 +4349,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 20000,
           "maxPrice": 29000,
-          "image": "images/cars/MINI_Countryman_1_1786209331759.webp"
+          "image": "images/cars/MINI_Countryman_1_1786209331759.png"
         },
         {
           "name": "2024-2027 (U25 Countryman S / JCW 2.0T)",
@@ -4848,7 +4357,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 33000,
           "maxPrice": 42000,
-          "image": "images/cars/MINI_Countryman_2_1786209338564.webp"
+          "image": "images/cars/MINI_Countryman_2_1786209338564.jpg"
         }
       ]
     },
@@ -4860,7 +4369,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 17000,
           "maxPrice": 24000,
-          "image": "images/cars/MITSUBISHI_Outlander_1_1786209342826.webp"
+          "image": "images/cars/MITSUBISHI_Outlander_1_1786209342826.jpg"
         }
       ]
     },
@@ -4872,7 +4381,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 21000,
           "maxPrice": 27000,
-          "image": "images/cars/NISSAN_Altima_1_1786209347528.webp"
+          "image": "images/cars/NISSAN_Altima_1_1786209347528.jpg"
         }
       ],
       "Kicks": [
@@ -4882,7 +4391,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 26000,
-          "image": "images/cars/NISSAN_Kicks_1_1786209351893.webp"
+          "image": "images/cars/NISSAN_Kicks_1_1786209351893.jpg"
         }
       ],
       "Murano": [
@@ -4895,16 +4404,7 @@ const carData = {
           "image": "images/cars/NISSAN_Murano_1_1786209357378.webp"
         }
       ],
-      "NV200": [
-        {
-          "name": "2017-2021 (2.0L MR20DE)",
-          "type": "Van",
-          "fuel": "Benzin",
-          "minPrice": 13000,
-          "maxPrice": 17500,
-          "image": "images/cars/NISSAN_NV200_1_1786209361184.webp"
-        }
-      ],
+      "NV200": [],
       "Rogue Sport": [
         {
           "name": "2017-2022 (2.0L MR20DD)",
@@ -4912,7 +4412,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 14500,
           "maxPrice": 20000,
-          "image": "images/cars/NISSAN_RogueSport_1_1786209367231.webp"
+          "image": "images/cars/NISSAN_RogueSport_1_1786209367231.jpg"
         }
       ],
       "Sentra": [
@@ -4922,7 +4422,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 16000,
           "maxPrice": 19000,
-          "image": "images/cars/NISSAN_Sentra_1_1786209371380.webp"
+          "image": "images/cars/NISSAN_Sentra_1_1786209371380.jpg"
         },
         {
           "name": "2024-2026 (B18 Facelift 2.0L)",
@@ -4930,7 +4430,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 19500,
           "maxPrice": 23000,
-          "image": "images/cars/NISSAN_Sentra_2_1786209375003.webp"
+          "image": "images/cars/NISSAN_Sentra_2_1786209375003.jpg"
         }
       ]
     },
@@ -4942,7 +4442,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 38000,
-          "image": "images/cars/PORSCHE_Macan_1_1786209379863.webp"
+          "image": "images/cars/PORSCHE_Macan_1_1786209379863.jpg"
         },
         {
           "name": "2019-2021 (Base 2.0T Facelift 1)",
@@ -4950,7 +4450,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 39000,
           "maxPrice": 47000,
-          "image": "images/cars/PORSCHE_Macan_2_1786209383954.webp"
+          "image": "images/cars/PORSCHE_Macan_2_1786209383954.jpg"
         },
         {
           "name": "2022-2026 (Base / Macan T 2.0T Facelift 2)",
@@ -4958,7 +4458,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 48000,
           "maxPrice": 62000,
-          "image": "images/cars/PORSCHE_Macan_3_1786209387423.webp"
+          "image": "images/cars/PORSCHE_Macan_3_1786209387423.jpg"
         }
       ],
       "718 Boxster / Cayman": [
@@ -4968,7 +4468,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 48000,
           "maxPrice": 68000,
-          "image": "images/cars/PORSCHE_718BoxsterCayman_1_1786209390684.webp"
+          "image": "images/cars/PORSCHE_718BoxsterCayman_1_1786209390684.jpg"
         },
         {
           "name": "2017-2025 (718 Base / T 2.0T Turbo)",
@@ -4976,7 +4476,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 48000,
           "maxPrice": 68000,
-          "image": "images/cars/PORSCHE_718BoxsterCayman_2_1786209396136.webp"
+          "image": "images/cars/PORSCHE_718BoxsterCayman_2_1786209396136.jpg"
         }
       ]
     },
@@ -4988,7 +4488,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 16000,
           "maxPrice": 21000,
-          "image": "images/cars/SUBARU_Crosstrek_1_1786209405324.webp"
+          "image": "images/cars/SUBARU_Crosstrek_1_1786209405324.jpg"
         },
         {
           "name": "2024-2026 (3-cü nəsil 2.0L FB20)",
@@ -4996,7 +4496,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 26000,
-          "image": "images/cars/SUBARU_Crosstrek_2_1786209413368.webp"
+          "image": "images/cars/SUBARU_Crosstrek_2_1786209413368.jpg"
         }
       ],
       "Impreza": [
@@ -5006,7 +4506,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 14000,
           "maxPrice": 18500,
-          "image": "images/cars/SUBARU_Impreza_1_1786209416694.webp"
+          "image": "images/cars/SUBARU_Impreza_1_1786209416694.jpg"
         },
         {
           "name": "2017-2023 (5-ci nəsil 2.0L FB20)",
@@ -5014,7 +4514,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 14000,
           "maxPrice": 18500,
-          "image": "images/cars/SUBARU_Impreza_2_1786209420264.webp"
+          "image": "images/cars/SUBARU_Impreza_2_1786209420264.jpg"
         },
         {
           "name": "2024-2026 (6-cı nəsil 2.0L FB20)",
@@ -5022,7 +4522,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 21000,
           "maxPrice": 25000,
-          "image": "images/cars/SUBARU_Impreza_3_1786209424393.webp"
+          "image": "images/cars/SUBARU_Impreza_3_1786209424393.jpg"
         }
       ],
       "WRX": [
@@ -5032,7 +4532,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 19000,
           "maxPrice": 26000,
-          "image": "images/cars/SUBARU_WRX_1_1786209427984.webp"
+          "image": "images/cars/SUBARU_WRX_1_1786209427984.jpg"
         }
       ]
     },
@@ -5044,7 +4544,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 23000,
-          "image": "images/cars/TOYOTA_86_1_1786209432630.webp"
+          "image": "images/cars/TOYOTA_86_1_1786209432630.jpg"
         }
       ],
       "C-HR": [
@@ -5054,7 +4554,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 16500,
           "maxPrice": 21000,
-          "image": "images/cars/TOYOTA_CHR_1_1786209445308.webp"
+          "image": "images/cars/TOYOTA_CHR_1_1786209445308.jpg"
         }
       ],
       "Corolla": [
@@ -5064,7 +4564,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 21500,
-          "image": "images/cars/TOYOTA_Corolla_1_1786209450438.webp"
+          "image": "images/cars/TOYOTA_Corolla_1_1786209450438.jpg"
         },
         {
           "name": "2019-2022 (E210 SE / XSE 2.0L Dynamic Force)",
@@ -5072,7 +4572,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 21500,
-          "image": "images/cars/TOYOTA_Corolla_2_1786209453907.webp"
+          "image": "images/cars/TOYOTA_Corolla_2_1786209453907.jpg"
         },
         {
           "name": "2023-2026 (E210 Facelift 2.0L Dynamic Force)",
@@ -5080,7 +4580,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 21000,
           "maxPrice": 26000,
-          "image": "images/cars/TOYOTA_Corolla_3_1786209457562.webp"
+          "image": "images/cars/TOYOTA_Corolla_3_1786209457562.png"
         },
         {
           "name": "2023-2026 (E210 Facelift 2.0L Dynamic Force)",
@@ -5088,7 +4588,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 21000,
           "maxPrice": 26000,
-          "image": "images/cars/TOYOTA_Corolla_4_1786209467350.webp"
+          "image": "images/cars/TOYOTA_Corolla_4_1786209467350.jpg"
         }
       ],
       "Corolla Cross": [
@@ -5098,7 +4598,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 27000,
-          "image": "images/cars/TOYOTA_CorollaCross_1_1786209474566.webp"
+          "image": "images/cars/TOYOTA_CorollaCross_1_1786209474566.jpg"
         },
         {
           "name": "2023-2026 (2.0L Hybrid M20A-FXS)",
@@ -5106,7 +4606,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 26000,
           "maxPrice": 32000,
-          "image": "images/cars/TOYOTA_CorollaCross_2_1786209478041.webp"
+          "image": "images/cars/TOYOTA_CorollaCross_2_1786209478041.jpg"
         }
       ],
       "GR Supra": [
@@ -5116,7 +4616,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 38000,
           "maxPrice": 46000,
-          "image": "images/cars/TOYOTA_GRSupra_1_1786209481936.webp"
+          "image": "images/cars/TOYOTA_GRSupra_1_1786209481936.jpg"
         }
       ],
       "Prius": [
@@ -5126,7 +4626,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 29000,
           "maxPrice": 34000,
-          "image": "images/cars/TOYOTA_Prius_1_1786209512347.webp"
+          "image": "images/cars/TOYOTA_Prius_1_1786209512347.jpg"
         },
         {
           "name": "2023-2026 (XW60 2.0 Prime PHEV)",
@@ -5134,7 +4634,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 32000,
           "maxPrice": 39000,
-          "image": "images/cars/TOYOTA_Prius_2_1786209524399.webp"
+          "image": "images/cars/TOYOTA_Prius_2_1786209524399.jpg"
         }
       ]
     },
@@ -5146,7 +4646,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 30000,
-          "image": "images/cars/VOLKSWAGEN_Atlas_1_1786209534200.webp"
+          "image": "images/cars/VOLKSWAGEN_Atlas_1_1786209534200.jpg"
         },
         {
           "name": "2024-2026 (Facelift 2.0 TSI 269hp)",
@@ -5154,7 +4654,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 33000,
           "maxPrice": 42000,
-          "image": "images/cars/VOLKSWAGEN_Atlas_2_1786209538280.webp"
+          "image": "images/cars/VOLKSWAGEN_Atlas_2_1786209538280.jpg"
         }
       ],
       "Beetle": [
@@ -5164,7 +4664,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 17000,
           "maxPrice": 21000,
-          "image": "images/cars/VOLKSWAGEN_Beetle_1_1786209542971.webp"
+          "image": "images/cars/VOLKSWAGEN_Beetle_1_1786209542971.jpg"
         },
         {
           "name": "2018-2019 (A5 2.0 TSI EA888.3)",
@@ -5172,7 +4672,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 17000,
           "maxPrice": 21000,
-          "image": "images/cars/VOLKSWAGEN_Beetle_2_1786209547161.webp"
+          "image": "images/cars/VOLKSWAGEN_Beetle_2_1786209547161.jpg"
         }
       ],
       "CC": [
@@ -5182,7 +4682,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 14000,
           "maxPrice": 17000,
-          "image": "images/cars/VOLKSWAGEN_CC_1_1786209551430.webp"
+          "image": "images/cars/VOLKSWAGEN_CC_1_1786209551430.png"
         }
       ],
       "Golf / Golf SportWagen": [
@@ -5192,7 +4692,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 23000,
-          "image": "images/cars/VOLKSWAGEN_GolfGolfSportWagen_1_1786209556712.webp"
+          "image": "images/cars/VOLKSWAGEN_GolfGolfSportWagen_1_1786209556712.png"
         },
         {
           "name": "2019-2021 (Mk7.5 2.0 TSI / Alltrack)",
@@ -5200,7 +4700,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 23000,
-          "image": "images/cars/VOLKSWAGEN_GolfGolfSportWagen_2_1786209564098.webp"
+          "image": "images/cars/VOLKSWAGEN_GolfGolfSportWagen_2_1786209564098.jpg"
         }
       ],
       "Golf GTI": [
@@ -5210,7 +4710,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 19000,
           "maxPrice": 26000,
-          "image": "images/cars/VOLKSWAGEN_GolfGTI_1_1786209580142.webp"
+          "image": "images/cars/VOLKSWAGEN_GolfGTI_1_1786209580142.jpg"
         },
         {
           "name": "2022-2026 (Mk8 / Mk8.5 2.0 TSI)",
@@ -5218,7 +4718,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 28000,
           "maxPrice": 36000,
-          "image": "images/cars/VOLKSWAGEN_GolfGTI_2_1786209589320.webp"
+          "image": "images/cars/VOLKSWAGEN_GolfGTI_2_1786209589320.jpg"
         }
       ],
       "Golf R": [
@@ -5228,7 +4728,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 28000,
           "maxPrice": 34000,
-          "image": "images/cars/VOLKSWAGEN_GolfR_1_1786209593345.webp"
+          "image": "images/cars/VOLKSWAGEN_GolfR_1_1786209593345.jpg"
         },
         {
           "name": "2022-2026 (Mk8 2.0 TSI AWD)",
@@ -5236,7 +4736,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 37000,
           "maxPrice": 45000,
-          "image": "images/cars/VOLKSWAGEN_GolfR_2_1786209601453.webp"
+          "image": "images/cars/VOLKSWAGEN_GolfR_2_1786209601453.jpg"
         }
       ],
       "Jetta": [
@@ -5246,7 +4746,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 15000,
           "maxPrice": 18500,
-          "image": "images/cars/VOLKSWAGEN_Jetta_1_1786209604991.webp"
+          "image": "images/cars/VOLKSWAGEN_Jetta_1_1786209604991.jpg"
         },
         {
           "name": "2019-2026 (Mk7 / Mk7.5 GLI 2.0 TSI)",
@@ -5254,7 +4754,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 20000,
           "maxPrice": 29000,
-          "image": "images/cars/VOLKSWAGEN_Jetta_2_1786209610098.webp"
+          "image": "images/cars/VOLKSWAGEN_Jetta_2_1786209610098.png"
         }
       ],
       "Passat": [
@@ -5264,7 +4764,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 16000,
           "maxPrice": 22000,
-          "image": "images/cars/VOLKSWAGEN_Passat_1_1786209614440.webp"
+          "image": "images/cars/VOLKSWAGEN_Passat_1_1786209614440.jpg"
         }
       ],
       "Tiguan": [
@@ -5274,7 +4774,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 16500,
           "maxPrice": 27000,
-          "image": "images/cars/VOLKSWAGEN_Tiguan_1_1786209619749.webp"
+          "image": "images/cars/VOLKSWAGEN_Tiguan_1_1786209619749.jpg"
         },
         {
           "name": "2025-2026 (Mk3 2.0 TSI)",
@@ -5282,7 +4782,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 29000,
           "maxPrice": 36000,
-          "image": "images/cars/VOLKSWAGEN_Tiguan_2_1786209623365.webp"
+          "image": "images/cars/VOLKSWAGEN_Tiguan_2_1786209623365.jpg"
         }
       ]
     },
@@ -5294,7 +4794,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 16000,
           "maxPrice": 19500,
-          "image": "images/cars/VOLVO_S60_1_1786209630247.webp"
+          "image": "images/cars/VOLVO_S60_1_1786209630247.jpg"
         },
         {
           "name": "2019-2022 (3-cü nəsil T5 / T6 2.0T)",
@@ -5310,7 +4810,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 30000,
           "maxPrice": 38000,
-          "image": "images/cars/VOLVO_S60_3_1786209639386.webp"
+          "image": "images/cars/VOLVO_S60_3_1786209639386.jpg"
         }
       ],
       "S90": [
@@ -5328,7 +4828,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 42000,
-          "image": "images/cars/VOLVO_S90_2_1786209651112.webp"
+          "image": "images/cars/VOLVO_S90_2_1786209651112.jpg"
         }
       ],
       "V60": [
@@ -5338,7 +4838,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 17000,
           "maxPrice": 21000,
-          "image": "images/cars/VOLVO_V60_1_1786209656552.webp"
+          "image": "images/cars/VOLVO_V60_1_1786209656552.jpg"
         },
         {
           "name": "2019-2025 (2-ci nəsil T5 / B5 Cross Country)",
@@ -5346,7 +4846,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 26000,
           "maxPrice": 38000,
-          "image": "images/cars/VOLVO_V60_2_1786209665520.webp"
+          "image": "images/cars/VOLVO_V60_2_1786209665520.jpg"
         }
       ],
       "V90": [
@@ -5356,7 +4856,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 25000,
           "maxPrice": 40000,
-          "image": "images/cars/VOLVO_V90_1_1786209668741.webp"
+          "image": "images/cars/VOLVO_V90_1_1786209668741.jpg"
         }
       ],
       "XC40": [
@@ -5366,7 +4866,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 23000,
           "maxPrice": 29000,
-          "image": "images/cars/VOLVO_XC40_1_1786209673053.webp"
+          "image": "images/cars/VOLVO_XC40_1_1786209673053.jpg"
         },
         {
           "name": "2023-2026 (B4 / B5 Mild-Hybrid)",
@@ -5374,7 +4874,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 30000,
           "maxPrice": 38000,
-          "image": "images/cars/VOLVO_XC40_2_1786209678588.webp"
+          "image": "images/cars/VOLVO_XC40_2_1786209678588.jpg"
         }
       ],
       "XC60": [
@@ -5384,7 +4884,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 30000,
-          "image": "images/cars/VOLVO_XC60_1_1786209682752.webp"
+          "image": "images/cars/VOLVO_XC60_1_1786209682752.png"
         },
         {
           "name": "2022-2026 (2-ci nəsil B5 / B6 Mild-Hybrid)",
@@ -5392,7 +4892,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 31000,
           "maxPrice": 43000,
-          "image": "images/cars/VOLVO_XC60_2_1786209687445.webp"
+          "image": "images/cars/VOLVO_XC60_2_1786209687445.jpg"
         },
         {
           "name": "2021-2026 (T8 Recharge PHEV)",
@@ -5400,7 +4900,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 42000,
           "maxPrice": 58000,
-          "image": "images/cars/VOLVO_XC60_3_1786209693206.webp"
+          "image": "images/cars/VOLVO_XC60_3_1786209693206.jpg"
         }
       ],
       "XC90": [
@@ -5410,7 +4910,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 24000,
           "maxPrice": 33000,
-          "image": "images/cars/VOLVO_XC90_1_1786209698024.webp"
+          "image": "images/cars/VOLVO_XC90_1_1786209698024.jpg"
         },
         {
           "name": "2022-2026 (2-ci nəsil B5 / B6 Mild-Hybrid)",
@@ -5418,7 +4918,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 35000,
           "maxPrice": 52000,
-          "image": "images/cars/VOLVO_XC90_2_1786209707242.webp"
+          "image": "images/cars/VOLVO_XC90_2_1786209707242.jpg"
         },
         {
           "name": "2021-2026 (T8 Recharge PHEV)",
@@ -5426,24 +4926,12 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 45000,
           "maxPrice": 62000,
-          "image": "images/cars/VOLVO_XC90_3_1786209718570.webp"
+          "image": "images/cars/VOLVO_XC90_3_1786209718570.jpg"
         }
       ]
     }
   },
   "2.2": {
-    "Mazda": {
-      "CX-5": [
-        {
-          "name": "2019 II Generation (KF)",
-          "type": "SUV",
-          "fuel": "Dizel",
-          "minPrice": 28000,
-          "maxPrice": 36000,
-          "image": "images/cars/Mazda_CX5_1_1786209723202.webp"
-        }
-      ]
-    },
     "Mercedes-Benz": {
       "Sprinter": [
         {
@@ -5452,7 +4940,7 @@ const carData = {
           "fuel": "Dizel",
           "minPrice": 45000,
           "maxPrice": 65000,
-          "image": "images/cars/images (10).webp"
+          "image": "images/cars/images (10).jpg"
         }
       ]
     }
@@ -5466,7 +4954,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 50000,
           "maxPrice": 75000,
-          "image": "images/cars/Ford_Bronco_1_1786209739994.webp"
+          "image": "images/cars/Ford_Bronco_1_1786209739994.jpg"
         }
       ],
       "Explorer": [
@@ -5476,7 +4964,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 42000,
-          "image": "images/cars/Ford_Explorer_1_1786209747409.webp"
+          "image": "images/cars/Ford_Explorer_1_1786209747409.jpg"
         },
         {
           "name": "2020-2026 VI Generation (EcoBoost)",
@@ -5484,19 +4972,10 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 45000,
           "maxPrice": 65000,
-          "image": "images/cars/Ford_Explorer_2_1786209751463.webp"
+          "image": "images/cars/Ford_Explorer_2_1786209751463.jpg"
         }
       ],
-      "Focus": [
-        {
-          "name": "2017-2018 III Generation (RS)",
-          "type": "Hatchback",
-          "fuel": "Benzin",
-          "minPrice": 35000,
-          "maxPrice": 45000,
-          "image": "images/cars/Ford_Focus_1_1786209757932.webp"
-        }
-      ],
+      "Focus": [],
       "Mustang": [
         {
           "name": "2017-2023 VI Generation (EcoBoost)",
@@ -5504,7 +4983,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 28000,
           "maxPrice": 45000,
-          "image": "images/cars/Ford_Mustang_1_1786209763633.webp"
+          "image": "images/cars/Ford_Mustang_1_1786209763633.jpg"
         },
         {
           "name": "2024-2026 VII Generation (EcoBoost)",
@@ -5512,7 +4991,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 55000,
           "maxPrice": 75000,
-          "image": "images/cars/Ford_Mustang_2_1786209772292.webp"
+          "image": "images/cars/Ford_Mustang_2_1786209772292.jpg"
         }
       ],
       "Ranger": [
@@ -5522,7 +5001,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 35000,
           "maxPrice": 50000,
-          "image": "images/cars/Ford_Ranger_1_1786209783406.webp"
+          "image": "images/cars/Ford_Ranger_1_1786209783406.jpg"
         },
         {
           "name": "2024-2026 V Generation (EcoBoost)",
@@ -5530,7 +5009,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 55000,
           "maxPrice": 72000,
-          "image": "images/cars/Ford_Ranger_2_1786209791107.webp"
+          "image": "images/cars/Ford_Ranger_2_1786209791107.jpg"
         }
       ]
     },
@@ -5542,83 +5021,13 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 38000,
           "maxPrice": 48000,
-          "image": "images/cars/Lincoln_Corsair_1_1786209796215.webp"
+          "image": "images/cars/Lincoln_Corsair_1_1786209796215.jpg"
         }
       ],
-      "MKC": [
-        {
-          "name": "2018-2019 I Restyling",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 28000,
-          "maxPrice": 36000,
-          "image": "images/cars/Lincoln_MKC_1_1786209798838.webp"
-        }
-      ]
+      "MKC": []
     }
   },
   "2.4": {
-    "Acura": {
-      "ILX": [
-        {
-          "name": "2017-2022 I Restyling",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 22000,
-          "maxPrice": 32000,
-          "image": "images/cars/Acura_ILX_1_1786209812246.webp"
-        }
-      ],
-      "TLX": [
-        {
-          "name": "2017-2020 I Generation",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 25000,
-          "maxPrice": 35000,
-          "image": "images/cars/Acura_TLX_1_1786209806325.webp"
-        }
-      ]
-    },
-    "Buick": {
-      "Verano": [
-        {
-          "name": "2017 I Generation",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 16000,
-          "maxPrice": 22000,
-          "image": "images/cars/Buick_Verano_1_1786209819919.webp"
-        }
-      ]
-    },
-    "Chevrolet": {
-      "Equinox": []
-    },
-    "Chrysler": {
-      "200": [
-        {
-          "name": "2017 II Generation",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 16000,
-          "maxPrice": 22000,
-          "image": "images/cars/Chrysler_200_1_1786209825029.webp"
-        }
-      ]
-    },
-    "Dodge": {
-      "Journey": [
-        {
-          "name": "2017-2020 I Restyling",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 18000,
-          "maxPrice": 26000,
-          "image": "images/cars/Dodge_Journey_1_1786209842196.webp"
-        }
-      ]
-    },
     "Fiat": {
       "500X": [
         {
@@ -5627,33 +5036,12 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 17000,
           "maxPrice": 23000,
-          "image": "images/cars/Fiat_500X_1_1786209847040.webp"
-        }
-      ]
-    },
-    "GMC": {
-      "Terrain": [
-        {
-          "name": "2017 I Restyling",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 18000,
-          "maxPrice": 24000,
-          "image": "images/cars/GMC_Terrain_1_1786209853231.webp"
+          "image": "images/cars/Fiat_500X_1_1786209847040.png"
         }
       ]
     },
     "Honda": {
-      "Accord": [
-        {
-          "name": "2017 IX Restyling",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 22000,
-          "maxPrice": 28000,
-          "image": "images/cars/Honda_Accord_1_1786209857624.webp"
-        }
-      ],
+      "Accord": [],
       "CR-V": [
         {
           "name": "2017-2019 V Generation",
@@ -5661,69 +5049,23 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 26000,
           "maxPrice": 35000,
-          "image": "images/cars/Honda_CRV_1_1786209863611.webp"
+          "image": "images/cars/Honda_CRV_1_1786209863611.jpg"
         }
       ]
     },
     "Hyundai": {
       "Santa Fe": [
         {
-          "name": "2017-2018 III Restyling (Sport)",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 23000,
-          "maxPrice": 30000,
-          "image": "images/cars/Hyundai_SantaFe_1_1786209867995.webp"
-        },
-        {
           "name": "2019-2020 IV Generation",
           "type": "SUV",
           "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 42000,
-          "image": "images/cars/Hyundai_SantaFe_2_1786209879535.webp"
-        }
-      ],
-      "Sonata": [
-        {
-          "name": "2017 VII Generation (LF)",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 20000,
-          "maxPrice": 26000,
-          "image": "images/cars/Hyundai_Sonata_1_1786209887422.webp"
-        },
-        {
-          "name": "2018-2019 VII Restyling (LF)",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 23000,
-          "maxPrice": 30000,
-          "image": "images/cars/Hyundai_Sonata_2_1786209894442.webp"
-        }
-      ],
-      "Tucson": [
-        {
-          "name": "2018-2021 III Restyling",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 25000,
-          "maxPrice": 35000,
-          "image": "images/cars/Hyundai_Tucson_1_1786209899609.webp"
+          "image": "images/cars/Hyundai_SantaFe_2_1786209879535.jpg"
         }
       ]
     },
     "Jeep": {
-      "Cherokee": [
-        {
-          "name": "2017-2021 V Generation (KL)",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 20000,
-          "maxPrice": 30000,
-          "image": "images/cars/Jeep_Cherokee_1_1786209904892.webp"
-        }
-      ],
       "Compass": [
         {
           "name": "2017-2022 II Generation (MP)",
@@ -5731,17 +5073,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 20000,
           "maxPrice": 32000,
-          "image": "images/cars/Jeep_Compass_1_1786209908910.webp"
-        }
-      ],
-      "Patriot": [
-        {
-          "name": "2017 I Restyling",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 16000,
-          "maxPrice": 22000,
-          "image": "images/cars/Jeep_Patriot_1_1786209912802.webp"
+          "image": "images/cars/Jeep_Compass_1_1786209908910.jpg"
         }
       ],
       "Renegade": [
@@ -5751,39 +5083,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 27000,
-          "image": "images/cars/Jeep_Renegade_1_1786209918882.webp"
-        }
-      ]
-    },
-    "KIA": {
-      "Optima": [
-        {
-          "name": "2017-2020 IV Generation (JF)",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 21000,
-          "maxPrice": 29000,
-          "image": "images/cars/KIA_Optima_1_1786209923814.webp"
-        }
-      ],
-      "Sorento": [
-        {
-          "name": "2017-2020 III Generation (UM)",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 24000,
-          "maxPrice": 34000,
-          "image": "images/cars/KIA_Sorento_1_1786209927978.webp"
-        }
-      ],
-      "Sportage": [
-        {
-          "name": "2017-2022 IV Generation (QL)",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 22000,
-          "maxPrice": 32000,
-          "image": "images/cars/KIA_Sportage_1_1786209938139.webp"
+          "image": "images/cars/Jeep_Renegade_1_1786209918882.jpg"
         }
       ]
     },
@@ -5795,7 +5095,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 65000,
           "maxPrice": 85000,
-          "image": "images/cars/Lexus_NX_1_1786209941827.webp"
+          "image": "images/cars/Lexus_NX_1_1786209941827.jpg"
         }
       ],
       "RX": [
@@ -5805,7 +5105,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 85000,
           "maxPrice": 115000,
-          "image": "images/cars/Lexus_RX_1_1786209946825.webp"
+          "image": "images/cars/Lexus_RX_1_1786209946825.jpg"
         }
       ],
       "TX": [
@@ -5815,7 +5115,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 90000,
           "maxPrice": 120000,
-          "image": "images/cars/Lexus_TX_1_1786209951776.webp"
+          "image": "images/cars/Lexus_TX_1_1786209951776.jpg"
         },
         {
           "name": "2024-2026 TX 500h (2.4 Turbo Hybrid)",
@@ -5823,45 +5123,11 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 110000,
           "maxPrice": 140000,
-          "image": "images/cars/Lexus_TX_2_1786209956530.webp"
-        }
-      ]
-    },
-    "Mitsubishi": {
-      "Outlander": [
-        {
-          "name": "2017-2020 III Restyling",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 22000,
-          "maxPrice": 30000,
-          "image": "images/cars/Mitsubishi_Outlander_1_1786209962442.webp"
-        }
-      ]
-    },
-    "RAM": {
-      "ProMaster City": [
-        {
-          "name": "2017-2022 I Generation",
-          "type": "Minivan",
-          "fuel": "Benzin",
-          "minPrice": 18000,
-          "maxPrice": 26000,
-          "image": "images/cars/RAM_ProMasterCity_1_1786209974593.webp"
+          "image": "images/cars/Lexus_TX_2_1786209956530.jpg"
         }
       ]
     },
     "Subaru": {
-      "Ascent": [
-        {
-          "name": "2019-2025 I Generation (2.4 Turbo)",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 38000,
-          "maxPrice": 55000,
-          "image": "images/cars/Subaru_Ascent_1_1786209978258.webp"
-        }
-      ],
       "BRZ": [
         {
           "name": "2023-2025 II Generation",
@@ -5869,7 +5135,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 42000,
           "maxPrice": 52000,
-          "image": "images/cars/Subaru_BRZ_1_1786209985526.webp"
+          "image": "images/cars/Subaru_BRZ_1_1786209985526.jpg"
         }
       ],
       "Legacy": [
@@ -5879,7 +5145,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 35000,
           "maxPrice": 45000,
-          "image": "images/cars/Subaru_Legacy_1_1786209992457.webp"
+          "image": "images/cars/Subaru_Legacy_1_1786209992457.jpg"
         }
       ],
       "Outback": [
@@ -5889,7 +5155,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 50000,
           "maxPrice": 65000,
-          "image": "images/cars/Subaru_Outback_1_1786210000313.webp"
+          "image": "images/cars/Subaru_Outback_1_1786210000313.jpg"
         }
       ]
     },
@@ -5901,7 +5167,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 75000,
           "maxPrice": 98000,
-          "image": "images/cars/Toyota_4Runner_1_1786210004598.webp"
+          "image": "images/cars/Toyota_4Runner_1_1786210004598.jpg"
         }
       ],
       "GR86": [
@@ -5911,7 +5177,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 42000,
           "maxPrice": 52000,
-          "image": "images/cars/Toyota_GR86_1_1786210008382.webp"
+          "image": "images/cars/Toyota_GR86_1_1786210008382.jpg"
         }
       ],
       "Grand Highlander": [
@@ -5921,7 +5187,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 75000,
           "maxPrice": 95000,
-          "image": "images/cars/Toyota_GrandHighlander_1_1786210014305.webp"
+          "image": "images/cars/Toyota_GrandHighlander_1_1786210014305.jpg"
         }
       ],
       "Highlander": [
@@ -5931,7 +5197,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 65000,
           "maxPrice": 85000,
-          "image": "images/cars/Toyota_Highlander_1_1786210019174.webp"
+          "image": "images/cars/Toyota_Highlander_1_1786210019174.jpg"
         }
       ],
       "Tacoma": [
@@ -5941,7 +5207,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 60000,
           "maxPrice": 85000,
-          "image": "images/cars/Toyota_Tacoma_1_1786210022741.webp"
+          "image": "images/cars/Toyota_Tacoma_1_1786210022741.jpg"
         }
       ]
     }
@@ -5955,19 +5221,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 45000,
           "maxPrice": 60000,
-          "image": "images/cars/Audi_RS3_1_1786210027451.webp"
-        }
-      ]
-    },
-    "Buick": {
-      "Envision": [
-        {
-          "name": "2017-2019 I Generation",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 20000,
-          "maxPrice": 27000,
-          "image": "images/cars/Buick_Envision_1_1786210034505.webp"
+          "image": "images/cars/Audi_RS3_1_1786210027451.jpg"
         }
       ]
     },
@@ -5979,7 +5233,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 25000,
           "maxPrice": 32000,
-          "image": "images/cars/images (20).webp"
+          "image": "images/cars/images (20).jpg"
         }
       ],
       "Colorado": [
@@ -5989,10 +5243,9 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 24000,
           "maxPrice": 32000,
-          "image": "images/cars/2018_chevrolet_colorado_crew-cab-pickup_zr2_fq_oem_1_1600.webp"
+          "image": "images/cars/2018_chevrolet_colorado_crew-cab-pickup_zr2_fq_oem_1_1600.avif"
         }
       ],
-      "Impala": [],
       "Traverse": [
         {
           "name": "2025-2026 III Generation (2.5 Turbo)",
@@ -6000,30 +5253,21 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 65000,
           "maxPrice": 85000,
-          "image": "images/cars/1-2025-chevrolet-traverse-z71-front-view.webp"
+          "image": "images/cars/1-2025-chevrolet-traverse-z71-front-view.avif"
         }
       ]
     },
     "Ford": {
       "Escape": [
         {
-          "name": "2017-2019 III Restyling",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 18000,
-          "maxPrice": 24000,
-          "image": "images/cars/Ford_Escape_1_1786210039118.webp"
-        },
-        {
           "name": "2020-2023 IV Generation (Hybrid)",
           "type": "SUV",
           "fuel": "Hybrid",
           "minPrice": 26000,
           "maxPrice": 35000,
-          "image": "images/cars/Ford_Escape_2_1786210043525.webp"
+          "image": "images/cars/Ford_Escape_2_1786210043525.jpg"
         }
       ],
-      "Fusion": [],
       "Maverick": [
         {
           "name": "2022-2026 I Generation (2.5 Hybrid)",
@@ -6031,7 +5275,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 32000,
           "maxPrice": 45000,
-          "image": "images/cars/Ford_Maverick_1_1786210060650.webp"
+          "image": "images/cars/Ford_Maverick_1_1786210060650.jpg"
         }
       ],
       "Transit Connect": [
@@ -6041,7 +5285,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 18000,
           "maxPrice": 24000,
-          "image": "images/cars/Ford_TransitConnect_1_1786210108815.webp"
+          "image": "images/cars/Ford_TransitConnect_1_1786210108815.jpg"
         }
       ]
     },
@@ -6053,7 +5297,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 21000,
           "maxPrice": 29000,
-          "image": "images/cars/GMC_Acadia_1_1786210115991.webp"
+          "image": "images/cars/GMC_Acadia_1_1786210115991.jpg"
         }
       ]
     },
@@ -6065,7 +5309,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 55000,
           "maxPrice": 70000,
-          "image": "images/cars/Genesis_G70_1_1786210120717.webp"
+          "image": "images/cars/Genesis_G70_1_1786210120717.jpg"
         }
       ],
       "G80": [
@@ -6075,7 +5319,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 55000,
           "maxPrice": 70000,
-          "image": "images/cars/Genesis_G80_1_1786210134687.webp"
+          "image": "images/cars/Genesis_G80_1_1786210134687.jpg"
         }
       ],
       "GV70": [
@@ -6085,7 +5329,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 52000,
           "maxPrice": 68000,
-          "image": "images/cars/Genesis_GV70_1_1786210142177.webp"
+          "image": "images/cars/Genesis_GV70_1_1786210142177.jpg"
         }
       ],
       "GV80": [
@@ -6095,7 +5339,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 58000,
           "maxPrice": 72000,
-          "image": "images/cars/Genesis_GV80_1_1786210158443.webp"
+          "image": "images/cars/Genesis_GV80_1_1786210158443.jpg"
         }
       ]
     },
@@ -6107,7 +5351,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 44000,
-          "image": "images/cars/Hyundai_SantaCruz_1_1786210169738.webp"
+          "image": "images/cars/Hyundai_SantaCruz_1_1786210169738.jpg"
         }
       ],
       "Santa Fe": [
@@ -6117,7 +5361,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 30000,
           "maxPrice": 42000,
-          "image": "images/cars/Hyundai_SantaFe_1_1786210174038.webp"
+          "image": "images/cars/Hyundai_SantaFe_1_1786210174038.jpg"
         },
         {
           "name": "2024-2025 V Generation (MX5)",
@@ -6125,7 +5369,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 48000,
           "maxPrice": 65000,
-          "image": "images/cars/Hyundai_SantaFe_2_1786210178633.webp"
+          "image": "images/cars/Hyundai_SantaFe_2_1786210178633.jpg"
         }
       ],
       "Sonata": [
@@ -6135,7 +5379,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 24000,
           "maxPrice": 33000,
-          "image": "images/cars/Hyundai_Sonata_1_1786210184342.webp"
+          "image": "images/cars/Hyundai_Sonata_1_1786210184342.jpg"
         },
         {
           "name": "2024-2025 VIII Restyling (DN8)",
@@ -6143,7 +5387,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 35000,
           "maxPrice": 45000,
-          "image": "images/cars/Hyundai_Sonata_2_1786210191021.webp"
+          "image": "images/cars/Hyundai_Sonata_2_1786210191021.png"
         }
       ],
       "Tucson": [
@@ -6153,7 +5397,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 28000,
           "maxPrice": 38000,
-          "image": "images/cars/Hyundai_Tucson_1_1786210198097.webp"
+          "image": "images/cars/Hyundai_Tucson_1_1786210198097.jpg"
         }
       ]
     },
@@ -6165,7 +5409,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 35000,
           "maxPrice": 45000,
-          "image": "images/cars/KIA_K5_1_1786210203939.webp"
+          "image": "images/cars/KIA_K5_1_1786210203939.jpg"
         }
       ],
       "Sorento": [
@@ -6175,7 +5419,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 35000,
           "maxPrice": 52000,
-          "image": "images/cars/KIA_Sorento_1_1786210208312.webp"
+          "image": "images/cars/KIA_Sorento_1_1786210208312.jpg"
         }
       ],
       "Sportage": [
@@ -6185,7 +5429,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 43000,
-          "image": "images/cars/KIA_Sportage_1_1786210215562.webp"
+          "image": "images/cars/KIA_Sportage_1_1786210215562.jpg"
         }
       ]
     },
@@ -6207,7 +5451,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 50000,
           "maxPrice": 70000,
-          "image": "images/cars/Lexus_NX_1_1786210235376.webp"
+          "image": "images/cars/Lexus_NX_1_1786210235376.jpg"
         }
       ]
     },
@@ -6233,7 +5477,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 25000,
           "maxPrice": 35000,
-          "image": "images/cars/Mazda_CX30_1_1786210297599.webp"
+          "image": "images/cars/Mazda_CX30_1_1786210297599.jpg"
         }
       ],
       "CX-5": [
@@ -6243,7 +5487,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 23000,
           "maxPrice": 32000,
-          "image": "images/cars/Mazda_CX5_1_1786210303435.webp"
+          "image": "images/cars/Mazda_CX5_1_1786210303435.png"
         },
         {
           "name": "2022-2026 II Restyling (KF)",
@@ -6251,7 +5495,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 42000,
-          "image": "images/cars/Mazda_CX5_2_1786210312099.webp"
+          "image": "images/cars/Mazda_CX5_2_1786210312099.jpg"
         }
       ],
       "CX-50": [
@@ -6261,19 +5505,10 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 35000,
           "maxPrice": 48000,
-          "image": "images/cars/Mazda_CX50_1_1786210319834.webp"
+          "image": "images/cars/Mazda_CX50_1_1786210319834.png"
         }
       ],
-      "CX-9": [
-        {
-          "name": "2018-2022 II Generation (2.5 Turbo)",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 30000,
-          "maxPrice": 42000,
-          "image": "images/cars/Mazda_CX9_1_1786210324389.webp"
-        }
-      ]
+      "CX-9": []
     },
     "Mitsubishi": {
       "Outlander": [
@@ -6283,27 +5518,19 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 30000,
           "maxPrice": 42000,
-          "image": "images/cars/Mitsubishi_Outlander_1_1786210332993.webp"
+          "image": "images/cars/Mitsubishi_Outlander_1_1786210332993.jpg"
         }
       ]
     },
     "Nissan": {
       "Altima": [
         {
-          "name": "2017-2018 V Restyling (L33)",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 16000,
-          "maxPrice": 22000,
-          "image": "images/cars/Nissan_Altima_1_1786210337794.webp"
-        },
-        {
           "name": "2019-2026 VI Generation (L34)",
           "type": "Sedan",
           "fuel": "Benzin",
           "minPrice": 22000,
           "maxPrice": 32000,
-          "image": "images/cars/Nissan_Altima_2_1786210344633.webp"
+          "image": "images/cars/Nissan_Altima_2_1786210344633.jpg"
         }
       ],
       "Frontier": [],
@@ -6314,7 +5541,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 19000,
           "maxPrice": 27000,
-          "image": "images/cars/Nissan_Rogue_1_1786210357380.webp"
+          "image": "images/cars/Nissan_Rogue_1_1786210357380.jpg"
         }
       ]
     },
@@ -6326,7 +5553,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 24000,
           "maxPrice": 31000,
-          "image": "images/cars/Subaru_Crosstrek_1_1786210361750.webp"
+          "image": "images/cars/Subaru_Crosstrek_1_1786210361750.jpg"
         },
         {
           "name": "2024-2025 III Generation",
@@ -6334,61 +5561,28 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 40000,
-          "image": "images/cars/Subaru_Crosstrek_2_1786210365841.webp"
+          "image": "images/cars/Subaru_Crosstrek_2_1786210365841.jpg"
         }
       ],
       "Forester": [
-        {
-          "name": "2017-2018 IV Restyling (SJ)",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 18000,
-          "maxPrice": 24000,
-          "image": "images/cars/Subaru_Forester_1_1786210368961.webp"
-        },
         {
           "name": "2019-2025 V Generation (SK)",
           "type": "SUV",
           "fuel": "Benzin",
           "minPrice": 25000,
           "maxPrice": 36000,
-          "image": "images/cars/Subaru_Forester_2_1786210385333.webp"
+          "image": "images/cars/Subaru_Forester_2_1786210385333.jpg"
         }
       ],
-      "Legacy": [
-        {
-          "name": "2017-2019 VI Generation (BN/BS)",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 18000,
-          "maxPrice": 24000,
-          "image": "images/cars/Subaru_Legacy_1_1786210391636.webp"
-        },
-        {
-          "name": "2020-2023 VII Generation (BW/BT)",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 25000,
-          "maxPrice": 32000,
-          "image": "images/cars/Subaru_Legacy_2_1786210397913.webp"
-        }
-      ],
+      "Legacy": [],
       "Outback": [
-        {
-          "name": "2017-2019 V Generation (BS)",
-          "type": "Wagon",
-          "fuel": "Benzin",
-          "minPrice": 20000,
-          "maxPrice": 27000,
-          "image": "images/cars/Subaru_Outback_1_1786210404152.webp"
-        },
         {
           "name": "2020-2025 VI Generation (BT)",
           "type": "Wagon",
           "fuel": "Benzin",
           "minPrice": 28000,
           "maxPrice": 38000,
-          "image": "images/cars/Subaru_Outback_2_1786210415792.webp"
+          "image": "images/cars/Subaru_Outback_2_1786210415792.jpg"
         }
       ],
       "WRX": [
@@ -6398,7 +5592,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 38000,
           "maxPrice": 50000,
-          "image": "images/cars/Subaru_WRX_1_1786210420723.webp"
+          "image": "images/cars/Subaru_WRX_1_1786210420723.jpg"
         }
       ]
     },
@@ -6410,25 +5604,17 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 32000,
           "maxPrice": 42000,
-          "image": "images/cars/Toyota_Avalon_1_1786210424828.webp"
+          "image": "images/cars/Toyota_Avalon_1_1786210424828.jpg"
         }
       ],
       "Camry": [
-        {
-          "name": "2017 XV55 Restyling",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 20000,
-          "maxPrice": 25000,
-          "image": "images/cars/Toyota_Camry_1_1786210430641.webp"
-        },
         {
           "name": "2018-2024 XV70 Generation",
           "type": "Sedan",
           "fuel": "Benzin",
           "minPrice": 25000,
           "maxPrice": 38000,
-          "image": "images/cars/Toyota_Camry_2_1786210438463.webp"
+          "image": "images/cars/Toyota_Camry_2_1786210438463.jpg"
         },
         {
           "name": "2025-2026 XV80 Generation (Hybrid)",
@@ -6436,7 +5622,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 42000,
           "maxPrice": 55000,
-          "image": "images/cars/Toyota_Camry_3_1786210456031.webp"
+          "image": "images/cars/Toyota_Camry_3_1786210456031.jpg"
         }
       ],
       "Crown": [
@@ -6446,7 +5632,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 55000,
           "maxPrice": 70000,
-          "image": "images/cars/Toyota_Crown_1_1786210467558.webp"
+          "image": "images/cars/Toyota_Crown_1_1786210467558.jpg"
         }
       ],
       "Crown Signia": [
@@ -6456,7 +5642,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 60000,
           "maxPrice": 75000,
-          "image": "images/cars/Toyota_CrownSignia_1_1786210471723.webp"
+          "image": "images/cars/Toyota_CrownSignia_1_1786210471723.jpg"
         }
       ],
       "Grand Highlander": [
@@ -6466,7 +5652,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 70000,
           "maxPrice": 88000,
-          "image": "images/cars/Toyota_GrandHighlander_1_1786210477012.webp"
+          "image": "images/cars/Toyota_GrandHighlander_1_1786210477012.jpg"
         }
       ],
       "Highlander": [
@@ -6476,7 +5662,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 48000,
           "maxPrice": 65000,
-          "image": "images/cars/Toyota_Highlander_1_1786210481602.webp"
+          "image": "images/cars/Toyota_Highlander_1_1786210481602.jpg"
         }
       ],
       "RAV4": [
@@ -6486,7 +5672,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 30000,
           "maxPrice": 45000,
-          "image": "images/cars/Toyota_RAV4_1_1786210498202.webp"
+          "image": "images/cars/Toyota_RAV4_1_1786210498202.png"
         }
       ],
       "Sienna": [
@@ -6496,7 +5682,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 50000,
           "maxPrice": 70000,
-          "image": "images/cars/Toyota_Sienna_1_1786210505177.webp"
+          "image": "images/cars/Toyota_Sienna_1_1786210505177.jpg"
         }
       ],
       "Venza": [
@@ -6512,28 +5698,6 @@ const carData = {
     }
   },
   "2.7": {
-    "Cadillac": {
-      "CT4": [
-        {
-          "name": "2021-2026 I Generation (2.7 Turbo)",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 38000,
-          "maxPrice": 52000,
-          "image": "images/cars/Cadillac_CT4_1_1786210522512.webp"
-        }
-      ],
-      "CT4-V": [
-        {
-          "name": "2021-2023 I Generation (2.7 Turbo Dual-Volute)",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 48000,
-          "maxPrice": 62000,
-          "image": "images/cars/Cadillac_CT4V_1_1786210526860.webp"
-        }
-      ]
-    },
     "Chevrolet": {
       "Colorado": [
         {
@@ -6542,7 +5706,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 42000,
           "maxPrice": 58000,
-          "image": "images/cars/my23-colorado-tb-1658934745.webp"
+          "image": "images/cars/my23-colorado-tb-1658934745.avif"
         }
       ],
       "Silverado 1500": [
@@ -6552,7 +5716,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 35000,
           "maxPrice": 48000,
-          "image": "images/cars/images (21).webp"
+          "image": "images/cars/images (21).jpg"
         },
         {
           "name": "2022-2026 IV Restyling (TurboMax)",
@@ -6560,7 +5724,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 48000,
           "maxPrice": 65000,
-          "image": "images/cars/silverado-1500-26-mov-cw2.webp"
+          "image": "images/cars/silverado-1500-26-mov-cw2.avif"
         }
       ]
     },
@@ -6572,25 +5736,17 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 55000,
           "maxPrice": 80000,
-          "image": "images/cars/Ford_Bronco_1_1786210532098.webp"
+          "image": "images/cars/Ford_Bronco_1_1786210532098.jpg"
         }
       ],
       "Edge": [
-        {
-          "name": "2017-2018 II Generation (Sport - 2.7 EcoBoost)",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 24000,
-          "maxPrice": 32000,
-          "image": "images/cars/Ford_Edge_1_1786210538424.webp"
-        },
         {
           "name": "2019-2024 II Restyling (ST - 2.7 EcoBoost)",
           "type": "SUV",
           "fuel": "Benzin",
           "minPrice": 35000,
           "maxPrice": 48000,
-          "image": "images/cars/Ford_Edge_2_1786210553792.webp"
+          "image": "images/cars/Ford_Edge_2_1786210553792.jpg"
         }
       ],
       "F-150": [
@@ -6600,7 +5756,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 48000,
-          "image": "images/cars/Ford_F150_1_1786210550599.webp"
+          "image": "images/cars/Ford_F150_1_1786210550599.jpg"
         },
         {
           "name": "2021-2026 XIV Generation (2.7 V6 EcoBoost)",
@@ -6608,7 +5764,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 50000,
           "maxPrice": 72000,
-          "image": "images/cars/Ford_F150_2_1786210558396.webp"
+          "image": "images/cars/Ford_F150_2_1786210558396.jpg"
         }
       ],
       "Fusion": [
@@ -6618,7 +5774,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 20000,
           "maxPrice": 27000,
-          "image": "images/cars/Ford_Fusion_1_1786210563381.webp"
+          "image": "images/cars/Ford_Fusion_1_1786210563381.jpg"
         }
       ],
       "Ranger": [
@@ -6640,7 +5796,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 45000,
           "maxPrice": 62000,
-          "image": "images/cars/GMC_Canyon_1_1786210583616.webp"
+          "image": "images/cars/GMC_Canyon_1_1786210583616.jpg"
         }
       ],
       "Sierra 1500": [
@@ -6650,7 +5806,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 36000,
           "maxPrice": 50000,
-          "image": "images/cars/GMC_Sierra1500_1_1786210606270.webp"
+          "image": "images/cars/GMC_Sierra1500_1_1786210606270.jpg"
         },
         {
           "name": "2022-2026 V Restyling (TurboMax)",
@@ -6658,44 +5814,12 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 50000,
           "maxPrice": 68000,
-          "image": "images/cars/GMC_Sierra1500_2_1786210612338.webp"
-        }
-      ]
-    },
-    "Lincoln": {
-      "Continental": [
-        {
-          "name": "2017-2020 X Generation (2.7 V6 Twin-Turbo)",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 28000,
-          "maxPrice": 38000,
-          "image": "images/cars/Lincoln_Continental_1_1786210616827.webp"
-        }
-      ],
-      "MKX": [],
-      "Nautilus": [
-        {
-          "name": "2019-2022 I Generation (2.7 V6 Twin-Turbo)",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 35000,
-          "maxPrice": 48000,
-          "image": "images/cars/Lincoln_Nautilus_1_1786210667098.webp"
+          "image": "images/cars/GMC_Sierra1500_2_1786210612338.jpg"
         }
       ]
     },
     "Toyota": {
-      "Highlander": [
-        {
-          "name": "2017 III Restyling (2.7 1AR-FE)",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 24000,
-          "maxPrice": 30000,
-          "image": "images/cars/Toyota_Highlander_1_1786210671918.webp"
-        }
-      ],
+      "Highlander": [],
       "Tacoma": [
         {
           "name": "2017-2023 III Generation (2.7 2TR-FE)",
@@ -6703,24 +5827,12 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 28000,
           "maxPrice": 38000,
-          "image": "images/cars/Toyota_Tacoma_1_1786210677516.webp"
+          "image": "images/cars/Toyota_Tacoma_1_1786210677516.jpg"
         }
       ]
     }
   },
   "3.0": {
-    "Acura": {
-      "MDX": [
-        {
-          "name": "2024 IV Generation (Type S - 3.0 V6 Turbo)",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 75000,
-          "maxPrice": 95000,
-          "image": "images/cars/Acura_MDX_1_1786210682995.webp"
-        }
-      ]
-    },
     "Audi": {
       "A6": [
         {
@@ -6729,7 +5841,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 42000,
           "maxPrice": 58000,
-          "image": "images/cars/Audi_A6_1_1786210690184.webp"
+          "image": "images/cars/Audi_A6_1_1786210690184.png"
         }
       ],
       "A7 / A7 Sportback": [
@@ -6739,7 +5851,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 42000,
-          "image": "images/cars/Audi_A7A7Sportback_1_1786210702449.webp"
+          "image": "images/cars/Audi_A7A7Sportback_1_1786210702449.jpg"
         },
         {
           "name": "2021 C8 Generation (55 TFSI)",
@@ -6747,7 +5859,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 55000,
           "maxPrice": 70000,
-          "image": "images/cars/Audi_A7A7Sportback_2_1786210706605.webp"
+          "image": "images/cars/Audi_A7A7Sportback_2_1786210706605.jpg"
         }
       ],
       "A8": [
@@ -6757,7 +5869,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 48000,
           "maxPrice": 62000,
-          "image": "images/cars/Audi_A8_1_1786210712156.webp"
+          "image": "images/cars/Audi_A8_1_1786210712156.jpg"
         }
       ],
       "Q7": [
@@ -6775,7 +5887,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 52000,
           "maxPrice": 72000,
-          "image": "images/cars/Audi_Q7_2_1786210721696.webp"
+          "image": "images/cars/Audi_Q7_2_1786210721696.jpg"
         }
       ],
       "Q8": [
@@ -6785,7 +5897,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 58000,
           "maxPrice": 82000,
-          "image": "images/cars/Audi_Q8_1_1786210726797.webp"
+          "image": "images/cars/Audi_Q8_1_1786210726797.jpg"
         }
       ],
       "S4": [
@@ -6795,7 +5907,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 42000,
           "maxPrice": 52000,
-          "image": "images/cars/Audi_S4_1_1786210732450.webp"
+          "image": "images/cars/Audi_S4_1_1786210732450.png"
         }
       ],
       "S5 / All-New S5": [
@@ -6805,7 +5917,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 38000,
           "maxPrice": 55000,
-          "image": "images/cars/Audi_S5AllNewS5_1_1786210736320.webp"
+          "image": "images/cars/Audi_S5AllNewS5_1_1786210736320.jpg"
         },
         {
           "name": "2025 B10 Generation (S5 MHEV)",
@@ -6813,7 +5925,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 68000,
           "maxPrice": 85000,
-          "image": "images/cars/Audi_S5AllNewS5_2_1786210742229.webp"
+          "image": "images/cars/Audi_S5AllNewS5_2_1786210742229.jpg"
         }
       ],
       "SQ5 / SQ5 Sportback": [
@@ -6823,7 +5935,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 38000,
           "maxPrice": 55000,
-          "image": "images/cars/Audi_SQ5SQ5Sportback_1_1786210751977.webp"
+          "image": "images/cars/Audi_SQ5SQ5Sportback_1_1786210751977.jpg"
         },
         {
           "name": "2022-2024 FY Sportback (3.0 TFSI)",
@@ -6831,7 +5943,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 45000,
           "maxPrice": 62000,
-          "image": "images/cars/Audi_SQ5SQ5Sportback_2_1786210757902.webp"
+          "image": "images/cars/Audi_SQ5SQ5Sportback_2_1786210757902.jpg"
         }
       ]
     },
@@ -6843,7 +5955,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 48000,
           "maxPrice": 62000,
-          "image": "images/cars/BMW_2Series_1_1786210762115.webp"
+          "image": "images/cars/BMW_2Series_1_1786210762115.jpg"
         }
       ],
       "3 Series": [
@@ -6853,7 +5965,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 28000,
           "maxPrice": 36000,
-          "image": "images/cars/BMW_3Series_1_1786210782848.webp"
+          "image": "images/cars/BMW_3Series_1_1786210782848.jpg"
         },
         {
           "name": "2019-2021 G20 Generation (M340i)",
@@ -6861,7 +5973,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 42000,
           "maxPrice": 55000,
-          "image": "images/cars/BMW_3Series_2_1786210794610.webp"
+          "image": "images/cars/BMW_3Series_2_1786210794610.jpg"
         }
       ],
       "4 Series": [
@@ -6871,7 +5983,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 42000,
-          "image": "images/cars/BMW_4Series_1_1786210801057.webp"
+          "image": "images/cars/BMW_4Series_1_1786210801057.jpg"
         },
         {
           "name": "2021-2026 G22 Generation (M440i)",
@@ -6879,7 +5991,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 52000,
           "maxPrice": 70000,
-          "image": "images/cars/BMW_4Series_2_1786210817116.webp"
+          "image": "images/cars/BMW_4Series_2_1786210817116.jpg"
         }
       ],
       "5 Series": [
@@ -6889,7 +6001,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 48000,
-          "image": "images/cars/BMW_5Series_1_1786210826326.webp"
+          "image": "images/cars/BMW_5Series_1_1786210826326.jpg"
         }
       ],
       "6 Series": [
@@ -6899,7 +6011,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 30000,
           "maxPrice": 40000,
-          "image": "images/cars/BMW_6Series_1_1786210843876.webp"
+          "image": "images/cars/BMW_6Series_1_1786210843876.jpg"
         }
       ],
       "7 Series": [
@@ -6909,7 +6021,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 42000,
           "maxPrice": 62000,
-          "image": "images/cars/BMW_7Series_1_1786210849856.webp"
+          "image": "images/cars/BMW_7Series_1_1786210849856.jpg"
         },
         {
           "name": "2023-2026 G70 Generation (740i B58)",
@@ -6917,7 +6029,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 85000,
           "maxPrice": 115000,
-          "image": "images/cars/BMW_7Series_2_1786210853435.webp"
+          "image": "images/cars/BMW_7Series_2_1786210853435.jpg"
         }
       ],
       "8 Series": [
@@ -6927,7 +6039,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 75000,
           "maxPrice": 95000,
-          "image": "images/cars/BMW_8Series_1_1786210858158.webp"
+          "image": "images/cars/BMW_8Series_1_1786210858158.jpg"
         }
       ],
       "M2": [
@@ -6937,7 +6049,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 55000,
           "maxPrice": 70000,
-          "image": "images/cars/BMW_M2_1_1786210864172.webp"
+          "image": "images/cars/BMW_M2_1_1786210864172.png"
         },
         {
           "name": "2023-2026 G87 Generation (S58)",
@@ -6945,7 +6057,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 72000,
           "maxPrice": 90000,
-          "image": "images/cars/BMW_M2_2_1786210877033.webp"
+          "image": "images/cars/BMW_M2_2_1786210877033.jpg"
         }
       ],
       "M3": [
@@ -6955,7 +6067,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 48000,
           "maxPrice": 62000,
-          "image": "images/cars/BMW_M3_1_1786210882475.webp"
+          "image": "images/cars/BMW_M3_1_1786210882475.png"
         },
         {
           "name": "2021-2025 G80 Generation (S58)",
@@ -6963,7 +6075,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 78000,
           "maxPrice": 105000,
-          "image": "images/cars/BMW_M3_2_1786210887123.webp"
+          "image": "images/cars/BMW_M3_2_1786210887123.jpg"
         }
       ],
       "M4": [
@@ -6973,7 +6085,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 50000,
           "maxPrice": 65000,
-          "image": "images/cars/BMW_M4_1_1786210891943.webp"
+          "image": "images/cars/BMW_M4_1_1786210891943.jpg"
         },
         {
           "name": "2021-2026 G82 Generation (S58)",
@@ -6981,7 +6093,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 80000,
           "maxPrice": 110000,
-          "image": "images/cars/BMW_M4_2_1786210926781.webp"
+          "image": "images/cars/BMW_M4_2_1786210926781.jpg"
         }
       ],
       "X3": [
@@ -6991,7 +6103,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 38000,
           "maxPrice": 55000,
-          "image": "images/cars/BMW_X3_1_1786210936937.webp"
+          "image": "images/cars/BMW_X3_1_1786210936937.jpg"
         },
         {
           "name": "2025-2026 G45 Generation (M50 xDrive)",
@@ -6999,7 +6111,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 68000,
           "maxPrice": 85000,
-          "image": "images/cars/BMW_X3_2_1786210944965.webp"
+          "image": "images/cars/BMW_X3_2_1786210944965.jpg"
         }
       ],
       "X4": [
@@ -7009,7 +6121,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 40000,
           "maxPrice": 58000,
-          "image": "images/cars/BMW_X4_1_1786210949983.webp"
+          "image": "images/cars/BMW_X4_1_1786210949983.png"
         }
       ],
       "X5 / PHEV": [
@@ -7019,7 +6131,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 48000,
           "maxPrice": 68000,
-          "image": "images/cars/BMW_X5PHEV_1_1786210980436.webp"
+          "image": "images/cars/BMW_X5PHEV_1_1786210980436.jpg"
         },
         {
           "name": "2024-2026 G05 LCI / xDrive50e PHEV",
@@ -7027,7 +6139,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 75000,
           "maxPrice": 98000,
-          "image": "images/cars/BMW_X5PHEV_2_1786210984401.webp"
+          "image": "images/cars/BMW_X5PHEV_2_1786210984401.jpg"
         }
       ],
       "X6": [
@@ -7037,7 +6149,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 35000,
           "maxPrice": 45000,
-          "image": "images/cars/BMW_X6_1_1786210997421.webp"
+          "image": "images/cars/BMW_X6_1_1786210997421.png"
         },
         {
           "name": "2020-2025 G06 Generation (xDrive40i)",
@@ -7045,7 +6157,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 62000,
           "maxPrice": 88000,
-          "image": "images/cars/BMW_X6_2_1786211004827.webp"
+          "image": "images/cars/BMW_X6_2_1786211004827.jpg"
         }
       ],
       "X7": [
@@ -7055,7 +6167,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 70000,
           "maxPrice": 105000,
-          "image": "images/cars/BMW_X7_1_1786211012068.webp"
+          "image": "images/cars/BMW_X7_1_1786211012068.jpg"
         }
       ]
     },
@@ -7067,7 +6179,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 45000,
           "maxPrice": 65000,
-          "image": "images/cars/Cadillac_CT5CT5V_1_1786211020947.webp"
+          "image": "images/cars/Cadillac_CT5CT5V_1_1786211020947.jpg"
         }
       ],
       "CT6": [
@@ -7077,7 +6189,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 38000,
           "maxPrice": 48000,
-          "image": "images/cars/Cadillac_CT6_1_1786211025889.webp"
+          "image": "images/cars/Cadillac_CT6_1_1786211025889.jpg"
         }
       ],
       "Escalade": [
@@ -7087,7 +6199,7 @@ const carData = {
           "fuel": "Dizel",
           "minPrice": 85000,
           "maxPrice": 115000,
-          "image": "images/cars/Cadillac_Escalade_1_1786211031076.webp"
+          "image": "images/cars/Cadillac_Escalade_1_1786211031076.jpg"
         }
       ]
     },
@@ -7099,7 +6211,7 @@ const carData = {
           "fuel": "Dizel",
           "minPrice": 42000,
           "maxPrice": 65000,
-          "image": "images/cars/images (22).webp"
+          "image": "images/cars/images (22).jpg"
         }
       ],
       "Suburban": [
@@ -7109,7 +6221,7 @@ const carData = {
           "fuel": "Dizel",
           "minPrice": 75000,
           "maxPrice": 95000,
-          "image": "images/cars/images (23).webp"
+          "image": "images/cars/images (23).jpg"
         }
       ],
       "Tahoe": [
@@ -7119,7 +6231,7 @@ const carData = {
           "fuel": "Dizel",
           "minPrice": 70000,
           "maxPrice": 90000,
-          "image": "images/cars/images (24).webp"
+          "image": "images/cars/images (24).jpg"
         }
       ]
     },
@@ -7131,7 +6243,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 65000,
           "maxPrice": 85000,
-          "image": "images/cars/Dodge_Charger_1_1786211079684.webp"
+          "image": "images/cars/Dodge_Charger_1_1786211079684.jpg"
         }
       ]
     },
@@ -7153,7 +6265,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 42000,
           "maxPrice": 65000,
-          "image": "images/cars/Ford_Explorer_1_1786211098652.webp"
+          "image": "images/cars/Ford_Explorer_1_1786211098652.jpg"
         }
       ],
       "Ranger": [
@@ -7163,7 +6275,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 62000,
           "maxPrice": 78000,
-          "image": "images/cars/Ford_Ranger_1_1786211103488.webp"
+          "image": "images/cars/Ford_Ranger_1_1786211103488.jpg"
         }
       ]
     },
@@ -7175,7 +6287,7 @@ const carData = {
           "fuel": "Dizel",
           "minPrice": 45000,
           "maxPrice": 68000,
-          "image": "images/cars/GMC_Sierra1500_1_1786211107590.webp"
+          "image": "images/cars/GMC_Sierra1500_1_1786211107590.jpg"
         }
       ],
       "Yukon": [
@@ -7185,41 +6297,7 @@ const carData = {
           "fuel": "Dizel",
           "minPrice": 72000,
           "maxPrice": 92000,
-          "image": "images/cars/GMC_Yukon_1_1786211114853.webp"
-        }
-      ]
-    },
-    "Ineos": {
-      "Grenadier": [
-        {
-          "name": "2024 I Generation (BMW B58 3.0 Turbo)",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 78000,
-          "maxPrice": 98000,
-          "image": "images/cars/Ineos_Grenadier_1_1786211179212.webp"
-        }
-      ]
-    },
-    "Infiniti": {
-      "Q50": [
-        {
-          "name": "2017-2024 V37 Restyling (3.0t VR30DDTT)",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 22000,
-          "maxPrice": 35000,
-          "image": "images/cars/Infiniti_Q50_1_1786211193158.webp"
-        }
-      ],
-      "Q60": [
-        {
-          "name": "2017-2021 CV37 Generation (3.0t VR30DDTT)",
-          "type": "Coupe",
-          "fuel": "Benzin",
-          "minPrice": 25000,
-          "maxPrice": 38000,
-          "image": "images/cars/Infiniti_Q60_1_1786211482540.webp"
+          "image": "images/cars/GMC_Yukon_1_1786211114853.jpg"
         }
       ]
     },
@@ -7231,29 +6309,11 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 28000,
           "maxPrice": 38000,
-          "image": "images/cars/Jaguar_FPace_1_1786211500676.webp"
+          "image": "images/cars/Jaguar_FPace_1_1786211500676.jpg"
         }
       ],
-      "XE": [
-        {
-          "name": "2017-2019 I Generation (3.0 V6 Supercharged)",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 22000,
-          "maxPrice": 30000,
-          "image": "images/cars/Jaguar_XE_1_1786211506215.webp"
-        }
-      ],
-      "XF": [
-        {
-          "name": "2017 X260 Generation (3.0 V6 Supercharged)",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 24000,
-          "maxPrice": 32000,
-          "image": "images/cars/Jaguar_XF_1_1786211512606.webp"
-        }
-      ]
+      "XE": [],
+      "XF": []
     },
     "Jeep": {
       "Grand Cherokee": [
@@ -7263,7 +6323,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 52000,
           "maxPrice": 72000,
-          "image": "images/cars/Jeep_GrandCherokee_1_1786211518468.webp"
+          "image": "images/cars/Jeep_GrandCherokee_1_1786211518468.jpg"
         }
       ],
       "Grand Wagoneer / Wagoneer": [
@@ -7273,7 +6333,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 65000,
           "maxPrice": 88000,
-          "image": "images/cars/Jeep_GrandWagoneerWagoneer_1_1786211523667.webp"
+          "image": "images/cars/Jeep_GrandWagoneerWagoneer_1_1786211523667.jpg"
         },
         {
           "name": "2024 Grand Wagoneer (3.0 Hurricane High Output)",
@@ -7281,7 +6341,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 85000,
           "maxPrice": 115000,
-          "image": "images/cars/Jeep_GrandWagoneerWagoneer_2_1786211530287.webp"
+          "image": "images/cars/Jeep_GrandWagoneerWagoneer_2_1786211530287.jpg"
         }
       ],
       "Wrangler": [
@@ -7291,7 +6351,7 @@ const carData = {
           "fuel": "Dizel",
           "minPrice": 42000,
           "maxPrice": 55000,
-          "image": "images/cars/Jeep_Wrangler_1_1786211537666.webp"
+          "image": "images/cars/Jeep_Wrangler_1_1786211537666.jpg"
         }
       ]
     },
@@ -7303,7 +6363,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 65000,
           "maxPrice": 90000,
-          "image": "images/cars/LandRover_Defender_1_1786211549444.webp"
+          "image": "images/cars/LandRover_Defender_1_1786211549444.jpg"
         }
       ],
       "Discovery": [
@@ -7313,7 +6373,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 35000,
           "maxPrice": 58000,
-          "image": "images/cars/LandRover_Discovery_1_1786211559667.webp"
+          "image": "images/cars/LandRover_Discovery_1_1786211559667.jpg"
         }
       ],
       "Range Rover / Sport": [
@@ -7323,7 +6383,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 45000,
           "maxPrice": 70000,
-          "image": "images/cars/LandRover_RangeRoverSport_1_1786211571617.webp"
+          "image": "images/cars/LandRover_RangeRoverSport_1_1786211571617.jpg"
         },
         {
           "name": "2022-2026 L460 Generation (P400 3.0 MHEV)",
@@ -7331,39 +6391,17 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 110000,
           "maxPrice": 160000,
-          "image": "images/cars/LandRover_RangeRoverSport_2_1786211575855.webp"
+          "image": "images/cars/LandRover_RangeRoverSport_2_1786211575855.jpg"
         }
-      ]
-    },
-    "Lincoln": {
-      "Aviator": [
+      ],
+      "Range Rover": [
         {
-          "name": "2020-2026 II Generation (3.0 V6 Twin-Turbo)",
+          "name": "2024-2026",
+          "fuel": "Benzin",
           "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 48000,
-          "maxPrice": 72000,
-          "image": "images/cars/Lincoln_Aviator_1_1786211588793.webp"
-        }
-      ],
-      "Continental": [
-        {
-          "name": "2017-2019 X Generation (3.0 V6 Twin-Turbo)",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 28000,
-          "maxPrice": 38000,
-          "image": "images/cars/Lincoln_Continental_1_1786212127760.webp"
-        }
-      ],
-      "MKZ": [
-        {
-          "name": "2017 II Restyling (3.0 V6 Twin-Turbo)",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 28000,
-          "maxPrice": 36000,
-          "image": "images/cars/Lincoln_MKZ_1_1786212131104.webp"
+          "minPrice": 170000,
+          "maxPrice": 250000,
+          "image": "images/cars/LandRover_RangeRover_1_1786550269619.png"
         }
       ]
     },
@@ -7375,7 +6413,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 45000,
-          "image": "images/cars/Maserati_Ghibli_1_1786212139012.webp"
+          "image": "images/cars/Maserati_Ghibli_1_1786212139012.jpg"
         }
       ],
       "Levante": [
@@ -7385,19 +6423,10 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 38000,
           "maxPrice": 62000,
-          "image": "images/cars/Maserati_Levante_1_1786212149534.webp"
+          "image": "images/cars/Maserati_Levante_1_1786212149534.jpg"
         }
       ],
-      "Quattroporte": [
-        {
-          "name": "2017 VI Restyling (3.0 V6 Twin-Turbo)",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 35000,
-          "maxPrice": 48000,
-          "image": "images/cars/Maserati_Quattroporte_1_1786212156284.webp"
-        }
-      ]
+      "Quattroporte": []
     },
     "Mercedes-Benz": {
       "C-Class / AMG C 43": [
@@ -7407,7 +6436,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 32000,
           "maxPrice": 45000,
-          "image": "images/cars/2019-mercedes-amg-c43-mmp-1544738283.webp"
+          "image": "images/cars/2019-mercedes-amg-c43-mmp-1544738283.avif"
         }
       ],
       "CLE-Class / AMG CLE 53": [
@@ -7417,7 +6446,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 75000,
           "maxPrice": 98000,
-          "image": "images/cars/2025-mercedes-amg-cle53-coupe-9642-68f628c3cee1d.webp"
+          "image": "images/cars/2025-mercedes-amg-cle53-coupe-9642-68f628c3cee1d.avif"
         }
       ],
       "CLS-Class": [
@@ -7427,7 +6456,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 48000,
           "maxPrice": 68000,
-          "image": "images/cars/images (11).webp"
+          "image": "images/cars/images (11).jpg"
         }
       ],
       "E-Class / E 400 / AMG E 43 / AMG E 53": [
@@ -7437,7 +6466,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 38000,
           "maxPrice": 52000,
-          "image": "images/cars/2018-mercedes-benz-e-class-amg-e-43-4matic-sedan.webp"
+          "image": "images/cars/2018-mercedes-benz-e-class-amg-e-43-4matic-sedan.jpg"
         },
         {
           "name": "2021-2025 W213 Restyling (E 450 / AMG E 53 Inline-6)",
@@ -7445,7 +6474,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 55000,
           "maxPrice": 78000,
-          "image": "images/cars/images (3).webp"
+          "image": "images/cars/images (3).jpg"
         },
         {
           "name": "2026 W214 (AMG E 53 HYBRID 3.0 PHEV)",
@@ -7453,7 +6482,7 @@ const carData = {
           "fuel": "Plug-in Hybrid",
           "minPrice": 88000,
           "maxPrice": 110000,
-          "image": "images/cars/2026_mercedes-benz_e-class_sedan_amg-e-53-hybrid_fq_oem_1_1600.webp"
+          "image": "images/cars/2026_mercedes-benz_e-class_sedan_amg-e-53-hybrid_fq_oem_1_1600.avif"
         }
       ],
       "GLC-Class": [
@@ -7463,25 +6492,17 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 48000,
           "maxPrice": 62000,
-          "image": "images/cars/images (12).webp"
+          "image": "images/cars/images (12).jpg"
         }
       ],
       "GLE-Class / GLE 450 / AMG GLE 53": [
-        {
-          "name": "2018 W166 Restyling (GLE 400 3.0 Biturbo)",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 35000,
-          "maxPrice": 45000,
-          "image": "images/cars/e77fc51c49e0db619d13f87d2694a6c0.webp"
-        },
         {
           "name": "2020-2026 V167 (GLE 450 / AMG GLE 53 Coupe)",
           "type": "SUV",
           "fuel": "Hybrid",
           "minPrice": 68000,
           "maxPrice": 98000,
-          "image": "images/cars/a7f0077d54f63bbce8325f3c0a3bb547.webp"
+          "image": "images/cars/a7f0077d54f63bbce8325f3c0a3bb547.jpg"
         }
       ],
       "GLS-Class / GLS 450": [
@@ -7491,7 +6512,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 70000,
           "maxPrice": 105000,
-          "image": "images/cars/2025_mercedes-benz_gls-class_4dr-suv_amg-gls-63_fq_oem_1_1280.webp"
+          "image": "images/cars/2025_mercedes-benz_gls-class_4dr-suv_amg-gls-63_fq_oem_1_1280.avif"
         }
       ],
       "AMG GT 43 / GT 53": [
@@ -7511,7 +6532,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 52000,
           "maxPrice": 70000,
-          "image": "images/cars/images (13).webp"
+          "image": "images/cars/images (13).jpg"
         },
         {
           "name": "2021-2023 W223 Generation (S 500 3.0 Inline-6)",
@@ -7519,7 +6540,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 95000,
           "maxPrice": 135000,
-          "image": "images/cars/images (14).webp"
+          "image": "images/cars/images (14).jpg"
         }
       ],
       "Sprinter": [
@@ -7529,7 +6550,7 @@ const carData = {
           "fuel": "Dizel",
           "minPrice": 38000,
           "maxPrice": 52000,
-          "image": "images/cars/mercedes-benz_sprinter_935498.webp"
+          "image": "images/cars/mercedes-benz_sprinter_935498.jpg"
         }
       ]
     },
@@ -7541,7 +6562,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 52000,
           "maxPrice": 68000,
-          "image": "images/cars/Nissan_Z_1_1786212167334.webp"
+          "image": "images/cars/Nissan_Z_1_1786212167334.jpg"
         }
       ]
     },
@@ -7553,7 +6574,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 75000,
           "maxPrice": 98000,
-          "image": "images/cars/Porsche_911_1_1786212191474.webp"
+          "image": "images/cars/Porsche_911_1_1786212191474.jpg"
         },
         {
           "name": "2020-2026 992 Generation (Carrera 3.0 Twin-Turbo)",
@@ -7561,7 +6582,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 115000,
           "maxPrice": 160000,
-          "image": "images/cars/Porsche_911_2_1786212196458.webp"
+          "image": "images/cars/Porsche_911_2_1786212196458.jpg"
         }
       ],
       "Cayenne / E-Hybrid": [
@@ -7571,7 +6592,7 @@ const carData = {
           "fuel": "Hybrid",
           "minPrice": 65000,
           "maxPrice": 98000,
-          "image": "images/cars/Porsche_CayenneEHybrid_1_1786212200881.webp"
+          "image": "images/cars/Porsche_CayenneEHybrid_1_1786212200881.jpg"
         }
       ],
       "Macan": [
@@ -7581,7 +6602,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 38000,
           "maxPrice": 55000,
-          "image": "images/cars/Porsche_Macan_1_1786212205605.webp"
+          "image": "images/cars/Porsche_Macan_1_1786212205605.jpg"
         }
       ],
       "Panamera": [
@@ -7591,7 +6612,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 52000,
           "maxPrice": 72000,
-          "image": "images/cars/Porsche_Panamera_1_1786212209770.webp"
+          "image": "images/cars/Porsche_Panamera_1_1786212209770.jpg"
         }
       ]
     },
@@ -7603,7 +6624,7 @@ const carData = {
           "fuel": "Dizel",
           "minPrice": 32000,
           "maxPrice": 50000,
-          "image": "images/cars/RAM_1500_1_1786212213872.webp"
+          "image": "images/cars/RAM_1500_1_1786212213872.jpg"
         },
         {
           "name": "2025-2026 DT Restyling (3.0 Hurricane I6)",
@@ -7611,7 +6632,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 58000,
           "maxPrice": 82000,
-          "image": "images/cars/RAM_1500_2_1786212221789.webp"
+          "image": "images/cars/RAM_1500_2_1786212221789.jpg"
         }
       ]
     },
@@ -7623,24 +6644,12 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 48000,
           "maxPrice": 62000,
-          "image": "images/cars/Toyota_GRSupra_1_1786212226210.webp"
+          "image": "images/cars/Toyota_GRSupra_1_1786212226210.jpg"
         }
       ]
     }
   },
   "3.5": {
-    "Acura": {
-      "MDX": [
-        {
-          "name": "2025-2026 IV Restyling (3.5 V6 i-VTEC)",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 75000,
-          "maxPrice": 98000,
-          "image": "images/cars/Acura_MDX_1_1786212232941.webp"
-        }
-      ]
-    },
     "Ford": {
       "Expedition": [
         {
@@ -7649,7 +6658,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 95000,
           "maxPrice": 135000,
-          "image": "images/cars/Ford_Expedition_1_1786212251552.webp"
+          "image": "images/cars/Ford_Expedition_1_1786212251552.jpg"
         }
       ],
       "F-150": [
@@ -7657,21 +6666,12 @@ const carData = {
           "name": "2025 XIV Restyling (3.5 V6 EcoBoost)",
           "type": "Pickup",
           "fuel": "Benzin",
-          "minPrice": 65000,
-          "maxPrice": 95000,
-          "image": "images/cars/Ford_F150_1_1786212274484.webp"
+          "minPrice": 90000,
+          "maxPrice": 115000,
+          "image": "images/cars/Ford_F150_1_1786212274484.jpg"
         }
       ],
-      "Transit / Transit-150 / 250 / 350 / Passenger Van": [
-        {
-          "name": "2025-2026 IV Restyling (3.5 V6 Duratec / EcoBoost)",
-          "type": "Minivan",
-          "fuel": "Benzin",
-          "minPrice": 48000,
-          "maxPrice": 68000,
-          "image": "images/cars/Ford_TransitTransit150250350PassengerVan_1_1786212277699.webp"
-        }
-      ]
+      "Transit / Transit-150 / 250 / 350 / Passenger Van": []
     },
     "Genesis": {
       "G90": [
@@ -7679,9 +6679,9 @@ const carData = {
           "name": "2026 II Generation (3.5 V6 Turbo)",
           "type": "Sedan",
           "fuel": "Benzin",
-          "minPrice": 110000,
-          "maxPrice": 150000,
-          "image": "images/cars/Genesis_G90_1_1786212299104.webp"
+          "minPrice": 100000,
+          "maxPrice": 125000,
+          "image": "images/cars/Genesis_G90_1_1786212299104.jpg"
         }
       ],
       "GV70": [
@@ -7689,9 +6689,9 @@ const carData = {
           "name": "2025-2026 I Restyling (3.5 V6 Twin-Turbo)",
           "type": "SUV",
           "fuel": "Benzin",
-          "minPrice": 68000,
-          "maxPrice": 88000,
-          "image": "images/cars/Genesis_GV70_1_1786212306052.webp"
+          "minPrice": 52000,
+          "maxPrice": 67000,
+          "image": "images/cars/Genesis_GV70_1_1786212306052.jpg"
         }
       ],
       "GV80": [
@@ -7699,23 +6699,14 @@ const carData = {
           "name": "2025-2026 I Restyling (3.5 V6 Twin-Turbo)",
           "type": "SUV",
           "fuel": "Benzin",
-          "minPrice": 85000,
+          "minPrice": 105000,
           "maxPrice": 115000,
-          "image": "images/cars/Genesis_GV80_1_1786212311890.webp"
+          "image": "images/cars/Genesis_GV80_1_1786212311890.jpg"
         }
       ]
     },
     "Honda": {
-      "Odyssey": [
-        {
-          "name": "2025-2026 V Restyling (3.5 V6 i-VTEC)",
-          "type": "Minivan",
-          "fuel": "Benzin",
-          "minPrice": 42000,
-          "maxPrice": 58000,
-          "image": "images/cars/Honda_Odyssey_1_1786212316280.webp"
-        }
-      ],
+      "Odyssey": [],
       "Passport": [
         {
           "name": "2025-2026 IV Generation (3.5 V6 i-VTEC)",
@@ -7723,7 +6714,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 45000,
           "maxPrice": 62000,
-          "image": "images/cars/Honda_Passport_1_1786212321006.webp"
+          "image": "images/cars/Honda_Passport_1_1786212321006.jpg"
         }
       ],
       "Pilot": [
@@ -7733,19 +6724,10 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 48000,
           "maxPrice": 68000,
-          "image": "images/cars/Honda_Pilot_1_1786212324020.webp"
+          "image": "images/cars/Honda_Pilot_1_1786212324020.jpg"
         }
       ],
-      "Ridgeline": [
-        {
-          "name": "2025-2026 II Restyling (3.5 V6 i-VTEC)",
-          "type": "Pickup",
-          "fuel": "Benzin",
-          "minPrice": 45000,
-          "maxPrice": 60000,
-          "image": "images/cars/Honda_Ridgeline_1_1786212329610.webp"
-        }
-      ]
+      "Ridgeline": []
     },
     "Hyundai": {
       "Palisade": [
@@ -7755,7 +6737,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 58000,
           "maxPrice": 78000,
-          "image": "images/cars/Hyundai_Palisade_1_1786212337966.webp"
+          "image": "images/cars/Hyundai_Palisade_1_1786212337966.jpg"
         }
       ]
     },
@@ -7767,19 +6749,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 120000,
           "maxPrice": 165000,
-          "image": "images/cars/Infiniti_QX80_1_1786212344115.webp"
-        }
-      ]
-    },
-    "KIA": {
-      "Carnival / Carnival MPV": [
-        {
-          "name": "2025-2026 KA4 Restyling (3.5 V6 Smartstream)",
-          "type": "Minivan",
-          "fuel": "Benzin",
-          "minPrice": 45000,
-          "maxPrice": 62000,
-          "image": "images/cars/KIA_CarnivalCarnivalMPV_1_1786212349223.webp"
+          "image": "images/cars/Infiniti_QX80_1_1786212344115.png"
         }
       ]
     },
@@ -7791,7 +6761,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 52000,
           "maxPrice": 70000,
-          "image": "images/cars/Lexus_ES_1_1786212354350.webp"
+          "image": "images/cars/Lexus_ES_1_1786212354350.jpg"
         }
       ],
       "IS": [
@@ -7801,7 +6771,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 48000,
           "maxPrice": 65000,
-          "image": "images/cars/Lexus_IS_1_1786212361082.webp"
+          "image": "images/cars/Lexus_IS_1_1786212361082.jpg"
         }
       ]
     },
@@ -7813,7 +6783,7 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 125000,
           "maxPrice": 175000,
-          "image": "images/cars/Lincoln_Navigator_1_1786212367408.webp"
+          "image": "images/cars/Lincoln_Navigator_1_1786212367408.jpg"
         }
       ]
     },
@@ -7825,83 +6795,35 @@ const carData = {
           "fuel": "Benzin",
           "minPrice": 90000,
           "maxPrice": 125000,
-          "image": "images/cars/Nissan_Armada_1_1786212373069.webp"
+          "image": "images/cars/Nissan_Armada_1_1786212373069.jpg"
         }
       ],
-      "Pathfinder": [
-        {
-          "name": "2025-2026 R53 Generation (3.5 V6 VQ35DD)",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 45000,
-          "maxPrice": 62000,
-          "image": "images/cars/Nissan_Pathfinder_1_1786212380226.webp"
-        }
-      ]
+      "Pathfinder": []
     }
   },
   "4.0": {
-    "Aston Martin": {
-      "Vantage": [
-        {
-          "name": "2025 II Restyling (4.0 V8 Twin-Turbo AMG Engine)",
-          "type": "Coupe",
-          "fuel": "Benzin",
-          "minPrice": 280000,
-          "maxPrice": 360000,
-          "image": "images/cars/images233.webp"
-        }
-      ]
-    },
     "Audi": {
-      "RS6 / RS6 Avant": [
-        {
-          "name": "2025 C8 Generation (4.0 TFSI V8 Twin-Turbo)",
-          "type": "Wagon",
-          "fuel": "Benzin",
-          "minPrice": 210000,
-          "maxPrice": 280000,
-          "image": "images/cars/Audi-RS6-GT-avant-2025-collection-1-of-660-the-ultimate-family-estate_035-1024x576.webp"
-        }
-      ],
+      "RS6 / RS6 Avant": [],
       "RS7 / RS 7 Sportback": [
         {
           "name": "2025-2026 C8 Generation (4.0 TFSI V8 Twin-Turbo)",
           "type": "Sedan",
           "fuel": "Benzin",
-          "minPrice": 220000,
-          "maxPrice": 290000,
-          "image": "images/cars/2025-audi-rs7-125-67f68b49cafa4.webp"
+          "minPrice": 180000,
+          "maxPrice": 225000,
+          "image": "images/cars/2025-audi-rs7-125-67f68b49cafa4.avif"
         }
       ],
-      "RS Q8 / RS Q8 Performance": [
-        {
-          "name": "2025-2026 I Restyling (4.0 TFSI V8 Twin-Turbo)",
-          "type": "SUV",
-          "fuel": "Benzin",
-          "minPrice": 240000,
-          "maxPrice": 320000,
-          "image": "images/cars/2025_audi_rs-q8_4dr-suv_performance_fq_oem_1_600.webp"
-        }
-      ],
-      "S8": [
-        {
-          "name": "2025 D5 Restyling (4.0 TFSI V8)",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 190000,
-          "maxPrice": 250000,
-          "image": "images/cars/5jczz.webp"
-        }
-      ],
+      "RS Q8 / RS Q8 Performance": [],
+      "S8": [],
       "SQ7": [
         {
           "name": "2025 II Restyling (4.0 TFSI V8)",
           "type": "SUV",
           "fuel": "Benzin",
-          "minPrice": 150000,
-          "maxPrice": 195000,
-          "image": "images/cars/images (26).webp"
+          "minPrice": 95000,
+          "maxPrice": 115000,
+          "image": "images/cars/images (26).jpg"
         }
       ],
       "SQ8": [
@@ -7909,9 +6831,9 @@ const carData = {
           "name": "2025 I Restyling (4.0 TFSI V8)",
           "type": "SUV",
           "fuel": "Benzin",
-          "minPrice": 165000,
-          "maxPrice": 210000,
-          "image": "images/cars/images (27).webp"
+          "minPrice": 100000,
+          "maxPrice": 140000,
+          "image": "images/cars/images (27).jpg"
         }
       ]
     },
@@ -7921,31 +6843,9 @@ const carData = {
           "name": "2025 Urus S / Performante (4.0 V8 Twin-Turbo)",
           "type": "SUV",
           "fuel": "Benzin",
-          "minPrice": 420000,
-          "maxPrice": 580000,
-          "image": "images/cars/2025-lamborghini-urus-se-01.webp"
-        }
-      ]
-    },
-    "McLaren": {
-      "750S": [
-        {
-          "name": "2025 I Generation (4.0 V8 Twin-Turbo M840T)",
-          "type": "Coupe",
-          "fuel": "Benzin",
-          "minPrice": 520000,
-          "maxPrice": 680000,
-          "image": "images/cars/images (28).webp"
-        }
-      ],
-      "GTS": [
-        {
-          "name": "2025 I Generation (4.0 V8 Twin-Turbo)",
-          "type": "Coupe",
-          "fuel": "Benzin",
-          "minPrice": 380000,
-          "maxPrice": 480000,
-          "image": "images/cars/403685-2025-mclaren-gts.webp"
+          "minPrice": 300000,
+          "maxPrice": 350000,
+          "image": "images/cars/2025-lamborghini-urus-se-01.jpg"
         }
       ]
     },
@@ -7955,9 +6855,9 @@ const carData = {
           "name": "2025-2026 W464 LCI (G 500 V8 / AMG G 63 4.0 V8 Biturbo)",
           "type": "SUV",
           "fuel": "Benzin",
-          "minPrice": 280000,
-          "maxPrice": 420000,
-          "image": "images/cars/666.webp"
+          "minPrice": 175000,
+          "maxPrice": 225000,
+          "image": "images/cars/666.jpg"
         }
       ],
       "GLE-Class / GLE 580 / AMG GLE 63 S / Coupe": [
@@ -7965,9 +6865,9 @@ const carData = {
           "name": "2025-2026 V167 LCI (GLE 580 / AMG GLE 63 S 4.0 V8 Biturbo)",
           "type": "SUV",
           "fuel": "Hybrid",
-          "minPrice": 160000,
-          "maxPrice": 240000,
-          "image": "images/cars/003-2025-mercedes-benz-gle-450e-front-view.webp"
+          "minPrice": 145000,
+          "maxPrice": 200000,
+          "image": "images/cars/003-2025-mercedes-benz-gle-450e-front-view.avif"
         }
       ],
       "GLS-Class / AMG GLS 63": [
@@ -7975,97 +6875,28 @@ const carData = {
           "name": "2025-2026 X167 LCI (GLS 580 / AMG GLS 63 4.0 V8 Biturbo)",
           "type": "SUV",
           "fuel": "Hybrid",
-          "minPrice": 180000,
-          "maxPrice": 270000,
-          "image": "images/cars/004-2024-mercedes-benz-gls580.webp"
+          "minPrice": 110000,
+          "maxPrice": 155000,
+          "image": "images/cars/004-2024-mercedes-benz-gls580.avif"
         }
       ],
-      "S-Class / S 580 / AMG S 63 E Performance": [
-        {
-          "name": "2025-2026 W223 (S 580 4.0 V8 Biturbo)",
-          "type": "Sedan",
-          "fuel": "Hybrid",
-          "minPrice": 210000,
-          "maxPrice": 280000,
-          "image": "images/cars/2025-mercedes-amg-s63-e-performance-144-67d450e1196f6.webp"
-        },
-        {
-          "name": "2025 W223 (AMG S 63 E Performance 4.0 V8 PHEV)",
-          "type": "Sedan",
-          "fuel": "Plug-in Hybrid",
-          "minPrice": 340000,
-          "maxPrice": 450000,
-          "image": "images/cars/mercedes-benz-s-class-phev-hero-720x405px.webp"
-        }
-      ],
-      "AMG GT / AMG SL 55 / AMG GT 63 4-Door": [
-        {
-          "name": "2025 AMG SL 55 Roadster (4.0 V8 Biturbo)",
-          "type": "Coupe",
-          "fuel": "Benzin",
-          "minPrice": 240000,
-          "maxPrice": 310000,
-          "image": "images/cars/2025_mercedes-benz_amg-gt_coupe_63-s-e-performance_fq_oem_5_1600.webp"
-        },
-        {
-          "name": "2026 AMG GT 55 / GT 63 Coupe (C192 4.0 V8)",
-          "type": "Coupe",
-          "fuel": "Benzin",
-          "minPrice": 260000,
-          "maxPrice": 350000,
-          "image": "images/cars/2025-mercedes-amg-gt-63-s-e-performance-108-6924bb6057075.webp"
-        },
-        {
-          "name": "2026 AMG GT 63 S 4-Door Coupe (X290 4.0 V8)",
-          "type": "Sedan",
-          "fuel": "Benzin",
-          "minPrice": 250000,
-          "maxPrice": 340000,
-          "image": "images/cars/2026-Mercedes-AMG-GT-63-S-4-Door-01-f34-05182026-Edmunds_1280.webp"
-        }
-      ]
+      "S-Class / S 580 / AMG S 63 E Performance": [],
+      "AMG GT / AMG SL 55 / AMG GT 63 4-Door": []
     },
     "Porsche": {
-      "911": [
-        {
-          "name": "2025-2026 992.2 GT3 / GT3 RS (4.0 N/A Flat-6)",
-          "type": "Coupe",
-          "fuel": "Benzin",
-          "minPrice": 320000,
-          "maxPrice": 480000,
-          "image": "images/cars/2025-porsche-911-gt3-102-67127828064af.webp"
-        }
-      ],
-      "718 Cayman / Boxster / Spyder": [
-        {
-          "name": "2025 718 GTS 4.0 / GT4 RS / Spyder (4.0 Flat-6)",
-          "type": "Coupe",
-          "fuel": "Benzin",
-          "minPrice": 150000,
-          "maxPrice": 230000,
-          "image": "images/cars/PCGB19_0656_fine-2133x1200-cropped.webp"
-        }
-      ],
+      "911": [],
+      "718 Cayman / Boxster / Spyder": [],
       "Cayenne / Coupe / E-Hybrid": [
         {
           "name": "2025-2026 PO536 LCI (Cayenne S V8 / Turbo E-Hybrid 4.0 V8)",
           "type": "SUV",
           "fuel": "Hybrid",
-          "minPrice": 160000,
-          "maxPrice": 260000,
+          "minPrice": 110000,
+          "maxPrice": 155000,
           "image": "images/cars/50689-large.webp"
         }
       ],
-      "Panamera": [
-        {
-          "name": "2026 G3 Generation (G3 GTS / Turbo E-Hybrid 4.0 V8)",
-          "type": "Sedan",
-          "fuel": "Hybrid",
-          "minPrice": 210000,
-          "maxPrice": 320000,
-          "image": "images/cars/Porsche-Panamera-3rd-Generation-Ultimate-Model-Guide.webp"
-        }
-      ]
+      "Panamera": []
     }
   }
 };
