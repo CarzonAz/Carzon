@@ -119,7 +119,7 @@ const carData = {
     "CADILLAC": {
       "Escalade IQ": [
         {
-          "name": "2025 Cadillac Escalade IQ",
+          "name": "2025 Cadillac Escalade",
           "type": "SUV",
           "fuel": "Electric",
           "minPrice": 180000,
