@@ -1447,7 +1447,7 @@ const carData = {
         {
           "name": "2017-2019 Chevrolet Cruze J400 Turbo Diesel",
           "type": "Sedan",
-          "fuel": "Diesel",
+          "fuel": "Dizel",
           "minPrice": 14500,
           "maxPrice": 17500,
           "image": "images/cars/2017-chevrolet-cruze-diesel-first-drive-review-car-and-driver-photo-677562-s-original.avif"
@@ -1455,7 +1455,7 @@ const carData = {
         {
           "name": "2017-2019 Chevrolet Cruze J400 Turbo Diesel",
           "type": "Hatchback",
-          "fuel": "Diesel",
+          "fuel": "Dizel",
           "minPrice": 14500,
           "maxPrice": 17500,
           "image": "images/cars/2017-chevrolet-cruze-hatchback-premier-review-curbed-with-craig-cole.webp"
