@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ağıllı Maliyyə Təxmini — CARZON</title>
-  
+  <title>Xəyalındakı Avtomobili Tap — CARZON</title>
+
   <link rel="icon" type="image/png" sizes="32x32" href="Logo/main-logo.png">
   <link rel="icon" type="image/png" sizes="16x16" href="Logo/main-logo.png">
   <link rel="icon" type="image/png" sizes="192x192" href="Logo/main-logo.png">
@@ -100,7 +100,7 @@
     }
 
     /* =========================================
-        KART VƏ FORM DİZAYNI (RESPONSIVE FIXED - YENİLƏNDİ)
+        BAŞLIQ VƏ ƏSAS KART (Hesablama kartı ilə eyni dil)
         ========================================= */
     .calc-title-badge h1 {
       text-align: center; 
@@ -116,8 +116,7 @@
       font-size: 14px;
       padding: 0 10px;
     }
-    
-    /* Form daha enli və səliqəli edildi */
+
     .tahmin-card {
       background: rgba(17, 26, 46, 0.6); 
       border: 1px solid rgba(255, 255, 255, 0.05);
@@ -125,23 +124,20 @@
       padding: 35px;
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      max-width: 1050px; /* Eni 800px-dən 1050px-ə qaldırıldı */
+      max-width: 1050px;
       margin: 0 auto 40px auto; 
       width: 100%;
     }
-    
-    /* Böyük ekranlarda 3 sütunlu nizam, noutbuklarda sıxılmanı tamamilə önləyir */
+
     .form-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 25px;
       margin-bottom: 25px;
     }
-    
     .form-grid-full {
       grid-column: span 2;
     }
-
     .form-grid-compact {
       margin-bottom: 0;
       gap: 25px;
@@ -155,7 +151,12 @@
       font-size: 14px;
       color: rgba(255, 255, 255, 0.9);
       font-weight: 500;
-      white-space: nowrap; /* Sözlərin daralıb alt sətirə düşməsini əngəlləyir */
+    }
+    .form-group label i {
+      color: #3498db;
+      margin-right: 6px;
+      width: 14px;
+      text-align: center;
     }
     .form-control {
       width: 100% !important;
@@ -169,7 +170,6 @@
       outline: none;
       display: block;
     }
-
     .form-control::-webkit-outer-spin-button,
     .form-control::-webkit-inner-spin-button {
       -webkit-appearance: none;
@@ -178,7 +178,6 @@
     .form-control[type="number"] {
       -moz-appearance: textfield;
     }
-    
     .form-control:focus {
       border-color: #3498db;
     }
@@ -194,98 +193,13 @@
       transition: background 0.3s ease;
       margin-top: 15px;
       font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
     .btn-calc:hover {
       background: #2980b9;
-    }
-
-    /* =========================================
-        NƏTİCƏ QUTUSU VƏ DETALLAR
-        ========================================= */
-    .tahmin-loader {
-      display: none;
-      text-align: center;
-      margin: 20px 0;
-      color: #3498db;
-      font-size: 14px;
-      font-weight: 600;
-    }
-    .tahmin-error {
-      display: none;
-      background: #e74c3c;
-      color: #fff;
-      padding: 15px;
-      border-radius: 8px;
-      margin-top: 20px;
-      font-size: 14px;
-    }
-    .tahmin-result-box {
-      background: rgba(17, 26, 46, 0.4); 
-      border-radius: 12px;
-      padding: 24px;
-      margin-top: 30px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      display: none;
-    }
-    .tahmin-result-title {
-      font-size: 16px;
-      color: #fff;
-      margin-bottom: 20px;
-      text-align: center;
-      letter-spacing: 1px;
-      font-weight: 600;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      padding-bottom: 10px;
-    }
-    .tahmin-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 10px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.7);
-      flex-wrap: wrap; 
-      gap: 10px;
-    }
-    .tahmin-row strong { color: #fff; text-align: right; }
-    .row-highlight-blue { background: rgba(52, 152, 219, 0.08); }
-    .row-highlight-yellow { background: rgba(241, 196, 15, 0.08); }
-    .text-yellow { color: #f1c40f; font-weight: 600; }
-    
-    .tahmin-total-box {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 8px;
-      margin-top: 20px;
-      text-align: center;
-      border: 1px solid rgba(37, 211, 102, 0.2);
-    }
-    .total-title {
-      color: #25D366;
-      font-size: 14px;
-      font-weight: 600;
-      display: block;
-      margin-bottom: 5px;
-    }
-    .total-azn {
-      color: #25D366;
-      font-size: 32px;
-      font-weight: 800;
-      margin: 0;
-    }
-    .total-usd {
-      color: rgba(255,255,255,0.5);
-      font-size: 14px;
-      display: block;
-      margin-top: 5px;
-    }
-    .notice-text {
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.4);
-      margin-top: 20px;
-      margin-bottom: 0;
-      line-height: 1.5;
     }
 
     /* =========================================
@@ -298,7 +212,7 @@
       background-color: rgba(17, 26, 46, 0.8) !important;
       border: 1px solid rgba(255, 255, 255, 0.1) !important;
       border-radius: 8px !important;
-      height: 50px !important; /* İnputlarla bərabərləşdirildi */
+      height: 50px !important;
       display: flex !important;
       align-items: center !important;
     }
@@ -311,6 +225,9 @@
     .select2-container--default .select2-selection--single .select2-selection__arrow {
       height: 48px !important;
       right: 10px !important;
+    }
+    .select2-container--disabled .select2-selection--single {
+      opacity: 0.5;
     }
     .select2-dropdown {
       background-color: #111a2e !important;
@@ -338,34 +255,312 @@
     }
 
     /* =========================================
-        MÜKƏMMƏL RESPONSIVE REJİMLƏRİ (YENİLƏNDİ)
+        AXTARIŞ REJİMİ SEÇİCİSİ
+        ========================================= */
+    .search-mode-selector {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+    .mode-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(17, 26, 46, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.6);
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .mode-btn:hover {
+      border-color: rgba(52, 152, 219, 0.4);
+      color: #fff;
+    }
+    .mode-btn.active-budget,
+    .mode-btn.active-brand,
+    .mode-btn.active-param {
+      background: #3498db;
+      color: #fff;
+      border-color: #3498db;
+    }
+
+    .search-card { display: none; }
+    .search-card.active { display: block; }
+
+    .currency-tag {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: 700;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+      pointer-events: none;
+    }
+    .input-with-icon { position: relative; }
+    .input-with-icon input { padding-right: 55px !important; }
+
+    /* =========================================
+        NƏTİCƏLƏR: KUZA TİPLƏRİ
+        ========================================= */
+    #resultsContainer h3 {
+      color: #fff;
+      font-size: 17px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+    #resultsContainer h3 i { color: #3498db; }
+
+    .body-types-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+    .body-type-card {
+      background: rgba(17, 26, 46, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 20px 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .body-type-card:hover,
+    .body-type-card.active {
+      border-color: #3498db;
+      background: rgba(52, 152, 219, 0.1);
+    }
+    .body-type-card .body-icon {
+      width: 42px;
+      height: 42px;
+      margin: 0 auto 10px auto;
+      background: rgba(52, 152, 219, 0.12);
+      color: #3498db;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+    .body-type-card .body-name {
+      font-weight: 600;
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .body-type-card .body-count {
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.06);
+      padding: 2px 8px;
+      border-radius: 10px;
+      display: inline-block;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* =========================================
+        MÜHƏRRİK FİLTRİ
+        ========================================= */
+    .engine-filter-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+    .engine-filter-wrapper > span {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.5);
+    }
+    .engine-btn-group {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .engine-filter-btn {
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(17, 26, 46, 0.6);
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.6);
+      cursor: pointer;
+      font-variant-numeric: tabular-nums;
+    }
+    .engine-filter-btn:hover {
+      border-color: rgba(52, 152, 219, 0.4);
+      color: #fff;
+    }
+    .engine-filter-btn.active {
+      background: #3498db;
+      color: #fff;
+      border-color: #3498db;
+    }
+
+    /* =========================================
+        MAŞIN KARTLARI
+        ========================================= */
+    .compact-models-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 18px;
+    }
+    .compact-car-card {
+      background: rgba(17, 26, 46, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s ease;
+    }
+    .compact-car-card:hover {
+      border-color: rgba(52, 152, 219, 0.4);
+    }
+    .compact-img-box {
+      height: 175px;
+      position: relative;
+      background: rgba(255, 255, 255, 0.02);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 10px;
+    }
+    .compact-img-box::after {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      background: #eef1f5;
+      border-radius: 10px;
+      z-index: 0;
+    }
+    .compact-img-box img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 10px;
+    }
+    .compact-fuel-badge {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: #3498db;
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      z-index: 2;
+    }
+    .compact-info-box {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+    .compact-brand-title {
+      font-weight: 700;
+      font-size: 16px;
+      color: #fff;
+    }
+    .compact-sub-info {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+      margin: 6px 0 12px 0;
+    }
+    .compact-price {
+      font-weight: 800;
+      font-size: 16px;
+      color: #25D366;
+      margin-bottom: 14px;
+      font-variant-numeric: tabular-nums;
+    }
+    .compact-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .btn-compact-bid,
+    .btn-compact-google {
+      padding: 9px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      transition: filter 0.2s ease;
+    }
+    .btn-compact-bid {
+      background: rgba(52, 152, 219, 0.14);
+      color: #3498db;
+      border-color: rgba(52, 152, 219, 0.3);
+    }
+    .btn-compact-bid:hover { filter: brightness(1.2); }
+    .btn-compact-google {
+      background: rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.6);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+    .btn-compact-google:hover { color: #fff; }
+
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+    .empty-state i {
+      font-size: 34px;
+      color: rgba(255, 255, 255, 0.25);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .empty-state h3 {
+      color: #fff;
+      margin: 0 0 6px 0;
+      font-size: 16px;
+    }
+    .empty-state p {
+      margin: 0;
+      font-size: 13px;
+    }
+
+    /* =========================================
+        BÖLMƏ VƏ RESPONSIVE
         ========================================= */
     .calc-section {
-      max-width: 1140px; /* Bölmənin tutumu artırıldı */
+      max-width: 1140px;
       padding-top: 140px; 
       margin: 0 auto; 
       padding-left: 20px; 
       padding-right: 20px;
     }
 
-    /* Noutbuklar və Planşetlər üçün Keçid Sərhədi (Əsas Düzəliş Buradadır) */
     @media (max-width: 1024px) {
       .form-grid { 
-        grid-template-columns: 1fr; /* 1024px-dən kiçik ekranlarda qutular qarışmasın deyə səliqəli şəkildə alt-alta düzülür */
+        grid-template-columns: 1fr;
         gap: 18px; 
       }
-      .form-grid-full {
-        grid-column: span 1;
-      }
-      .form-grid-compact {
-        gap: 18px;
-      }
-      .form-group label {
-        white-space: normal; /* Kiçik ekranlarda uzun yazılar normal şəkildə alt sətirə keçə bilsin */
-      }
-      .tahmin-card { 
-        padding: 25px; 
-      }
+      .form-grid-full { grid-column: span 1; }
+      .form-grid-compact { gap: 18px; }
+      .tahmin-card { padding: 25px; }
     }
 
     @media (max-width: 768px) {
@@ -374,33 +569,16 @@
         padding-left: 15px; 
         padding-right: 15px; 
       }
-      .tahmin-card { 
-        padding: 20px; 
-      }
-      .calc-title-badge h1 { 
-        font-size: 22px !important; 
-      }
-      .total-azn { 
-        font-size: 26px !important; 
-      }
+      .tahmin-card { padding: 20px; }
+      .calc-title-badge h1 { font-size: 22px !important; }
+      .body-types-grid { grid-template-columns: repeat(auto-fill, minmax(125px, 1fr)); }
+      .search-mode-selector { gap: 8px; }
+      .mode-btn { padding: 9px 14px; font-size: 13px; }
     }
 
     @media (max-width: 480px) {
-      .tahmin-card { 
-        padding: 16px; 
-      }
-      .tahmin-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-        padding: 10px 5px;
-      }
-      .tahmin-row strong { 
-        align-self: flex-end; 
-      }
-      .total-azn {
-        font-size: 22px !important;
-      }
+      .tahmin-card { padding: 16px; }
+      .compact-models-grid { grid-template-columns: 1fr; }
     }
   </style>
 
@@ -432,151 +610,128 @@
 
   <section class="calc-section">
     <div class="calc-container">
-      
+
       <div class="calc-title-badge">
-        <h1>Ağıllı Hesablama Kalkulyatoru</h1>
-        <p>ABŞ hərraclarından Azərbaycana çatdırılma və rəsmi gömrük xərclərini real vaxt rejimində təxmin edin.</p>
+        <h1>Xəyalındakı Avtomobili Tap</h1>
+        <p>Büdcənizə və ya istədiyiniz marka, mühərrik və kuza parametrlərinə uyğun ən dəqiq avtomobil təkliflərini görün.</p>
       </div>
 
       <div class="tahmin-card">
-        <form id="tahminForm" onsubmit="return false;">
-          
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="tahminAuction">Hərrac Platforması *</label>
-              <select id="tahminAuction" style="width: 100%;">
-                <option value="">-- Hərrac Seçin --</option>
-                <option value="copart">Copart</option>
-                <option value="iaai">IAAI</option>
-                <option value="manheim">Manheim</option>
-                <option value="canada">Kanada (Canada)</option>
-              </select>
-            </div>
 
-            <div class="form-group">
-              <label for="tahminLocation">Meydança / Region *</label>
-              <select id="tahminLocation" style="width: 100%;" disabled>
-                <option value="">Əvvəlcə hərrac seçin...</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="bidPrice">Təxmini Uduş (USD) *</label>
-              <input type="number" id="bidPrice" class="form-control" inputmode="decimal" placeholder="Məsələn: 5000" min="1">
-            </div>
-
-            <div class="form-group">
-              <label for="engineType">Mühərrikin növü *</label>
-              <select id="engineType" class="form-control">
-                <option value="0">Benzin</option>
-                <option value="1">Dizel</option>
-                <option value="2">Qaz (LPG)</option>
-                <option value="3">Hibrid (Benzin + Elektrik)</option>
-                <option value="4">Hibrid (Dizel + Elektrik)</option>
-                <option value="5">Elektrik</option>
-                <option value="6">Plug-in Hibrid</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-grid">
-            <div class="form-group form-grid-full">
-              <label for="engine">Mühərrikin həcmi (sm³ və ya Litr) *</label>
-              <input type="number" id="engine" class="form-control" inputmode="decimal" step="any" placeholder="Məs: 1.6 və ya 1597" min="0">
-            </div>
-          </div>
-
-          <div class="form-grid form-grid-compact">
-            <div class="form-group">
-              <label for="manufactureYear">İl *</label>
-              <select id="manufactureYear" class="form-control">
-                <option value="2026">2026</option>
-                <option value="2025">2025</option>
-                <option value="2024">2024</option>
-                <option value="2023">2023</option>
-                <option value="2022">2022</option>
-                <option value="2021">2021</option>
-                <option value="2020">2020</option>
-                <option value="2019">2019</option>
-                <option value="2018">2018</option>
-                <option value="2017">2017</option>
-                <option value="2016">2016</option>
-                <option value="2015">2015</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="manufactureMonth">Ay *</label>
-              <select id="manufactureMonth" class="form-control">
-                <option value="01">Yanvar</option>
-                <option value="02">Fevral</option>
-                <option value="03">Mart</option>
-                <option value="04">Aprel</option>
-                <option value="05">May</option>
-                <option value="06">İyun</option>
-                <option value="07">İyul</option>
-                <option value="08">Avqust</option>
-                <option value="09">Sentyabr</option>
-                <option value="10">Oktyabr</option>
-                <option value="11">Noyabr</option>
-                <option value="12">Dekabr</option>
-              </select>
-            </div>
-          </div>
-
-          <input type="hidden" id="commerceType" value="0">
-
-          <button type="button" class="btn-calc" id="calcTahminBtn">Yekun Qiyməti Hesabla</button>
-        </form>
-
-        <div class="tahmin-loader" id="tahminLoader">
-          <p>Dövlət Gömrük Komitəsinə rəsmi sorğu göndərilir, zəhmət olmasa gözləyin...</p>
+        <!-- REJİM SEÇİCİSİ -->
+        <div class="search-mode-selector">
+          <button type="button" class="mode-btn active-budget" id="btnModeBudget" onclick="switchSearchMode('budget')">
+            <i class="fa-solid fa-wallet"></i>
+            <span>Büdcəyə Görə</span>
+          </button>
+          <button type="button" class="mode-btn" id="btnModeBrand" onclick="switchSearchMode('brand')">
+            <i class="fa-solid fa-car"></i>
+            <span>Marka və Mühərrikə Görə</span>
+          </button>
+          <button type="button" class="mode-btn" id="btnModeParam" onclick="switchSearchMode('param')">
+            <i class="fa-solid fa-sliders"></i>
+            <span>Parametrlərə Görə</span>
+          </button>
         </div>
-        <div class="tahmin-error" id="tahminError"></div>
 
-        <div class="tahmin-result-box" id="tahminResult">
-          <h3 class="tahmin-result-title">XƏRC MADDƏLƏRİNİN DETALLARI</h3>
-          
-          <div class="tahmin-row">
-            <span>Hərrac Uduş Qiyməti:</span>
-            <strong><span id="resBidUsd">$-</span> (<span id="resBidAzn">- AZN</span>)</strong>
+        <!-- 1. BÜDCƏYƏ GÖRƏ -->
+        <div class="search-card active" id="budgetSearchCard">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="budgetFuelTypeSelect"><i class="fa-solid fa-gas-pump"></i>Mühərrik Növü</label>
+              <select id="budgetFuelTypeSelect" class="form-control">
+                <option value="">-- Bütün Mühərrik Növləri --</option>
+                <option value="Benzin">Benzin</option>
+                <option value="Dizel">Dizel</option>
+                <option value="Hybrid">Hibrid (HEV)</option>
+                <option value="Plug-in Hybrid">Plug-in Hibrid (PHEV)</option>
+                <option value="Electric">Elektrik (EV)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="userBudgetAZN"><i class="fa-solid fa-coins"></i>Maksimum Büdcəniz</label>
+              <div class="input-with-icon">
+                <input type="number" id="userBudgetAZN" class="form-control" inputmode="decimal" placeholder="Məsələn: 22000" min="1" onkeypress="handleBudgetEnter(event)">
+                <span class="currency-tag">AZN</span>
+              </div>
+            </div>
           </div>
-          <div class="tahmin-row">
-            <span>Hərrac Komissiyası/Vergisi (+):</span>
-            <strong><span id="resFeeUsd">$-</span> (<span id="resFeeAzn">- AZN</span>)</strong>
-          </div>
-          <div class="tahmin-row row-highlight-blue">
-            <span>Xalis İnvoys Qiyməti:</span>
-            <strong><span id="resInvoiceUsd">$-</span> (<span id="resInvoiceAzn">- AZN</span>)</strong>
-          </div>
-          <div class="tahmin-row">
-            <span>ABŞ/Kanada Daxili + Okean Logistikası:</span>
-            <strong><span id="resUsaShipUsd">$-</span> (<span id="resUsaShipAzn">- AZN</span>)</strong>
-          </div>
-          <div class="tahmin-row">
-            <span>Poti Limanından Bakıya Daşınma (Sabit):</span>
-            <strong><span id="resPotiUsd">$-</span> (<span id="resPotiAzn">- AZN</span>)</strong>
-          </div>
-          <div class="tahmin-row row-highlight-yellow">
-            <span class="text-yellow">Dövlət Gömrük Rüsumları:</span>
-            <strong class="text-yellow"><span id="resCustomsAzn">- AZN</span></strong>
-          </div>
-          <div class="tahmin-row">
-            <span>Torpaq Basdı Qiyməti (Sabit):</span>
-            <strong><span id="resTopraqBasdiAzn">- AZN</span></strong>
-          </div>
-          
-          <div class="tahmin-total-box">
-            <span class="total-title">Təxmini Gömrük daxil Bakı təhvil qiyməti</span>
-            <h3 id="totalFinalAzn" class="total-azn">0.00 AZN</h3>
-            <span id="totalFinalUsd" class="total-usd">($0.00)</span>
-          </div>
+          <button type="button" class="btn-calc" onclick="searchByBudgetAZN()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Nəticələri Göstər</span>
+          </button>
+        </div>
 
-          <p class="notice-text" id="legalNotice"></p>
+        <!-- 2. MARKA VƏ MÜHƏRRİKƏ GÖRƏ -->
+        <div class="search-card" id="brandSearchCard">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="brandSelect"><i class="fa-solid fa-award"></i>Marka</label>
+              <select id="brandSelect" style="width:100%;" onchange="onBrandChange()">
+                <option value="">-- Marka Seçin --</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="brandModelSelect"><i class="fa-solid fa-car"></i>Model (İstəyə görə)</label>
+              <select id="brandModelSelect" style="width:100%;" disabled onchange="onBrandModelChange()">
+                <option value="">Əvvəlcə marka seçin...</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-grid" style="margin-bottom:0;">
+            <div class="form-group form-grid-full">
+              <label for="brandEngineSelect"><i class="fa-solid fa-gauge-high"></i>Mühərrik Həcmi</label>
+              <select id="brandEngineSelect" class="form-control" disabled>
+                <option value="">-- Əvvəlcə Marka Seçin --</option>
+              </select>
+            </div>
+          </div>
+          <button type="button" class="btn-calc" onclick="searchByBrandAndEngine()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Nəticələri Göstər</span>
+          </button>
+        </div>
+
+        <!-- 3. PARAMETRLƏRƏ GÖRƏ -->
+        <div class="search-card" id="paramSearchCard">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="fuelTypeSelect"><i class="fa-solid fa-gas-pump"></i>Mühərrik Növü</label>
+              <select id="fuelTypeSelect" class="form-control" onchange="onFuelChangeParam()">
+                <option value="">-- Bütün Mühərrik Növləri --</option>
+                <option value="Benzin">Benzin</option>
+                <option value="Dizel">Dizel</option>
+                <option value="Hybrid">Hibrid (HEV)</option>
+                <option value="Plug-in Hybrid">Plug-in Hibrid (PHEV)</option>
+                <option value="Electric">Elektrik (EV)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="bodyStyleSelect"><i class="fa-solid fa-car"></i>Kuza Növü</label>
+              <select id="bodyStyleSelect" class="form-control" onchange="onBodyChangeParam()">
+                <option value="">-- Bütün Kuzalar --</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-grid" style="margin-bottom:0;">
+            <div class="form-group form-grid-full">
+              <label for="engineSelect"><i class="fa-solid fa-gauge-high"></i>Mühərrik Həcmi</label>
+              <select id="engineSelect" class="form-control">
+                <option value="">-- Bütün Mühərriklər --</option>
+              </select>
+            </div>
+          </div>
+          <button type="button" class="btn-calc" onclick="searchByParams()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Nəticələri Göstər</span>
+          </button>
         </div>
 
       </div>
+
+      <!-- NƏTİCƏLƏR -->
+      <div id="resultsContainer"></div>
+
     </div>
   </section>
 
@@ -614,9 +769,479 @@
     <img src="Logo/whatsapp-sabit.png" alt="WhatsApp" width="34" height="34">
   </a>
 
-  <script src="logisticData.js"></script>
-  <script src="script.js"></script> 
-  <script src="agillihesab.js"></script>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+    /* =========================================
+        AVTOMOBİL AXTARIŞ MƏNTİQİ
+        (köhnə hesablama funksiyaları əvəzinə)
+        ========================================= */
+    let globalGroupedData = {};
+    let currentBodyCars = [];
+
+    function matchFuelType(selectedFuel, carFuel) {
+      if (!selectedFuel) return true;
+      const s = selectedFuel.toLowerCase();
+      const c = (carFuel || "").toLowerCase();
+      if (s === "benzin" && (c === "benzin" || c === "gasoline")) return true;
+      if (s === "dizel" && (c === "dizel" || c === "diesel")) return true;
+      if (s === "electric" && (c === "electric" || c === "elektrik" || c === "ev")) return true;
+      if (s === "hybrid" && (c === "hybrid" || c === "hibrid" || c === "hev")) return true;
+      if (s === "plug-in hybrid" && (c === "plug-in hybrid" || c === "phev")) return true;
+      return s === c;
+    }
+
+    function scrollToTarget(targetSelector) {
+      setTimeout(() => {
+        const el = $(targetSelector);
+        if (el.length) {
+          $('html, body').animate({ scrollTop: el.offset().top - 90 }, 400);
+        }
+      }, 100);
+    }
+
+    function switchSearchMode(mode) {
+      $('#resultsContainer').empty();
+      $('.search-card').removeClass('active');
+      $('.mode-btn').removeClass('active-budget active-brand active-param');
+
+      if (mode === 'budget') {
+        $('#budgetSearchCard').addClass('active');
+        $('#btnModeBudget').addClass('active-budget');
+      } else if (mode === 'brand') {
+        $('#brandSearchCard').addClass('active');
+        $('#btnModeBrand').addClass('active-brand');
+      } else {
+        $('#paramSearchCard').addClass('active');
+        $('#btnModeParam').addClass('active-param');
+      }
+    }
+
+    function openDirectBidCars(brand, model, gen, engine) {
+      const yearMatch = gen ? gen.match(/\b((?:19|20)\d{2})\b/g) : null;
+      const yFrom = yearMatch ? yearMatch[0] : "1900";
+      const yTo = yearMatch ? (yearMatch[1] || yearMatch[0]) : "2027";
+      const fullQuery = encodeURIComponent(`${brand} ${model}`).replace(/%20/g, "+");
+      let url = `https://bid.cars/en/search/results?search-type=typing&query=${fullQuery}&year-from=${yFrom}&year-to=${yTo}&auction-type=All`;
+      if (engine && parseFloat(engine) > 0) url += `&engine-size-to=${parseFloat(engine)}`;
+      window.open(url, '_blank');
+    }
+
+    function openDirectGoogle(brand, model, gen) {
+      const query = encodeURIComponent(`${brand} ${model} ${gen} USA`);
+      window.open(`https://www.google.com/search?tbm=isch&q=${query}`, '_blank');
+    }
+
+    function handleBudgetEnter(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        searchByBudgetAZN();
+      }
+    }
+
+    function emptyStateHtml(message) {
+      return `
+        <div class="empty-state">
+          <i class="fa-solid fa-face-frown"></i>
+          <h3>Nəticə Tapılmadı</h3>
+          <p>${message}</p>
+        </div>
+      `;
+    }
+
+    function searchByBudgetAZN() {
+      const budget = parseFloat($('#userBudgetAZN').val());
+      const selectedFuelType = $('#budgetFuelTypeSelect').val();
+      const container = $('#resultsContainer');
+      container.empty();
+
+      if (!budget || budget <= 0) return alert("Zəhmət olmasa düzgün AZN məbləği daxil edin!");
+      if (typeof carData === 'undefined') return alert("Məlumat bazası tapılmadı!");
+
+      globalGroupedData = {};
+      let totalCarCount = 0;
+
+      for (const engine in carData) {
+        for (const brand in carData[engine]) {
+          for (const model in carData[engine][brand]) {
+            carData[engine][brand][model].forEach(item => {
+              if (typeof item === 'object' && item.minPrice && item.minPrice <= budget) {
+                const itemFuel = item.fuel || "Benzin";
+                const itemType = item.type || "Digər";
+                if (matchFuelType(selectedFuelType, itemFuel)) {
+                  if (!globalGroupedData[itemType]) globalGroupedData[itemType] = {};
+                  if (!globalGroupedData[itemType][brand]) globalGroupedData[itemType][brand] = [];
+                  globalGroupedData[itemType][brand].push({
+                    engine, brand, model,
+                    generation: item.name,
+                    fuel: itemFuel,
+                    type: itemType,
+                    minPrice: item.minPrice,
+                    maxPrice: item.maxPrice,
+                    image: item.image || ""
+                  });
+                  totalCarCount++;
+                }
+              }
+            });
+          }
+        }
+      }
+
+      const bodyTypes = Object.keys(globalGroupedData).sort();
+      if (bodyTypes.length === 0) {
+        container.html(emptyStateHtml("Seçilmiş parametrlərə və büdcəyə uyğun avtomobil tapılmadı."));
+        return;
+      }
+
+      let bodyCardsHtml = '<h3><i class="fa-solid fa-layer-group"></i> Uyğun Kuza Növləri</h3><div class="body-types-grid">';
+      bodyCardsHtml += `
+        <div class="body-type-card active" onclick="selectBodyType('all', this, true)">
+          <div class="body-icon"><i class="fa-solid fa-layer-group"></i></div>
+          <div class="body-name">Hamısı</div>
+          <div class="body-count">${totalCarCount} Avtomobil</div>
+        </div>
+      `;
+      bodyTypes.forEach(bodyType => {
+        let count = 0;
+        Object.keys(globalGroupedData[bodyType]).forEach(b => count += globalGroupedData[bodyType][b].length);
+        bodyCardsHtml += `
+          <div class="body-type-card" onclick="selectBodyType('${bodyType}', this, true)">
+            <div class="body-icon"><i class="fa-solid fa-car"></i></div>
+            <div class="body-name">${bodyType}</div>
+            <div class="body-count">${count} Avtomobil</div>
+          </div>
+        `;
+      });
+      bodyCardsHtml += '</div><div id="selectedBodyDetails"></div>';
+      container.html(bodyCardsHtml);
+      selectBodyType('all', container.find('.body-type-card').first(), false);
+      scrollToTarget("#resultsContainer");
+    }
+
+    function selectBodyType(bodyType, element, shouldScroll) {
+      $('.body-type-card').removeClass('active');
+      $(element).addClass('active');
+      const detailsContainer = $('#selectedBodyDetails');
+      detailsContainer.empty();
+      currentBodyCars = [];
+
+      if (bodyType === 'all') {
+        Object.keys(globalGroupedData).forEach(bType => {
+          Object.keys(globalGroupedData[bType]).forEach(brand => {
+            globalGroupedData[bType][brand].forEach(car => currentBodyCars.push(car));
+          });
+        });
+      } else {
+        const rawBrands = globalGroupedData[bodyType];
+        Object.keys(rawBrands).forEach(brand => {
+          rawBrands[brand].forEach(car => currentBodyCars.push(car));
+        });
+      }
+
+      currentBodyCars.sort((a, b) => a.minPrice - b.minPrice);
+
+      const engineSizes = [...new Set(currentBodyCars.map(c => c.engine))]
+        .filter(Boolean)
+        .sort((a, b) => parseFloat(a) - parseFloat(b));
+
+      let engineFilterBtns = `<button class="engine-filter-btn active" onclick="filterByEngine('all', this)">Hamısı (${currentBodyCars.length})</button>`;
+      engineSizes.forEach((eng) => {
+        const count = currentBodyCars.filter(c => c.engine === eng).length;
+        const label = parseFloat(eng) === 0 ? "EV" : `${eng}L`;
+        engineFilterBtns += `<button class="engine-filter-btn" onclick="filterByEngine('${eng}', this)">${label} (${count})</button>`;
+      });
+
+      detailsContainer.html(`
+        <div id="modelsHeaderAnchor" class="engine-filter-wrapper">
+          <span><i class="fa-solid fa-gauge-high"></i> Mühərrik:</span>
+          <div class="engine-btn-group">${engineFilterBtns}</div>
+        </div>
+        <div class="compact-models-grid" id="modelsGridContainer"></div>
+      `);
+      filterByEngine('all', null);
+
+      if (shouldScroll) scrollToTarget("#modelsHeaderAnchor");
+    }
+
+    function filterByEngine(engineSize, btnElement) {
+      if (btnElement) {
+        $('.engine-filter-btn').removeClass('active');
+        $(btnElement).addClass('active');
+      }
+      let filtered = currentBodyCars;
+      if (engineSize !== 'all') {
+        filtered = currentBodyCars.filter(car => car.engine === engineSize);
+      }
+      renderModelsGrid(filtered);
+    }
+
+    function renderModelsGrid(carsList) {
+      const gridContainer = $('#modelsGridContainer');
+      gridContainer.empty();
+
+      if (carsList.length === 0) {
+        gridContainer.html('<div style="color:rgba(255,255,255,0.5); padding:20px;">Bu parametrlərdə model tapılmadı.</div>');
+        return;
+      }
+
+      let modelsHtml = '';
+      carsList.forEach(car => {
+        const fallbackSvg = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><rect width='100%' height='100%' fill='%23eef1f5'/><text x='50%' y='50%' fill='%238d97a3' font-size='12' text-anchor='middle' dy='.3em'>Şəkil Yoxdur</text></svg>";
+        const imgSrc = car.image ? car.image : fallbackSvg;
+        const engineLabel = parseFloat(car.engine) === 0 ? "EV" : `${car.engine}L`;
+
+        modelsHtml += `
+          <div class="compact-car-card">
+            <div class="compact-img-box">
+              <img src="${imgSrc}" alt="${car.brand} ${car.model}" onerror="this.src='${fallbackSvg}'">
+              <span class="compact-fuel-badge">${car.fuel}</span>
+            </div>
+            <div class="compact-info-box">
+              <div>
+                <div class="compact-brand-title">${car.brand.toUpperCase()} ${car.model}</div>
+                <div class="compact-sub-info">${car.generation} • <b>${engineLabel}</b> • ${car.type}</div>
+                <div class="compact-price">~${car.minPrice ? car.minPrice.toLocaleString() : 'N/A'} - ${car.maxPrice ? car.maxPrice.toLocaleString() : 'N/A'} AZN</div>
+              </div>
+              <div class="compact-actions">
+                <button class="btn-compact-bid" onclick="openDirectBidCars('${car.brand}', '${car.model}', '${car.generation}', '${car.engine}')">
+                  Bid.Cars <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+                <button class="btn-compact-google" onclick="openDirectGoogle('${car.brand}', '${car.model}', '${car.generation}')">
+                  Google <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      gridContainer.html(modelsHtml);
+    }
+
+    /* MARKA VƏ MÜHƏRRİK (select2) */
+    function fillSelect2(selector, items, placeholder, enable) {
+      const $el = $(selector);
+      let options = `<option value="">${placeholder}</option>`;
+      items.forEach(item => { options += `<option value="${item}">${item}</option>`; });
+      $el.html(options);
+      if ($el.hasClass('select2-hidden-accessible')) {
+        $el.select2('destroy');
+      }
+      $el.prop('disabled', !enable);
+      $el.select2({ width: '100%', placeholder: placeholder, minimumResultsForSearch: 6 });
+    }
+
+    function initBrandDropdowns() {
+      if (typeof carData === 'undefined') return;
+      const brands = new Set();
+      for (const eng in carData) {
+        for (const brand in carData[eng]) brands.add(brand);
+      }
+      fillSelect2('#brandSelect', Array.from(brands).sort(), '-- Marka Seçin --', true);
+    }
+
+    function onBrandChange() {
+      const selectedBrand = $('#brandSelect').val();
+      if (!selectedBrand) {
+        fillSelect2('#brandModelSelect', [], 'Əvvəlcə marka seçin...', false);
+        fillEngineSelectCustom('#brandEngineSelect', []);
+        $('#brandEngineSelect').prop('disabled', true);
+        return;
+      }
+
+      const models = new Set();
+      const engines = new Set();
+      for (const eng in carData) {
+        if (carData[eng][selectedBrand]) {
+          engines.add(eng);
+          for (const model in carData[eng][selectedBrand]) models.add(model);
+        }
+      }
+
+      fillSelect2('#brandModelSelect', Array.from(models).sort(), '-- Bütün Modellər --', true);
+      fillEngineSelectCustom('#brandEngineSelect', Array.from(engines));
+      $('#brandEngineSelect').prop('disabled', false);
+    }
+
+    function onBrandModelChange() {
+      const selectedBrand = $('#brandSelect').val();
+      const selectedModel = $('#brandModelSelect').val();
+      if (!selectedBrand) return;
+
+      const engines = new Set();
+      for (const eng in carData) {
+        if (carData[eng][selectedBrand]) {
+          if (!selectedModel || carData[eng][selectedBrand][selectedModel]) engines.add(eng);
+        }
+      }
+      fillEngineSelectCustom('#brandEngineSelect', Array.from(engines));
+      $('#brandEngineSelect').prop('disabled', false);
+    }
+
+    function searchByBrandAndEngine() {
+      const brand = $('#brandSelect').val();
+      const model = $('#brandModelSelect').val();
+      const engine = $('#brandEngineSelect').val();
+      const container = $('#resultsContainer');
+
+      if (!brand) return alert("Zəhmət olmasa ən azı Marka seçin!");
+
+      let matchedCars = [];
+      for (const eng in carData) {
+        if (!engine || eng === engine) {
+          if (carData[eng][brand]) {
+            for (const mdl in carData[eng][brand]) {
+              if (!model || mdl === model) {
+                carData[eng][brand][mdl].forEach(item => {
+                  matchedCars.push({
+                    engine: eng, brand, model: mdl,
+                    generation: item.name,
+                    fuel: item.fuel || "Benzin",
+                    type: item.type || "Digər",
+                    minPrice: item.minPrice,
+                    maxPrice: item.maxPrice,
+                    image: item.image || ""
+                  });
+                });
+              }
+            }
+          }
+        }
+      }
+
+      container.empty();
+      if (matchedCars.length === 0) {
+        container.html(emptyStateHtml("Seçilmiş marka və parametrlərə uyğun avtomobil tapılmadı."));
+        return;
+      }
+
+      matchedCars.sort((a, b) => (a.minPrice || 0) - (b.minPrice || 0));
+      container.html(`
+        <h3><i class="fa-solid fa-circle-check"></i> ${brand.toUpperCase()} üçün tapılan avtomobillər (${matchedCars.length})</h3>
+        <div class="compact-models-grid" id="modelsGridContainer"></div>
+      `);
+      renderModelsGrid(matchedCars);
+      scrollToTarget("#resultsContainer");
+    }
+
+    /* PARAMETRLƏRƏ GÖRƏ */
+    function fillSelect(selector, items, placeholder) {
+      let options = `<option value="">${placeholder}</option>`;
+      items.forEach(item => { options += `<option value="${item}">${item}</option>`; });
+      $(selector).html(options).prop('disabled', false);
+    }
+
+    function fillEngineSelectCustom(selector, sortedEnginesArray) {
+      const sortedEngines = sortedEnginesArray.sort((a, b) => parseFloat(a) - parseFloat(b));
+      let options = `<option value="">-- Bütün Mühərriklər --</option>`;
+      sortedEngines.forEach(eng => {
+        const label = parseFloat(eng) === 0 ? "EV (Elektrik)" : `${eng}L`;
+        options += `<option value="${eng}">${label}</option>`;
+      });
+      $(selector).html(options);
+    }
+
+    function initParamDropdowns() {
+      if (typeof carData === 'undefined') return;
+      const bodies = new Set();
+      const engines = new Set();
+      for (const eng in carData) {
+        engines.add(eng);
+        for (const brand in carData[eng]) {
+          for (const model in carData[eng][brand]) {
+            carData[eng][brand][model].forEach(item => { if (item.type) bodies.add(item.type); });
+          }
+        }
+      }
+      fillSelect('#bodyStyleSelect', Array.from(bodies).sort(), '-- Bütün Kuzalar --');
+      fillEngineSelectCustom('#engineSelect', Array.from(engines));
+    }
+
+    function onFuelChangeParam() { updateParamOptions(); }
+    function onBodyChangeParam() { updateParamOptions(); }
+
+    function updateParamOptions() {
+      if (typeof carData === 'undefined') return;
+      const fuel = $('#fuelTypeSelect').val();
+      const body = $('#bodyStyleSelect').val();
+      const bodies = new Set();
+      const engines = new Set();
+
+      for (const eng in carData) {
+        for (const brand in carData[eng]) {
+          for (const model in carData[eng][brand]) {
+            carData[eng][brand][model].forEach(item => {
+              const itemFuel = item.fuel || "Benzin";
+              const isFuelMatch = matchFuelType(fuel, itemFuel);
+              const isBodyMatch = !body || item.type === body;
+              if (isFuelMatch && item.type) bodies.add(item.type);
+              if (isFuelMatch && isBodyMatch) engines.add(eng);
+            });
+          }
+        }
+      }
+
+      const currentBody = $('#bodyStyleSelect').val();
+      fillSelect('#bodyStyleSelect', Array.from(bodies).sort(), '-- Bütün Kuzalar --');
+      $('#bodyStyleSelect').val(currentBody);
+      fillEngineSelectCustom('#engineSelect', Array.from(engines));
+    }
+
+    function searchByParams() {
+      const fuel = $('#fuelTypeSelect').val();
+      const body = $('#bodyStyleSelect').val();
+      const engine = $('#engineSelect').val();
+      const container = $('#resultsContainer');
+      container.empty();
+
+      let matchedCars = [];
+      for (const eng in carData) {
+        const isEngineMatch = !engine || eng === engine;
+        if (isEngineMatch) {
+          for (const brand in carData[eng]) {
+            for (const model in carData[eng][brand]) {
+              carData[eng][brand][model].forEach(item => {
+                const itemFuel = item.fuel || "Benzin";
+                const isFuelMatch = matchFuelType(fuel, itemFuel);
+                const isBodyMatch = !body || item.type === body;
+                if (isFuelMatch && isBodyMatch) {
+                  matchedCars.push({
+                    engine: eng, brand, model,
+                    generation: item.name,
+                    fuel: itemFuel,
+                    type: item.type || "Digər",
+                    minPrice: item.minPrice,
+                    maxPrice: item.maxPrice,
+                    image: item.image || ""
+                  });
+                }
+              });
+            }
+          }
+        }
+      }
+
+      if (matchedCars.length === 0) {
+        container.html(emptyStateHtml("Seçilmiş parametrlərə uyğun avtomobil tapılmadı."));
+        return;
+      }
+
+      matchedCars.sort((a, b) => (a.minPrice || 0) - (b.minPrice || 0));
+      container.html(`
+        <h3><i class="fa-solid fa-circle-check"></i> Tapılan Avtomobillər (${matchedCars.length})</h3>
+        <div class="compact-models-grid" id="modelsGridContainer"></div>
+      `);
+      renderModelsGrid(matchedCars);
+      scrollToTarget("#resultsContainer");
+    }
+
+    $(document).ready(function () {
+      initParamDropdowns();
+      initBrandDropdowns();
+    });
+  </script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -675,4 +1300,4 @@
   </script>
 
 </body>
-</html>
+</html
