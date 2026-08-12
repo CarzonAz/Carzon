@@ -2107,7 +2107,7 @@ const carData = {
           "image": "images/cars/TOYOTA_Corolla_1.jpg"
         },
         {
-          "name": "2020-2022 Toyota Corolla E210 1.8L Benzin",
+          "name": "2020-2022 Toyota Corolla E210 1.8L Gasoline",
           "type": "Sedan",
           "fuel": "Benzin",
           "minPrice": 19500,
@@ -3007,7 +3007,7 @@ const carData = {
       ],
       "Fusion": [
         {
-          "name": "2017-2020 (2-ci nəsil Facelift 2.0T Benzin)",
+          "name": "2017-2020 (2-ci nəsil Facelift 2.0T Gasoline)",
           "type": "Sedan",
           "fuel": "Benzin",
           "minPrice": 15000,
@@ -3401,7 +3401,7 @@ const carData = {
     "INFINITI": {
       "Q50": [
         {
-          "name": "2017-2019 (2.0t Benzin)",
+          "name": "2017-2019 (2.0t Gasoline)",
           "type": "Sedan",
           "fuel": "Benzin",
           "minPrice": 17500,
@@ -3872,7 +3872,7 @@ const carData = {
       ],
       "UX": [
         {
-          "name": "2019-2022 (ZA10 UX 200 2.0L Benzin)",
+          "name": "2019-2022 (ZA10 UX 200 2.0L Gasoline)",
           "type": "Crossover",
           "fuel": "Benzin",
           "minPrice": 22000,
@@ -3954,7 +3954,7 @@ const carData = {
           "image": "images/cars/LINCOLN_Nautilus_1_1786209238603.jpg"
         },
         {
-          "name": "2024-2026 (2-ci nəsil 2.0T Benzin)",
+          "name": "2024-2026 (2-ci nəsil 2.0T Gasoline)",
           "type": "Crossover",
           "fuel": "Benzin",
           "minPrice": 42000,
@@ -4593,7 +4593,7 @@ const carData = {
       ],
       "Corolla Cross": [
         {
-          "name": "2022-2026 (2.0L Benzin M20A-FKS)",
+          "name": "2022-2026 (2.0L Gasoline M20A-FKS)",
           "type": "Crossover",
           "fuel": "Benzin",
           "minPrice": 22000,
